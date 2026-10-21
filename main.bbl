@@ -16,5 +16,520 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{goerke2025neffy2}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=06a68ea4cf41daea71660096b25befef}{%
+           family={Goerke},
+           familyi={G\bibinitperiod},
+           given={Charly},
+           giveni={C\bibinitperiod}}}%
+        {{hash=25bc437de4008aa8531a62a4ac65e337}{%
+           family={Kazubski},
+           familyi={K\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Berliner Hochschule für Technik, Labor für Kommunikation}%
+      }
+      \list{location}{1}{%
+        {Berlin}%
+      }
+      \strng{namehash}{788d5c6a78bdc24bb529f4bba80ddb4a}
+      \strng{fullhash}{788d5c6a78bdc24bb529f4bba80ddb4a}
+      \strng{fullhashraw}{788d5c6a78bdc24bb529f4bba80ddb4a}
+      \strng{bibnamehash}{788d5c6a78bdc24bb529f4bba80ddb4a}
+      \strng{authorbibnamehash}{788d5c6a78bdc24bb529f4bba80ddb4a}
+      \strng{authornamehash}{788d5c6a78bdc24bb529f4bba80ddb4a}
+      \strng{authorfullhash}{788d5c6a78bdc24bb529f4bba80ddb4a}
+      \strng{authorfullhashraw}{788d5c6a78bdc24bb529f4bba80ddb4a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{month}{3}
+      \field{title}{Praxisbericht -- Neffy 2}
+      \field{type}{Praxisbericht}
+      \field{year}{2025}
+      \field{dateera}{ce}
+    \endentry
+    \entry{thomas2025neffy}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=4f835210bf1268a5d50dab4fcdd31024}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={Emily\bibnamedelima Jean},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=fbb2736324027c6282a5359de8c4c031}{%
+           family={Dincel},
+           familyi={D\bibinitperiod},
+           given={Kerim},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f54a02c89685d3f5aad2c96278ed3b1f}{%
+           family={Buchem},
+           familyi={B\bibinitperiod},
+           given={Ilona},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{7960e8f19a84e00f29dc5372f7248c4d}
+      \strng{fullhash}{7960e8f19a84e00f29dc5372f7248c4d}
+      \strng{fullhashraw}{7960e8f19a84e00f29dc5372f7248c4d}
+      \strng{bibnamehash}{7960e8f19a84e00f29dc5372f7248c4d}
+      \strng{authorbibnamehash}{7960e8f19a84e00f29dc5372f7248c4d}
+      \strng{authornamehash}{7960e8f19a84e00f29dc5372f7248c4d}
+      \strng{authorfullhash}{7960e8f19a84e00f29dc5372f7248c4d}
+      \strng{authorfullhashraw}{7960e8f19a84e00f29dc5372f7248c4d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)}
+      \field{title}{{NEFFY} -- A Social Robot for Multimodal Support of Slow-Paced Breathing Exercises}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{pages}{1800\bibrangedash 1802}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1109/HRI61500.2025.10974160
+      \endverb
+    \endentry
+    \entry{buchem2026neffy2}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=f54a02c89685d3f5aad2c96278ed3b1f}{%
+           family={Buchem},
+           familyi={B\bibinitperiod},
+           given={Ilona},
+           giveni={I\bibinitperiod}}}%
+        {{hash=25bc437de4008aa8531a62a4ac65e337}{%
+           family={Kazubski},
+           familyi={K\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+        {{hash=06a68ea4cf41daea71660096b25befef}{%
+           family={Goerke},
+           familyi={G\bibinitperiod},
+           given={Charly},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{f759dd18b435aff417f481c308706775}
+      \strng{fullhash}{f759dd18b435aff417f481c308706775}
+      \strng{fullhashraw}{f759dd18b435aff417f481c308706775}
+      \strng{bibnamehash}{f759dd18b435aff417f481c308706775}
+      \strng{authorbibnamehash}{f759dd18b435aff417f481c308706775}
+      \strng{authornamehash}{f759dd18b435aff417f481c308706775}
+      \strng{authorfullhash}{f759dd18b435aff417f481c308706775}
+      \strng{authorfullhashraw}{f759dd18b435aff417f481c308706775}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Companion Proceedings of the 21st ACM/IEEE International Conference on Human-Robot Interaction (HRI)}
+      \field{title}{{NEFFY} 2.0: A Breathing Companion Robot: User-Centered Design and Findings from a Study with Ukrainian Refugees}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{pages}{521\bibrangedash 525}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1145/3776734.3794450
+      \endverb
+    \endentry
+    \entry{nicolo2020rr}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=55adad779c065abe4bddf9725bbabf7c}{%
+           family={Nicolò},
+           familyi={N\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4a1cf86d39027e6931a1624b9faea2d2}{%
+           family={Massaroni},
+           familyi={M\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod}}}%
+        {{hash=423143f5a391256d0caec5ce15a96478}{%
+           family={Schena},
+           familyi={S\bibinitperiod},
+           given={Emiliano},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2764357cd1269c259dc4a5ad852a30d8}{%
+           family={Sacchetti},
+           familyi={S\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa59df2e9ddf409e1c2ce3fb1ce90d4f}
+      \strng{fullhash}{fa44404332e19ff7cfc1666acaeb0448}
+      \strng{fullhashraw}{fa44404332e19ff7cfc1666acaeb0448}
+      \strng{bibnamehash}{aa59df2e9ddf409e1c2ce3fb1ce90d4f}
+      \strng{authorbibnamehash}{aa59df2e9ddf409e1c2ce3fb1ce90d4f}
+      \strng{authornamehash}{aa59df2e9ddf409e1c2ce3fb1ce90d4f}
+      \strng{authorfullhash}{fa44404332e19ff7cfc1666acaeb0448}
+      \strng{authorfullhashraw}{fa44404332e19ff7cfc1666acaeb0448}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{21}
+      \field{title}{The Importance of Respiratory Rate Monitoring: From Healthcare to Sport and Exercise}
+      \field{volume}{20}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{6396}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s20216396
+      \endverb
+    \endentry
+    \entry{massaroni2019contact}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=4a1cf86d39027e6931a1624b9faea2d2}{%
+           family={Massaroni},
+           familyi={M\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod}}}%
+        {{hash=55adad779c065abe4bddf9725bbabf7c}{%
+           family={Nicolò},
+           familyi={N\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=71c0b722029132c49075dd177a84191b}{%
+           family={Lo\bibnamedelima Presti},
+           familyi={L\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2764357cd1269c259dc4a5ad852a30d8}{%
+           family={Sacchetti},
+           familyi={S\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2e1e5faab8d83d730455f8d896b09e22}{%
+           family={Silvestri},
+           familyi={S\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod}}}%
+        {{hash=423143f5a391256d0caec5ce15a96478}{%
+           family={Schena},
+           familyi={S\bibinitperiod},
+           given={Emiliano},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{84c8bf56dbaf65bbdbddf28c82bc1cb9}
+      \strng{fullhash}{75cd4ba7c0df170205dd9584b2c15ece}
+      \strng{fullhashraw}{75cd4ba7c0df170205dd9584b2c15ece}
+      \strng{bibnamehash}{84c8bf56dbaf65bbdbddf28c82bc1cb9}
+      \strng{authorbibnamehash}{84c8bf56dbaf65bbdbddf28c82bc1cb9}
+      \strng{authornamehash}{84c8bf56dbaf65bbdbddf28c82bc1cb9}
+      \strng{authorfullhash}{75cd4ba7c0df170205dd9584b2c15ece}
+      \strng{authorfullhashraw}{75cd4ba7c0df170205dd9584b2c15ece}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{4}
+      \field{title}{Contact-Based Methods for Measuring Respiratory Rate}
+      \field{volume}{19}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{908}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s19040908
+      \endverb
+    \endentry
+    \entry{massaroni2021contactless}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=4a1cf86d39027e6931a1624b9faea2d2}{%
+           family={Massaroni},
+           familyi={M\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod}}}%
+        {{hash=55adad779c065abe4bddf9725bbabf7c}{%
+           family={Nicolò},
+           familyi={N\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2764357cd1269c259dc4a5ad852a30d8}{%
+           family={Sacchetti},
+           familyi={S\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=423143f5a391256d0caec5ce15a96478}{%
+           family={Schena},
+           familyi={S\bibinitperiod},
+           given={Emiliano},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{84c8bf56dbaf65bbdbddf28c82bc1cb9}
+      \strng{fullhash}{01dd7e34cc3ae6a866897e9866ec3e87}
+      \strng{fullhashraw}{01dd7e34cc3ae6a866897e9866ec3e87}
+      \strng{bibnamehash}{84c8bf56dbaf65bbdbddf28c82bc1cb9}
+      \strng{authorbibnamehash}{84c8bf56dbaf65bbdbddf28c82bc1cb9}
+      \strng{authornamehash}{84c8bf56dbaf65bbdbddf28c82bc1cb9}
+      \strng{authorfullhash}{01dd7e34cc3ae6a866897e9866ec3e87}
+      \strng{authorfullhashraw}{01dd7e34cc3ae6a866897e9866ec3e87}
+      \field{extraname}{2}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Sensors Journal}
+      \field{number}{11}
+      \field{title}{Contactless Methods For Measuring Respiratory Rate: A Review}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{pages}{12821\bibrangedash 12839}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1109/JSEN.2020.3023486
+      \endverb
+    \endentry
+    \entry{matheus2023phase}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=60dda222a1e53d68527669ba9598cac8}{%
+           family={Matheus},
+           familyi={M\bibinitperiod},
+           given={Kayla},
+           giveni={K\bibinitperiod}}}%
+        {{hash=af29142fab03c01c7fa8881d003b8028}{%
+           family={Mamantov},
+           familyi={M\bibinitperiod},
+           given={Ellie},
+           giveni={E\bibinitperiod}}}%
+        {{hash=14d7845d6509960fab57307fb33094ff}{%
+           family={Vázquez},
+           familyi={V\bibinitperiod},
+           given={Marynel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=052e75642103215e79dde81e3e348764}{%
+           family={Scassellati},
+           familyi={S\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{1582088d6679c38bc98f1f5795543fa0}
+      \strng{fullhash}{d0dc4239f41773f51018b78f36debe5c}
+      \strng{fullhashraw}{d0dc4239f41773f51018b78f36debe5c}
+      \strng{bibnamehash}{1582088d6679c38bc98f1f5795543fa0}
+      \strng{authorbibnamehash}{1582088d6679c38bc98f1f5795543fa0}
+      \strng{authornamehash}{1582088d6679c38bc98f1f5795543fa0}
+      \strng{authorfullhash}{d0dc4239f41773f51018b78f36debe5c}
+      \strng{authorfullhashraw}{d0dc4239f41773f51018b78f36debe5c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 25th International Conference on Multimodal Interaction (ICMI '23)}
+      \field{title}{Deep Breathing Phase Classification with a Social Robot for Mental Health}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{pages}{153\bibrangedash 162}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3577190.3614173
+      \endverb
+    \endentry
+    \entry{shokrollahi2024pir}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=c65e0282d2a85e8d26da31928d3a85d7}{%
+           family={Shokrollahi},
+           familyi={S\bibinitperiod},
+           given={Azad},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0f61134d07ea4e61102e81c2f8db6981}{%
+           family={Persson},
+           familyi={P\bibinitperiod},
+           given={Jan\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f419af271f46d08da95babfa7e868817}{%
+           family={Malekian},
+           familyi={M\bibinitperiod},
+           given={Reza},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6f31d7aa2a982be5fdb582c6f3e1a222}{%
+           family={Sarkheyli-Hägele},
+           familyi={S\bibinithyphendelim H\bibinitperiod},
+           given={Arezoo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f42a3e2f4b09d8109abcfe0a2c5d0d57}{%
+           family={Karlsson},
+           familyi={K\bibinitperiod},
+           given={Fredrik},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f9b89f4e5952337b061c7c72d546b037}
+      \strng{fullhash}{ea870cc5323d33444772416784b0a4df}
+      \strng{fullhashraw}{ea870cc5323d33444772416784b0a4df}
+      \strng{bibnamehash}{f9b89f4e5952337b061c7c72d546b037}
+      \strng{authorbibnamehash}{f9b89f4e5952337b061c7c72d546b037}
+      \strng{authornamehash}{f9b89f4e5952337b061c7c72d546b037}
+      \strng{authorfullhash}{ea870cc5323d33444772416784b0a4df}
+      \strng{authorfullhashraw}{ea870cc5323d33444772416784b0a4df}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{5}
+      \field{title}{Passive Infrared Sensor-Based Occupancy Monitoring in Smart Buildings: A Review of Methodologies and Machine Learning Approaches}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{pages}{1533}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s24051533
+      \endverb
+    \endentry
+    \entry{omron2017d6t}{manual}{}{}
+      \list{organization}{1}{%
+        {OMRON Corporation}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{note}{Datenblatt, Cat.\ No.\ A216-E1-05}
+      \field{title}{D6T MEMS Thermal Sensors}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://components.omron.com/us-en/products/sensors/D6T
+      \endverb
+      \verb{url}
+      \verb https://components.omron.com/us-en/products/sensors/D6T
+      \endverb
+    \endentry
+    \entry{matheus2022ommie}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=60dda222a1e53d68527669ba9598cac8}{%
+           family={Matheus},
+           familyi={M\bibinitperiod},
+           given={Kayla},
+           giveni={K\bibinitperiod}}}%
+        {{hash=14d7845d6509960fab57307fb33094ff}{%
+           family={Vázquez},
+           familyi={V\bibinitperiod},
+           given={Marynel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=052e75642103215e79dde81e3e348764}{%
+           family={Scassellati},
+           familyi={S\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{555322f60a0a6ef71ed296fdab723f19}
+      \strng{fullhash}{555322f60a0a6ef71ed296fdab723f19}
+      \strng{fullhashraw}{555322f60a0a6ef71ed296fdab723f19}
+      \strng{bibnamehash}{555322f60a0a6ef71ed296fdab723f19}
+      \strng{authorbibnamehash}{555322f60a0a6ef71ed296fdab723f19}
+      \strng{authornamehash}{555322f60a0a6ef71ed296fdab723f19}
+      \strng{authorfullhash}{555322f60a0a6ef71ed296fdab723f19}
+      \strng{authorfullhashraw}{555322f60a0a6ef71ed296fdab723f19}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 31st IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)}
+      \field{title}{A Social Robot for Anxiety Reduction via Deep Breathing}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{pages}{89\bibrangedash 94}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/RO-MAN53752.2022.9900638
+      \endverb
+    \endentry
+    \entry{jamil2026mainboard}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=c9517ea874ee87011d538ddbb26000cb}{%
+           family={Jamil},
+           familyi={J\bibinitperiod},
+           given={Younes},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9517ea874ee87011d538ddbb26000cb}
+      \strng{fullhash}{c9517ea874ee87011d538ddbb26000cb}
+      \strng{fullhashraw}{c9517ea874ee87011d538ddbb26000cb}
+      \strng{bibnamehash}{c9517ea874ee87011d538ddbb26000cb}
+      \strng{authorbibnamehash}{c9517ea874ee87011d538ddbb26000cb}
+      \strng{authornamehash}{c9517ea874ee87011d538ddbb26000cb}
+      \strng{authorfullhash}{c9517ea874ee87011d538ddbb26000cb}
+      \strng{authorfullhashraw}{c9517ea874ee87011d538ddbb26000cb}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Neffy-3.0-Mainboard: Firmware für das Neffy Board (ESP32-S3)}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/YounesJamil/Neffy-3.0-Mainboard
+      \endverb
+      \verb{url}
+      \verb https://github.com/YounesJamil/Neffy-3.0-Mainboard
+      \endverb
+    \endentry
+    \entry{goerke2026uart}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=06a68ea4cf41daea71660096b25befef}{%
+           family={Goerke},
+           familyi={G\bibinitperiod},
+           given={Charly},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{06a68ea4cf41daea71660096b25befef}
+      \strng{fullhash}{06a68ea4cf41daea71660096b25befef}
+      \strng{fullhashraw}{06a68ea4cf41daea71660096b25befef}
+      \strng{bibnamehash}{06a68ea4cf41daea71660096b25befef}
+      \strng{authorbibnamehash}{06a68ea4cf41daea71660096b25befef}
+      \strng{authornamehash}{06a68ea4cf41daea71660096b25befef}
+      \strng{authorfullhash}{06a68ea4cf41daea71660096b25befef}
+      \strng{authorfullhashraw}{06a68ea4cf41daea71660096b25befef}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Neffy\_UART\_Interface}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/LegitimateShake/Neffy_UART_Interface
+      \endverb
+      \verb{url}
+      \verb https://github.com/LegitimateShake/Neffy_UART_Interface
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

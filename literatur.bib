@@ -3,8 +3,8 @@
 %  Nur reale, überprüfbare Quellen eintragen (DOI, Verlag oder URL).
 %  Bei Webquellen/Datenblättern immer urldate (= "besucht am") angeben.
 %
-%  Vorlage Datenblatt:
-%  @manual{omron_d6t,
+%  Vorlage Datenblatt (vor "manual" ein @ setzen):
+%  manual{omron_d6t,
 %    title        = {...},
 %    organization = {...},
 %    year         = {...},
@@ -12,3 +12,134 @@
 %    urldate      = {JJJJ-MM-TT},
 %  }
 % =====================================================================
+
+% ---- Neffy und verwandte Roboter (DOIs über Crossref/OpenAlex geprüft, 21.10.2026) ----
+@inproceedings{thomas2025neffy,
+  author    = {Thomas, Emily Jean and Dincel, Kerim and Buchem, Ilona},
+  title     = {{NEFFY} -- A Social Robot for Multimodal Support of Slow-Paced Breathing Exercises},
+  booktitle = {2025 20th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
+  pages     = {1800--1802},
+  publisher = {IEEE},
+  date      = {2025},
+  doi       = {10.1109/HRI61500.2025.10974160},
+}
+
+@inproceedings{buchem2026neffy2,
+  author    = {Buchem, Ilona and Kazubski, Jessica and Goerke, Charly},
+  title     = {{NEFFY} 2.0: A Breathing Companion Robot: User-Centered Design and Findings
+               from a Study with Ukrainian Refugees},
+  booktitle = {Companion Proceedings of the 21st ACM/IEEE International Conference on
+               Human-Robot Interaction (HRI)},
+  pages     = {521--525},
+  publisher = {ACM},
+  date      = {2026},
+  doi       = {10.1145/3776734.3794450},
+}
+
+@inproceedings{matheus2022ommie,
+  author    = {Matheus, Kayla and Vázquez, Marynel and Scassellati, Brian},
+  title     = {A Social Robot for Anxiety Reduction via Deep Breathing},
+  booktitle = {2022 31st IEEE International Conference on Robot and Human Interactive
+               Communication (RO-MAN)},
+  pages     = {89--94},
+  publisher = {IEEE},
+  date      = {2022},
+  doi       = {10.1109/RO-MAN53752.2022.9900638},
+}
+
+@inproceedings{matheus2023phase,
+  author    = {Matheus, Kayla and Mamantov, Ellie and Vázquez, Marynel and Scassellati, Brian},
+  title     = {Deep Breathing Phase Classification with a Social Robot for Mental Health},
+  booktitle = {Proceedings of the 25th International Conference on Multimodal Interaction (ICMI '23)},
+  pages     = {153--162},
+  publisher = {ACM},
+  date      = {2023},
+  doi       = {10.1145/3577190.3614173},
+}
+
+% ---- Atemerfassung ----
+@article{massaroni2019contact,
+  author  = {Massaroni, Carlo and Nicolò, Andrea and Lo Presti, Daniela and Sacchetti, Massimo
+             and Silvestri, Sergio and Schena, Emiliano},
+  title   = {Contact-Based Methods for Measuring Respiratory Rate},
+  journal = {Sensors},
+  volume  = {19},
+  number  = {4},
+  pages   = {908},
+  date    = {2019},
+  doi     = {10.3390/s19040908},
+}
+
+@article{massaroni2021contactless,
+  author  = {Massaroni, Carlo and Nicolò, Andrea and Sacchetti, Massimo and Schena, Emiliano},
+  title   = {Contactless Methods For Measuring Respiratory Rate: A Review},
+  journal = {IEEE Sensors Journal},
+  volume  = {21},
+  number  = {11},
+  pages   = {12821--12839},
+  date    = {2021},
+  doi     = {10.1109/JSEN.2020.3023486},
+}
+
+@article{nicolo2020rr,
+  author  = {Nicolò, Andrea and Massaroni, Carlo and Schena, Emiliano and Sacchetti, Massimo},
+  title   = {The Importance of Respiratory Rate Monitoring: From Healthcare to Sport and Exercise},
+  journal = {Sensors},
+  volume  = {20},
+  number  = {21},
+  pages   = {6396},
+  date    = {2020},
+  doi     = {10.3390/s20216396},
+}
+
+% ---- Anwesenheitserkennung ----
+@article{shokrollahi2024pir,
+  author  = {Shokrollahi, Azad and Persson, Jan A. and Malekian, Reza and
+             Sarkheyli-Hägele, Arezoo and Karlsson, Fredrik},
+  title   = {Passive Infrared Sensor-Based Occupancy Monitoring in Smart Buildings:
+             A Review of Methodologies and Machine Learning Approaches},
+  journal = {Sensors},
+  volume  = {24},
+  number  = {5},
+  pages   = {1533},
+  date    = {2024},
+  doi     = {10.3390/s24051533},
+}
+
+% Inhalt geprüft an einer Kopie des Datenblatts (Cat. No. A216-E1-05)
+@manual{omron2017d6t,
+  organization = {{OMRON Corporation}},
+  title        = {D6T MEMS Thermal Sensors},
+  note         = {Datenblatt, Cat.\ No.\ A216-E1-05},
+  date         = {2017},
+  url          = {https://components.omron.com/us-en/products/sensors/D6T},
+  urldate      = {2026-10-21},
+}
+
+% Firmware Neffy Board (Team Sensorik), Stand Commit 2693747
+@software{jamil2026mainboard,
+  author  = {Jamil, Younes},
+  title   = {Neffy-3.0-Mainboard: Firmware für das Neffy Board (ESP32-S3)},
+  date    = {2026},
+  url     = {https://github.com/YounesJamil/Neffy-3.0-Mainboard},
+  urldate = {2026-10-21},
+}
+
+% UART-Bibliothek, bereitgestellt vom Labor (GitHub: LegitimateShake = Charly Goerke)
+@software{goerke2026uart,
+  author  = {Goerke, Charly},
+  title   = {Neffy\_UART\_Interface},
+  date    = {2026},
+  url     = {https://github.com/LegitimateShake/Neffy_UART_Interface},
+  urldate = {2026-10-21},
+}
+
+% Vorgängerbericht; liegt als referenz/Praxisbericht.pdf vor
+@report{goerke2025neffy2,
+  author      = {Goerke, Charly and Kazubski, Jessica},
+  title       = {Praxisbericht -- Neffy 2},
+  type        = {Praxisbericht},
+  institution = {Berliner Hochschule für Technik, Labor für Kommunikation},
+  location    = {Berlin},
+  date        = {2025-03-11},
+}

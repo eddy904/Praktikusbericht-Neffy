@@ -7,26 +7,147 @@
 \section{Recherchemethodik}
 \label{sec:recherche}
 
-\todoi{Datenbanken (z.\,B. IEEE Xplore, ACM DL, Google Scholar), Suchbegriffe,
-Zeitraum, Auswahlkriterien.}
+Die Recherche erfolgte in zwei Schritten. Während des Projekts wurden Sensorprinzipien
+für Atem- und Anwesenheitserkennung anhand von Herstellerangaben und Datenblättern
+verglichen. Für diesen Bericht wurde die Literatur anschließend gezielt ergänzt. Gesucht
+wurde über die Metadatenbanken Crossref, OpenAlex und Europe PMC, über die
+Publikationsliste des Labors für Kommunikation sowie, auf Empfehlung der Betreuerin, über
+das ORCID-Profil von Prof.\ Dr.\ Ilona Buchem. Suchbegriffe waren unter anderem
+\enquote{respiratory rate monitoring}, \enquote{contact-based / contactless respiratory
+rate}, \enquote{social robot breathing exercise}, \enquote{Ommie}, \enquote{NEFFY} und
+\enquote{PIR occupancy stationary}. Aufgenommen wurden begutachtete Veröffentlichungen mit
+DOI sowie Datenblätter, die einen direkten Bezug zu Atemerfassung, Anwesenheitserkennung
+oder robotergestützten Atemübungen haben. Die Suche wurde durch das \ac{KI}-Werkzeug Claude
+Code unterstützt; alle Quellen wurden anhand ihrer DOI bzw.\ des Originaldokuments
+überprüft (siehe Abschnitt~\ref{sec:sw_ki}).
 
 \section{Atemerkennung}
 \label{sec:sdt_atem}
 
-\todoi{Kategorien: kontaktbasiert vs.\ berührungslos -- je Beispiele mit
-Abbildung und Quelle.}
+Die Atemfrequenz ist ein empfindlicher Indikator für den Zustand eines Menschen. Bei
+Erwachsenen liegt sie in Ruhe zwischen 12 und 20 Atemzügen pro Minute; bei Angst und
+Anspannung steigt sie an, während langsames, tiefes Atmen negative emotionale Zustände
+abschwächen kann~\cite{nicolo2020rr}. Verfahren zu ihrer Messung werden danach eingeteilt,
+ob der Sensor den Körper berührt~\cite{massaroni2019contact,massaroni2021contactless}.
+
+\textbf{Kontaktbasierte Verfahren} erfassen unter anderem den Luftstrom, Atemgeräusche,
+Temperatur und Feuchte der Atemluft oder die Bewegung des Brustkorbs~\cite{massaroni2019contact}.
+Zu Letzteren gehören Atemgurte, die um den Brustkorb gelegt werden. Sie sind genau, setzen
+aber voraus, dass die Person etwas am Körper trägt. In Studien mit Atemrobotern dienen sie
+deshalb vor allem als Referenzmessung~\cite{matheus2023phase}.
+
+\textbf{Berührungslose Verfahren} kommen ohne Kontakt zum Körper aus~\cite{massaroni2021contactless}.
+Sie sind komfortabler, erfordern aber in der Regel aufwendigere Sensorik und Signalverarbeitung.
+
+Für Atemroboter ergibt sich eine besondere Schwierigkeit: Der Roboter bewegt sich selbst im
+Atemrhythmus. Matheus et~al.\ zeigen für den Roboter Ommie, dass sich die Atemphasen
+(Einatmen, Halten, Ausatmen) dennoch aus den Sensordaten des Roboters bestimmen lassen. Dafür
+wurde ein eigener Datensatz mit Atemgurt als Referenz aufgezeichnet und ein neuronales Netz
+trainiert, das auch bei Eigenbewegung des Roboters funktioniert~\cite{matheus2023phase}. Der
+Aufwand für Datenerhebung und Training ist allerdings erheblich.
 
 \section{Anwesenheitserkennung}
 \label{sec:sdt_anwesenheit}
 
-\todoi{\ac{PIR}, Thermopile, Kamera, \ac{ToF} -- je Beispiele mit Quelle.}
+Für die Erkennung von Personen kommen verschiedene Sensorprinzipien in Frage:
 
-\section{Roboter und Geräte für Atemübungen}
+\begin{itemize}
+  \item \textbf{Passiv-Infrarot (\ac{PIR}):} günstig, einfach und weit verbreitet. Da \ac{PIR}-Sensoren
+        auf Änderungen der Wärmestrahlung reagieren, erkennen sie still sitzende Personen häufig
+        nicht~\cite{shokrollahi2024pir}.
+  \item \textbf{Abstandssensoren (z.\,B.\ \ac{ToF}, Infrarot-Abstand):} messen die Entfernung zum
+        nächsten Objekt, unterscheiden aber nicht, ob es sich um einen Menschen oder ein beliebiges
+        Hindernis handelt.
+  \item \textbf{Kamera:} liefert die meisten Informationen, erfordert aber Bildverarbeitung und wirft
+        im persönlichen Umfeld Fragen des Datenschutzes auf.
+        \todo{Quelle Kamera/Datenschutz oder Punkt kürzen}
+  \item \textbf{Thermopile-Sensoren:} messen die Temperatur einer Fläche berührungslos und können so
+        auch die Anwesenheit unbewegter Personen erkennen~\cite{omron2017d6t}.
+\end{itemize}
+
+\section{Roboter für Atemübungen}
 \label{sec:sdt_roboter}
 
-\todoi{Vergleichbare Systeme mit Abbildung und Quelle.}
+\textbf{Ommie} wurde an der Yale University entwickelt und leitet Atemübungen zur Angstreduktion
+an, indem es Einatmen, Halten und Ausatmen über haptische Interaktion und Audio
+vorgibt~\cite{matheus2022ommie}.
+
+\textbf{Neffy~1.0} ist eine Weiterentwicklung von Ommie aus dem Labor für Kommunikation der
+\ac{BHT}~\cite{thomas2025neffy}. Der anthropomorphe Roboter unterstützt langsames Atmen über
+multimodale Interaktion und wurde nachhaltig gestaltet. In einer explorativen Pilotstudie mit
+25 Teilnehmenden sanken die Angstwerte (STAI-6) nach der Übung signifikant; in Interviews wurde
+die haptische Erfahrung als motivierend und natürlich beschrieben und vermittelte ein Gefühl
+gemeinsamer Präsenz~\cite{thomas2025neffy}. Die Atembewegung wurde über einen 3D-gedruckten
+Kurbelschleifen-Mechanismus erzeugt, zwei kleine Displays zeigten die Augen~\cite{goerke2025neffy2}.
+
+\textbf{Neffy~2.0} wurde vollständig neu konstruiert: Ein Riementrieb hebt die Schultern um bis
+zu 25\,mm, der Kopf nickt über ein Zahnradpaar, und ein Touchscreen zeigt ein ganzes Gesicht;
+hinzu kommt eine Sprachausgabe~\cite{goerke2025neffy2}. In einer Studie mit 14 Geflüchteten aus
+der Ukraine wurde eine Atemübung mit Neffy~2.0 mit einer reinen Audioanleitung verglichen. Die
+Teilnehmenden empfanden den Roboter als intuitiv, beruhigend und unterstützend, und der
+subjektiv empfundene Stress sank mit dem Roboter deutlich stärker. Die physiologischen Messwerte,
+darunter die Atemfrequenz, fielen dagegen uneinheitlich aus~\cite{buchem2026neffy2}.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.3\linewidth}
+    \centering
+    \includegraphics[height=3.8cm]{neffy1}
+    \caption{Neffy~1.0 (aus~\cite{goerke2025neffy2})}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.3\linewidth}
+    \centering
+    \includegraphics[height=3.8cm]{neffy2}
+    \caption{Neffy~2.0 (Rendering, aus~\cite{goerke2025neffy2})}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.3\linewidth}
+    \centering
+    \platzhalter[\linewidth]{Foto Neffy~3.0}
+    \caption{Neffy~3.0}
+  \end{subfigure}
+  \caption{Die drei Generationen von Neffy}
+  \label{fig:neffy_versionen}
+\end{figure}
 
 \section{Vergleich und Einordnung von Neffy~3.0}
 \label{sec:sdt_vergleich}
 
-\todoi{Vergleichstabelle Vor-/Nachteile der Ansätze, dann Einordnung von Neffy~3.0.}
+Tabelle~\ref{tab:vergleich_neffy} stellt die drei Generationen von Neffy gegenüber. Allen
+gemeinsam ist das Grundprinzip, dass die Nutzer:innen den Atemrhythmus über die Hände spüren.
+Neffy~1.0 und 2.0 geben diesen Rhythmus jedoch nur vor: Sie nehmen weder wahr, ob jemand vor
+ihnen sitzt, noch wie die Person atmet.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Vergleich der Generationen von Neffy}
+  \label{tab:vergleich_neffy}
+  \small
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}
+                    >{\raggedright\arraybackslash}p{3.6cm}
+                    >{\raggedright\arraybackslash}p{3.6cm}
+                    >{\raggedright\arraybackslash}p{3.6cm}@{}}
+    \toprule
+    & Neffy~1.0 & Neffy~2.0 & Neffy~3.0 \\
+    \midrule
+    Atembewegung & Kurbelschleife & Riementrieb, bis 25\,mm; Kopf nickt
+                 & Gewindespindel, 85\,mm; Kopf neigt sich \\
+    Antrieb      & Elektromotor & Dynamixel XL430-W250 & Schrittmotoren \\
+    Anzeige      & zwei kleine Displays (Augen) & Touchscreen (Gesicht)
+                 & neuer Bildschirm \todoi{Modell} \\
+    Hände        & auf den Schultern & auf den Schultern & in Taschen mit Drucksensoren \\
+    Anwesenheit  & -- & -- & Thermalsensor \\
+    Atemerfassung & -- & -- & aktiv über Taschen, Einstufung \\
+    Evaluation   & Pilotstudie, $n=25$~\cite{thomas2025neffy}
+                 & Studie, $n=14$~\cite{buchem2026neffy2} & noch keine \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\todo{Neffy 1.0: keine Sensoren? Antrieb genauer?}
+
+Neffy~3.0 ergänzt das bewährte haptische Prinzip um Wahrnehmung. Der Thermalsensor erkennt,
+ob jemand vor dem Roboter sitzt. Für die Atemerfassung wurde bewusst kein aufwendiges
+lernbasiertes Verfahren wie bei Ommie gewählt~\cite{matheus2023phase} und auch kein Sensor am
+Körper. Stattdessen begleiten die Nutzer:innen ihre Atmung mit einem Druck in die Taschen.
+Das ist keine physiologische Messung im engeren Sinne, ermöglicht aber mit einfacher und
+günstiger Hardware eine robuste Einschätzung der Atemfrequenz und damit eine Reaktion des
+Roboters auf sein Gegenüber.

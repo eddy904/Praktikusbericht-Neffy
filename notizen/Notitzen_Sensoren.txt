@@ -1,0 +1,100 @@
+Team Sensorik | Atemübungsroboter
+
+Kontext & Aufgabe
+Praktikum im Rahmen eines Atemübungsroboter-Projekts
+Zuständigkeit: Team Sensorik (zu zweit)
+Zwei Hauptaufgaben:
+Atmungserkennung über Handbewegung auf Roboterschultern
+Menschenerkennung – Roboter soll merken wenn jemand davor sitzt
+
+Aufgabe 1: Atmungserkennung
+Anforderung / Besonderheit:
+Klassische Atemübungssensoren werden am Körper getragen (Gurte etc.)
+Unser Ansatz: Hände einfach auf die Schultern legen – keine zusätzliche Hardware am Menschen
+Roboter bewegt sich synchron mit der Atmung (Schultern hoch/runter)
+Warum kein Beschleunigungssensor:
+Roboter bewegt sich selbst mit → Sensor kann nicht unterscheiden ob Bewegung vom Menschen oder vom Roboter kommt
+Gegenseitige Beeinflussung macht zuverlässige Messung unmöglich
+Fazit der Recherche: Für diesen speziellen Anwendungsfall kommen eigentlich nur Drucksensoren in Frage
+Drei Approaches zum Testen:
+Klassischer Punktdrucksensor (Joy-IT / Arduino Drucksensor)
+Einfacher, günstiger Einstieg
+Zum ersten Ausprobieren und Kalibrieren
+Velostat-Sheet
+Flexibles, zuschneidbares druckempfindliches Material
+Vorteile gegenüber klassischem Drucksensor:
+Flächige Messung → Hand muss nicht exakt positioniert sein
+Frei zuschneidbar auf benötigte Schultergröße (~10×10cm)
+Sehr dünn (0,1mm) → unsichtbar unter Verkleidung integrierbar
+Günstig und einfach zu beschaffen
+Kein starres Gehäuse → passt sich Oberfläche an
+Gleichmäßige Druckverteilung über gesamte Fläche
+Dehnungssensor / Conductive Rubber Cord (Atemgurt) (Nur wenn nicht schon                durch Ilona vorhanden)
+Als Backup-Approach falls Schultersensoren nicht ausreichen
+Gurt um den Brustkorb → misst Dehnung direkt durch Atemzug
+Unabhängig vom Roboter → keine gegenseitige Beeinflussung
+Nachteil: Person muss etwas tragen
+Hardware für Raspberry Pi:
+MCP3208 (ADC, 8-Kanal, DIP-16) – nötig da Raspberry Pi keine analogen Eingänge hat
+
+Aufgabe 2: Menschenerkennung
+Anforderung:
+Roboter soll erkennen wenn Person sich direkt davor hinsetzt
+Soll nicht triggern bei Personen die in 2-3m Entfernung vorbeigehen
+Zuverlässig auch bei stillsitzenden Personen
+Rechercheprozess:
+Zunächst Richtung Abstandssensoren / IR-Sensoren geschaut
+Problem: Reagieren auf alle Hindernisse, nicht nur Menschen
+IR-Sensoren erkennen stillsitzende Personen nicht zuverlässig
+Entscheidung: Omron D6T-1A-02 Thermalsensor
+Erkennt menschliche Körperwärme (36-37°C) gegenüber Raumtemperatur
+Funktioniert auch bei komplett stillstehenden Personen
+Distanzabhängigkeit durch Infrarot-Physik (Intensität nimmt quadratisch ab) → natürlicher Filter gegen weit entfernte Personen
+I²C Interface → direkt an Raspberry Pi
+Teurer als IR (~15,95€) aber deutlich zuverlässiger und präziser
+Zuversichtlich dass Aufgabe damit schnell und zuverlässig erfüllt wird
+
+
+
+
+
+
+Status und Setup
+Sensoren sind endlich eingetroffen, sodass die praktische Arbeit beginnen konnte
+Entwicklungsumgebung: PlatformIO in VSCode (statt der klassischen Arduino-IDE)
+Setup so aufgesetzt, dass Daten über den analogen Eingang ausgelesen werden können
+
+Erste Tests: Velostat mit Kupferfolie
+Zunächst Fokus auf Velostat in Kombination mit Kupferfolie
+Problem festgestellt: Klebeseite der gekauften Kupferfolie leitet nicht zuverlässig genug
+Alternative Lösung musste gefunden werden
+Zwischenschritt: Alternativer Drucksensor
+Zwischenzeitlich anderen Sensor getestet
+Ergebnis: reagiert viel zu sensibel für den Anwendungsfall high oder low verhalten 
+Vermutung: Sensor-Variante bis 10 kg wäre nötig, aber vermutlich immer noch nicht präzise/sensibel genug
+Das Verhalten ist auch im Plot deutlich sichtbar
+Theoretische Möglichkeit: Sensibilität über internen Widerstand anpassen → aber zu aufwendig, lohnt sich nicht
+Entscheidung: zurück zum Velostat-Ansatz
+atemkurve_1_kleiner Drucksensor.csv
+atemkurve_2_kleiner Drucksensor.csv
+Überarbeiteter Velostat-Aufbau
+Neuer Ansatz: Kupferfolie nicht mehr aufgeklebt
+Begründung: Es muss lediglich beidseitig Kontakt mit leitendem Material bestehen, und die abführenden Drähte sorgen sowieso für Fixierung
+Nur die normale beschichtete (nicht-klebende) Kupferseite verwendet
+Nach einigen Tests funktioniert der Aufbau zufriedenstellend
+atemkurve_3_Velostat.csv
+atemkurve_4_Velostat ohne mitbewegen.csv
+atemkurve_7_Velostat mit nicht richitgem wiederstand.csv
+atemkurve_10_Velostat richtig ausgelegt.csv
+
+
+
+Erkenntnisse zur Anwendung (Atemerkennung)
+Ursprüngliches Ziel: Nutzer legen einfach die Hände auf die Schulter, atmen los, und der Roboter erkennt das automatisch
+Dieses Ziel ist so nicht umsetzbar
+Grund: Signal weist ein konstantes Rauschen auf → keine zuverlässige Unterscheidung zwischen Atmung und kurzen, unbeabsichtigten Handbewegungen
+Aktueller Stand: Nutzer müssen die Atembewegung aktiv mit einer leichten Handbewegung begleiten
+Testergebnisse
+Testaufbau: Velostat auf einem runden Objekt platziert
+Bei aktiver Mitbewegung lässt sich das Atemintervall zuverlässig aus den Plots ablesen
+Plots belegen die Zuverlässigkeit unter diesen Bedingungen

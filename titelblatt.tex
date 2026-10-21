@@ -1,36 +1,45 @@
 % ---------------------------------------------------------------------
-%  Titelblatt (BHT-Stil)
+%  Titelblatt nach Vorlage Praxisbericht Neffy 2 (BHT-Stil)
+%  bht_titelseite.pdf = BHT-Logo, Formen und „Studiere Zukunft“ als
+%  ganzseitiger Hintergrund (aus der Vorlage, Text entfernt).
+%  Alle Zeilen sind fest positioniert (Abstand von oben, wie Vorlage).
 % ---------------------------------------------------------------------
+
+% Kompakter Marker für offene Felder (erscheint auch in der Todo-Liste)
+\newcommand{\titelfehlt}[1]{%
+  \colorbox{orange!50}{\strut #1}%
+  \addcontentsline{tdo}{todo}{Titelblatt: #1}}
+
+% \titelzeile{Abstand von oben}{Inhalt}
+\newcommand{\titelzeile}[2]{%
+  \node[anchor=base west, inner sep=0pt]
+    at ([xshift=3.62cm, yshift=-#1]current page.north west) {#2};}
+
 \begin{titlepage}
-  \centering
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west, inner sep=0pt] at (current page.north west)
+      {\includegraphics[width=\paperwidth]{bht_titelseite}};
 
-  % BHT-Logo: Datei als abbildungen/bht_logo.pdf (oder .png) ablegen
-  % und die folgende Zeile durch \includegraphics[width=6cm]{bht_logo} ersetzen.
-  \fbox{\parbox[c][2cm][c]{6cm}{\centering\small BHT-Logo}}
-  \todo{BHT-Logo als abbildungen/bht\_logo ablegen}
+    \titelzeile{12.78cm}{\fontsize{23}{28}\selectfont Praktikumsbericht -- Neffy 3.0}
+    \titelzeile{13.75cm}{\large Labor für Kommunikation}
+    \titelzeile{14.55cm}{\large Team Sensorik}
 
-  \vspace{2.5cm}
+    \titelzeile{16.40cm}{\large vorgelegt von:}
 
-  {\Huge\bfseries Praktikumsbericht\par}
+    \titelzeile{17.45cm}{\large\textbf{Badre} \titelfehlt{Nachname}}
+    \titelzeile{18.10cm}{\large Matr.-Nr.: \titelfehlt{Matrikelnummer}}
 
-  \vspace{0.8cm}
+    \titelzeile{19.17cm}{\large\textbf{Younes Jamil}}
+    \titelzeile{19.82cm}{\large Matr.-Nr.: \titelfehlt{Matrikelnummer}}
 
-  {\Large Neffy 3.0 -- Sensorik und Gehäuse eines Tischroboters zur Anleitung von Atemübungen\par}
-  \todo{Arbeitstitel bestätigen}
+    \titelzeile{21.30cm}{\large
+      \begin{tabular}[t]{@{}l l@{}}
+        \textbf{Lehrkraft:}   & Prof.\ Dr.\ Ilona Buchem \\
+        \textbf{Betreuer:}    & Prof.\ Dr.\ Manfred Hild \\
+        \textbf{Studiengang:} & Bachelor Humanoide Robotik \\
+      \end{tabular}}
 
-  \vspace{2cm}
-
-  \begin{tabular}{>{\raggedleft\arraybackslash}p{5cm} p{8cm}}
-    durchgeführt im:   & \todoi{Labor/Fachgebiet} \\[2pt]
-    vorgelegt von:     & Badre \todoi{Nachname} \\[2pt]
-    Matr.-Nr.:         & \todoi{Matrikelnummer} \\[2pt]
-    Betreuerin:        & Prof.\,Dr.~Ilona Buchem \\[2pt]
-    Zeitraum:          & \todoi{von -- bis} \\[2pt]
-    Dauer:             & \todoi{Wochen / Stunden} \\[2pt]
-    Fachbereich:       & \todoi{Fachbereich (Nummer und Name)} \\[2pt]
-    Studiengang:       & Humanoide Robotik (Bachelor) \\[2pt]
-    Abgabedatum:       & 31.10.2026 \\
-  \end{tabular}
-
-  \vfill
+    \titelzeile{25.17cm}{\large Abgabe am 26.~Oktober 2026}
+  \end{tikzpicture}
+  \null
 \end{titlepage}

@@ -2,45 +2,74 @@
 
 ## Kontext
 - Studiengang: Bachelor Humanoide Robotik (HROB), BHT Berlin
-- Betreuung: Prof. Dr. Ilona Buchem
+- Hauptbetreuerin: Prof. Dr. Ilona Buchem (Titelblatt: „Lehrkraft“)
+- Betreuer: Prof. Dr. Manfred Hild (Studiengangsleiter; Titelblatt: „Betreuer“)
+- Durchgeführt im **Labor für Kommunikation** der BHT
 - Gruppenprojekt mit drei Teams: Sensorik, Programmierung, Design
-- Unser Team: **Sensorik, 2 Personen** – Badre und [Name Teampartner:in]
-- Bericht: [gemeinsamer Teambericht ODER Einzelbericht pro Person – bitte festlegen]
+- Unser Team: **Sensorik, 2 Personen** – Badre und Younes Jamil
+- Charly Goerke (GitHub „LegitimateShake“) ist Mitarbeiter im Labor für Kommunikation und Mitautor des
+  Neffy-2-Berichts. Von ihm stammen der Entwurf des Neffy Boards und die UART-Bibliothek
+  (Neffy_UART_Interface). Das ist **nicht** Eigenleistung des Teams und muss so gekennzeichnet werden.
+- Die **Firmware im Repo ist maßgeblich**: Bei Widersprüchen zu Notizen gilt der Code.
+- Bericht: **ein gemeinsamer Teambericht**. Wer was gemacht hat, wird erst ganz am Ende gekennzeichnet.
 - Abgabeformat: LaTeX (VS Code + LaTeX Workshop), Literatur über biblatex (`literatur.bib`)
 - Umfang: **ca. 20 Seiten** von Einleitung bis Ende der Einschätzung; Titelblatt, Verzeichnisse,
   Literatur, Anhang und Eigenständigkeitserklärung zählen nicht mit [bitte bestätigen]
-- Abgabe: **31.10.2026**
+- Abgabe: **26.10.2026**
 - Sprache: Deutsch
 
 ## Referenzbericht
-In `referenz/` liegt der Praktikumsbericht eines Kommilitonen (anderes Projekt: „Headset-Lift“).
-- Nur als Vorlage für **Gliederung, Aufbau, Tonfall und Formalia** verwenden.
-- Keine Inhalte, Formulierungen oder Quellen daraus übernehmen.
-- Die Hauptkapitel sind verbindlich (außer „Praktikumsstelle“, die entfällt). Die Unterkapitel dort
-  sind projektspezifisch – unsere werden auf Neffy zugeschnitten.
-- Der Referenzbericht deckt einige unserer Bewertungskriterien kaum ab (keine explizite
-  Anforderungsliste, keine Messwerte/Tabellen, keine Recherchemethodik, keine Softwareablage).
+In `referenz/Praxisbericht.pdf` liegt der **Praxisbericht zu Neffy 2** (Goerke & Kazubski, BHT,
+Labor für Kommunikation, 11.03.2025). Analyse: `notizen/analyse_praxisbericht_neffy2.md`.
+- **Verbindliche Vorlage für Titelblatt und Formalia** (Titelblatt-Layout, Kopfzeile, Abbildungen,
+  Literaturstil). Die BHT-Grafik des Titelblatts liegt als `abbildungen/bht_titelseite.pdf` vor.
+- **Ausgangspunkt und zitierbare Quelle** für Neffy 3.0 (`goerke2025neffy2` in `literatur.bib`).
+  Inhalte nur mit Zitat verwenden, keine Formulierungen wörtlich übernehmen.
+- Die Gliederung kommt **nicht** aus diesem Bericht, sondern aus der verbindlichen Gliederung unten.
+- Der Neffy-2-Bericht deckt einige unserer Bewertungskriterien kaum ab: Es fehlen Anforderungen,
+  Stand der Technik, Recherchemethodik, Messwerte, Evaluation, Fazit und Softwareablage.
   Unser Bericht muss hier mehr liefern.
 
 ## Bekannter Projektstand (aus früheren Notizen – mit mir abgleichen, nicht ungeprüft übernehmen)
 - Neffy ist ein Tischroboter (Oberkörper ohne Arme, Bildschirm als Gesicht), der Atemübungen
-  anleitet. Ein Motor-Mechanismus bewegt den Roboter hoch und runter und visualisiert so den Atemrhythmus.
-  Neffy 3.0 baut auf Neffy 2.0 auf (Vorgängerversion = Ausgangspunkt, wie V3 im Referenzbericht).
+  anleitet. Schultern und Kopf heben und senken sich im Atemrhythmus; die Nutzer:innen legen dabei die
+  Hände auf die Schultern (haptischer Atemtakt).
+- Neffy 3.0 baut direkt auf Neffy 2.0 auf (Bericht in `referenz/`), Neffy 2.0 auf Neffy 1.0
+  (Bericht Dincel & Thomas, 2024 – noch nicht beschafft).
+  - Übernommen: Raspberry Pi; Schulter- und Kopfbewegung nach dem Prinzip von Neffy 1.0/2.0, weil das
+    haptische Feedback bei Neffy 1 und 2 sehr gut ankam [Beleg, falls vorhanden: Studie/Feedback].
+  - Geändert: Die Dynamixel-Motoren von Neffy 2.0 wurden durch **Schrittmotoren** ersetzt, weil mehr
+    Kraft benötigt wurde [genaues Modell folgt]. Damit gab es Probleme → im Fazit ansprechen
+    [welche Probleme? welches Team war zuständig?].
 - Ziele 3.0 (gesamt): sensorbasierte Interaktion, besserer Touch, Atemübungen per Interaktion auswählbar.
 - Ursprünglicher Auftrag Team Sensorik:
   - Anwesenheitserkennung mit Thermalsensor Omron D6T-1A-02 (I²C) → Neffy „wacht auf“
   - Atemerkennung mit Velostat (Drucksensor, analog am ESP32) → Stresslevel einschätzen, Atemübung vorschlagen
-- Elektronik: eigene Platine „Neffy Board“ mit ESP32-S3, Kommunikation mit Raspberry Pi;
-  WS2812B-LEDs (FastLED, PlatformIO) funktionieren.
-- Auswahl Drucksensor: Es wurden mehrere Drucksensor-Ansätze getestet (u. a. FSR [weitere bitte ergänzen]).
-  Sehr schnell zeigte sich, dass Velostat am besten geeignet ist. → Zentrales Beispiel für
-  „begründete Auswahl von Lösungsansätzen“: getestete Varianten, Kriterien, Beobachtungen, Entscheidung
-  (Bewertungstabelle). Gründe für Velostat bei mir erfragen, nicht erfinden.
+- Elektronik: eigene Platine „Neffy Board“ / „Mainboard“ mit ESP32-S3, Kommunikation mit dem
+  Raspberry Pi über UART (115200 Baud, Bibliothek Neffy_UART_Interface); WS2812B-LEDs (FastLED, PlatformIO).
+  Firmware: https://github.com/YounesJamil/Neffy-3.0-Mainboard. Analyse: `notizen/analyse_firmware.md`
+  (Hardware-Eckdaten, Erkennungsverfahren, Protokoll, Auffälligkeiten).
+- Antrieb laut Firmware: Körper über Gewindespindel (8 mm Steigung, 85 mm Hub), Kopf über Zahnräder
+  30 → 40 Zähne (32°), TMC2225-Treiber, Referenzfahrt gegen Endschalter.
+- Auswahl Drucksensor: getestet wurden FSR (verschiedene Größen) und Velostat. In den getesteten Aufbauten
+  verhielt sich der FSR nahezu binär (sofort volle Spannung, keine abgestufte Kurve). Velostat war
+  feinfühliger, besser einstellbar, lieferte abgestufte Kurven, erkannte schwächere Druckunterschiede, und
+  Fläche und Form ließen sich frei wählen → Entscheidung für Velostat.
+- Aufbau einer Tasche: 3D-gedruckter Grundkörper → Kupferfolie → Velostat → Kupferfolie, mit Silikon
+  verschlossen; ein Rahmen dazwischen ermöglicht den Zusammenbau.
+- Thermalsensor Omron D6T: recherchiert, gutes Preis-Leistungs-Verhältnis, anerkannter Hersteller; nur
+  dieser eine wurde bestellt und erfüllte die Anforderungen. Kein Vergleichstest → ehrlich so darstellen,
+  technische Einordnung (PIR/Kamera/ToF) über Kap. 3.
+- Passive Atemerkennung: Hände ruhen in den Taschen, Atmung soll über leichte Gewichtsänderungen erkannt
+  werden → nicht eindeutig genug. Messdaten existieren (folgen).
+- Schaltplan existiert (folgt). Gehäuse-Infos folgen.
 - Ergebnisse Atemerkennung:
   - Passive Erkennung (Hand auf der Schulter, Atembewegung) unzuverlässig – Signal zu verrauscht
   - Aktive Variante funktioniert: beim Einatmen drücken, beim Ausatmen loslassen → klare Flanken;
     nebenbei als Touch-Eingabe nutzbar
-  - Auswertungsidee: 20-s-Fenster, mittlerer Atemrhythmus; Modul als eigene `.cpp`/`.h`
+  - Umsetzung (Firmware): **30-s-Messung** auf Befehl, Atemfrequenz aus der mittleren Zeit zwischen
+    Einatemzügen → Einstufung entspannt / normal / gestresst (Modul `BreathingDetection.cpp/.h`).
+    An den Pi geht nur die Einstufung.
   - Empfehlung für die nächste Version: Velostat durch einfache Taster ersetzen
 - Wendepunkt: Team Sensorik hat zusätzlich das komplette neue Gehäuse übernommen
   (SolidWorks-Konstruktion, FDM-3D-Druck, Nachbearbeitung, Lackierung) – größter Zeitanteil.
@@ -61,6 +90,20 @@ Du unterstützt beim Schreiben eines wissenschaftlichen Praktikumsberichts.
 Du strukturierst, formulierst, prüfst und setzt in LaTeX um. Die Inhalte (was gemacht wurde,
 Messwerte, Entscheidungen) kommen von mir bzw. aus dem Material in diesem Ordner.
 
+## Arbeitsweise beim Schreiben (vereinbart am 21.10.2026)
+Kapitel für Kapitel, im Interview:
+1. Claude fragt gezielt, was in das Kapitel bzw. den Abschnitt gehört (konkrete Fragen, Bekanntes vorausgefüllt).
+2. Badre beschreibt den Inhalt in Stichpunkten oder frei formuliert.
+3. Claude formuliert daraus den Fließtext in LaTeX, kompiliert und meldet zurück:
+   - wo eine Literaturrecherche sinnvoll ist (und was gesucht wird),
+   - welche Messdaten/Auswertungen, Bilder/Fotos oder Angaben aus dem Neffy-1/2-Bericht noch fehlen,
+   - Anregungen, was im Kapitel noch fehlt oder besser belegt werden sollte.
+Die Kennzeichnung „wer hat was gemacht“ erfolgt erst am Ende.
+
+## KI-Nutzung
+Als KI-Werkzeug wurde ausschließlich **Claude Code** verwendet. Das wird in Kap. 4 (Abschnitt
+„Einsatz von KI-Werkzeugen“) offengelegt, auch die Unterstützung bei der Literaturrecherche.
+
 ## Harte Regeln
 - Erfinde NIEMALS Messwerte, Ergebnisse, Quellen, Zitate oder Seitenzahlen.
 - Fehlt etwas, setze einen sichtbaren Marker `\todo{Was fehlt}` (Paket `todonotes`) und sammle
@@ -70,21 +113,26 @@ Messwerte, Entscheidungen) kommen von mir bzw. aus dem Material in diesem Ordner
 - Die anderen Teams nur so weit beschreiben, wie es für unsere Schnittstellen nötig ist.
 - Frag nach, bevor du größere Umstrukturierungen machst.
 
-## Verbindliche Gliederung (Hauptkapitel aus dem Referenzbericht, Unterkapitel für Neffy)
+## Verbindliche Gliederung
 Seitenzahlen = Richtwerte für ~20 Seiten.
 
-**Titelblatt** (BHT-Stil): „Praktikumsbericht“, durchgeführt im: [Labor/Fachgebiet], vorgelegt von,
-Matr.-Nr., Betreuerin, Zeitraum, Dauer (Wochen/Stunden), Fachbereich, Studiengang, Abgabedatum, BHT-Logo
+**Titelblatt** (wie Praxisbericht Neffy 2): BHT-Grafik rechts, Titel, „Labor für Kommunikation“,
+„Team Sensorik“, vorgelegt von (Name + Matr.-Nr.), Lehrkraft, Betreuer, Studiengang, Abgabedatum.
+Zeitraum und Dauer (Stunden) gehören in Kap. 2 (Projektorganisation), nicht aufs Titelblatt.
 **Inhaltsverzeichnis**
 
 1. **Einleitung** (~1 S.) – Hinführung: Stress, Atemübungen, soziale Roboter; worum es im Bericht geht
 2. **Ziel der Arbeit** (~2 S.)
    - Zielstellung (Neffy 2.0 → 3.0, Auftrag Team Sensorik, später Gehäuse)
    - Anforderungsdefinition – nummerierte Tabelle, funktional/nicht-funktional, prüfbar (A1, A2, …)
-   - Übergeordnete Fragestellung (als hervorgehobene Frage, wie im Referenzbericht)
+   - Übergeordnete Fragestellung (als hervorgehobene Frage)
    - Projektorganisation und Aufgabenverteilung – **Pflichttabelle „Wer macht was“** im Team Sensorik
-     + Schnittstellen zu Programmierung und Design
+     + Schnittstellen zu Programmierung und Design; Zeitraum, Stunden und Zeitaufteilung pro Person
+     (wie im Neffy-2-Bericht als Diagramm)
 3. **Stand der Technik und Wissenschaft** (~2–3 S.)
+   - **Vorgabe der Betreuerin:** Studien zu Ommie, Neffy 1.0 und Neffy 2.0 aufnehmen und Neffy 3.0 als
+     „Stand der Technik“ mit 2.0 und 1.0 vergleichen. Studien zu Neffy siehe ORCID
+     https://orcid.org/0000-0002-9189-7217 (bereits eingetragen: `thomas2025neffy`, `buchem2026neffy2`).
    - kurz: Recherchemethodik (Datenbanken, Suchbegriffe, Auswahlkriterien)
    - Ansätze in Kategorien einordnen, je mit Beispielen + Abbildung, dann Vor-/Nachteile vergleichen
      (z. B. Atemerkennung: kontaktbasiert / berührungslos; Anwesenheitserkennung: PIR, Thermopile, Kamera, ToF;
@@ -125,19 +173,23 @@ Rohdaten, Schaltplan) · **Eigenständigkeitserklärung** (Ort, Datum, Name)
 | Softwareablage, technische Dokumentation | 4 + Anhang |
 | Selbstständigkeit, Motivation, Teamarbeit | 2 (Tabelle) + 7 |
 
-## Stil und Formalia (abgeleitet aus dem Referenzbericht)
+## Stil und Formalia
+- Layout wie Praxisbericht Neffy 2: Kopfzeile links Kapitel, rechts „Praktikumsbericht Neffy 3.0“,
+  Seitenzahl unten mittig, Serifenschrift auch in Überschriften.
 - Fachkapitel sachlich und überwiegend unpersönlich (Passiv/„es wurde …“); Ich-/Wir-Form nur in Kap. 7
   und sparsam am Anfang der Diskussion.
 - Jede Abbildung nummeriert, beschriftet und im Text referenziert („siehe Abbildung 3“);
   Unterabbildungen (a), (b), (c) mit `subcaption`; fremde Bilder mit Quellenangabe in der Bildunterschrift.
 - Entscheidungen im Muster: Problem → Optionen → Kriterien → Entscheidung → Begründung
-  (vgl. im Referenzbericht den Wechsel Arduino → STM32).
-- Iterationen sichtbar machen (Versionen mit Abbildungen nebeneinander).
+  (genau das fehlt im Neffy-2-Bericht, z. B. bei Spindel- vs. Riementrieb).
+- Iterationen sichtbar machen (Versionen mit Abbildungen nebeneinander, auch Neffy 2 vs. Neffy 3.0).
+- Rechnungen mit Datenblattwerten und nummerierten Gleichungen (Vorbild: Drehmoment-Rechnung und
+  Strombudget im Neffy-2-Bericht).
 - Diskussion mit konkreten Zahlen und Ursachen statt allgemeiner Aussagen; Datenblätter zitieren.
 - Auch Gescheitertes (passive Atemerkennung) sauber als Ergebnis darstellen.
 - Abkürzungen beim ersten Auftreten ausschreiben, Abkürzungsverzeichnis per `acro` oder `glossaries`.
 - Literatur: biblatex, numerisch [1], mit DOI/URL und „besucht am“; bevorzugt Fachliteratur
-  (ACM, IEEE, Frontiers, Sensors/MDPI) + Datenblätter + Vorgängerberichte zu Neffy 2.0.
+  (ACM, IEEE, Frontiers, Sensors/MDPI) + Datenblätter + Vorgängerberichte zu Neffy 1.0 und 2.0.
 
 ## Vorgehen – in dieser Reihenfolge
 1. **Bestandsaufnahme:** Lies alles im Ordner (Notizen, Code, Messdaten, Bilder, Präsentation, Referenzbericht).

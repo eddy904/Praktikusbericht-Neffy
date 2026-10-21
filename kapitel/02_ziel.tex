@@ -7,73 +7,176 @@
 \section{Zielstellung}
 \label{sec:zielstellung}
 
-\todoi{Ausgangspunkt Neffy~2.0 (Vorgängerbericht zitieren) und Ziele
-von Neffy~3.0 im Gesamtprojekt: sensorbasierte Interaktion, besserer
-Touch, Auswahl von Atemübungen per Interaktion.}
+\subsection*{Ausgangspunkt: Neffy~2}
 
-\todoi{Ursprünglicher Auftrag Team Sensorik: Anwesenheitserkennung
-(Thermalsensor Omron D6T-1A-02, \ac{I2C}) und Atemerkennung (Velostat,
-analog am ESP32-S3).}
+Ausgangspunkt dieser Arbeit ist der Atemroboter Neffy~2, der im Labor für
+Kommunikation der \ac{BHT} entwickelt wurde~\cite{goerke2025neffy2}. Neffy~2 leitet
+Atemübungen an, indem sich Schultern und Kopf im Atemrhythmus heben und senken,
+während die Nutzer:innen ihre Hände auf die Schultern des Roboters legen. Dieses
+haptische Feedback wurde bereits bei Neffy~1 und Neffy~2 sehr positiv aufgenommen
+\cite{thomas2025neffy,buchem2026neffy2} und bildet deshalb auch die Grundlage für
+Neffy~3.0 (siehe Abschnitt~\ref{sec:sdt_roboter}).
 
-\todoi{Wendepunkt: Übernahme des kompletten neuen Gehäuses durch das
-Team Sensorik -- wann und warum?}
+Im Betrieb von Neffy~2 zeigten sich jedoch mehrere Schwächen. Der Touchscreen
+reagierte nur schwach und war insgesamt fehleranfällig. Die Motoren waren zu schwach
+dimensioniert: Lagen beide Hände auf den Schultern, konnte der Roboter teilweise nicht
+mehr genügend Kraft aufbringen, um nach oben zu fahren.
+\todo{Wie oft/unter welcher Last trat das auf? (Neffy-2-Bericht rechnet mit 2--4\,kg durch beide Hände)}
+Zudem verfügte Neffy~2 über keinerlei Sensorik und damit über kein Feedback darüber,
+was in seiner Umgebung geschieht. Eine Interaktion fand nur statt, nachdem die
+Übung über den Bildschirm gestartet wurde; davor war der Roboter ein rein passives
+Objekt. Schließlich wurde die Gestaltung als kantig empfunden, und Nutzer:innen
+bemängelten, dass ihre Hände nicht gut auf die Schultern passten und leicht abrutschten.
+
+\subsection*{Ziele von Neffy~3.0}
+
+Übergeordnetes Ziel von Neffy~3.0 ist eine deutlich verbesserte
+\ac{MRI}: Der Roboter soll sein Gegenüber wahrnehmen und in gewissem Maße auf
+dieses reagieren. Daraus ergaben sich für das Gesamtprojekt folgende Ziele:
+
+\begin{itemize}
+  \item \textbf{Anwesenheitserkennung:} Neffy~3.0 soll erkennen, ob eine Person vor
+        ihm sitzt oder an ihm vorbeigeht, und darauf reagieren.
+  \item \textbf{Erfassung des Atemrhythmus:} Über Sensoren in den Schultern soll der
+        Atemrhythmus der Nutzer:innen erfasst und eingestuft werden, sodass eine zum
+        aktuellen Stresslevel passende Atemübung ausgewählt werden kann.
+  \item \textbf{Mehrere Atemübungen:} Je nach Stresslevel sollen verschiedene Übungen
+        mit unterschiedlichem Rhythmus von Ein- und Ausatmen zur Verfügung stehen, die
+        zusätzlich personalisiert werden können.
+  \item \textbf{Neuer Bildschirm:} Der fehleranfällige Touchscreen von Neffy~2 wird
+        durch einen leistungsfähigeren Bildschirm mit höherer Bildwiederholrate ersetzt.
+        \todo{Genaues Display-Modell (OLED?) und Datenblatt}
+  \item \textbf{Stärkerer Antrieb:} Die Dynamixel-Motoren von Neffy~2 werden durch
+        Schrittmotoren ersetzt, um mehr Kraft für die Hubbewegung bereitzustellen.
+  \item \textbf{Neue Gestaltung:} Als gestalterische Vorgabe diente ein
+        \ac{KI}-generiertes Bild, das die Vorstellung der Betreuerin von Neffy~3.0
+        wiedergibt (Abbildung~\ref{fig:zielbild}). Der Roboter sollte
+        weniger kantig und insgesamt runder wirken. Die wichtigste Neuerung sind
+        Taschen in den Schultern, in denen die Hände gesichert und angenehm liegen,
+        statt von den Schultern abzurutschen.
+\end{itemize}
+
+Der Funktionsumfang von Neffy~3.0 umfasst damit auch die Auswahl und Durchführung
+der Atemübungen sowie die Darstellung auf dem Bildschirm. Diese Teile wurden vom Team
+Programmierung umgesetzt und werden in diesem Bericht nur so weit beschrieben, wie
+es für das Verständnis der Schnittstellen nötig ist.
+
+\begin{figure}[htbp]
+  \centering
+  \platzhalter[0.45\linewidth]{KI-generiertes Zielbild}
+  \caption{Gestalterische Vorgabe für Neffy~3.0 (\ac{KI}-generiertes Zielbild der Betreuerin)}
+  \label{fig:zielbild}
+\end{figure}
+\todo{Mit welchem KI-Werkzeug wurde das Zielbild erzeugt, und von wem?}
+
+\subsection*{Auftrag des Teams Sensorik und Erweiterung des Aufgabenfelds}
+
+Das Team Sensorik war ursprünglich für die Anwesenheitserkennung und die Erfassung
+der Atmung zuständig. Für die Anwesenheitserkennung wurde ein Thermalsensor
+eingesetzt.
+\todo{Omron D6T-1A-02 bestätigen}
+Die Atmung sollte zunächst passiv erfasst werden: Allein über die aufgelegten Hände
+sollte gemessen werden, wie die Person atmet, ohne dass sie dafür etwas tun muss.
+Es zeigte sich jedoch, dass dies ohne zusätzliches Zubehör, etwa einen Brustgurt,
+oder ohne sehr teure und dennoch wenig genaue Sensorik nicht zuverlässig möglich ist
+(siehe Abschnitt~\ref{sec:sdt_atem} und Abschnitt~\ref{sec:erg_passiv}). Stattdessen wird
+der Atemrhythmus nun aktiv erfasst: Die Nutzer:innen drücken beim Einatmen auf die
+Drucksensoren in den Schultertaschen und lassen beim Ausatmen los. Aus den Zeitpunkten
+der Einatemzüge wird die Atemfrequenz bestimmt und als entspannt, normal oder gestresst
+eingestuft. Auf dieser Grundlage wählt der Raspberry Pi eine passende Atemübung aus.
+
+Im Projektverlauf erweiterte sich das Aufgabenfeld des Teams deutlich. Nach
+Einschätzung des Teams Sensorik wäre ein Neffy~2, der lediglich um Sensoren ergänzt
+wird, kein wirklicher Fortschritt gewesen. Das Team entschied sich daher, das Zielbild
+der Betreuerin vollständig umzusetzen, und übernahm aus eigener Initiative die
+komplette Neukonstruktion des Roboters: Konstruktion in SolidWorks, 3D-Druck,
+Nachbearbeitung und Lackierung des Gehäuses. Hinzu kam die Firmware für den
+ESP32-S3 auf dem Neffy Board, der die Sensoren ausliest und die Befehle des
+Raspberry Pi umsetzt, etwa zur Ansteuerung der Motoren. Die Platine selbst wurde von
+Charly Goerke, Mitarbeiter im Labor für Kommunikation, entworfen und bereitgestellt. Nicht zum Aufgabengebiet des
+Teams gehörten die Animationen und alle Inhalte, die über den Raspberry Pi auf dem
+Bildschirm dargestellt werden. Damit war das Team Sensorik im Ergebnis für den Entwurf
+eines weitgehend neuen Roboters verantwortlich.
+\todo{Was war ursprünglich die Aufgabe des Teams Design?}
 
 \section{Anforderungsdefinition}
 \label{sec:anforderungen}
 
-Tabelle~\ref{tab:anforderungen} fasst die Anforderungen zusammen, gegen
-die in Kapitel~\ref{kap:diskussion} evaluiert wird.
+Aus der Zielstellung wurden die Anforderungen in Tabelle~\ref{tab:anforderungen}
+abgeleitet. Sie beziehen sich auf die Aufgaben des Teams Sensorik und dienen in
+Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
 
 \begin{table}[htbp]
   \centering
-  \caption{Anforderungen an Neffy~3.0 (Team Sensorik)}
+  \caption{Anforderungen an Neffy~3.0 im Aufgabenbereich des Teams Sensorik
+    (F = funktional, NF = nicht-funktional)}
   \label{tab:anforderungen}
   \small
-  \begin{tabular}{@{}l p{3.2cm} p{1.6cm} p{6cm}@{}}
+  \begin{tabular}{@{}l p{7.4cm} l p{4.4cm}@{}}
     \toprule
     Nr. & Anforderung & Art & Prüfkriterium \\
     \midrule
-    A1 & Anwesenheitserkennung & funktional & \todoi{prüfbares Kriterium, z.\,B. Distanz/Reaktionszeit} \\
-    A2 & Atemerkennung         & funktional & \todoi{prüfbares Kriterium} \\
-    A3 & Touch-Eingabe         & funktional & \todoi{prüfbares Kriterium} \\
-    A4 & Gehäuse               & nicht-funktional & \todoi{prüfbares Kriterium, z.\,B. Bauraum, Montage} \\
+    A1 & Eine Person vor dem Roboter wird zuverlässig erkannt, auch auf größere Entfernung.
+       & F & Erkennung bis \todoi{Entfernung in m} \\
+    A2 & Bei erkannter Anwesenheit, auch beim Vorbeigehen, reagiert der Roboter mit einer
+         kurzen Hubbewegung und lädt so zur Nutzung ein.
+       & F & Bewegung wird bei Annäherung ausgelöst \\
+    A3 & Einatemzüge werden über Drücken und Loslassen der Sensoren in den Schultertaschen
+         erkannt; aus einer Messung von 30\,s wird die Atemfrequenz bestimmt.
+       & F & \todoi{Erkennungsrate der Einatemzüge} \\
+    A4 & Die Atemfrequenz wird als entspannt, normal oder gestresst eingestuft und an den
+         Raspberry Pi übermittelt.
+       & F & Einstufung kommt am Pi an \\
+    A5 & Die Hubbewegung gelingt auch mit beiden aufgelegten Händen zuverlässig.
+       & F & \todoi{Last in kg} ohne Stocken \\
+    A6 & Die Gestaltung folgt dem Zielbild: weniger kantig, runde Formen.
+       & NF & Abgleich mit Zielbild \\
+    A7 & Die Hände liegen gesichert und angenehm in Schultertaschen und rutschen nicht ab;
+         auch größere Hände finden Platz.
+       & NF & \todoi{Maße der Taschen / Test mit Personen?} \\
+    A8 & Schultern bzw.\ Deckel sind abnehmbar, sodass Innenleben und Elektronik gut
+         zugänglich sind.
+       & NF & Öffnen ohne Werkzeug? \todoi{bestätigen} \\
+    A9 & Alle Gehäuseteile sind auf den verfügbaren FDM-Druckern herstellbar.
+       & NF & \todoi{Druckbettgröße} \\
     \bottomrule
   \end{tabular}
 \end{table}
-\todo{Anforderungsliste ist ein Entwurf aus dem bekannten Projektstand -- bitte abgleichen und ergänzen}
 
 \section{Übergeordnete Fragestellung}
 \label{sec:fragestellung}
 
+Aus der Zielstellung ergibt sich die übergeordnete Fragestellung dieser Arbeit:
+
 \begin{center}
   \fbox{\parbox{0.85\linewidth}{\centering\itshape
-    \todoi{Übergeordnete Fragestellung als hervorgehobene Frage formulieren.}}}
+    Wie kann Neffy durch Sensorik und ein neu gestaltetes Gehäuse von einem
+    ablaufgesteuerten Objekt zu einem Roboter weiterentwickelt werden, der seine
+    Umgebung wahrnimmt und mit den Nutzer:innen interagiert?}}
 \end{center}
+\todo{Fragestellung ist ein Vorschlag -- passt sie?}
 
-\section{Projektorganisation und Aufgabenverteilung}
+\section{Projektorganisation}
 \label{sec:organisation}
 
-\todoi{Kurz: drei Teams (Sensorik, Programmierung, Design), Arbeitsweise,
-Abstimmung, Termine.}
+Das Projekt wurde von drei Teams bearbeitet: Sensorik, Programmierung und Design.
+Zu Beginn trafen sich die Teams in mehreren Meetings und legten eine gemeinsame
+Grundstruktur fest. Die Organisation lief anschließend über ein gemeinsames Google
+Drive, in dem unter anderem die Liste der benötigten Bauteile geführt wurde. Um die
+Beschaffung kümmerte sich hauptsächlich das Team Sensorik; Bauteile für einzelne
+Komponenten, etwa den Bildschirm, wurden von den jeweils zuständigen Personen
+beschafft. Zusätzlich stand ein GitHub-Repository zur Verfügung, das die Daten und
+die SolidWorks-Baugruppen der Vorgängerversionen enthielt.
+\todo{Repo-Link; regelmäßige Treffen während des Projekts? Zeitraum und Stunden}
 
-\begin{table}[htbp]
-  \centering
-  \caption{Aufgabenverteilung im Team Sensorik}
-  \label{tab:aufgaben}
-  \small
-  \begin{tabular}{@{}p{5cm} p{4.5cm} p{4.5cm}@{}}
-    \toprule
-    Aufgabe & Badre & \todoi{Name Teampartner:in} \\
-    \midrule
-    Anwesenheitserkennung (Thermalsensor) & \todoi{Anteil} & \todoi{Anteil} \\
-    Atemerkennung (Velostat)              & \todoi{Anteil} & \todoi{Anteil} \\
-    Auswahl und Test Drucksensoren        & \todoi{Anteil} & \todoi{Anteil} \\
-    Gehäuse: \ac{CAD}-Konstruktion        & \todoi{Anteil} & \todoi{Anteil} \\
-    Gehäuse: 3D-Druck und Nachbearbeitung & \todoi{Anteil} & \todoi{Anteil} \\
-    Software Signalverarbeitung           & \todoi{Anteil} & \todoi{Anteil} \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+Die zentrale Schnittstelle zwischen den Teams ist die Verbindung zwischen dem
+Raspberry Pi (Team Programmierung) und dem ESP32-S3 auf dem Neffy Board (Team
+Sensorik). Beide kommunizieren über \ac{UART} mit einem gemeinsam definierten
+Befehlssatz: Der Raspberry Pi sendet Bewegungsbefehle und startet die Atemerkennung,
+der ESP32-S3 meldet Anwesenheit, Eingaben über die Taschen und das Ergebnis der
+Atemerkennung zurück. Das Protokoll wird in Abschnitt~\ref{sec:architektur} beschrieben.
 
-\todoi{Schnittstellen zu Team Programmierung und Team Design
-(nur soweit für Sensorik/Gehäuse relevant).}
+% Aufgabenverteilung pro Person: wird ganz am Ende ergänzt (Kennzeichnung „wer was“)
+
+\todoi{Zeitaufteilung nach Arbeitsbereichen (Diagramm, vgl.\ Praxisbericht
+Neffy~2~\cite{goerke2025neffy2}).}

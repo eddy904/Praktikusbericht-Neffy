@@ -2,13 +2,19 @@
 \babel@toc {ngerman}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Gestalterische Vorgabe für Neffy~3.0 (\ac {KI}-generiertes Zielbild der Betreuerin)}}{3}{figure.caption.8}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die drei Generationen von Neffy}}{8}{figure.caption.23}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Systemarchitektur von Neffy~3.0 (Entwurf)}}{5}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Entwicklungsschritte des Gehäuses}}{6}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Systemarchitektur von Neffy~3.0 (Aufgabenbereich Team Sensorik: links und unten)}}{9}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}}{10}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Spannungsverlauf bei rhythmischem Drücken: \ac {FSR} und Velostat im Vergleich}}{12}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Schematischer Lagenaufbau einer Drucksensor-Tasche (nicht maßstäblich; Rahmen nicht dargestellt)}}{13}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Entwicklungsschritte des Gehäuses}}{14}{figure.caption.43}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Neffy~3.0 im aufgebauten Zustand}}{8}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Spannungsverlauf des Velostat-Sensors}}{8}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Neffy~3.0 im aufgebauten Zustand}}{17}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Spannungsverlauf des Velostat-Sensors}}{17}{figure.caption.48}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }

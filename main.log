@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  21 OCT 2026 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  21 OCT 2026 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -330,6 +330,22 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@dimlist=\toks23
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer-sc
+rpage.sty
+Package: scrlayer-scrpage 2026/02/02 v3.49.2 KOMA-Script package (end user inte
+rface for scrlayer)
+
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer.st
+y
+Package: scrlayer 2026/02/02 v3.49.2 KOMA-Script package (defining layers and p
+age styles)
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 217
+9.
+)
+Package scrlayer-scrpage Info: Makeing stand-alone element `pagehead' from
+(scrlayer-scrpage)             alias to `pageheadfoot' on input line 1106.
+)
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -1052,14 +1068,18 @@ Loading module `upgrade' ...
 )
 ==> First Aid for acro.sty applied!
 (abkuerzungen.tex
-\c@g@acro@BHT@int=\count375
-\c@g@acro@CAD@int=\count376
-\c@g@acro@FDM@int=\count377
-\c@g@acro@FSR@int=\count378
-\c@g@acro@I2C@int=\count379
-\c@g@acro@LED@int=\count380
-\c@g@acro@PIR@int=\count381
-\c@g@acro@ToF@int=\count382
+\c@g@acro@ADC@int=\count375
+\c@g@acro@BHT@int=\count376
+\c@g@acro@CAD@int=\count377
+\c@g@acro@FDM@int=\count378
+\c@g@acro@FSR@int=\count379
+\c@g@acro@KI@int=\count380
+\c@g@acro@MRI@int=\count381
+\c@g@acro@I2C@int=\count382
+\c@g@acro@LED@int=\count383
+\c@g@acro@PIR@int=\count384
+\c@g@acro@ToF@int=\count385
+\c@g@acro@UART@int=\count386
 )
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
@@ -1071,7 +1091,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count383
+\lrq@indent=\count387
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -1080,49 +1100,49 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count384
-\c@listtotal=\count385
-\c@listcount=\count386
-\c@liststart=\count387
-\c@liststop=\count388
-\c@citecount=\count389
-\c@citetotal=\count390
-\c@multicitecount=\count391
-\c@multicitetotal=\count392
-\c@instcount=\count393
-\c@maxnames=\count394
-\c@minnames=\count395
-\c@maxitems=\count396
-\c@minitems=\count397
-\c@citecounter=\count398
-\c@maxcitecounter=\count399
-\c@savedcitecounter=\count400
-\c@uniquelist=\count401
-\c@uniquename=\count402
-\c@refsection=\count403
-\c@refsegment=\count404
-\c@maxextratitle=\count405
-\c@maxextratitleyear=\count406
-\c@maxextraname=\count407
-\c@maxextradate=\count408
-\c@maxextraalpha=\count409
-\c@abbrvpenalty=\count410
-\c@highnamepenalty=\count411
-\c@lownamepenalty=\count412
-\c@maxparens=\count413
-\c@parenlevel=\count414
-\blx@tempcnta=\count415
-\blx@tempcntb=\count416
-\blx@tempcntc=\count417
-\c@blx@maxsection=\count418
-\blx@maxsegment@0=\count419
-\blx@notetype=\count420
-\blx@parenlevel@text=\count421
-\blx@parenlevel@foot=\count422
-\blx@sectionciteorder@0=\count423
-\blx@sectionciteorderinternal@0=\count424
-\blx@entrysetcounter=\count425
-\blx@biblioinstance=\count426
+\c@tabx@nest=\count388
+\c@listtotal=\count389
+\c@listcount=\count390
+\c@liststart=\count391
+\c@liststop=\count392
+\c@citecount=\count393
+\c@citetotal=\count394
+\c@multicitecount=\count395
+\c@multicitetotal=\count396
+\c@instcount=\count397
+\c@maxnames=\count398
+\c@minnames=\count399
+\c@maxitems=\count400
+\c@minitems=\count401
+\c@citecounter=\count402
+\c@maxcitecounter=\count403
+\c@savedcitecounter=\count404
+\c@uniquelist=\count405
+\c@uniquename=\count406
+\c@refsection=\count407
+\c@refsegment=\count408
+\c@maxextratitle=\count409
+\c@maxextratitleyear=\count410
+\c@maxextraname=\count411
+\c@maxextradate=\count412
+\c@maxextraalpha=\count413
+\c@abbrvpenalty=\count414
+\c@highnamepenalty=\count415
+\c@lownamepenalty=\count416
+\c@maxparens=\count417
+\c@parenlevel=\count418
+\blx@tempcnta=\count419
+\blx@tempcntb=\count420
+\blx@tempcntc=\count421
+\c@blx@maxsection=\count422
+\blx@maxsegment@0=\count423
+\blx@notetype=\count424
+\blx@parenlevel@text=\count425
+\blx@parenlevel@foot=\count426
+\blx@sectionciteorder@0=\count427
+\blx@sectionciteorderinternal@0=\count428
+\blx@entrysetcounter=\count429
+\blx@biblioinstance=\count430
 \labelnumberwidth=\skip72
 \labelalphawidth=\skip73
 \biblabelsep=\skip74
@@ -1134,9 +1154,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \blx@bcfin=\read4
 \blx@bcfout=\write4
 \blx@langwohyphens=\language80
-\c@mincomprange=\count427
-\c@maxcomprange=\count428
-\c@mincompwidth=\count429
+\c@mincomprange=\count431
+\c@maxcomprange=\count432
+\c@mincompwidth=\count433
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1147,74 +1167,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count430
-\c@savedafterword=\count431
-\c@annotator=\count432
-\c@savedannotator=\count433
-\c@author=\count434
-\c@savedauthor=\count435
-\c@bookauthor=\count436
-\c@savedbookauthor=\count437
-\c@commentator=\count438
-\c@savedcommentator=\count439
-\c@editor=\count440
-\c@savededitor=\count441
-\c@editora=\count442
-\c@savededitora=\count443
-\c@editorb=\count444
-\c@savededitorb=\count445
-\c@editorc=\count446
-\c@savededitorc=\count447
-\c@foreword=\count448
-\c@savedforeword=\count449
-\c@holder=\count450
-\c@savedholder=\count451
-\c@introduction=\count452
-\c@savedintroduction=\count453
-\c@namea=\count454
-\c@savednamea=\count455
-\c@nameb=\count456
-\c@savednameb=\count457
-\c@namec=\count458
-\c@savednamec=\count459
-\c@translator=\count460
-\c@savedtranslator=\count461
-\c@shortauthor=\count462
-\c@savedshortauthor=\count463
-\c@shorteditor=\count464
-\c@savedshorteditor=\count465
-\c@labelname=\count466
-\c@savedlabelname=\count467
-\c@institution=\count468
-\c@savedinstitution=\count469
-\c@lista=\count470
-\c@savedlista=\count471
-\c@listb=\count472
-\c@savedlistb=\count473
-\c@listc=\count474
-\c@savedlistc=\count475
-\c@listd=\count476
-\c@savedlistd=\count477
-\c@liste=\count478
-\c@savedliste=\count479
-\c@listf=\count480
-\c@savedlistf=\count481
-\c@location=\count482
-\c@savedlocation=\count483
-\c@organization=\count484
-\c@savedorganization=\count485
-\c@origlocation=\count486
-\c@savedoriglocation=\count487
-\c@origpublisher=\count488
-\c@savedorigpublisher=\count489
-\c@publisher=\count490
-\c@savedpublisher=\count491
-\c@language=\count492
-\c@savedlanguage=\count493
-\c@origlanguage=\count494
-\c@savedoriglanguage=\count495
-\c@pageref=\count496
-\c@savedpageref=\count497
+\c@afterword=\count434
+\c@savedafterword=\count435
+\c@annotator=\count436
+\c@savedannotator=\count437
+\c@author=\count438
+\c@savedauthor=\count439
+\c@bookauthor=\count440
+\c@savedbookauthor=\count441
+\c@commentator=\count442
+\c@savedcommentator=\count443
+\c@editor=\count444
+\c@savededitor=\count445
+\c@editora=\count446
+\c@savededitora=\count447
+\c@editorb=\count448
+\c@savededitorb=\count449
+\c@editorc=\count450
+\c@savededitorc=\count451
+\c@foreword=\count452
+\c@savedforeword=\count453
+\c@holder=\count454
+\c@savedholder=\count455
+\c@introduction=\count456
+\c@savedintroduction=\count457
+\c@namea=\count458
+\c@savednamea=\count459
+\c@nameb=\count460
+\c@savednameb=\count461
+\c@namec=\count462
+\c@savednamec=\count463
+\c@translator=\count464
+\c@savedtranslator=\count465
+\c@shortauthor=\count466
+\c@savedshortauthor=\count467
+\c@shorteditor=\count468
+\c@savedshorteditor=\count469
+\c@labelname=\count470
+\c@savedlabelname=\count471
+\c@institution=\count472
+\c@savedinstitution=\count473
+\c@lista=\count474
+\c@savedlista=\count475
+\c@listb=\count476
+\c@savedlistb=\count477
+\c@listc=\count478
+\c@savedlistc=\count479
+\c@listd=\count480
+\c@savedlistd=\count481
+\c@liste=\count482
+\c@savedliste=\count483
+\c@listf=\count484
+\c@savedlistf=\count485
+\c@location=\count486
+\c@savedlocation=\count487
+\c@organization=\count488
+\c@savedorganization=\count489
+\c@origlocation=\count490
+\c@savedoriglocation=\count491
+\c@origpublisher=\count492
+\c@savedorigpublisher=\count493
+\c@publisher=\count494
+\c@savedpublisher=\count495
+\c@language=\count496
+\c@savedlanguage=\count497
+\c@origlanguage=\count498
+\c@savedoriglanguage=\count499
+\c@pageref=\count500
+\c@savedpageref=\count501
 \shorthandwidth=\skip80
 \shortjournalwidth=\skip81
 \shortserieswidth=\skip82
@@ -1239,19 +1259,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
-\c@textcitecount=\count498
-\c@textcitetotal=\count499
-\c@textcitemaxnames=\count500
-\c@biburlbigbreakpenalty=\count501
-\c@biburlbreakpenalty=\count502
-\c@biburlnumpenalty=\count503
-\c@biburlucpenalty=\count504
-\c@biburllcpenalty=\count505
+\c@textcitecount=\count502
+\c@textcitetotal=\count503
+\c@textcitemaxnames=\count504
+\c@biburlbigbreakpenalty=\count505
+\c@biburlbreakpenalty=\count506
+\c@biburlnumpenalty=\count507
+\c@biburlucpenalty=\count508
+\c@biburllcpenalty=\count509
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count506
+\c@smartand=\count510
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1265,8 +1285,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
 bx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count507
-\c@bbx:relatedtotal=\count508
+\c@bbx:relatedcount=\count511
+\c@bbx:relatedtotal=\count512
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1329,7 +1349,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count509
+\c@section@level=\count513
 )
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
 ty
@@ -1337,8 +1357,8 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen320
-\Hy@linkcounter=\count510
-\Hy@pagecounter=\count511
+\Hy@linkcounter=\count514
+\Hy@pagecounter=\count515
  (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -1346,7 +1366,7 @@ Now handling font encoding PD1 ...
 ) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count512
+\Hy@SavedSpaceFactor=\count516
  (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1359,7 +1379,7 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count513
+\c@Hy@tempcnt=\count517
 LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen321
 
@@ -1371,7 +1391,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count514
+\Fld@menulength=\count518
 \Field@Width=\dimen322
 \Fld@charsize=\dimen323
 Package hyperref Info: Hyper figures OFF on input line 6078.
@@ -1381,16 +1401,16 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count515
-\c@Item=\count516
-\c@Hfootnote=\count517
+\Hy@abspage=\count519
+\c@Item=\count520
+\c@Hfootnote=\count521
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
-\Fld@listcount=\count518
-\c@bookmark@seq@number=\count519
+\Fld@listcount=\count522
+\c@bookmark@seq@number=\count523
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -1414,17 +1434,17 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message adding:
 (scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 92.
+(scrreprt)           before \begin{document} on input line 107.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2026-05-21 v1.32 PDF bookmarks (HO)
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2026-05-21 v1.32 bookmark driver for pdfTeX (HO)
-\BKM@id=\count520
+\BKM@id=\count524
 ))
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 92
-.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 10
+7.
  (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1434,31 +1454,31 @@ Package babel Info: 'ngerman' activates 'german' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Info: Redefining \microtypecontext on input line 92.
-Package microtype Info: Applying patch `item' on input line 92.
-Package microtype Info: Applying patch `toc' on input line 92.
-Package microtype Info: Applying patch `eqnum' on input line 92.
-Package microtype Info: Applying patch `footnote' on input line 92.
-Package microtype Info: Applying patch `verbatim' on input line 92.
-LaTeX Info: Redefining \microtypesetup on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Info: Redefining \microtypecontext on input line 107.
+Package microtype Info: Applying patch `item' on input line 107.
+Package microtype Info: Applying patch `toc' on input line 107.
+Package microtype Info: Applying patch `eqnum' on input line 107.
+Package microtype Info: Applying patch `footnote' on input line 107.
+Package microtype Info: Applying patch `verbatim' on input line 107.
+LaTeX Info: Redefining \microtypesetup on input line 107.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1512,16 +1532,16 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count521
+\scratchcounter=\count525
 \scratchdimen=\dimen324
 \scratchbox=\box82
-\nofMPsegments=\count522
-\nofMParguments=\count523
+\nofMPsegments=\count526
+\nofMParguments=\count527
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count524
+\MPscratchCnt=\count528
 \MPscratchDim=\dimen325
-\MPnumerator=\count525
-\makeMPintoPDFobject=\count526
+\MPnumerator=\count529
+\makeMPintoPDFobject=\count530
 \everyMPtoPDFconversion=\toks51
 )
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1550,9 +1570,9 @@ File: translations-basic-dictionary-german.trsl (german translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `german'. on input line 92.
-\c@lstlisting=\count527
-Package tocbasic Info: setting babel extension for `lol' on input line 92.
+or `german'. on input line 107.
+\c@lstlisting=\count531
+Package tocbasic Info: setting babel extension for `lol' on input line 107.
 \scr@dte@lstlisting@maxnumwidth=\skip95
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
@@ -1580,74 +1600,96 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 92.
-Package biblatex Info: Reference segment=0 on input line 92.
-Package hyperref Info: Link coloring OFF on input line 92.
+Package biblatex Info: Reference section=0 on input line 107.
+Package biblatex Info: Reference segment=0 on input line 107.
+Package hyperref Info: Link coloring OFF on input line 107.
  (titelblatt.tex
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
-.
 
+pdfTeX warning: pdflatex.exe (file ./abbildungen/bht_titelseite.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<abbildungen/bht_titelseite.pdf, id=6, 597.51233pt x 845.0471pt>
+File: abbildungen/bht_titelseite.pdf Graphic file (type pdf)
+<use abbildungen/bht_titelseite.pdf>
+Package pdftex.def Info: abbildungen/bht_titelseite.pdf  used on input line 21.
+
+(pdftex.def)             Requested size: 597.50787pt x 845.04504pt.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 29.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
+0.
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
-.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+0.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-9.
+40.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-9.
+40.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 9.
+(Font)              <14.4> on input line 40.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 9.
+(Font)              <10> on input line 40.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 9.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 10.
+(Font)              <7> on input line 40.
  [1
 
 
 
 {C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Admi
-n/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}])
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 9
-7.
-
-(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-Package tocbasic Info: character protrusion at toc deactivated on input line 97
-.
- (main.toc [2
+n/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./abbildungen/bh
+t_titelseite.pdf>])
+Package tocbasic Info: character protrusion at toc deactivated on input line 11
+2.
+ (main.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 5.
+Package babel Info: 'ngerman' activates 'german' shorthands.
+(babel)             Reported on input line 41.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 41.
+ [2
 
 ])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [3] (main.tdo [4
+ [3] (main.tdo
+Overfull \hbox (3.22318pt too wide) in paragraph at lines 20--20
+ [][] [][][][] \T1/lmr/m/n/12 (-20) Zeitauf-tei-lung nach Ar-beits-be-rei-chen 
+(Dia-gramm, vgl. Pra-xis-be-richt Neffy 2 [[]1[]]).[] [][]  
+ []
 
-] [5{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.
-enc}] [6])
+[4
+
+]
+Overfull \hbox (5.28922pt too wide) in paragraph at lines 33--33
+ \T1/lmr/m/n/12 (-20) schen; Pass-s-tif-te Ø5/Ø6mm mit Rundloch-plus-Langloch-P
+rinzip; Toleranz- 
+ []
+
+[5{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
+c}])
 \tf@tdo=\write6
 \openout6 = `main.tdo'.
 
- [7] (kapitel/01_einleitung.tex
+ [6] (kapitel/01_einleitung.tex
 chapter 1.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 8--8
@@ -1669,195 +1711,122 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 15--15
 
 ]
 chapter 2.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+8.
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 12--12
+{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [
+3]
+[4]
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 182--182
 [] 
  []
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 16.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 16.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 16.
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 16--16
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 19--19
-[] 
- []
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 32.
-
-Overfull \hbox (19.96288pt too wide) in paragraph at lines 36--36
-[]|\T1/lmr/m/n/10.95 (-20) Anwesenheitserkennung| 
- []
-
-
-Overfull \hbox (2.16875pt too wide) in paragraph at lines 36--36
-[]|\T1/lmr/m/n/10.95 (-20) funktional| 
- []
-
-
-Overfull \hbox (2.16875pt too wide) in paragraph at lines 37--37
-[]|\T1/lmr/m/n/10.95 (-20) funktional| 
- []
-
-
-Overfull \hbox (2.16875pt too wide) in paragraph at lines 38--38
-[]|\T1/lmr/m/n/10.95 (-20) funktional| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--39
-[]|\T1/lmr/m/n/10.95 (+20) nicht-
- []
-
-
-Overfull \hbox (2.16875pt too wide) in paragraph at lines 39--39
-\T1/lmr/m/n/10.95 (-20) funktional| 
- []
-
-
-Overfull \hbox (15.8969pt too wide) in paragraph at lines 43--43
-[][][]\T1/lmr/m/n/10 (-20) Anforderungsliste 
- []
-
-
-Overfull \hbox (15.8969pt too wide) in paragraph at lines 43--43
-[][][]\T1/lmr/m/n/10 (-20) Anforderungsliste 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 57--57
-[] 
- []
-
-[2
-
-]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 79--79
-[] 
- []
-
-) (kapitel/03_stand_der_technik.tex [3]
+) (kapitel/03_stand_der_technik.tex [5]
 chapter 3.
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 11--11
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 17--17
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 22--22
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 27--27
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 32--32
-[] 
- []
-
-) (kapitel/04_methoden.tex [4
+[6
 
 ]
+Overfull \hbox (7.3373pt too wide) in paragraph at lines 63--63
+\T1/lmr/m/n/10 (-20) ra/Datenschutz 
+ []
+
+
+Overfull \hbox (7.3373pt too wide) in paragraph at lines 63--63
+\T1/lmr/m/n/10 (-20) ra/Datenschutz 
+ []
+
+<abbildungen/neffy1.jpg, id=371, 513.92pt x 422.57875pt>
+File: abbildungen/neffy1.jpg Graphic file (type jpg)
+<use abbildungen/neffy1.jpg>
+Package pdftex.def Info: abbildungen/neffy1.jpg  used on input line 95.
+(pdftex.def)             Requested size: 131.49092pt x 108.12054pt.
+
+Overfull \hbox (3.45222pt too wide) in paragraph at lines 95--96
+ [][] 
+ []
+
+<abbildungen/neffy2.jpg, id=374, 1104.125pt x 1405.25pt>
+File: abbildungen/neffy2.jpg Graphic file (type jpg)
+<use abbildungen/neffy2.jpg>
+Package pdftex.def Info: abbildungen/neffy2.jpg  used on input line 100.
+(pdftex.def)             Requested size: 84.94543pt x 108.12054pt.
+
+Underfull \hbox (badness 1048) in paragraph at lines 101--101
+[][][]|\T1/lmr/m/n/10.95 (+20) Neffy 2.0 (Ren-de-ring,
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 105--106
+ [][] 
+ []
+
+[7]) (kapitel/04_methoden.tex [8{C:/Users/Admin/AppData/Local/Programs/MiKTeX/f
+onts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Admin/AppData/Local/Programs/MiKTeX/f
+onts/enc/dvips/lm/lm-rm.enc} <./abbildungen/neffy1.jpg> <./abbildungen/neffy2.j
+pg>]
 chapter 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 44.
 
-Overfull \hbox (20.11731pt too wide) in paragraph at lines 32--33
+Overfull \hbox (2.75099pt too wide) in paragraph at lines 52--53
  [][] 
  []
 
-
-Overfull \hbox (16.98059pt too wide) in paragraph at lines 36--36
-\T1/lmr/m/n/10 (-20) (UART/USB/...)?[]  
- []
-
-
-Overfull \hbox (16.98059pt too wide) in paragraph at lines 36--36
-\T1/lmr/m/n/10 (-20) (UART/USB/...)?[]  
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 45--45
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 52--52
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 73--73
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 79--79
-[] 
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 85--86
- [][] 
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 90--91
- [][] 
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 95--96
- [][] 
- []
-
-[5
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+0.
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [9
 
 ]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 105--105
+[10] [11]
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 214--215
+ [][] 
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 219--220
+ [][] 
+ []
+
+[12]
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 291--291
 [] 
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 110--110
-[] 
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 297--298
+ [][] 
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 115--115
-[] 
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 302--303
+ [][] 
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 123--123
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 307--308
+ [][] 
+ []
+
+[13] [14] [15]
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 444--444
 [] 
  []
 
-[6]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 128--128
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 133--133
-[] 
- []
-
-) (kapitel/05_diskussion.tex [7]
+) (kapitel/05_diskussion.tex [16]
 chapter 5.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 21--21
@@ -1874,7 +1843,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 38--38
 [] 
  []
 
-[8
+[17
 
 ]
 Overfull \hbox (11.42696pt too wide) in paragraph at lines 52--52
@@ -1891,7 +1860,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 68--68
 [] 
  []
 
-) (kapitel/06_fazit.tex [9]
+) (kapitel/06_fazit.tex [18]
 chapter 6.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 10--10
@@ -1899,11 +1868,16 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 10--10
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 15--15
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 13--13
 [] 
  []
 
-) (kapitel/07_einschaetzung.tex [10
+
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 18--18
+[] 
+ []
+
+) (kapitel/07_einschaetzung.tex [19
 
 ]
 chapter 7.
@@ -1932,40 +1906,54 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 22--22
 [] 
  []
 
-) [11
+) [20
 
 ]
-Package tocbasic Info: character protrusion at lof deactivated on input line 11
-4.
+Package tocbasic Info: character protrusion at lof deactivated on input line 12
+9.
  (main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [12
+ [21
 
 ]
-Package tocbasic Info: character protrusion at lot deactivated on input line 11
-5.
+Package tocbasic Info: character protrusion at lot deactivated on input line 13
+0.
  (main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [13
+ [22
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+32.
 
-LaTeX Warning: Empty bibliography on input line 117.
-
-(anhang/anhang.tex [14
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [23
 
 ]
+chapter without number
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/12'.
+(microtype)             Ignoring protrusion settings for this character.
+[24
+
+] (anhang/anhang.tex [25]
 chapter A.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 6--6
 [] 
  []
 
-[15
+[26
 
 ]
 chapter B.
@@ -1974,7 +1962,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 10--10
 [] 
  []
 
-[16
+[27
 
 ]
 chapter C.
@@ -1983,7 +1971,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 14--14
 [] 
  []
 
-[17
+[28
 
 ]
 chapter D.
@@ -1992,14 +1980,14 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 18--18
 [] 
  []
 
-) (kapitel/eigenstaendigkeit.tex [18
+) (kapitel/eigenstaendigkeit.tex [29
 
 ]
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 7--7
 [] 
  []
 
-) [19
+) [30
 
 ] (main.aux)
  ***********
@@ -2011,25 +1999,33 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56351 strings out of 467871
- 1334022 string characters out of 5418375
- 2401089 words of memory out of 5000000
- 84198 multiletter control sequences out of 15000+600000
- 717516 words of font info for 157 fonts, out of 8000000 for 9000
+ 58828 strings out of 467871
+ 1412175 string characters out of 5418375
+ 2486530 words of memory out of 5000000
+ 86536 multiletter control sequences out of 15000+600000
+ 731287 words of font info for 218 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,17n,107p,11209b,2966s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,107p,11209b,2970s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
+b><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.p
+fb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.p
+fb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.p
+fb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pf
 b><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
 ><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
 <C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><
-C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:
+C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:
 /Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/U
 sers/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/U
-sers/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:
-/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (26 pages, 343688 bytes).
+sers/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/U
+sers/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Us
+ers/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/
+Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/
+Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/
+Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (36 pages, 716613 bytes).
 PDF statistics:
- 693 PDF objects out of 1000 (max. 8388607)
- 177 named destinations out of 1000 (max. 500000)
- 49565 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 910 PDF objects out of 1000 (max. 8388607)
+ 196 named destinations out of 1000 (max. 500000)
+ 56772 words of extra memory for PDF output out of 61914 (max. 10000000)
 

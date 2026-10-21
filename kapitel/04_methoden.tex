@@ -7,33 +7,121 @@
 \section{Systemarchitektur}
 \label{sec:architektur}
 
-Abbildung~\ref{fig:architektur} zeigt den Aufbau des Systems.
+Neffy~3.0 ist auf zwei Steuereinheiten aufgeteilt (Abbildung~\ref{fig:architektur}).
+Der Raspberry Pi (Team Programmierung) steuert den Ablauf der Interaktion, die Atemübungen
+und den Bildschirm. Der ESP32-S3 auf dem Neffy Board liest alle Sensoren aus und steuert
+Motoren, \acp{LED} und die Stummschaltung des Lautsprechers. Er trifft selbst keine
+Entscheidungen, sondern führt die Befehle des Raspberry Pi aus und meldet zurück, was er
+erfasst~\cite{jamil2026mainboard}. Die Platine wurde von Charly Goerke (Labor für
+Kommunikation) entworfen; die Firmware entstand im Team Sensorik.
+
+Ursprünglich war vorgesehen, die Sensoren direkt am Raspberry Pi zu betreiben. Da dieser
+keine analogen Eingänge besitzt, wäre für die Drucksensoren ein externer \ac{ADC}
+(MCP3208) nötig gewesen. Im finalen Aufbau übernimmt der ESP32-S3 diese Aufgabe mit seinen
+integrierten \acp{ADC}.
+\todo{Warum der Wechsel aufs ESP32-Board? (z.\,B. Motorsteuerung in Echtzeit, Entlastung des Pi)}
 
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}[
-      node distance = 1.2cm and 1.4cm,
-      block/.style = {draw, rounded corners, align=center,
-                      minimum width=2.8cm, minimum height=1cm, font=\small},
+      node distance = 0.5cm and 1.1cm,
+      block/.style = {draw, rounded corners, align=center, font=\small,
+                      minimum width=2.6cm, minimum height=0.9cm},
+      main/.style  = {block, fill=orange!15, minimum height=2.2cm},
+      lbl/.style   = {font=\scriptsize, midway, fill=white, inner sep=1pt},
       >={Stealth},
     ]
-    \node[block] (sens)  {Sensoren\\{\footnotesize Thermal, Velostat}};
-    \node[block, right=of sens] (board) {Neffy Board\\{\footnotesize ESP32-S3}};
-    \node[block, right=of board] (pi)   {Raspberry Pi};
-    \node[block, above right=0.4cm and 1.4cm of pi] (motor) {Motor};
-    \node[block, below right=0.4cm and 1.4cm of pi] (disp)  {Display};
-    \node[block, below=of board] (led)  {\ac{LED}s\\{\footnotesize WS2812B}};
+    \node[main] (esp) {ESP32-S3\\Neffy Board};
+    \node[block, left=1.6cm of esp, yshift=1.3cm] (d6t) {Thermalsensor\\D6T-1A-02};
+    \node[block, below=of d6t] (vel)  {2 Taschen\\(Velostat)};
+    \node[block, below=of vel] (end)  {Endschalter\\Körper, Kopf};
+    \node[main, right=1.8cm of esp] (pi) {Raspberry Pi};
+    \node[block, right=of pi] (disp) {Bildschirm};
+    \node[block, below=2.3cm of esp, xshift=-2.6cm] (mot) {2$\times$ TMC2225 +\\Schrittmotoren};
+    \node[block, below=2.3cm of esp, xshift=0.6cm] (led)  {\acp{LED}\\WS2812B};
+    \node[block, below=2.3cm of esp, xshift=3.8cm] (amp)  {Verstärker\\(Stummschaltung)};
 
-    \draw[->]  (sens)  -- (board);
-    \draw[<->] (board) -- (pi);
-    \draw[->]  (pi)    -- (motor);
-    \draw[->]  (pi)    -- (disp);
-    \draw[->]  (board) -- (led);
+    \draw[->] (d6t) -- node[lbl]{\acs{I2C}} (esp);
+    \draw[->] (vel) -- node[lbl]{analog} (esp);
+    \draw[->] (end) -- (esp);
+    \draw[<->, thick] (esp) -- node[lbl]{\acs{UART}} (pi);
+    \draw[->] (pi) -- (disp);
+    \draw[->] (esp) -- (mot);
+    \draw[->] (esp) -- (led);
+    \draw[->] (esp) -- (amp);
   \end{tikzpicture}
-  \caption{Systemarchitektur von Neffy~3.0 (Entwurf)}
+  \caption{Systemarchitektur von Neffy~3.0 (Aufgabenbereich Team Sensorik: links und unten)}
   \label{fig:architektur}
 \end{figure}
-\todo{Architektur prüfen: Wer steuert den Motor? Schnittstelle ESP32 -- Pi (UART/USB/...)?}
+
+\subsection*{Schnittstelle zum Raspberry Pi}
+
+Beide Steuereinheiten kommunizieren über \ac{UART} mit 115\,200\,Baud. Jede Nachricht hat
+das Format \texttt{FA <ID> <Länge> <Nutzdaten>}; Zahlenwerte werden als ganze Zahlen mit
+dem Faktor~10 übertragen, etwa Positionen in Zehntelmillimetern. Der Befehlssatz ist in
+der gemeinsamen Bibliothek Neffy\_UART\_Interface festgelegt, die vom Labor bereitgestellt
+wurde~\cite{goerke2026uart}. Tabelle~\ref{tab:uart} fasst die Befehle nach Gruppen
+zusammen; die vollständige Liste befindet sich in Anhang~\ref{anh:code}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Befehle der \ac{UART}-Schnittstelle nach Gruppen}
+  \label{tab:uart}
+  \small
+  \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{5.6cm} >{\raggedright\arraybackslash}p{5.6cm}@{}}
+    \toprule
+    Gruppe & Raspberry Pi $\rightarrow$ ESP32-S3 & ESP32-S3 $\rightarrow$ Raspberry Pi \\
+    \midrule
+    Bewegung     & Körper und/oder Kopf in vorgegebener Zeit an Zielposition fahren
+                   (\texttt{MOVE\_\ldots\_IN\_TIME})
+                 & Bestätigung mit erreichter Position \\
+    Anwesenheit  & --
+                 & Person da / nicht da (\texttt{GET\_PERSON\_READING}), bei jeder
+                   Änderung und alle 0{,}5\,s \\
+    Taschen      & --
+                 & Klick links / rechts (\texttt{PRESSURE\_CLICK\_L/R}) \\
+    Atmung       & Atemerkennung starten (\texttt{BREATHING\_DETECTION\_START})
+                 & Einstufung entspannt / normal / gestresst \\
+    Sonstiges    & Lautsprecher stumm (\texttt{MUTE}); Startsignal einer Übung
+                   (\texttt{DISABLE\_MOTORS}, siehe Abschnitt~\ref{sec:schwachstellen})
+                 & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Abbildung~\ref{fig:sequenz} zeigt beispielhaft, wie die Befehle während einer
+Interaktion zusammenspielen.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      >={Stealth}, font=\small,
+      msg/.style = {->, shorten >=1pt},
+      note/.style = {font=\scriptsize\itshape, align=left},
+    ]
+    \def\L{0} \def\R{8}
+    \node[draw, rounded corners, minimum width=2.6cm] (a) at (\L,0) {Raspberry Pi};
+    \node[draw, rounded corners, minimum width=2.6cm, fill=orange!15] (b) at (\R,0) {ESP32-S3};
+    \draw[dashed, gray] (\L,-0.35) -- (\L,-8.2);
+    \draw[dashed, gray] (\R,-0.35) -- (\R,-8.2);
+
+    \draw[msg] (\R,-1.0) -- node[above]{\texttt{GET\_PERSON\_READING} = 1} (\L,-1.0);
+    \node[note, right] at (\R+0.1,-1.0) {Person erkannt};
+    \draw[msg] (\L,-1.8) -- node[above]{\texttt{MOVE\_BODY\_HEAD\_IN\_TIME}} (\R,-1.8);
+    \node[note, left] at (\L-0.1,-1.8) {Aufwachen};
+    \draw[msg] (\R,-2.6) -- node[above]{Bestätigung: Position erreicht} (\L,-2.6);
+    \draw[msg] (\L,-3.6) -- node[above]{\texttt{BREATHING\_DETECTION\_START}} (\R,-3.6);
+    \node[note, right] at (\R+0.1,-4.2) {30\,s: Drücken beim\\Einatmen, Loslassen\\beim Ausatmen};
+    \draw[msg] (\R,-5.2) -- node[above]{\texttt{BREATHING\_DETECTION\_STRESSED}} (\L,-5.2);
+    \node[note, left] at (\L-0.1,-5.2) {Übung\\auswählen};
+    \draw[msg] (\L,-6.2) -- node[above]{\texttt{DISABLE\_MOTORS} (Startsignal)} (\R,-6.2);
+    \draw[msg] (\L,-7.0) -- node[above]{\texttt{MOVE\_BODY\_HEAD\_IN\_TIME} (Einatmen)} (\R,-7.0);
+    \draw[msg] (\L,-7.8) -- node[above]{\texttt{MOVE\_BODY\_HEAD\_IN\_TIME} (Ausatmen) \ldots} (\R,-7.8);
+  \end{tikzpicture}
+  \caption{Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}
+  \label{fig:sequenz}
+\end{figure}
+\todo{Ablauf aus Sicht des Pi so richtig? (z.\,B. Begrüßung, Übungsauswahl)}
 
 \section{Hardware und Sensorik}
 \label{sec:hardware}
@@ -41,42 +129,166 @@ Abbildung~\ref{fig:architektur} zeigt den Aufbau des Systems.
 \subsection{Anwesenheitserkennung}
 \label{sec:hw_anwesenheit}
 
-\todoi{Omron D6T-1A-02: Funktionsprinzip, Anschluss über \ac{I2C},
-Datenblatt zitieren. Final integriert?}
+Der Roboter soll erkennen, wenn sich eine Person direkt vor ihn setzt, und zwar auch
+dann, wenn sie still sitzt. Personen, die in zwei bis drei Metern Entfernung vorbeigehen,
+sollen dagegen keine Reaktion auslösen.
+\todo{Passt das zu A2 (kurze Reaktion beim Vorbeigehen)? Ab welcher Entfernung reagiert er?}
+
+Zunächst wurden Abstands- und Infrarotsensoren betrachtet. Abstandssensoren reagieren
+jedoch auf jedes Hindernis und nicht nur auf Menschen, und passive Infrarotsensoren
+erkennen still sitzende Personen nicht zuverlässig~\cite{shokrollahi2024pir} (siehe
+Abschnitt~\ref{sec:sdt_anwesenheit}). Die Wahl fiel daher auf den Thermalsensor
+Omron D6T-1A-02~\cite{omron2017d6t}, der die Körperwärme einer Person gegenüber
+der Raumtemperatur erfasst. Er erkennt damit auch Personen, die sich nicht bewegen. Der
+Sensor besitzt nur einen Messpunkt mit einem Sichtwinkel von 26{,}5°~\cite{omron2017d6t}.
+Je weiter eine Person entfernt ist, desto kleiner ist der Anteil des Sichtfelds, den sie
+ausfüllt, und desto geringer fällt die gemessene Erwärmung aus. Der Abstand wirkt damit als
+natürlicher Filter gegen weiter entfernte Personen. Der Sensor wird über \ac{I2C}
+angebunden. Mit rund 16\,€ ist er teurer als einfache
+Infrarotsensoren, versprach aber eine deutlich zuverlässigere Erkennung. Ausschlaggebend
+waren zudem das gute Preis-Leistungs-Verhältnis und der etablierte Hersteller. Ein
+Vergleichstest mit anderen Sensoren wurde nicht durchgeführt, da bereits der D6T die
+Anforderungen erfüllte (siehe Abschnitt~\ref{sec:messwerte}).
 
 \subsection{Auswahl des Drucksensors}
 \label{sec:hw_drucksensor}
 
-\todoi{Muster: Problem $\rightarrow$ Optionen $\rightarrow$ Kriterien
-$\rightarrow$ Entscheidung $\rightarrow$ Begründung. Getestete Varianten
-(u.\,a. \ac{FSR}, \dots), Beobachtungen, Entscheidung für Velostat.}
+Übliche Verfahren zur Atemerfassung arbeiten mit Sensoren, die am Körper getragen werden,
+etwa mit Atemgurten (siehe Abschnitt~\ref{sec:sdt_atem}). Für Neffy~3.0 sollte dagegen
+keine zusätzliche Hardware am Menschen nötig sein: Die Nutzer:innen legen lediglich die
+Hände auf die Schultern bzw.\ in die Taschen des Roboters. Ein Beschleunigungssensor in
+den Schultern schied aus, da sich der Roboter selbst im Atemrhythmus bewegt und der Sensor
+nicht unterscheiden kann, ob eine Bewegung vom Menschen oder vom Roboter ausgeht. Für
+diesen Anwendungsfall kamen daher nur Drucksensoren in Frage. Drei Ansätze wurden
+vorgesehen:
+
+\begin{enumerate}
+  \item \textbf{Punktdrucksensor} (\ac{FSR}, Joy-IT): einfacher, günstiger Einstieg zum
+        ersten Ausprobieren.
+  \item \textbf{Velostat:} flexible, druckempfindliche Folie, die sich frei zuschneiden lässt.
+  \item \textbf{Dehnungssensor als Atemgurt:} Rückfallebene, falls Sensoren in den Schultern
+        nicht ausreichen. Er misst die Atmung direkt am Brustkorb und ist unabhängig von der
+        Bewegung des Roboters, muss aber von der Person getragen werden.
+        \todo{Wurde der Gurt getestet?}
+\end{enumerate}
+
+Der \ac{FSR} wurde in verschiedenen Größen getestet. In den getesteten Aufbauten verhielt er
+sich nahezu binär: Schon bei geringem Druck stieg die Spannung auf den Maximalwert, sodass
+statt eines abgestuften Verlaufs nur zwei Zustände erkennbar waren
+(Abbildung~\ref{fig:fsr_velostat}\,a). Eine Variante für höhere Lasten (bis 10\,kg) hätte das
+Verhalten möglicherweise verbessert, wäre aber vermutlich weiterhin nicht feinfühlig genug
+gewesen. Die Empfindlichkeit ließe sich zwar über den Widerstand der Messschaltung anpassen;
+dieser Aufwand wurde jedoch als nicht lohnend eingeschätzt.
+
+Velostat zeigte dagegen einen abgestuften Signalverlauf, erkannte auch schwache
+Druckunterschiede und ließ sich über die Schaltung gut einstellen
+(Abbildung~\ref{fig:fsr_velostat}\,b). Ein weiterer Vorteil ist die frei wählbare Form:
+Die Folie kann auf die benötigte Fläche zugeschnitten werden, sodass die Hand nicht exakt
+positioniert sein muss. Sie ist mit etwa 0{,}1\,mm sehr dünn, passt sich der Oberfläche an
+und lässt sich unsichtbar unter der Verkleidung integrieren. Tabelle~\ref{tab:bewertung_drucksensor}
+fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
 
 \begin{table}[htbp]
   \centering
-  \caption{Bewertung der getesteten Drucksensoren}
+  \caption{Vergleich der getesteten Drucksensoren (+ geeignet, $\circ$ eingeschränkt, -- ungeeignet)}
   \label{tab:bewertung_drucksensor}
   \small
-  \begin{tabular}{@{}p{3.4cm} p{3.2cm} p{3.2cm} p{3.2cm}@{}}
+  \begin{tabular}{@{}p{7.2cm} c c@{}}
     \toprule
-    Kriterium & \ac{FSR} & Velostat & \todoi{weitere Variante} \\
+    Kriterium & \ac{FSR} & Velostat \\
     \midrule
-    \todoi{Kriterium 1} & & & \\
-    \todoi{Kriterium 2} & & & \\
+    Abgestufter Signalverlauf statt Ein/Aus           & --      & + \\
+    Erkennung schwacher Druckunterschiede             & --      & + \\
+    Einstellbarkeit über die Schaltung                & $\circ$ & + \\
+    Fläche und Form frei wählbar                      & --      & + \\
+    Integration unter der Verkleidung (dünn, flexibel) & $\circ$ & + \\
+    Kosten und Beschaffung                            & +       & + \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\subsection{Messaufbau und Schaltung}
-\label{sec:hw_schaltung}
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.48\linewidth}
+    \centering
+    \platzhalter[\linewidth]{Plot atemkurve\_1/2 (kleiner Drucksensor)}
+    \caption{\ac{FSR}: nahezu binäres Verhalten}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.48\linewidth}
+    \centering
+    \platzhalter[\linewidth]{Plot atemkurve\_10 (Velostat richtig ausgelegt)}
+    \caption{Velostat: abgestufter Verlauf}
+  \end{subfigure}
+  \caption{Spannungsverlauf bei rhythmischem Drücken: \ac{FSR} und Velostat im Vergleich}
+  \label{fig:fsr_velostat}
+\end{figure}
 
-\todoi{Schaltung Velostat am ESP32-S3 (z.\,B. Spannungsteiler, Widerstandswert,
-ADC-Pin), Messaufbau, Foto.}
+\subsection{Aufbau der Drucksensor-Taschen}
+\label{sec:hw_taschen}
+
+Jede Tasche besteht aus mehreren Lagen (Abbildung~\ref{fig:taschenaufbau}): Auf den
+3D-gedruckten Grundkörper folgt eine Kupferfolie als untere Elektrode, darüber das
+Velostat und eine zweite Kupferfolie als obere Elektrode. Ein Rahmen zwischen den Lagen
+ermöglicht den Zusammenbau; abschließend wird die Tasche mit Silikon verschlossen.
+\todo{Fläche des Velostats pro Tasche (geplant ca.\ 10\,$\times$\,10\,cm)?}
+
+Im ersten Aufbau wurde die Kupferfolie mit ihrer Klebeseite zum Velostat verklebt. Die
+Klebeseite leitete jedoch nicht zuverlässig genug. Da lediglich beidseitig Kontakt mit
+leitendem Material bestehen muss und die abführenden Drähte die Folie ohnehin fixieren,
+wird seitdem nur noch die nicht klebende, leitende Seite der Kupferfolie als Kontaktfläche
+genutzt. Mit diesem Aufbau funktionierten die Taschen nach einigen Tests zufriedenstellend.
+\todo{So richtig beschrieben? (Klebeseite zum Grundkörper, leitende Seite zum Velostat)}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[font=\small, layer/.style={draw, minimum width=7cm, anchor=south west}]
+    \node[layer, minimum height=0.9cm, fill=gray!20]   (base) at (0,0)    {3D-gedruckter Grundkörper};
+    \node[layer, minimum height=0.3cm, fill=orange!50] (cu1)  at (0,0.9)  {};
+    \node[layer, minimum height=0.5cm, fill=black!70, text=white] (vel) at (0,1.2) {Velostat};
+    \node[layer, minimum height=0.3cm, fill=orange!50] (cu2)  at (0,1.7)  {};
+    \node[layer, minimum height=0.5cm, fill=blue!10]   (sil)  at (0,2.0)  {Silikon};
+    \draw[<-] (7,1.05) -- (7.8,1.05) node[right]{Kupferfolie (Elektrode)};
+    \draw[<-] (7,1.85) -- (7.8,1.85) node[right]{Kupferfolie (Elektrode)};
+    \draw[->, thick] (-0.6,1.05) -- (0,1.05);
+    \draw[->, thick] (-0.6,1.85) -- (0,1.85);
+    \node[left, align=right, font=\scriptsize] at (-0.6,1.45) {zum\\ESP32-S3};
+  \end{tikzpicture}
+  \caption{Schematischer Lagenaufbau einer Drucksensor-Tasche (nicht maßstäblich; Rahmen nicht dargestellt)}
+  \label{fig:taschenaufbau}
+\end{figure}
+
+Das Velostat ändert unter Druck seinen elektrischen Widerstand. Es bildet zusammen mit
+einem Festwiderstand einen Spannungsteiler, dessen Ausgangsspannung der ESP32-S3 misst.
+\todo{Schaltung bestätigen, Widerstandswert, Schaltplan}
+Die Wahl des Widerstands hat großen Einfluss auf das Signal: Mit einem ungeeigneten
+Widerstand war der Spannungsverlauf deutlich schlechter auszuwerten als mit dem
+abgestimmten Wert.
+\todo{Plot atemkurve\_7 vs.\ atemkurve\_10 -- hier oder in Kap.\ 5?}
+Der \ac{ADC} arbeitet mit 12\,bit Auflösung; jeder Messwert ist der Mittelwert aus acht
+Einzelmessungen und wird über die im Chip hinterlegten Kalibrierdaten in eine Spannung
+umgerechnet, da der \ac{ADC} des ESP32-S3 nicht linear ist. Beide Taschen werden alle
+20\,ms abgetastet.
+
+\subsection{Antrieb}
+\label{sec:hw_antrieb}
+
+Die Dynamixel-Motoren von Neffy~2 wurden durch Schrittmotoren ersetzt, um mehr Kraft für
+die Hubbewegung bereitzustellen.
+\todo{Motor-Modell, Datenblatt; wer hat die Mechanik konstruiert?}
+Der Körper wird über eine Gewindespindel mit 8\,mm Steigung bewegt und hat einen Hubweg von
+85\,mm; Neffy~2 erreichte mit seinem Riementrieb maximal 25\,mm~\cite{goerke2025neffy2}. Der
+Kopf wird über ein Zahnradpaar mit 30 und 40 Zähnen geneigt und nutzt 32° seines
+mechanischen Bewegungsbereichs von etwa 34°. Angesteuert werden beide Motoren über
+TMC2225-Treiber mit vier Mikroschritten. Bei jedem Start fahren beide Achsen gegen einen
+Endschalter, um ihre Nullposition zu bestimmen (Referenzfahrt).
 
 \section{Konstruktion des Gehäuses}
 \label{sec:gehaeuse}
 
-\todoi{Eiförmige Schale, gespiegelte Hälften, Teilung in druckbare Teile mit
-abnehmbarem Deckel; \ac{CAD} in SolidWorks.}
+\todoi{Folgt: SolidWorks-Konstruktion nach Zielbild, eiförmige Schale, gespiegelte Hälften,
+Teilung in druckbare Teile, abnehmbarer Deckel/Schultern, Taschen; Passstifte Ø5/Ø6\,mm mit
+Rundloch-plus-Langloch-Prinzip; Toleranz-Testkörper; Drucker, Material, Druckzeiten;
+Nachbearbeitung und Lackierung.}
 
 \begin{figure}[htbp]
   \centering
@@ -99,35 +311,134 @@ abnehmbarem Deckel; \ac{CAD} in SolidWorks.}
   \label{fig:gehaeuse_schritte}
 \end{figure}
 
-\subsection{Teilung und Ausrichtung}
-\label{sec:gehaeuse_teilung}
-
-\todoi{Passstifte Ø5/Ø6\,mm, Rundloch-plus-Langloch-Prinzip -- Begründung.}
-
-\subsection{Toleranzen im \ac{FDM}-Druck}
-\label{sec:gehaeuse_toleranz}
-
-\todoi{Testkörper zur empirischen Ermittlung der Passungen: Maße, Ergebnisse.}
-
-\subsection{Fertigung und Nachbearbeitung}
-\label{sec:gehaeuse_fertigung}
-
-\todoi{Drucker, Material, Druckzeiten, Schleifen, Lackieren.}
-
 \section{Software}
 \label{sec:software}
 
-\subsection{Signalverarbeitung und Atemerkennung}
-\label{sec:sw_atem}
-
-\todoi{Flankenerkennung (aktive Variante), 20-s-Fenster, mittlerer Atemrhythmus.}
-
-\subsection{Softwarestruktur und Ablage}
+\subsection{Aufbau der Firmware}
 \label{sec:sw_struktur}
 
-\todoi{Modulstruktur (.cpp/.h), PlatformIO, FastLED; Repository-Link, Build-Anleitung.}
+Die Firmware ist in C++ mit dem Arduino-Framework geschrieben und wird mit PlatformIO
+gebaut~\cite{jamil2026mainboard}. Sie nutzt beide Rechenkerne des ESP32-S3: Die
+Motorsteuerung läuft in einer eigenen Task auf Kern~0, während Kern~1 die \ac{UART}-Kommunikation,
+die Sensoren und die \acp{LED} bedient. Die Trennung ist nötig, weil der Interrupt der
+Schrittmotorsteuerung mit 50\,kHz und die Ausgabe an die \acp{LED} sich auf einem gemeinsamen
+Kern gegenseitig stören. Tabelle~\ref{tab:module} zeigt die Module.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Module der Firmware}
+  \label{tab:module}
+  \small
+  \begin{tabular}{@{}l p{9.4cm}@{}}
+    \toprule
+    Modul & Aufgabe \\
+    \midrule
+    \texttt{main}               & Initialisierung, Hauptschleife, \ac{LED}-Steuerung, Debug-Befehle \\
+    \texttt{config.h}           & Pins, Hardwarekonstanten, Zeiten, \ac{LED}-Einstellungen \\
+    \texttt{MotorControlLoop}   & Referenzfahrt, Ausführung der Bewegungsbefehle, Rückmeldungen (Kern~0) \\
+    \texttt{PersonSensor}       & Auslesen des D6T und Anwesenheitserkennung \\
+    \texttt{PersonDetector}     & Senden des Anwesenheitszustands \\
+    \texttt{PressureDetector}   & Klick- und Druckerkennung je Tasche \\
+    \texttt{BreathingDetection} & Atemerkennung über 30\,s \\
+    \texttt{VoltageReader}      & Kalibrierte \ac{ADC}-Messung \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Anwesenheitserkennung}
+\label{sec:sw_anwesenheit}
+
+Der D6T liefert etwa alle 100\,ms einen neuen Temperaturwert $T$, der mit einer
+CRC-Prüfsumme auf Übertragungsfehler geprüft wird. Die Erkennung vergleicht $T$ mit einer
+laufend gelernten Raumtemperatur $T_\mathrm{R}$. Eine Person gilt als anwesend, sobald
+\begin{equation}
+  T - T_\mathrm{R} \geq \vartheta \quad\text{mit}\quad
+  \vartheta = \max\left(8\,\sigma;\ 1\,\mathrm{K}\right),
+  \label{eq:anwesenheit}
+\end{equation}
+wobei $\sigma$ das gemessene Rauschen des Sensors ohne Person ist. Als abwesend gilt sie,
+sobald die Differenz unter $0{,}6\,\vartheta$ fällt; der Abstand zwischen beiden Schwellen
+verhindert ein Flackern des Zustands. Die Raumtemperatur folgt der Messung je nach Situation
+unterschiedlich schnell: Sinkt die Temperatur, wird sie sofort übernommen, da eine Person den
+Sensor nur erwärmen kann. Steigt sie, wird sie nur langsam nachgeführt, damit eine Person,
+die sich langsam nähert oder etwas weiter entfernt steht, nicht als Raumtemperatur
+\enquote{weggelernt} wird. Als zusätzliche Absicherung wird die Raumtemperatur schneller neu
+gelernt, wenn zwar eine Person gemeldet wird, das Signal aber 20\,s lang nahezu konstant
+bleibt, da eine reale Person die Messung innerhalb von Sekunden verändert. Die Parameter
+wurden anhand einer geführten Aufzeichnung abgestimmt (leerer Raum, Annähern, Davorstehen,
+Abstand 1\,m, Vorbeigehen, Weggehen; siehe Abschnitt~\ref{sec:messwerte}).
+
+\subsection{Klick- und Druckerkennung}
+\label{sec:sw_druck}
+
+Das Signal der Velostat-Taschen driftet mit der Zeit und unterscheidet sich von Tasche zu
+Tasche. Die Erkennung ist deshalb selbstkalibrierend: Sie lernt laufend den Ruhepegel, das
+Rauschen und die typische Höhe eines Klicks und leitet daraus ihre Schwellen ab. Ein Klick
+wird erkannt, wenn das Signal kurzzeitig (höchstens 600\,ms) über einen lokalen Grundpegel
+steigt, oder bei leichten Klicks als schneller Sprung in beide Richtungen. Liegt eine Hand
+dauerhaft auf der Tasche, wird dies erkannt; Klicks müssen dann deutlicher ausfallen. Für die
+Atemerkennung gibt es zusätzlich einen schnellen Zustand \enquote{gedrückt}, der nach 140\,ms
+Druck gesetzt und nach 200\,ms ohne Druck zurückgesetzt wird. Die Parameter wurden anhand
+aufgezeichneter Messreihen beider Taschen abgestimmt (Klicks, aufliegende Hand, langes
+Drücken). Für jede Tasche lässt sich die Empfindlichkeit zusätzlich fein einstellen.
+
+\subsection{Atemerkennung}
+\label{sec:sw_atem}
+
+Die Atemerkennung wird vom Raspberry Pi gestartet und dauert 30\,s. Die Nutzer:innen drücken
+beim Einatmen auf eine Tasche und lassen beim Ausatmen los; jeder Beginn eines Drucks zählt als
+Einatemzug. Aus den Zeitpunkten des ersten ($t_1$) und letzten ($t_n$) von $n$ Einatemzügen
+wird die mittlere Dauer eines Atemzyklus und daraus die Atemfrequenz bezogen auf 30\,s
+berechnet:
+\begin{equation}
+  \bar{T} = \frac{t_n - t_1}{n - 1}, \qquad
+  f_{30} = \frac{30\,\mathrm{s}}{\bar{T}}.
+  \label{eq:atemfrequenz}
+\end{equation}
+Dieses Vorgehen ist genauer als das Zählen ganzer Atemzüge, da in 30\,s nur wenige Zyklen
+liegen. Erwachsene atmen in Ruhe 12- bis 20-mal pro Minute~\cite{nicolo2020rr}, also 6- bis
+10-mal in 30\,s. Daraus ergibt sich die Einstufung: Bis zu 5 Atemzüge pro 30\,s gelten als
+entspannt, 6 bis 10 als normal und mehr als 10 als gestresst. Das Ergebnis wird an den
+Raspberry Pi gesendet; bei weniger als zwei Einatemzügen wird kein Ergebnis gesendet.
+Während der Messung werden keine Klicks gemeldet, und alle \acp{LED} werden beim Einatmen
+heller und beim Ausatmen dunkler, sodass die Nutzer:innen eine direkte Rückmeldung erhalten.
+
+Ursprünglich sollte die Atmung passiv erkannt werden: Die Hände ruhen in den Taschen, und die
+Atmung wird über leichte Änderungen des Drucks der Hände erfasst. Dieser Ansatz erwies sich
+als nicht zuverlässig genug (siehe Abschnitt~\ref{sec:erg_passiv}) und wurde zugunsten der
+beschriebenen aktiven Erfassung aufgegeben.
+
+\subsection{Rückmeldung über die \acp{LED}}
+\label{sec:sw_led}
+
+Unter jeder Tasche liegt ein Streifen mit acht \acp{LED}, dazu kommt ein Ring mit zwölf
+\acp{LED}. Ihre Helligkeit folgt der Kopfposition: Bei gesenktem Kopf glimmen sie schwach, in
+der Aufwachposition leuchten sie voll. Da das Auge Helligkeit nicht linear wahrnimmt, wird
+die Helligkeit kubisch über den Stellweg verteilt.
+
+\subsection{Softwareablage, Build und Tests}
+\label{sec:sw_ablage}
+
+Der Quellcode liegt im Repository \url{https://github.com/YounesJamil/Neffy-3.0-Mainboard}
+\cite{jamil2026mainboard}; dieser Bericht bezieht sich auf den Stand vom 21.10.2026
+(Commit \texttt{2693747}). Board-Definition und Pinbelegung sind im Repository enthalten,
+die verwendeten Bibliotheken (Neffy\_UART\_Interface, TMX222x\_StepperDriver, FastLED)
+werden von PlatformIO in festen Versionen geladen. Die Firmware wird über den USB-Anschluss
+der Platine aufgespielt, ohne dass eine Taste gedrückt werden muss.
+
+Für die Inbetriebnahme gibt es eigenständige Testprogramme, mit denen einzelne Komponenten
+ohne die gesamte Firmware geprüft werden können (\acp{LED}, beide Motorachsen, Endschalter,
+Taschen, Thermalsensor, Reaktion des Raspberry Pi auf Anwesenheitsmeldungen). Über den
+USB-Anschluss lassen sich zur Fehlersuche Messwerte der Taschen und des Thermalsensors
+ausgeben und mit Python-Skripten aufzeichnen; ein \ac{UART}-Monitor zeigt den gesamten
+Datenverkehr zwischen beiden Steuereinheiten im Klartext an.
 
 \subsection{Einsatz von KI-Werkzeugen}
 \label{sec:sw_ki}
 
-\todoi{Transparent benennen, wofür KI-Werkzeuge genutzt wurden.}
+Als \ac{KI}-Werkzeug wurde ausschließlich Claude Code (Anthropic) eingesetzt. Beim Bericht
+unterstützte es die Gliederung, das Ausformulieren der von den Autoren gelieferten Inhalte,
+den Satz in \LaTeX{}, die Analyse der Firmware sowie die Literaturrecherche. Inhalte,
+Messwerte und Entscheidungen stammen vom Team; alle Literaturangaben wurden anhand der DOI
+bzw.\ des Originaldokuments überprüft.
+\todoi{Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}

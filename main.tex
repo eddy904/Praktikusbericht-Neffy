@@ -14,6 +14,7 @@
   toc=listof,        % Verzeichnisse im Inhaltsverzeichnis
   toc=bibliography,
   listof=totoc,
+  numbers=noenddot,  % „2.1 Titel“ statt „2.1. Titel“ (wie Vorlage)
 ]{scrreprt}
 
 % --- Sprache und Schrift ---------------------------------------------
@@ -29,6 +30,20 @@
   left=3cm, right=3cm, top=2.5cm, bottom=2.5cm,
   marginparwidth=2.4cm,
 ]{geometry}
+
+% Kopfzeile wie im Praxisbericht Neffy 2:
+% links Kapitel, rechts Berichtstitel, Seitenzahl unten mittig
+\usepackage[headsepline]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\automark{chapter}
+\clearpairofpagestyles
+\ihead{\leftmark}
+\ohead{Praktikumsbericht Neffy 3.0}
+\cfoot*{\pagemark}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+\setkomafont{pageheadfoot}{\normalfont\small}
+% Überschriften in Serifenschrift (wie Vorlage)
+\setkomafont{disposition}{\normalfont\bfseries}
 
 % --- Abbildungen, Tabellen, Diagramme --------------------------------
 \usepackage{graphicx}
