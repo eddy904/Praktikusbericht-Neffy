@@ -1,0 +1,133 @@
+% =====================================================================
+%  Kapitel 4 – Verfahren und Methoden (~6–7 Seiten)
+% =====================================================================
+\chapter{Verfahren und Methoden}
+\label{kap:methoden}
+
+\section{Systemarchitektur}
+\label{sec:architektur}
+
+Abbildung~\ref{fig:architektur} zeigt den Aufbau des Systems.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      node distance = 1.2cm and 1.4cm,
+      block/.style = {draw, rounded corners, align=center,
+                      minimum width=2.8cm, minimum height=1cm, font=\small},
+      >={Stealth},
+    ]
+    \node[block] (sens)  {Sensoren\\{\footnotesize Thermal, Velostat}};
+    \node[block, right=of sens] (board) {Neffy Board\\{\footnotesize ESP32-S3}};
+    \node[block, right=of board] (pi)   {Raspberry Pi};
+    \node[block, above right=0.4cm and 1.4cm of pi] (motor) {Motor};
+    \node[block, below right=0.4cm and 1.4cm of pi] (disp)  {Display};
+    \node[block, below=of board] (led)  {\ac{LED}s\\{\footnotesize WS2812B}};
+
+    \draw[->]  (sens)  -- (board);
+    \draw[<->] (board) -- (pi);
+    \draw[->]  (pi)    -- (motor);
+    \draw[->]  (pi)    -- (disp);
+    \draw[->]  (board) -- (led);
+  \end{tikzpicture}
+  \caption{Systemarchitektur von Neffy~3.0 (Entwurf)}
+  \label{fig:architektur}
+\end{figure}
+\todo{Architektur prüfen: Wer steuert den Motor? Schnittstelle ESP32 -- Pi (UART/USB/...)?}
+
+\section{Hardware und Sensorik}
+\label{sec:hardware}
+
+\subsection{Anwesenheitserkennung}
+\label{sec:hw_anwesenheit}
+
+\todoi{Omron D6T-1A-02: Funktionsprinzip, Anschluss über \ac{I2C},
+Datenblatt zitieren. Final integriert?}
+
+\subsection{Auswahl des Drucksensors}
+\label{sec:hw_drucksensor}
+
+\todoi{Muster: Problem $\rightarrow$ Optionen $\rightarrow$ Kriterien
+$\rightarrow$ Entscheidung $\rightarrow$ Begründung. Getestete Varianten
+(u.\,a. \ac{FSR}, \dots), Beobachtungen, Entscheidung für Velostat.}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Bewertung der getesteten Drucksensoren}
+  \label{tab:bewertung_drucksensor}
+  \small
+  \begin{tabular}{@{}p{3.4cm} p{3.2cm} p{3.2cm} p{3.2cm}@{}}
+    \toprule
+    Kriterium & \ac{FSR} & Velostat & \todoi{weitere Variante} \\
+    \midrule
+    \todoi{Kriterium 1} & & & \\
+    \todoi{Kriterium 2} & & & \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Messaufbau und Schaltung}
+\label{sec:hw_schaltung}
+
+\todoi{Schaltung Velostat am ESP32-S3 (z.\,B. Spannungsteiler, Widerstandswert,
+ADC-Pin), Messaufbau, Foto.}
+
+\section{Konstruktion des Gehäuses}
+\label{sec:gehaeuse}
+
+\todoi{Eiförmige Schale, gespiegelte Hälften, Teilung in druckbare Teile mit
+abnehmbarem Deckel; \ac{CAD} in SolidWorks.}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.31\linewidth}
+    \centering
+    \platzhalter[\linewidth]{CAD-Modell}
+    \caption{CAD-Modell}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.31\linewidth}
+    \centering
+    \platzhalter[\linewidth]{Teilung}
+    \caption{Teilung}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.31\linewidth}
+    \centering
+    \platzhalter[\linewidth]{Druckteil}
+    \caption{Druck}
+  \end{subfigure}
+  \caption{Entwicklungsschritte des Gehäuses}
+  \label{fig:gehaeuse_schritte}
+\end{figure}
+
+\subsection{Teilung und Ausrichtung}
+\label{sec:gehaeuse_teilung}
+
+\todoi{Passstifte Ø5/Ø6\,mm, Rundloch-plus-Langloch-Prinzip -- Begründung.}
+
+\subsection{Toleranzen im \ac{FDM}-Druck}
+\label{sec:gehaeuse_toleranz}
+
+\todoi{Testkörper zur empirischen Ermittlung der Passungen: Maße, Ergebnisse.}
+
+\subsection{Fertigung und Nachbearbeitung}
+\label{sec:gehaeuse_fertigung}
+
+\todoi{Drucker, Material, Druckzeiten, Schleifen, Lackieren.}
+
+\section{Software}
+\label{sec:software}
+
+\subsection{Signalverarbeitung und Atemerkennung}
+\label{sec:sw_atem}
+
+\todoi{Flankenerkennung (aktive Variante), 20-s-Fenster, mittlerer Atemrhythmus.}
+
+\subsection{Softwarestruktur und Ablage}
+\label{sec:sw_struktur}
+
+\todoi{Modulstruktur (.cpp/.h), PlatformIO, FastLED; Repository-Link, Build-Anleitung.}
+
+\subsection{Einsatz von KI-Werkzeugen}
+\label{sec:sw_ki}
+
+\todoi{Transparent benennen, wofür KI-Werkzeuge genutzt wurden.}

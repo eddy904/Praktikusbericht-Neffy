@@ -1,0 +1,79 @@
+% =====================================================================
+%  Kapitel 2 – Ziel der Arbeit (~2 Seiten)
+% =====================================================================
+\chapter{Ziel der Arbeit}
+\label{kap:ziel}
+
+\section{Zielstellung}
+\label{sec:zielstellung}
+
+\todoi{Ausgangspunkt Neffy~2.0 (Vorgängerbericht zitieren) und Ziele
+von Neffy~3.0 im Gesamtprojekt: sensorbasierte Interaktion, besserer
+Touch, Auswahl von Atemübungen per Interaktion.}
+
+\todoi{Ursprünglicher Auftrag Team Sensorik: Anwesenheitserkennung
+(Thermalsensor Omron D6T-1A-02, \ac{I2C}) und Atemerkennung (Velostat,
+analog am ESP32-S3).}
+
+\todoi{Wendepunkt: Übernahme des kompletten neuen Gehäuses durch das
+Team Sensorik -- wann und warum?}
+
+\section{Anforderungsdefinition}
+\label{sec:anforderungen}
+
+Tabelle~\ref{tab:anforderungen} fasst die Anforderungen zusammen, gegen
+die in Kapitel~\ref{kap:diskussion} evaluiert wird.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Anforderungen an Neffy~3.0 (Team Sensorik)}
+  \label{tab:anforderungen}
+  \small
+  \begin{tabular}{@{}l p{3.2cm} p{1.6cm} p{6cm}@{}}
+    \toprule
+    Nr. & Anforderung & Art & Prüfkriterium \\
+    \midrule
+    A1 & Anwesenheitserkennung & funktional & \todoi{prüfbares Kriterium, z.\,B. Distanz/Reaktionszeit} \\
+    A2 & Atemerkennung         & funktional & \todoi{prüfbares Kriterium} \\
+    A3 & Touch-Eingabe         & funktional & \todoi{prüfbares Kriterium} \\
+    A4 & Gehäuse               & nicht-funktional & \todoi{prüfbares Kriterium, z.\,B. Bauraum, Montage} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\todo{Anforderungsliste ist ein Entwurf aus dem bekannten Projektstand -- bitte abgleichen und ergänzen}
+
+\section{Übergeordnete Fragestellung}
+\label{sec:fragestellung}
+
+\begin{center}
+  \fbox{\parbox{0.85\linewidth}{\centering\itshape
+    \todoi{Übergeordnete Fragestellung als hervorgehobene Frage formulieren.}}}
+\end{center}
+
+\section{Projektorganisation und Aufgabenverteilung}
+\label{sec:organisation}
+
+\todoi{Kurz: drei Teams (Sensorik, Programmierung, Design), Arbeitsweise,
+Abstimmung, Termine.}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Aufgabenverteilung im Team Sensorik}
+  \label{tab:aufgaben}
+  \small
+  \begin{tabular}{@{}p{5cm} p{4.5cm} p{4.5cm}@{}}
+    \toprule
+    Aufgabe & Badre & \todoi{Name Teampartner:in} \\
+    \midrule
+    Anwesenheitserkennung (Thermalsensor) & \todoi{Anteil} & \todoi{Anteil} \\
+    Atemerkennung (Velostat)              & \todoi{Anteil} & \todoi{Anteil} \\
+    Auswahl und Test Drucksensoren        & \todoi{Anteil} & \todoi{Anteil} \\
+    Gehäuse: \ac{CAD}-Konstruktion        & \todoi{Anteil} & \todoi{Anteil} \\
+    Gehäuse: 3D-Druck und Nachbearbeitung & \todoi{Anteil} & \todoi{Anteil} \\
+    Software Signalverarbeitung           & \todoi{Anteil} & \todoi{Anteil} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\todoi{Schnittstellen zu Team Programmierung und Team Design
+(nur soweit für Sensorik/Gehäuse relevant).}

@@ -1,0 +1,125 @@
+% =====================================================================
+%  Praktikumsbericht – Neffy 3.0 (Team Sensorik)
+%  Bachelor Humanoide Robotik (HROB), BHT Berlin
+%
+%  Kompilieren: in VS Code mit LaTeX Workshop speichern (Strg+S) oder
+%  Strg+Alt+B; PDF-Vorschau: Strg+Alt+V.
+%  Ablauf: pdflatex -> biber -> pdflatex -> pdflatex
+% =====================================================================
+\documentclass[
+  a4paper,
+  12pt,
+  oneside,
+  parskip=half,
+  toc=listof,        % Verzeichnisse im Inhaltsverzeichnis
+  toc=bibliography,
+  listof=totoc,
+]{scrreprt}
+
+% --- Sprache und Schrift ---------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[autostyle]{csquotes}
+
+% --- Seitenlayout ----------------------------------------------------
+\usepackage[
+  left=3cm, right=3cm, top=2.5cm, bottom=2.5cm,
+  marginparwidth=2.4cm,
+]{geometry}
+
+% --- Abbildungen, Tabellen, Diagramme --------------------------------
+\usepackage{graphicx}
+\graphicspath{{abbildungen/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{siunitx}
+\sisetup{locale=DE}
+
+% --- Code-Auszüge ----------------------------------------------------
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  numbers=left, numberstyle=\tiny, frame=single,
+  breaklines=true, columns=fullflexible,
+  literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {ß}{{\ss}}1
+           {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1,
+}
+
+% --- Offene Punkte ---------------------------------------------------
+% Für die Abgabe: [disable] setzen, dann verschwinden alle Marker.
+\usepackage[colorinlistoftodos, ngerman]{todonotes}
+\setuptodonotes{size=\footnotesize}
+\newcommand{\todoi}[1]{\todo[inline]{#1}}
+
+% Platzhalter für noch fehlende Abbildungen
+\newcommand{\platzhalter}[2][0.8\linewidth]{%
+  \fbox{\parbox[c][4cm][c]{#1}{\centering\small\textit{Platzhalter:}\\ #2}}}
+
+% --- Abkürzungen -----------------------------------------------------
+\usepackage{acro}
+\acsetup{
+  make-links = true,
+  list/display = all,
+  list/heading = chapter*,
+  list/name = Abkürzungsverzeichnis,
+}
+\input{abkuerzungen}
+
+% --- Literatur -------------------------------------------------------
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none,
+  urldate=long,
+]{biblatex}
+\addbibresource{literatur.bib}
+
+% --- Links (zuletzt laden) -------------------------------------------
+\usepackage[hidelinks]{hyperref}
+
+% =====================================================================
+\begin{document}
+
+\pagenumbering{Roman}
+\input{titelblatt}
+
+\tableofcontents
+
+% Übersicht aller offenen Punkte – vor der Abgabe entfernen
+\listoftodos[Offene Punkte (vor Abgabe entfernen)]
+
+\clearpage
+\pagenumbering{arabic}
+
+\input{kapitel/01_einleitung}
+\input{kapitel/02_ziel}
+\input{kapitel/03_stand_der_technik}
+\input{kapitel/04_methoden}
+\input{kapitel/05_diskussion}
+\input{kapitel/06_fazit}
+\input{kapitel/07_einschaetzung}
+
+% --- Verzeichnisse ---------------------------------------------------
+\listoffigures
+\listoftables
+\printacronyms
+\printbibliography[heading=bibintoc, title=Literaturverzeichnis]
+
+% --- Anhang ----------------------------------------------------------
+\appendix
+\input{anhang/anhang}
+
+\input{kapitel/eigenstaendigkeit}
+
+\end{document}

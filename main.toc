@@ -1,0 +1,54 @@
+\acswitchoff 
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Ziel der Arbeit}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Zielstellung}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Anforderungsdefinition}{2}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Übergeordnete Fragestellung}{2}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Projektorganisation und Aufgabenverteilung}{3}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Stand der Technik und Wissenschaft}{4}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Recherchemethodik}{4}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Atemerkennung}{4}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Anwesenheitserkennung}{4}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Roboter und Geräte für Atemübungen}{4}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Vergleich und Einordnung von Neffy~3.0}{4}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Verfahren und Methoden}{5}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Systemarchitektur}{5}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Hardware und Sensorik}{5}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Anwesenheitserkennung}{5}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Auswahl des Drucksensors}{5}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Messaufbau und Schaltung}{5}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Konstruktion des Gehäuses}{6}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Teilung und Ausrichtung}{6}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Toleranzen im \ac {FDM}-Druck}{6}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Fertigung und Nachbearbeitung}{6}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Software}{7}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Signalverarbeitung und Atemerkennung}{7}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Softwarestruktur und Ablage}{7}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Einsatz von KI-Werkzeugen}{7}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Diskussion der Ergebnisse}{8}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Funktionsnachweis}{8}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Messwerte und Auswertung}{8}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Passive Atemerkennung}{8}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Aktive Atemerkennung}{9}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Evaluation gegen die Anforderungen}{9}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Schwachstellen}{9}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Eigene Ideen}{9}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Fazit}{10}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Zusammenfassung}{10}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ausblick}{10}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Unsere Einschätzung zum Praktikum}{11}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Studium und Praktikum}{11}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Praktikumsalltag}{11}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Erwartungen}{11}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Erfahrungen}{11}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Persönliches Fazit}{11}{section.7.5}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{12}{chapter*.86}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{13}{chapter*.87}%
+\def \@chapapp {\appendixname }
+\contentsline {chapter}{\numberline {A}Code-Auszüge}{15}{appendix.A}%
+\contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{16}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Schaltplan}{17}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Rohdaten}{18}{appendix.D}%
+\contentsline {chapter}{Eigenständigkeitserklärung}{19}{chapter*.93}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
