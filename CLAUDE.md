@@ -134,8 +134,13 @@ Kapitel für Kapitel, im Interview:
 Die Kennzeichnung „wer hat was gemacht“ erfolgt erst am Ende.
 
 ## KI-Nutzung
-Als KI-Werkzeug wurde ausschließlich **Claude Code** verwendet. Das wird in Kap. 4 (Abschnitt
-„Einsatz von KI-Werkzeugen“) offengelegt, auch die Unterstützung bei der Literaturrecherche.
+Als KI-Werkzeug wurde ausschließlich **Claude Code** verwendet. Das wird in Kap. 4.4.7
+(„Einsatz von KI-Werkzeugen“) offengelegt: Gliederung, Formulieren, LaTeX-Satz, Analyse der Firmware
+und Entwicklung der Firmware. **Die Literatursuche wird nicht als KI-Nutzung aufgeführt**, und Kap. 3.1
+(Recherchemethodik) nennt nur Datenbanken, Suchbegriffe und Auswahlkriterien (Entscheidung Badre,
+21.10.2026). Der Satz „Inhalte, Messwerte und Entscheidungen stammen vom Team; alle Quellen über DOI bzw.
+Originaldokument geprüft“ bleibt. Offen: bei Prof. Buchem klären, welche Form der KI-Angabe die BHT
+erwartet; danach Kap. 4.4.7 und Eigenständigkeitserklärung anpassen.
 
 ## Harte Regeln
 - Erfinde NIEMALS Messwerte, Ergebnisse, Quellen, Zitate oder Seitenzahlen.

@@ -5,7 +5,11 @@
 - [x] BHT-Grafik fürs Titelblatt (`abbildungen/bht_titelseite.pdf`)
 - [ ] Bericht zu Neffy 1 (Dincel & Thomas, 2024) beschaffen
 - [x] Notiz `notizen/Notitzen_Sensoren.txt` gesichtet (Recherche, Testreihenfolge, Messreihen)
-- [ ] **Messdaten nach `daten/`:**
+- [x] Atemkurven liegen in `daten/Messdaten_Atemsensorik/` (F1–F3 FSR, P1–P2 aufgelegt, A1–A6 aktiv, 50/200 ms, April 2026)
+  - [ ] P1/P2 als „Hände nur aufgelegt“ bestätigen (laut LIESMICH nur aus Signalform abgeleitet)
+  - [ ] A3 (Atemkurve 7): Notiz sagt „falscher Widerstand“, LIESMICH „zu fest gedrückt“ – was stimmt? Welcher Widerstand war es?
+  - [ ] Messaufbau: GPIO36 passt zu einem ESP32-Entwicklungsboard, nicht zum ESP32-S3 des Neffy Boards – mit welchem Board gemessen?
+- [ ] **Ursprüngliche Liste Messdaten (Abgleich):**
   - `atemkurve_1_kleiner Drucksensor.csv`, `atemkurve_2_kleiner Drucksensor.csv` (FSR)
   - `atemkurve_3_Velostat.csv`, `atemkurve_4_Velostat ohne mitbewegen.csv` (passiv)
   - `atemkurve_7_Velostat mit nicht richitgem wiederstand.csv`, `atemkurve_10_Velostat richtig ausgelegt.csv`
@@ -53,5 +57,6 @@
 - [ ] A3/A4: Firmware sendet nur entspannt/normal/gestresst, keine Ein-/Ausatemdauer – Ziel anpassen?
 - [ ] Quelle für Atemfrequenz in Ruhe (12–20/min), Grundlage der Einstufung
 - [ ] Wer ist Younes Jamil / LegitimateShake (Teampartner? Team Programmierung?)
-- [ ] KI-Nutzung (Claude Code o. Ä.) bei Firmware und Bericht offenlegen
+- [x] KI-Nutzung (Claude Code) bei Firmware und Bericht offenlegen → Kap. 4.4.7; Literatursuche nicht mehr als KI-Nutzung genannt (Entscheidung 21.10.2026)
+- [ ] **Bei Prof. Buchem nachfragen, welche Form der KI-Angabe die BHT erwartet** → danach Kap. 4.4.7 und Eigenständigkeitserklärung anpassen
 - [ ] Welche weiteren Messungen gibt es?

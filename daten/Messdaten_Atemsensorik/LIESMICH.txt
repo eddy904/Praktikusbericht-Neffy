@@ -1,0 +1,27 @@
+Messdaten Atemsensorik – Neffy 3.0, Team Sensorik
+Quelle: Rohdaten aus dem Serial Monitor (ESP32, GPIO36, 12-bit ADC 0–4095 ≙ 0–3,3 V), April 2026
+
+CSV-Format: Semikolon-getrennt, Dezimalkomma (öffnet direkt in deutschem Excel/LibreOffice).
+
+Dateien
+- 00_Uebersicht_Kennwerte.csv   eine Zeile pro Messreihe mit Kennwerten (für die Tabelle im Bericht)
+- 1_FSR.csv                     FSR SEN-Pressure10 (F1–F3)
+- 2_Velostat_aufgelegt.csv      Velostat, Hände nur aufgelegt (P1–P2)
+- 3_Velostat_aktiv.csv          Velostat, aktives Mitdrücken (A1–A6)
+- 99_Alle_Messwerte_Langformat.csv  alles in einer Tabelle (für Auswertung/Pivot)
+- Abb_alle_Messreihen.png       alle 11 Kurven
+- Abb_Vergleich_FSR_aufgelegt_aktiv.png  F1 / P2 / A5 untereinander – für den Bericht
+
+Kennwerte
+- Anteil_Null / Anteil_Saettigung / Anteil_Zwischenbereich: Anteil der Messwerte bei 0, bei 4095 bzw. zwischen 100 und 4000.
+  Zeigt das „An/Aus“-Verhalten des FSR (kaum Zwischenwerte) gegenüber dem Velostat.
+- Signalhub (P95−P5) und Streuung (SD) im Auswertefenster, d. h. nur solange die Hand auf dem Sensor liegt.
+- Atemzyklen/Atemfrequenz: Peak-Erkennung auf geglättetem Signal (gleitender Mittelwert 7 Werte, Prominenz ≥ 700 ADC, Mindestabstand 1,5 s).
+- A6: zwei kurze Störspitzen auf 4095 (~10,5 s und ~12 s) sind für die Kennwerte herausinterpoliert, in den Rohdaten aber enthalten.
+
+Hinweise zur Zuordnung
+- F1 ist im Chat ausdrücklich als FSR benannt. F2 und F3 sind über Chronologie und Signalform (harte Null, sprunghafter Anstieg) dem FSR zugeordnet.
+- P1/P2 (Hände aufgelegt) sind aus der Signalform abgeleitet: Dauerplateau ohne erkennbare Atemzyklen. Bitte gegenprüfen.
+- A2 ist gemischt: anfangs aktive Zyklen, ab ~25 s gehaltener Druck mit unregelmäßiger Welligkeit.
+- Bei F2 und P1 wurde die Ruhephase (Nullwerte) am Ende auf 2 s gekürzt; sonst unverändert.
+- Atemkurve 8 wurde im Chat doppelt gesendet und ist nur einmal enthalten.
