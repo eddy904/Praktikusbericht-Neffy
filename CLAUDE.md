@@ -21,6 +21,8 @@
 ## Referenzbericht
 In `referenz/Praxisbericht.pdf` liegt der **Praxisbericht zu Neffy 2** (Goerke & Kazubski, BHT,
 Labor für Kommunikation, 11.03.2025). Analyse: `notizen/analyse_praxisbericht_neffy2.md`.
+**Die PDF ist per `.gitignore` vom (öffentlichen) Repo ausgeschlossen** und liegt nur lokal. Wer sie braucht,
+bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in der Analyse-Notiz.
 - **Verbindliche Vorlage für Titelblatt und Formalia** (Titelblatt-Layout, Kopfzeile, Abbildungen,
   Literaturstil). Die BHT-Grafik des Titelblatts liegt als `abbildungen/bht_titelseite.pdf` vor.
 - **Ausgangspunkt und zitierbare Quelle** für Neffy 3.0 (`goerke2025neffy2` in `literatur.bib`).
@@ -35,9 +37,14 @@ Labor für Kommunikation, 11.03.2025). Analyse: `notizen/analyse_praxisbericht_n
   anleitet. Schultern und Kopf heben und senken sich im Atemrhythmus; die Nutzer:innen legen dabei die
   Hände auf die Schultern (haptischer Atemtakt).
 - Neffy 3.0 baut direkt auf Neffy 2.0 auf (Bericht in `referenz/`), Neffy 2.0 auf Neffy 1.0
-  (Bericht Dincel & Thomas, 2024 – noch nicht beschafft).
+  (Bericht Dincel & Thomas, 2024 – noch nicht beschafft). Neffy 1.0 ist eine Weiterentwicklung von Ommie (Yale).
   - Übernommen: Raspberry Pi; Schulter- und Kopfbewegung nach dem Prinzip von Neffy 1.0/2.0, weil das
-    haptische Feedback bei Neffy 1 und 2 sehr gut ankam [Beleg, falls vorhanden: Studie/Feedback].
+    haptische Feedback bei Neffy 1 und 2 sehr gut ankam. **Belegt:** `thomas2025neffy` (Neffy 1.0,
+    Pilotstudie n = 25, STAI-6 signifikant gesenkt, Haptik als motivierend/natürlich beschrieben) und
+    `buchem2026neffy2` (Neffy 2.0, n = 14 Geflüchtete, Roboter vs. Audio: subjektiv deutlich stärkere
+    Stresssenkung, physiologische Werte uneinheitlich). Zu Neffy 3.0 gibt es noch keine Studie.
+  - Atemgurte werden nur in Studien als Referenzmessung genutzt. Ein Gurt als Rückfallebene war bei uns
+    nur eine Idee und wurde nicht getestet.
   - Geändert: Die Dynamixel-Motoren von Neffy 2.0 wurden durch **Schrittmotoren** ersetzt, weil mehr
     Kraft benötigt wurde [genaues Modell folgt]. Damit gab es Probleme → im Fazit ansprechen
     [welche Probleme? welches Team war zuständig?].
@@ -78,7 +85,33 @@ Labor für Kommunikation, 11.03.2025). Analyse: `notizen/analyse_praxisbericht_n
 - Herausforderungen: SolidWorks neu lernen, Druckbettgröße, lange Druckzeiten, Laborzeiten koordinieren,
   FDM-Toleranzen (empirisch über Testkörper ermittelt statt ISO-Passungen) → bisher nur eine Gehäuseversion.
 - Bekannte Messreihe: Velostat-Spannungsverlauf, 481 Werte im 50-ms-Takt (~24 s). Weitere Messdaten in `daten/`.
-- Offen/zu klären: Wurde der Thermalsensor final integriert? Welche Messungen gibt es noch?
+- Messreihen laut `notizen/Notitzen_Sensoren.txt` (noch nicht im Ordner): `atemkurve_1/2` (FSR),
+  `atemkurve_3` (Velostat), `atemkurve_4` (Velostat ohne Mitbewegen = passiv), `atemkurve_7` (falscher
+  Widerstand), `atemkurve_10` (richtig ausgelegt); dazu die Firmware-Logs `logs/pocket-*.csv` und
+  `logs/thermal-*.csv`. Thermalsensor D6T-1A-02 ist final integriert.
+
+## Arbeitsstand (21.10.2026, Commit nach `1fb51cf`)
+| Kapitel | Stand |
+|---|---|
+| Titelblatt | fertig nach Neffy-2-Vorlage; fehlen: Nachname Badre, Matrikelnummern |
+| 1 Einleitung | offen (wird am Schluss geschrieben) |
+| 2 Ziel der Arbeit | Fließtext fertig; fehlen: Zahlen für A1/A5/A7/A9, Zeitraum/Stunden, KI-Zielbild |
+| 3 Stand der Technik | Fließtext fertig; Vergleich Neffy 1.0/2.0/3.0 nach Vorgabe der Betreuerin |
+| 4 Methoden | Fließtext fertig außer **4.3 Gehäuse** (Infos folgen); Plots fehlen; mit 8 S. zu lang → später kürzen |
+| 5 Diskussion | offen, wartet auf Messdaten |
+| 6 Fazit, 7 Einschätzung | offen |
+Reihenfolge danach: 5 → 6 → 1 → 7 → Kürzen → Kennzeichnung „wer was“.
+
+Wichtige Einordnung (Kap. 3/4): Ommie bestimmt die Atemphase trotz Eigenbewegung des Roboters mit einem
+eigenen Datensatz und einem neuronalen Netz (`matheus2023phase`). Unser Argument gegen den
+Beschleunigungssensor deshalb so formulieren: möglich, aber mit großem Aufwand, bewusst der einfache Weg.
+
+Literatur: Alle Einträge in `literatur.bib` sind geprüft (DOI über Crossref/OpenAlex, Datenblatt am Dokument).
+Neue Quellen nur nach derselben Prüfung aufnehmen.
+
+## Öffentliches Repo – Datenschutz
+Das GitHub-Repo ist **öffentlich**. Keine Matrikelnummern oder andere persönliche Daten committen; diese
+erst kurz vor der Abgabe lokal eintragen. Fremde Berichte (z. B. `referenz/`) bleiben per `.gitignore` draußen.
 
 ## Material
 Das Projektmaterial wird nach und nach in diesen Ordner hochgeladen (`daten/`, `abbildungen/`, `notizen/`,
