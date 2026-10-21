@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  21 OCT 2026 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  21 OCT 2026 20:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1738,7 +1738,7 @@ Overfull \hbox (7.3373pt too wide) in paragraph at lines 61--61
 \T1/lmr/m/n/10 (-20) ra/Datenschutz 
  []
 
-<abbildungen/neffy1.jpg, id=369, 513.92pt x 422.57875pt>
+<abbildungen/neffy1.jpg, id=370, 513.92pt x 422.57875pt>
 File: abbildungen/neffy1.jpg Graphic file (type jpg)
 <use abbildungen/neffy1.jpg>
 Package pdftex.def Info: abbildungen/neffy1.jpg  used on input line 93.
@@ -1748,7 +1748,7 @@ Overfull \hbox (3.45222pt too wide) in paragraph at lines 93--94
  [][] 
  []
 
-<abbildungen/neffy2.jpg, id=372, 1104.125pt x 1405.25pt>
+<abbildungen/neffy2.jpg, id=373, 1104.125pt x 1405.25pt>
 File: abbildungen/neffy2.jpg Graphic file (type jpg)
 <use abbildungen/neffy2.jpg>
 Package pdftex.def Info: abbildungen/neffy2.jpg  used on input line 98.
@@ -1787,44 +1787,48 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ]
 [10] [11]
-<abbildungen/plots/fsr_F1.pdf, id=456, 210.55063pt x 136.57324pt>
+<abbildungen/plots/fsr_F1.pdf, id=458, 210.55063pt x 136.57324pt>
 File: abbildungen/plots/fsr_F1.pdf Graphic file (type pdf)
 <use abbildungen/plots/fsr_F1.pdf>
-Package pdftex.def Info: abbildungen/plots/fsr_F1.pdf  used on input line 220.
+Package pdftex.def Info: abbildungen/plots/fsr_F1.pdf  used on input line 221.
 (pdftex.def)             Requested size: 204.85802pt x 132.88223pt.
-<abbildungen/plots/velostat_aktiv_A5.pdf, id=459, 210.55063pt x 136.57324pt>
+<abbildungen/plots/velostat_aktiv_A5.pdf, id=461, 210.55063pt x 136.57324pt>
 File: abbildungen/plots/velostat_aktiv_A5.pdf Graphic file (type pdf)
 <use abbildungen/plots/velostat_aktiv_A5.pdf>
 Package pdftex.def Info: abbildungen/plots/velostat_aktiv_A5.pdf  used on input
- line 225.
+ line 226.
 (pdftex.def)             Requested size: 204.85802pt x 132.88223pt.
  [12 <./abbildungen/plots/fsr_F1.pdf> <./abbildungen/plots/velostat_aktiv_A5.pd
 f>]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 294--294
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 297--297
 [] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 300--301
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 303--304
  [][] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 305--306
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 308--309
  [][] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 310--311
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 313--314
  [][] 
  []
 
 [13] [14] [15]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 449--449
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 452--452
 [] 
  []
 
-) (kapitel/05_diskussion.tex [16]
+) (kapitel/05_diskussion.tex [16] [17]
 chapter 5.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 21--21
@@ -1841,7 +1845,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 38--38
 [] 
  []
 
-[17
+[18
 
 ]
 Overfull \hbox (11.42696pt too wide) in paragraph at lines 52--52
@@ -1858,7 +1862,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 68--68
 [] 
  []
 
-) (kapitel/06_fazit.tex [18]
+) (kapitel/06_fazit.tex [19]
 chapter 6.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 10--10
@@ -1875,7 +1879,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 18--18
 [] 
  []
 
-) (kapitel/07_einschaetzung.tex [19
+) (kapitel/07_einschaetzung.tex [20
 
 ]
 chapter 7.
@@ -1904,7 +1908,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 22--22
 [] 
  []
 
-) [20
+) [21
 
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 12
@@ -1913,7 +1917,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 12
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [21
+ [22
 
 ]
 Package tocbasic Info: character protrusion at lot deactivated on input line 13
@@ -1922,7 +1926,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 13
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [22
+ [23
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
@@ -1935,23 +1939,23 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [23
+ [24
 
 ]
 chapter without number
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-[24
+[25
 
-] (anhang/anhang.tex [25]
+] (anhang/anhang.tex [26]
 chapter A.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 6--6
 [] 
  []
 
-[26
+[27
 
 ]
 chapter B.
@@ -1960,7 +1964,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 10--10
 [] 
  []
 
-[27
+[28
 
 ]
 chapter C.
@@ -1969,7 +1973,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 14--14
 [] 
  []
 
-[28
+[29
 
 ]
 chapter D.
@@ -1978,14 +1982,14 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 18--18
 [] 
  []
 
-) (kapitel/eigenstaendigkeit.tex [29
+) (kapitel/eigenstaendigkeit.tex [30
 
 ]
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 7--7
 [] 
  []
 
-) [30
+) [31
 
 ] (main.aux)
  ***********
@@ -1997,11 +2001,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58837 strings out of 467871
- 1412499 string characters out of 5418375
- 2486460 words of memory out of 5000000
- 86546 multiletter control sequences out of 15000+600000
- 731287 words of font info for 218 fonts, out of 8000000 for 9000
+ 58842 strings out of 467871
+ 1412641 string characters out of 5418375
+ 2485476 words of memory out of 5000000
+ 86548 multiletter control sequences out of 15000+600000
+ 731375 words of font info for 219 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,107p,11209b,2970s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
@@ -2023,9 +2027,9 @@ youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/User
 s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/User
 s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/User
 s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (36 pages, 787321 bytes).
+Output written on main.pdf (37 pages, 789444 bytes).
 PDF statistics:
- 953 PDF objects out of 1000 (max. 8388607)
- 195 named destinations out of 1000 (max. 500000)
+ 963 PDF objects out of 1000 (max. 8388607)
+ 196 named destinations out of 1000 (max. 500000)
  56782 words of extra memory for PDF output out of 61914 (max. 10000000)
 

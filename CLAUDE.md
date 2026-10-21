@@ -90,7 +90,8 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
   **ESP32-Entwicklungsboard** (nicht dem Neffy Board), Velostat mit 10-kΩ-Festwiderstand, 50 ms (F1: 200 ms).
   A3 (= Atemkurve 7) ist teils gesättigt, weil **zu fest gedrückt** wurde – nicht wegen eines falschen
   Widerstands (Notiz war falsch). Beim FSR wurden mehrere Festwiderstände (1 kΩ … 100 kΩ) probiert,
-  das Verhalten blieb binär → Spannungsteiler war nicht die Ursache; im Bericht nur ein Satz dazu. Plots: `python daten/plots_atemsensorik.py` → `abbildungen/plots/`.
+  der Einfluss war vernachlässigbar, das Verhalten blieb binär; im Bericht nur ein Satz dazu. Beim Velostat
+  wirkt der Widerstand deutlich; begonnen mit 4,7 kΩ, endgültiger Wert offen (LIESMICH: 10 kΩ). Plots: `python daten/plots_atemsensorik.py` → `abbildungen/plots/`.
 - Noch nicht im Ordner: Firmware-Logs `logs/pocket-*.csv` und `logs/thermal-*.csv`.
   Thermalsensor D6T-1A-02 ist final integriert.
 

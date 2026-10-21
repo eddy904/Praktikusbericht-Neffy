@@ -181,9 +181,10 @@ Atemrhythmus mit der Hand gedrückt und wieder entlastet.
 
 Der \ac{FSR} (SEN-Pressure10, Joy-IT) verhielt sich nahezu binär: Schon bei geringem Druck
 stieg die Spannung auf den Maximalwert, sodass statt eines abgestuften Verlaufs nur zwei
-Zustände erkennbar waren (Abbildung~\ref{fig:fsr_velostat}\,a). Mehrere Festwiderstände
-zwischen 1\,k$\Omega$ und 100\,k$\Omega$ änderten daran nichts; die Auslegung des
-Spannungsteilers war damit als Ursache ausgeschlossen. Eine Variante für höhere Lasten
+Zustände erkennbar waren (Abbildung~\ref{fig:fsr_velostat}\,a). Über den Festwiderstand des
+Spannungsteilers lässt sich die Empfindlichkeit zwar grundsätzlich einstellen; beim \ac{FSR}
+war der Einfluss jedoch vernachlässigbar: Mit mehreren Werten zwischen 1\,k$\Omega$ und
+100\,k$\Omega$ blieb das Verhalten binär. Eine Variante für höhere Lasten
 (bis 10\,kg) wäre vermutlich ebenfalls nicht feinfühlig genug gewesen.
 
 Velostat zeigte dagegen einen abgestuften Signalverlauf, erkannte auch schwache
@@ -266,7 +267,9 @@ genutzt. Mit diesem Aufbau funktionierten die Taschen nach einigen Tests zufried
 
 Das Velostat ändert unter Druck seinen elektrischen Widerstand. Es bildet zusammen mit
 einem Festwiderstand einen Spannungsteiler, dessen Ausgangsspannung der ESP32-S3 misst.
-\todo{Schaltplan; Festwiderstand auf dem Neffy Board ebenfalls 10\,k$\Omega$?}
+Anders als beim \ac{FSR} wirkt sich der Festwiderstand hier deutlich auf den Signalverlauf
+aus; begonnen wurde mit 4{,}7\,k$\Omega$.
+\todo{Endgültiger Festwiderstand der Taschen? (LIESMICH der Messdaten nennt 10\,k$\Omega$) Kurz begründen, warum dieser Wert; Schaltplan}
 Der \ac{ADC} arbeitet mit 12\,bit Auflösung; jeder Messwert ist der Mittelwert aus acht
 Einzelmessungen und wird über die im Chip hinterlegten Kalibrierdaten in eine Spannung
 umgerechnet, da der \ac{ADC} des ESP32-S3 nicht linear ist. Beide Taschen werden alle
