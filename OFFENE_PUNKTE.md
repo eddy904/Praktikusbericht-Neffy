@@ -10,7 +10,7 @@
   - [x] A3 (Atemkurve 7): zu fest gedrückt, kein falscher Widerstand (bestätigt 21.10.2026)
   - [x] Messaufbau: ESP32-Entwicklungsboard, nicht Neffy Board (bestätigt, steht in Kap. 4.2)
   - [x] Plots erzeugt: `daten/plots_atemsensorik.py` → `abbildungen/plots/` (F1, A5 in Kap. 4; P2 vs. A5 für Kap. 5)
-  - [x] FSR: mehrere Festwiderstände (4,7 Ω … 1 MΩ) probiert, Einfluss vernachlässigbar, Verhalten blieb binär (Kap. 4.2)
+  - [x] FSR: mehrere Festwiderstände (1 kΩ … 1 MΩ) probiert, Einfluss vernachlässigbar, Verhalten blieb binär (Kap. 4.2)
   - [ ] Velostat: Widerstand wirkt deutlich; Start mit 4,7 kΩ. **Endgültiger Wert?** (LIESMICH nennt 10 kΩ für die Messreihen) + kurze Begründung; Schaltplan
 - [ ] **Ursprüngliche Liste Messdaten (Abgleich):**
   - `atemkurve_1_kleiner Drucksensor.csv`, `atemkurve_2_kleiner Drucksensor.csv` (FSR)
