@@ -8,12 +8,12 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Systemarchitektur von Neffy~3.0 (Aufgabenbereich Team Sensorik: links und unten)}}{9}{figure.caption.28}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}}{10}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Spannungsverlauf bei rhythmischem Drücken: \ac {FSR} und Velostat im Vergleich}}{12}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Spannungsverlauf bei rhythmischem Drücken im Atemtakt: \ac {FSR} und Velostat im Vergleich (eigene Messung am ESP32-Entwicklungsboard)}}{12}{figure.caption.35}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Schematischer Lagenaufbau einer Drucksensor-Tasche (nicht maßstäblich; Rahmen nicht dargestellt)}}{13}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Entwicklungsschritte des Gehäuses}}{14}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Entwicklungsschritte des Gehäuses}}{14}{figure.caption.42}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Neffy~3.0 im aufgebauten Zustand}}{17}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Spannungsverlauf des Velostat-Sensors}}{17}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Neffy~3.0 im aufgebauten Zustand}}{17}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Spannungsverlauf des Velostat-Sensors}}{17}{figure.caption.48}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

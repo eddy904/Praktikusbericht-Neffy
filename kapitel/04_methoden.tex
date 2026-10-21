@@ -168,9 +168,17 @@ vorgesehen:
   \item \textbf{Velostat:} flexible, druckempfindliche Folie, die sich frei zuschneiden lässt.
   \item \textbf{Dehnungssensor als Atemgurt:} Rückfallebene, falls Sensoren in den Schultern
         nicht ausreichen. Er misst die Atmung direkt am Brustkorb und ist unabhängig von der
-        Bewegung des Roboters, muss aber von der Person getragen werden.
-        \todo{Wurde der Gurt getestet?}
+        Bewegung des Roboters, muss aber von der Person getragen werden. Dieser Ansatz
+        wurde im Projekt nicht erprobt.
 \end{enumerate}
+
+Für den Vergleich wurden die Sensoren an einem ESP32-Entwicklungsboard betrieben, noch nicht
+am späteren Neffy Board. Der Sensor bildete jeweils mit einem Festwiderstand einen
+Spannungsteiler (Velostat: 10\,k$\Omega$), dessen Spannung der 12-bit-\ac{ADC} erfasste
+(0 bis 4095, entsprechend 0 bis 3{,}3\,V). Die Werte wurden alle 50\,ms ausgelesen (erste
+\ac{FSR}-Messreihe: 200\,ms) und über die serielle Schnittstelle aufgezeichnet. In jeder
+Messreihe wurde der Sensor im Atemrhythmus mit der Hand gedrückt und wieder entlastet.
+\todo{Festwiderstand beim FSR?}
 
 Der \ac{FSR} wurde in verschiedenen Größen getestet. In den getesteten Aufbauten verhielt er
 sich nahezu binär: Schon bei geringem Druck stieg die Spannung auf den Maximalwert, sodass
@@ -211,15 +219,16 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
   \centering
   \begin{subfigure}[b]{0.48\linewidth}
     \centering
-    \platzhalter[\linewidth]{Plot atemkurve\_1/2 (kleiner Drucksensor)}
-    \caption{\ac{FSR}: nahezu binäres Verhalten}
+    \includegraphics[width=\linewidth]{plots/fsr_F1.pdf}
+    \caption{\ac{FSR} (Messreihe F1): nahezu binäres Verhalten}
   \end{subfigure}\hfill
   \begin{subfigure}[b]{0.48\linewidth}
     \centering
-    \platzhalter[\linewidth]{Plot atemkurve\_10 (Velostat richtig ausgelegt)}
-    \caption{Velostat: abgestufter Verlauf}
+    \includegraphics[width=\linewidth]{plots/velostat_aktiv_A5.pdf}
+    \caption{Velostat (Messreihe A5): abgestufter Verlauf}
   \end{subfigure}
-  \caption{Spannungsverlauf bei rhythmischem Drücken: \ac{FSR} und Velostat im Vergleich}
+  \caption{Spannungsverlauf bei rhythmischem Drücken im Atemtakt: \ac{FSR} und Velostat im
+    Vergleich (eigene Messung am ESP32-Entwicklungsboard)}
   \label{fig:fsr_velostat}
 \end{figure}
 
@@ -259,11 +268,7 @@ genutzt. Mit diesem Aufbau funktionierten die Taschen nach einigen Tests zufried
 
 Das Velostat ändert unter Druck seinen elektrischen Widerstand. Es bildet zusammen mit
 einem Festwiderstand einen Spannungsteiler, dessen Ausgangsspannung der ESP32-S3 misst.
-\todo{Schaltung bestätigen, Widerstandswert, Schaltplan}
-Die Wahl des Widerstands hat großen Einfluss auf das Signal: Mit einem ungeeigneten
-Widerstand war der Spannungsverlauf deutlich schlechter auszuwerten als mit dem
-abgestimmten Wert.
-\todo{Plot atemkurve\_7 vs.\ atemkurve\_10 -- hier oder in Kap.\ 5?}
+\todo{Schaltplan; Festwiderstand auf dem Neffy Board ebenfalls 10\,k$\Omega$?}
 Der \ac{ADC} arbeitet mit 12\,bit Auflösung; jeder Messwert ist der Mittelwert aus acht
 Einzelmessungen und wird über die im Chip hinterlegten Kalibrierdaten in eine Spannung
 umgerechnet, da der \ac{ADC} des ESP32-S3 nicht linear ist. Beide Taschen werden alle
@@ -439,7 +444,8 @@ Datenverkehr zwischen beiden Steuereinheiten im Klartext an.
 Als \ac{KI}-Werkzeug wurde ausschließlich Claude Code (Anthropic) eingesetzt. Beim Bericht
 unterstützte es die Gliederung, das Ausformulieren der von den Autoren gelieferten Inhalte,
 den Satz in \LaTeX{} und die Analyse der Firmware. Außerdem wurde es bei der Entwicklung
-der Firmware eingesetzt. Inhalte, Messwerte und Entscheidungen stammen vom Team; alle
+der Firmware und der Auswerteskripte eingesetzt, mit denen die Diagramme direkt aus den
+Messdaten erzeugt werden (\texttt{daten/plots\_atemsensorik.py}). Inhalte, Messwerte und Entscheidungen stammen vom Team; alle
 Literaturangaben wurden anhand der DOI bzw.\ des Originaldokuments überprüft.
 \todo{KI-Angabe mit Prof.\ Buchem abstimmen (welche Form erwartet die BHT?); danach diesen Abschnitt und die Eigenständigkeitserklärung anpassen}
 \todoi{Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}

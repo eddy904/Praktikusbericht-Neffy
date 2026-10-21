@@ -6,9 +6,12 @@
 - [ ] Bericht zu Neffy 1 (Dincel & Thomas, 2024) beschaffen
 - [x] Notiz `notizen/Notitzen_Sensoren.txt` gesichtet (Recherche, Testreihenfolge, Messreihen)
 - [x] Atemkurven liegen in `daten/Messdaten_Atemsensorik/` (F1–F3 FSR, P1–P2 aufgelegt, A1–A6 aktiv, 50/200 ms, April 2026)
-  - [ ] P1/P2 als „Hände nur aufgelegt“ bestätigen (laut LIESMICH nur aus Signalform abgeleitet)
-  - [ ] A3 (Atemkurve 7): Notiz sagt „falscher Widerstand“, LIESMICH „zu fest gedrückt“ – was stimmt? Welcher Widerstand war es?
-  - [ ] Messaufbau: GPIO36 passt zu einem ESP32-Entwicklungsboard, nicht zum ESP32-S3 des Neffy Boards – mit welchem Board gemessen?
+  - [x] P1/P2 = Hände nur aufgelegt (bestätigt 21.10.2026)
+  - [x] A3 (Atemkurve 7): zu fest gedrückt, kein falscher Widerstand (bestätigt 21.10.2026)
+  - [x] Messaufbau: ESP32-Entwicklungsboard, nicht Neffy Board (bestätigt, steht in Kap. 4.2)
+  - [x] Plots erzeugt: `daten/plots_atemsensorik.py` → `abbildungen/plots/` (F1, A5 in Kap. 4; P2 vs. A5 für Kap. 5)
+  - [ ] Festwiderstand beim FSR? Festwiderstand auf dem Neffy Board ebenfalls 10 kΩ?
+  - [ ] FSR „in verschiedenen Größen“ getestet? In den Daten nur SEN-Pressure10 (F1–F3)
 - [ ] **Ursprüngliche Liste Messdaten (Abgleich):**
   - `atemkurve_1_kleiner Drucksensor.csv`, `atemkurve_2_kleiner Drucksensor.csv` (FSR)
   - `atemkurve_3_Velostat.csv`, `atemkurve_4_Velostat ohne mitbewegen.csv` (passiv)
@@ -49,7 +52,7 @@
 - [ ] Datenblätter: D6T-1A-02, TMC2225, Schrittmotoren, Velostat
 - [ ] Anforderung Anwesenheit: „nicht bei Vorbeigehen in 2–3 m“ (Notiz) vs. „reagiert kurz beim Vorbeigehen“ – was gilt?
 - [x] Drucksensoren: FSR (Joy-IT) vs. Velostat, Gründe geklärt
-- [ ] Wurde der Dehnungsgurt (Backup) getestet?
+- [x] Wurde der Dehnungsgurt (Backup) getestet? → nein, nur Idee (Kap. 4.2)
 - [ ] Warum Wechsel von „Sensoren am Pi mit MCP3208“ zum ESP32-Board?
 - [ ] Schaltung der Taschen: Spannungsteiler? Widerstandswert? Schaltplan
 - [ ] Gehäuse-Infos (Badre schickt später)

@@ -84,11 +84,14 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
   Ausrichtung über Passstifte Ø5/Ø6 mm mit Rundloch-plus-Langloch-Prinzip.
 - Herausforderungen: SolidWorks neu lernen, Druckbettgröße, lange Druckzeiten, Laborzeiten koordinieren,
   FDM-Toleranzen (empirisch über Testkörper ermittelt statt ISO-Passungen) → bisher nur eine Gehäuseversion.
-- Bekannte Messreihe: Velostat-Spannungsverlauf, 481 Werte im 50-ms-Takt (~24 s). Weitere Messdaten in `daten/`.
-- Messreihen laut `notizen/Notitzen_Sensoren.txt` (noch nicht im Ordner): `atemkurve_1/2` (FSR),
-  `atemkurve_3` (Velostat), `atemkurve_4` (Velostat ohne Mitbewegen = passiv), `atemkurve_7` (falscher
-  Widerstand), `atemkurve_10` (richtig ausgelegt); dazu die Firmware-Logs `logs/pocket-*.csv` und
-  `logs/thermal-*.csv`. Thermalsensor D6T-1A-02 ist final integriert.
+- Atemkurven liegen in `daten/Messdaten_Atemsensorik/` (Übersicht + Kennwerte: `LIESMICH.txt`,
+  `00_Uebersicht_Kennwerte.csv`): F1–F3 FSR SEN-Pressure10, P1–P2 Velostat mit nur aufgelegten Händen
+  (passiv, bestätigt), A1–A6 Velostat mit aktivem Mitdrücken. Gemessen im April 2026 auf einem
+  **ESP32-Entwicklungsboard** (nicht dem Neffy Board), Velostat mit 10-kΩ-Festwiderstand, 50 ms (F1: 200 ms).
+  A3 (= Atemkurve 7) ist teils gesättigt, weil **zu fest gedrückt** wurde – nicht wegen eines falschen
+  Widerstands (Notiz war falsch). Plots: `python daten/plots_atemsensorik.py` → `abbildungen/plots/`.
+- Noch nicht im Ordner: Firmware-Logs `logs/pocket-*.csv` und `logs/thermal-*.csv`.
+  Thermalsensor D6T-1A-02 ist final integriert.
 
 ## Arbeitsstand (21.10.2026)
 | Kapitel | Stand |
