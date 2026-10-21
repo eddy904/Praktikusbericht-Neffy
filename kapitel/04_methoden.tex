@@ -174,19 +174,17 @@ vorgesehen:
 
 Für den Vergleich wurden die Sensoren an einem ESP32-Entwicklungsboard betrieben, noch nicht
 am späteren Neffy Board. Der Sensor bildete jeweils mit einem Festwiderstand einen
-Spannungsteiler (Velostat: 10\,k$\Omega$), dessen Spannung der 12-bit-\ac{ADC} erfasste
-(0 bis 4095, entsprechend 0 bis 3{,}3\,V). Die Werte wurden alle 50\,ms ausgelesen (erste
-\ac{FSR}-Messreihe: 200\,ms) und über die serielle Schnittstelle aufgezeichnet. In jeder
-Messreihe wurde der Sensor im Atemrhythmus mit der Hand gedrückt und wieder entlastet.
-\todo{Festwiderstand beim FSR?}
+Spannungsteiler, dessen Spannung der 12-bit-\ac{ADC} erfasste (0 bis 4095, entsprechend
+0 bis 3{,}3\,V). Die Werte wurden alle 50\,ms ausgelesen (erste \ac{FSR}-Messreihe: 200\,ms)
+und über die serielle Schnittstelle aufgezeichnet. In jeder Messreihe wurde der Sensor im
+Atemrhythmus mit der Hand gedrückt und wieder entlastet.
 
-Der \ac{FSR} wurde in verschiedenen Größen getestet. In den getesteten Aufbauten verhielt er
-sich nahezu binär: Schon bei geringem Druck stieg die Spannung auf den Maximalwert, sodass
-statt eines abgestuften Verlaufs nur zwei Zustände erkennbar waren
-(Abbildung~\ref{fig:fsr_velostat}\,a). Eine Variante für höhere Lasten (bis 10\,kg) hätte das
-Verhalten möglicherweise verbessert, wäre aber vermutlich weiterhin nicht feinfühlig genug
-gewesen. Die Empfindlichkeit ließe sich zwar über den Widerstand der Messschaltung anpassen;
-dieser Aufwand wurde jedoch als nicht lohnend eingeschätzt.
+Der \ac{FSR} (SEN-Pressure10, Joy-IT) verhielt sich nahezu binär: Schon bei geringem Druck
+stieg die Spannung auf den Maximalwert, sodass statt eines abgestuften Verlaufs nur zwei
+Zustände erkennbar waren (Abbildung~\ref{fig:fsr_velostat}\,a). Mehrere Festwiderstände
+zwischen 1\,k$\Omega$ und 100\,k$\Omega$ änderten daran nichts; die Auslegung des
+Spannungsteilers war damit als Ursache ausgeschlossen. Eine Variante für höhere Lasten
+(bis 10\,kg) wäre vermutlich ebenfalls nicht feinfühlig genug gewesen.
 
 Velostat zeigte dagegen einen abgestuften Signalverlauf, erkannte auch schwache
 Druckunterschiede und ließ sich über die Schaltung gut einstellen
@@ -207,7 +205,7 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
     \midrule
     Abgestufter Signalverlauf statt Ein/Aus           & --      & + \\
     Erkennung schwacher Druckunterschiede             & --      & + \\
-    Einstellbarkeit über die Schaltung                & $\circ$ & + \\
+    Einstellbarkeit über die Schaltung                & --      & + \\
     Fläche und Form frei wählbar                      & --      & + \\
     Integration unter der Verkleidung (dünn, flexibel) & $\circ$ & + \\
     Kosten und Beschaffung                            & +       & + \\

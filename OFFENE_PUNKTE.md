@@ -10,8 +10,8 @@
   - [x] A3 (Atemkurve 7): zu fest gedrückt, kein falscher Widerstand (bestätigt 21.10.2026)
   - [x] Messaufbau: ESP32-Entwicklungsboard, nicht Neffy Board (bestätigt, steht in Kap. 4.2)
   - [x] Plots erzeugt: `daten/plots_atemsensorik.py` → `abbildungen/plots/` (F1, A5 in Kap. 4; P2 vs. A5 für Kap. 5)
-  - [ ] Festwiderstand beim FSR? Festwiderstand auf dem Neffy Board ebenfalls 10 kΩ?
-  - [ ] FSR „in verschiedenen Größen“ getestet? In den Daten nur SEN-Pressure10 (F1–F3)
+  - [x] FSR: mehrere Festwiderstände (1 kΩ … 100 kΩ) probiert, Verhalten immer binär → Spannungsteiler nicht die Ursache (Kap. 4.2)
+  - [ ] Festwiderstand auf dem Neffy Board ebenfalls 10 kΩ? (klärt sich mit dem Schaltplan)
 - [ ] **Ursprüngliche Liste Messdaten (Abgleich):**
   - `atemkurve_1_kleiner Drucksensor.csv`, `atemkurve_2_kleiner Drucksensor.csv` (FSR)
   - `atemkurve_3_Velostat.csv`, `atemkurve_4_Velostat ohne mitbewegen.csv` (passiv)
