@@ -90,7 +90,7 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
   Widerstand), `atemkurve_10` (richtig ausgelegt); dazu die Firmware-Logs `logs/pocket-*.csv` und
   `logs/thermal-*.csv`. Thermalsensor D6T-1A-02 ist final integriert.
 
-## Arbeitsstand (21.10.2026, Commit nach `1fb51cf`)
+## Arbeitsstand (21.10.2026)
 | Kapitel | Stand |
 |---|---|
 | Titelblatt | fertig nach Neffy-2-Vorlage; fehlen: Nachname Badre, Matrikelnummern |
