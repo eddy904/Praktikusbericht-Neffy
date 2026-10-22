@@ -291,10 +291,74 @@ Endschalter, um ihre Nullposition zu bestimmen (Referenzfahrt).
 \section{Konstruktion des Gehäuses}
 \label{sec:gehaeuse}
 
-\todoi{Folgt: SolidWorks-Konstruktion nach Zielbild, eiförmige Schale, gespiegelte Hälften,
-Teilung in druckbare Teile, abnehmbarer Deckel/Schultern, Taschen; Passstifte Ø5/Ø6\,mm mit
-Rundloch-plus-Langloch-Prinzip; Toleranz-Testkörper; Drucker, Material, Druckzeiten;
-Nachbearbeitung und Lackierung.}
+\subsection{Form und Aufbau}
+\label{sec:gehaeuse_form}
+
+Das Gehäuse wurde in SolidWorks nach dem Zielbild (Abbildung~\ref{fig:zielbild}) konstruiert.
+\todo{Kurz: Wie wurde vom Zielbild zum CAD-Modell gearbeitet?}
+Es hat die Form einer weitgehend eiförmigen Schale: Ober- und Unterseite sind eben, damit der
+Roboter sicher steht und oben die Bewegung möglich ist, während die Seiten stark abgerundet
+sind. So entsteht statt eines reinen Kastens die weichere, weniger kantige Form, die das Zielbild
+vorgibt (Anforderung~A6). Neffy~3.0 ist 43\,cm breit, 21{,}5\,cm tief und 45\,cm hoch.
+\todo{Gewicht? Kopf: eigenes Bauteil, wie aufgebaut?}
+
+\subsection{Teilung in druckbare Teile}
+\label{sec:gehaeuse_teilung}
+
+Da die Bauteile deutlich größer sind als der Bauraum des 3D-Druckers, musste das Gehäuse in
+mehrere druckbare Teile zerlegt werden (Tabelle~\ref{tab:gehaeuse_teile}, Anforderung~A9).
+\todo{Drucker und Bauraum (Druckbettgröße) angeben}
+Der Oberkörper ist in eine linke und eine rechte Schulter geteilt, die jeweils aus drei
+Druckteilen bestehen. Der Unterkörper besteht aus sechs Druckteilen, die zu zwei Hälften
+verklebt wurden. Die Hälften sind spiegelbildlich aufgebaut.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Teilung des Gehäuses}
+  \label{tab:gehaeuse_teile}
+  \small
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm} c
+                    >{\raggedright\arraybackslash}p{3.8cm}
+                    >{\raggedright\arraybackslash}p{4.8cm}@{}}
+    \toprule
+    Baugruppe & Druckteile & Verbindung der Druckteile & Befestigung am Roboter \\
+    \midrule
+    Schulter links  & 3 & verklebt, ausgerichtet über Passstifte & Magnete, ohne Werkzeug abnehmbar \\
+    Schulter rechts & 3 & verklebt, ausgerichtet über Passstifte & Magnete, ohne Werkzeug abnehmbar \\
+    Unterkörper     & 6 & zu zwei Hälften verklebt, ausgerichtet über Passstifte
+                    & beide Hälften verschraubt \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Damit die Druckteile beim Verkleben exakt zueinander ausgerichtet sind, werden sie über
+Passstifte mit 5 bzw.\ 6\,mm Durchmesser verbunden. Dabei sitzt der Stift auf der einen Seite in
+einem Rundloch und auf der anderen in einem Langloch: Das Rundloch legt die Position fest, das
+Langloch lässt in einer Richtung Spiel und gleicht so Maßabweichungen des Drucks aus, ohne dass
+sich die Teile verspannen.
+\todo{Passstift-Prinzip so bestätigen; Material der Stifte, Kleber?}
+
+\subsection{Zugang zum Innenleben}
+\label{sec:gehaeuse_zugang}
+
+Die Teilung berücksichtigt, dass die Elektronik zugänglich bleiben muss (Anforderung~A8). Die
+beiden Schultern sind mit Magneten befestigt und lassen sich ohne Werkzeug abnehmen und wieder
+aufsetzen. Darunter liegen das Innenleben des Oberkörpers und die Kabel. Der Unterkörper ist
+verschraubt; nach dem Lösen mehrerer Schrauben ist die Elektronik im Unterkörper, etwa das
+Neffy Board, zugänglich.
+\todo{Wie viele Magnete/Schrauben? Was sitzt wo (Pi, Board, Netzteil, Motoren, Spindel)?}
+
+\subsection{Toleranzen im \acs{FDM}-Druck}
+\label{sec:gehaeuse_toleranz}
+
+\todoi{Testkörper: Wie sahen sie aus, welche Spaltmaße wurden getestet, welches Ergebnis
+(z.\,B.\ Bohrung $+0{,}2$\,mm)? Warum empirisch statt ISO-Passungen?}
+
+\subsection{Fertigung und Nachbearbeitung}
+\label{sec:gehaeuse_fertigung}
+
+\todoi{Drucker, Material, Schichthöhe/Füllung, Druckzeiten (gesamt, größtes Teil), Fehldrucke;
+Schleifen, Spachteln, Grundieren, Lackieren (Farbe, Aufwand).}
 
 \begin{figure}[htbp]
   \centering

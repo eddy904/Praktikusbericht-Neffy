@@ -7,55 +7,59 @@
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wie oft/unter welcher Last trat das auf? (Neffy-2-Bericht rechnet mit 2--4\,kg durch beide Hände)}{2}{section*.6}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Genaues Display-Modell (OLED?) und Datenblatt}{3}{section*.7}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Mit welchem KI-Werkzeug wurde das Zielbild erzeugt, und von wem?}{3}{section*.9}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Omron D6T-1A-02 bestätigen}{3}{section*.10}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Was war ursprünglich die Aufgabe des Teams Design?}{4}{section*.11}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Entfernung in m}{4}{section*.13}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Erkennungsrate der Einatemzüge}{4}{section*.14}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Last in kg}{4}{section*.15}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Maße der Taschen / Test mit Personen?}{4}{section*.16}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ bestätigen}{4}{section*.17}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Druckbettgröße}{4}{section*.18}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Fragestellung ist ein Vorschlag -- passt sie?}{5}{section*.19}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Repo-Link; regelmäßige Treffen während des Projekts? Zeitraum und Stunden}{5}{section*.20}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Zeitaufteilung nach Arbeitsbereichen (Diagramm, vgl.\ Praxisbericht Neffy~2~\blx@tocontentsinit {0}\cite {goerke2025neffy2}).}{5}{section*.21}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Quelle Kamera/Datenschutz oder Punkt kürzen}{7}{section*.22}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Modell}{8}{section*.25}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Neffy 1.0: keine Sensoren? Antrieb genauer?}{8}{section*.26}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Warum der Wechsel aufs ESP32-Board? (z.\,B. Motorsteuerung in Echtzeit, Entlastung des Pi)}{9}{section*.27}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf aus Sicht des Pi so richtig? (z.\,B. Begrüßung, Übungsauswahl)}{10}{section*.31}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Passt das zu A2 (kurze Reaktion beim Vorbeigehen)? Ab welcher Entfernung reagiert er?}{11}{section*.32}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Fläche des Velostats pro Tasche (geplant ca.\ 10\,$\times $\,10\,cm)?}{13}{section*.35}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ So richtig beschrieben? (Klebeseite zum Grundkörper, leitende Seite zum Velostat)}{13}{section*.36}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Endgültiger Festwiderstand der Taschen? (LIESMICH der Messdaten nennt 10\,k$\Omega $) Kurz begründen, warum dieser Wert; Schaltplan}{13}{section*.38}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Motor-Modell, Datenblatt; wer hat die Mechanik konstruiert?}{13}{section*.39}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Folgt: SolidWorks-Konstruktion nach Zielbild, eiförmige Schale, gespiegelte Hälften, Teilung in druckbare Teile, abnehmbarer Deckel/Schultern, Taschen; Passstifte Ø5/Ø6\,mm mit Rundloch-plus-Langloch-Prinzip; Toleranz-Testkörper; Drucker, Material, Druckzeiten; Nachbearbeitung und Lackierung.}{14}{section*.40}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ KI-Angabe mit Prof.\ Buchem abstimmen (welche Form erwartet die BHT?); danach diesen Abschnitt und die Eigenständigkeitserklärung anpassen}{16}{section*.43}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}{16}{section*.44}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Velostat-Spannungsverlauf (481 Werte, 50-ms-Takt) als Diagramm direkt aus der Datei in daten/ erzeugen; weitere Messreihen.}{18}{section*.46}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergebnis: Hand auf der Schulter -- Signal zu verrauscht. Mit Zahlen und Ursachen.}{18}{section*.48}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergebnis: Drücken beim Einatmen, Loslassen beim Ausatmen -- klare Flanken.}{19}{section*.49}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{19}{section*.51}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{19}{section*.52}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{19}{section*.53}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{19}{section*.54}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{19}{section*.55}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{19}{section*.56}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{19}{section*.57}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{19}{section*.58}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Konkret mit Zahlen und Ursachen; auch was nicht funktioniert hat.}{19}{section*.59}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Explizit benennen, welche Ideen vom Team Sensorik bzw.\ individuell stammen.}{19}{section*.60}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Antwort auf die übergeordnete Fragestellung (Abschnitt~\ref {sec:fragestellung}).}{20}{section*.61}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Probleme mit den Schrittmotoren, die die Dynamixel-Motoren ersetzt haben (mehr Kraft benötigt): welche Probleme, Ursachen, Folgen.}{20}{section*.62}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Konkret: Taster statt Velostat, nächste Gehäuseversion, Materialwahl, \dots }{20}{section*.63}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ „Meine“ oder „Unsere“ -- hängt von Team- vs.\ Einzelbericht ab}{21}{section*.64}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bezug zu Studieninhalten.}{21}{section*.65}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf einer typischen Woche, Laborzeiten.}{21}{section*.66}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Erwartungen vorher -- was davon eingetreten ist.}{21}{section*.67}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Selbstständigkeit, Motivation, Teamarbeit -- mit konkreten Beispielen.}{21}{section*.68}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Persönliches Fazit.}{21}{section*.69}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Atemerkennungs-Modul (.cpp/.h) per \textbackslash lstinputlisting einbinden.}{27}{section*.74}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Technische Zeichnungen des Gehäuses.}{28}{section*.75}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Schaltplan Neffy Board / Sensoranschluss.}{29}{section*.76}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Verweis auf Dateien in daten/ bzw.\ Repository.}{30}{section*.77}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Vorgegebenen Wortlaut der BHT bzw.\ des Fachbereichs einsetzen.}{31}{section*.79}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname}{31}{section*.80}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Was war ursprünglich die Aufgabe des Teams Design?}{4}{section*.10}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Entfernung in m}{4}{section*.12}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Erkennungsrate der Einatemzüge}{4}{section*.13}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Last in kg}{4}{section*.14}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Maße der Taschen / Test mit Personen?}{4}{section*.15}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Druckbettgröße}{4}{section*.16}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Fragestellung ist ein Vorschlag -- passt sie?}{5}{section*.17}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Repo-Link; regelmäßige Treffen während des Projekts? Zeitraum und Stunden}{5}{section*.18}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Zeitaufteilung nach Arbeitsbereichen (Diagramm, vgl.\ Praxisbericht Neffy~2~\blx@tocontentsinit {0}\cite {goerke2025neffy2}).}{5}{section*.19}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Quelle Kamera/Datenschutz oder Punkt kürzen}{7}{section*.20}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Modell}{8}{section*.23}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Neffy 1.0: keine Sensoren? Antrieb genauer?}{8}{section*.24}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Warum der Wechsel aufs ESP32-Board? (z.\,B. Motorsteuerung in Echtzeit, Entlastung des Pi)}{9}{section*.25}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf aus Sicht des Pi so richtig? (z.\,B. Begrüßung, Übungsauswahl)}{10}{section*.29}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Passt das zu A2 (kurze Reaktion beim Vorbeigehen)? Ab welcher Entfernung reagiert er?}{11}{section*.30}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Fläche des Velostats pro Tasche (geplant ca.\ 10\,$\times $\,10\,cm)?}{13}{section*.33}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ So richtig beschrieben? (Klebeseite zum Grundkörper, leitende Seite zum Velostat)}{13}{section*.34}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Endgültiger Festwiderstand der Taschen? (LIESMICH der Messdaten nennt 10\,k$\Omega $) Kurz begründen, warum dieser Wert; Schaltplan}{13}{section*.36}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Motor-Modell, Datenblatt; wer hat die Mechanik konstruiert?}{13}{section*.37}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Kurz: Wie wurde vom Zielbild zum CAD-Modell gearbeitet?}{14}{section*.38}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Gewicht? Kopf: eigenes Bauteil, wie aufgebaut?}{14}{section*.39}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Drucker und Bauraum (Druckbettgröße) angeben}{14}{section*.40}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Passstift-Prinzip so bestätigen; Material der Stifte, Kleber?}{14}{section*.42}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wie viele Magnete/Schrauben? Was sitzt wo (Pi, Board, Netzteil, Motoren, Spindel)?}{14}{section*.43}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Testkörper: Wie sahen sie aus, welche Spaltmaße wurden getestet, welches Ergebnis (z.\,B.\ Bohrung $+0{,}2$\,mm)? Warum empirisch statt ISO-Passungen?}{15}{section*.44}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Drucker, Material, Schichthöhe/Füllung, Druckzeiten (gesamt, größtes Teil), Fehldrucke; Schleifen, Spachteln, Grundieren, Lackieren (Farbe, Aufwand).}{15}{section*.45}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ KI-Angabe mit Prof.\ Buchem abstimmen (welche Form erwartet die BHT?); danach diesen Abschnitt und die Eigenständigkeitserklärung anpassen}{18}{section*.48}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}{18}{section*.49}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Velostat-Spannungsverlauf (481 Werte, 50-ms-Takt) als Diagramm direkt aus der Datei in daten/ erzeugen; weitere Messreihen.}{19}{section*.51}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergebnis: Hand auf der Schulter -- Signal zu verrauscht. Mit Zahlen und Ursachen.}{19}{section*.53}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergebnis: Drücken beim Einatmen, Loslassen beim Ausatmen -- klare Flanken.}{20}{section*.54}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{20}{section*.56}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{20}{section*.57}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{20}{section*.58}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{20}{section*.59}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{20}{section*.60}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{20}{section*.61}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{20}{section*.62}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{20}{section*.63}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Konkret mit Zahlen und Ursachen; auch was nicht funktioniert hat.}{20}{section*.64}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Explizit benennen, welche Ideen vom Team Sensorik bzw.\ individuell stammen.}{20}{section*.65}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Antwort auf die übergeordnete Fragestellung (Abschnitt~\ref {sec:fragestellung}).}{21}{section*.66}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Probleme mit den Schrittmotoren, die die Dynamixel-Motoren ersetzt haben (mehr Kraft benötigt): welche Probleme, Ursachen, Folgen.}{21}{section*.67}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Konkret: Taster statt Velostat, nächste Gehäuseversion, Materialwahl, \dots }{21}{section*.68}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ „Meine“ oder „Unsere“ -- hängt von Team- vs.\ Einzelbericht ab}{22}{section*.69}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bezug zu Studieninhalten.}{22}{section*.70}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf einer typischen Woche, Laborzeiten.}{22}{section*.71}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Erwartungen vorher -- was davon eingetreten ist.}{22}{section*.72}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Selbstständigkeit, Motivation, Teamarbeit -- mit konkreten Beispielen.}{22}{section*.73}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Persönliches Fazit.}{22}{section*.74}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Atemerkennungs-Modul (.cpp/.h) per \textbackslash lstinputlisting einbinden.}{28}{section*.79}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Technische Zeichnungen des Gehäuses.}{29}{section*.80}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Schaltplan Neffy Board / Sensoranschluss.}{30}{section*.81}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Verweis auf Dateien in daten/ bzw.\ Repository.}{31}{section*.82}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Vorgegebenen Wortlaut der BHT bzw.\ des Fachbereichs einsetzen.}{32}{section*.84}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname}{32}{section*.85}%
