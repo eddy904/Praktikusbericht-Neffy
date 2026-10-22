@@ -120,6 +120,10 @@ Hinterteil verschraubt, Vorderteil zwei Stifte). **Rundloch-Langloch wurde verwo
 Drucker Prusa MK4S und i3 MK3S, große Teile je ≥ 15 h, Toleranzannahme 0,1 mm, oft nachgebohrt.
 Kopfmechanik: Kaspar (Team Programmierung). Pi sitzt im Kopf. Schwachstelle: Hände/Ellbogen etwas zu
 hoch → Kissen (Kap. 5/6). Druckerverfügbarkeit eingeschränkt → neutral in Kap. 7.
+Material PLA. Nachbearbeitung: Klebekanten mit Sekundenkleber gefüllt, von Hand geschliffen (Elektroschleifer
+beschädigt PLA), Spachteln wäre an manchen Stellen besser gewesen. Lack: Kunststoffprimer → Haftgrund
+(Hersteller offen) → 2–3 Schichten Montana GOLD „Sahara Beige“; lange Trockenzeiten. Ausblick: Teile möglichst
+am Stück drucken und Stützmaterial in Kauf nehmen, spart Nacharbeit.
 
 ## Öffentliches Repo – Datenschutz
 Das GitHub-Repo ist **öffentlich**. Keine Matrikelnummern oder andere persönliche Daten committen; diese

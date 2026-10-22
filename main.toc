@@ -29,7 +29,7 @@
 \contentsline {subsection}{\numberline {4.4.2}Anwesenheitserkennung}{17}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Klick- und Druckerkennung}{18}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}Atemerkennung}{18}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Rückmeldung über die \acp {LED}}{18}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.5}Rückmeldung über die \acp {LED}}{19}{subsection.4.4.5}%
 \contentsline {subsection}{\numberline {4.4.6}Softwareablage, Build und Tests}{19}{subsection.4.4.6}%
 \contentsline {subsection}{\numberline {4.4.7}Einsatz von KI-Werkzeugen}{19}{subsection.4.4.7}%
 \contentsline {chapter}{\numberline {5}Diskussion der Ergebnisse}{20}{chapter.5}%
@@ -49,13 +49,13 @@
 \contentsline {section}{\numberline {7.3}Erwartungen}{23}{section.7.3}%
 \contentsline {section}{\numberline {7.4}Erfahrungen}{23}{section.7.4}%
 \contentsline {section}{\numberline {7.5}Persönliches Fazit}{23}{section.7.5}%
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{24}{chapter*.76}%
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{25}{chapter*.77}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{27}{chapter*.79}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{24}{chapter*.77}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{25}{chapter*.78}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{27}{chapter*.80}%
 \def \@chapapp {\appendixname }
 \contentsline {chapter}{\numberline {A}Code-Auszüge}{29}{appendix.A}%
 \contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{30}{appendix.B}%
 \contentsline {chapter}{\numberline {C}Schaltplan}{31}{appendix.C}%
 \contentsline {chapter}{\numberline {D}Rohdaten}{32}{appendix.D}%
-\contentsline {chapter}{Eigenständigkeitserklärung}{33}{chapter*.84}%
+\contentsline {chapter}{Eigenständigkeitserklärung}{33}{chapter*.85}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
