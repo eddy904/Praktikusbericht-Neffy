@@ -130,9 +130,11 @@ Interaktion zusammenspielen.
 \label{sec:hw_anwesenheit}
 
 Der Roboter soll erkennen, wenn sich eine Person direkt vor ihn setzt, und zwar auch
-dann, wenn sie still sitzt. Personen, die in zwei bis drei Metern Entfernung vorbeigehen,
-sollen dagegen keine Reaktion auslösen.
-\todo{Passt das zu A2 (kurze Reaktion beim Vorbeigehen)? Ab welcher Entfernung reagiert er?}
+dann, wenn sie still sitzt. Ursprünglich sollten Personen, die in zwei bis drei Metern
+Entfernung vorbeigehen, keine Reaktion auslösen. Im Projektverlauf wurde stattdessen
+entschieden, dass Neffy auch auf vorbeigehende Personen kurz reagiert, um zur Nutzung
+einzuladen (Anforderung~A2).
+\todo{So richtig?}
 
 Zunächst wurden Abstands- und Infrarotsensoren betrachtet. Abstandssensoren reagieren
 jedoch auf jedes Hindernis und nicht nur auf Menschen, und passive Infrarotsensoren
@@ -487,7 +489,9 @@ dauerhaft auf der Tasche, wird dies erkannt; Klicks müssen dann deutlicher ausf
 Atemerkennung gibt es zusätzlich einen schnellen Zustand \enquote{gedrückt}, der nach 140\,ms
 Druck gesetzt und nach 200\,ms ohne Druck zurückgesetzt wird. Die Parameter wurden anhand
 aufgezeichneter Messreihen beider Taschen abgestimmt (Klicks, aufliegende Hand, langes
-Drücken). Für jede Tasche lässt sich die Empfindlichkeit zusätzlich fein einstellen.
+Drücken). Für jede Tasche lässt sich die Empfindlichkeit zusätzlich fein einstellen. Die
+Klickmeldungen werden auch zur Bedienung genutzt: Ein Klick links oder rechts dient der
+Navigation, gleichzeitiges Drücken beider Taschen der Auswahl.
 
 \subsection{Atemerkennung}
 \label{sec:sw_atem}

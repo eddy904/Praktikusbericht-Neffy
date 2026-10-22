@@ -117,18 +117,18 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
     Nr. & Anforderung & Art & Prüfkriterium \\
     \midrule
     A1 & Eine Person vor dem Roboter wird zuverlässig erkannt, auch auf größere Entfernung.
-       & F & Erkennung bis \todoi{Entfernung in m} \\
+       & F & Erkennung bis ca.\ 2--3\,m \\
     A2 & Bei erkannter Anwesenheit, auch beim Vorbeigehen, reagiert der Roboter mit einer
          kurzen Hubbewegung und lädt so zur Nutzung ein.
        & F & Bewegung wird bei Annäherung ausgelöst \\
     A3 & Einatemzüge werden über Drücken und Loslassen der Sensoren in den Schultertaschen
          erkannt; aus einer Messung von 30\,s wird die Atemfrequenz bestimmt.
-       & F & \todoi{Erkennungsrate der Einatemzüge} \\
+       & F & Atemzüge im Signal klar erkennbar \\
     A4 & Die Atemfrequenz wird als entspannt, normal oder gestresst eingestuft und an den
          Raspberry Pi übermittelt.
        & F & Einstufung kommt am Pi an \\
     A5 & Die Hubbewegung gelingt auch mit beiden aufgelegten Händen zuverlässig.
-       & F & \todoi{Last in kg} ohne Stocken \\
+       & F & Hub mit beiden aufgelegten Händen ohne Stocken \\
     A6 & Die Gestaltung folgt dem Zielbild: weniger kantig, runde Formen.
        & NF & Abgleich mit Zielbild \\
     A7 & Die Hände liegen gesichert und angenehm in Schultertaschen und rutschen nicht ab;
@@ -138,7 +138,10 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
          zugänglich sind.
        & NF & Schultern ohne Werkzeug abnehmbar, Unterkörper verschraubt \\
     A9 & Alle Gehäuseteile sind auf den verfügbaren FDM-Druckern herstellbar.
-       & NF & \todoi{Druckbettgröße} \\
+       & NF & alle Teile auf den Druckern des Labors gedruckt \\
+    A10 & Die Taschen dienen zusätzlich als Eingabe: Klick links bzw.\ rechts zur Navigation,
+          beide gleichzeitig zur Auswahl.
+       & F & Klicks und Auswahl werden erkannt \\
     \bottomrule
   \end{tabular}
 \end{table}

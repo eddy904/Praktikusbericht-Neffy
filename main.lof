@@ -4,16 +4,16 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Gestalterische Vorgabe für Neffy~3.0 (\ac {KI}-generiertes Zielbild der Betreuerin)}}{3}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Die drei Generationen von Neffy}}{9}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die drei Generationen von Neffy}}{9}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Systemarchitektur von Neffy~3.0 (Aufgabenbereich Team Sensorik: links und unten)}}{10}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}}{11}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Spannungsverlauf bei rhythmischem Drücken im Atemtakt: \ac {FSR} und Velostat im Vergleich (eigene Messung am ESP32-Entwicklungsboard)}}{13}{figure.caption.32}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Schematischer Lagenaufbau eines Sensoreinsatzes (nicht maßstäblich)}}{14}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Gehäuse von Neffy~3.0}}{15}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Systemarchitektur von Neffy~3.0 (Aufgabenbereich Team Sensorik: links und unten)}}{10}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}}{11}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Spannungsverlauf bei rhythmischem Drücken im Atemtakt: \ac {FSR} und Velostat im Vergleich (eigene Messung am ESP32-Entwicklungsboard)}}{13}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Schematischer Lagenaufbau eines Sensoreinsatzes (nicht maßstäblich)}}{14}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Gehäuse von Neffy~3.0}}{15}{figure.caption.35}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Neffy~3.0 im aufgebauten Zustand}}{21}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Velostat mit nur aufgelegten Händen (a, P2) und mit aktivem Mitdrücken beim Einatmen (b, A5); Punkte markieren die erkannten Atemzüge}}{23}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Neffy~3.0 im aufgebauten Zustand}}{21}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Velostat mit nur aufgelegten Händen (a, P2) und mit aktivem Mitdrücken beim Einatmen (b, A5); Punkte markieren die erkannten Atemzüge}}{23}{figure.caption.46}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

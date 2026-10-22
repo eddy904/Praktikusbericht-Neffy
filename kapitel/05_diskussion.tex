@@ -7,9 +7,13 @@
 \section{Funktionsnachweis}
 \label{sec:funktionsnachweis}
 
-\todoi{Kurz: Neffy~3.0 wurde vollständig aufgebaut und in Betrieb genommen -- was funktioniert im
-Zusammenspiel (Aufwachen bei Anwesenheit, Atemerkennung, Bewegung, LEDs, Übung)? Wo wurde er
-vorgeführt/getestet?}
+Neffy~3.0 wurde vollständig aufgebaut und in Betrieb genommen (Abbildung~\ref{fig:neffy_fertig}).
+Alle Funktionen im Aufgabenbereich des Teams Sensorik arbeiten im Zusammenspiel mit dem Raspberry
+Pi: Der Roboter erkennt, wenn sich jemand nähert, und reagiert mit einer Bewegung; die
+Atemerkennung über die Taschen läuft, und ihr Ergebnis wird an den Raspberry Pi übermittelt, der
+daraufhin eine Atemübung startet. Körper und Kopf bewegen sich dabei im Atemrhythmus, und die
+\acp{LED} geben eine Rückmeldung. Eine Studie mit Nutzer:innen ist derzeit in Arbeit.
+\todo{Wer führt die Studie durch (Labor/Prof.\ Buchem)? Zeitraum?}
 
 \begin{figure}[htbp]
   \centering
@@ -86,18 +90,38 @@ trotzdem gut erkennbar. A5 lieferte die saubersten Zyklen ohne Sättigung.
 Übertragen auf die Einstufung der Firmware (Abschnitt~\ref{sec:sw_atem}) entsprechen 12{,}1 bis
 15{,}2 Atemzüge pro Minute 6 bis 8 Atemzügen in 30\,s und damit der Stufe \enquote{normal}; die
 langsamste Messreihe A6 mit 9{,}7 pro Minute läge mit knapp 5 Atemzügen in 30\,s bei
-\enquote{entspannt}. Die Ergebnisse sind plausibel, unterliegen aber zwei Einschränkungen: Die
-Messungen fanden am Entwicklungsboard und nicht im fertigen Sensoreinsatz statt, und die
-Atemzüge wurden offline bestimmt, nicht mit der Erkennung der Firmware.
-\todo{Gibt es Tests der Atemerkennung am fertigen Neffy (Erkennungsrate, Einstufung)?}
+\enquote{entspannt}. Die Messreihen entstanden am Entwicklungsboard und wurden offline
+ausgewertet. Am fertigen Roboter funktioniert die Atemerkennung mit der Erkennung der Firmware im
+praktischen Betrieb zuverlässig; eine Erkennungsrate wurde dort jedoch nicht systematisch
+bestimmt.
+
+\subsection{Bedienung über die Taschen}
+\label{sec:erg_bedienung}
+
+Zusätzlich zur Atemerkennung lassen sich die Taschen zur Bedienung nutzen: Ein Klick links oder
+rechts dient der Navigation, gleichzeitiges Drücken beider Taschen der Auswahl. Diese Funktion
+arbeitet, aber noch nicht in allen Fällen zuverlässig.
+\todo{Was genau funktioniert nicht perfekt? (z.\,B. Klicks nicht erkannt, Fehlklicks bei aufliegender Hand, beide gleichzeitig schwer zu treffen)}
 
 \subsection{Anwesenheitserkennung}
 \label{sec:erg_anwesenheit}
 
-\todoi{Ergebnisse: Ab welcher Entfernung wird eine Person erkannt, wie schnell, Reaktion beim
-Vorbeigehen, Fehlauslösungen? Laut Abstimmungsaufnahme der Firmware: direkt davor $+4$ bis
-$+6$\,K, in 1\,m etwa $+2$\,K über Raumtemperatur. Messdaten/Logs vorhanden
-(\texttt{logs/thermal-*.csv})?}
+Im Betrieb erkennt Neffy~3.0 Personen nach Beobachtung des Teams zuverlässig bis zu einer
+Entfernung von etwa 2 bis 3\,m. Bei der Abstimmung der Firmware ergab sich eine Erwärmung des
+Messwerts um 4 bis 6\,K gegenüber der Raumtemperatur, wenn eine Person direkt vor dem Roboter
+stand, und um etwa 2\,K in 1\,m Entfernung. Kommt jemand vorbei, fährt der Roboter kurz hoch und
+wieder herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Innenräumen traten
+auch bei normalem Tageslicht keine Probleme auf.
+\todoi{Messung ausstehend: Erkennung in 0{,}5 / 1 / 1{,}5 / 2 / 2{,}5 / 3\,m mit
+\texttt{tools/thermal\_log.py} aufzeichnen; danach Plot \enquote{Temperaturdifferenz über
+Entfernung} und genaue Reichweite eintragen.}
+
+Eine Grenze ergibt sich aus dem Verfahren selbst: Die gelernte Raumtemperatur steigt nur langsam,
+folgt einem Absinken aber sofort (Abschnitt~\ref{sec:sw_anwesenheit}). Scheint die Sonne längere
+Zeit in das Sichtfeld des Sensors oder steht er vor einem Heizkörper, gilt diese Wärme nach einiger
+Zeit als Raumtemperatur. Eine Person, die kühler ist als die aufgeheizte Fläche, senkt dann den
+Messwert und wird nicht als Person erkannt. Neffy~3.0 sollte deshalb nicht mit Blick auf direkte
+Sonne oder einen Heizkörper aufgestellt werden.
 
 \section{Evaluation gegen die Anforderungen}
 \label{sec:evaluation}
@@ -115,13 +139,18 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
     \toprule
     Nr. & Anforderung & Status & Begründung \\
     \midrule
-    A1 & Anwesenheit erkennen & \todoi{?} & \todoi{Begründung} \\
-    A2 & Reaktion auf Anwesenheit & \todoi{?} & \todoi{Begründung} \\
-    A3 & Einatemzüge erkennen, Atemfrequenz bestimmen & $\circ$
-       & Im Labortest klar erkennbar (9{,}7--15{,}2/min); am fertigen Roboter nicht gemessen
-         \todoi{bestätigen} \\
-    A4 & Einstufung an den Raspberry Pi & \todoi{?} & \todoi{Begründung} \\
-    A5 & Hub mit beiden Händen & \todoi{?} & \todoi{Begründung} \\
+    A1 & Anwesenheit erkennen & \checkmark
+       & Zuverlässig bis etwa 2--3\,m (beobachtet, Messung ausstehend); Grenze bei direkter Sonne
+         oder Heizung \\
+    A2 & Reaktion auf Anwesenheit & \checkmark
+       & Kurze Hubbewegung bei Annäherung und beim Vorbeigehen \\
+    A3 & Einatemzüge erkennen, Atemfrequenz bestimmen & \checkmark
+       & Funktioniert am fertigen Roboter; Labormessung 9{,}7--15{,}2/min; Erkennungsrate nicht
+         quantifiziert \\
+    A4 & Einstufung an den Raspberry Pi & \checkmark
+       & Ergebnis kommt an, Pi startet passende Übung \\
+    A5 & Hub mit beiden Händen & \checkmark
+       & Auch mit schwerer aufliegenden Händen; Probleme nur bei starkem Drücken auf den Roboter \\
     A6 & Gestaltung nach Zielbild & \checkmark
        & Runde, weniger kantige Form mit Taschen umgesetzt \\
     A7 & Hände sicher in Taschen & $\circ$
@@ -130,6 +159,8 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
        & Oberkörper magnetisch, ohne Werkzeug abnehmbar; Unterkörper mit sechs Schrauben \\
     A9 & Druck auf vorhandenen Druckern & \checkmark
        & Alle Teile gedruckt; dafür Teilung in 16 Druckteile nötig \\
+    A10 & Bedienung über die Taschen & $\circ$
+       & Navigation und Auswahl möglich, aber noch nicht immer zuverlässig \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -144,20 +175,27 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
   \item \textbf{Sättigung bei festem Druck:} Wird zu fest gedrückt, erreicht das Signal das obere
         Ende des Messbereichs (A3, A4). Die Erkennung bleibt möglich, die Signalform geht aber
         verloren.
+  \item \textbf{Bedienung über die Taschen:} Navigation und Auswahl über Klicks funktionieren noch
+        nicht in allen Fällen zuverlässig (Abschnitt~\ref{sec:erg_bedienung}).
+  \item \textbf{Anwesenheit bei Wärmequellen:} Direkte Sonne oder ein Heizkörper im Sichtfeld
+        verhindern die Erkennung (Abschnitt~\ref{sec:erg_anwesenheit}). Die Reichweite wurde
+        bislang nur beobachtet, nicht gemessen.
   \item \textbf{Ergonomie:} Durch die Größe von Neffy~3.0 liegen Hände und Ellbogen etwas zu hoch;
         dieser Punkt wurde im Entwurf zu wenig beachtet. Als einfache Abhilfe dienen kleine Kissen
         links und rechts unter den Ellbogen.
-  \item \textbf{Schrittmotoren und Referenzfahrt:} \todoi{Probleme konkret: z.\,B. verlorene
-        Schritte, wenn eine Achse beim Start auf dem Endschalter stand; Endlosschleife bei der
-        Referenzfahrt des Kopfes (in der Firmware behoben) -- weitere?}
+  \item \textbf{Antrieb:} Im normalen Betrieb schafft der Antrieb den Hub zuverlässig. Probleme traten
+        nur auf, wenn stark auf den Roboter gedrückt wurde. Bei der Referenzfahrt verloren die
+        Schrittmotoren anfangs Schritte, wenn eine Achse beim Start auf dem Endschalter stand; dies
+        wurde in der Firmware behoben.
+        \todo{Was passierte bei starkem Drücken genau (Schrittverlust, Stillstand)?}
   \item \textbf{Zweckentfremdeter Befehl:} Der Befehl \texttt{DISABLE\_MOTORS} schaltet die Motoren
         nicht ab, sondern dient als Startsignal einer Übung. Der Name passt nicht zur Bedeutung und
         erschwert die Wartung der Schnittstelle.
   \item \textbf{Fertigung:} Es gibt nur eine Gehäuseversion; Toleranzen wurden nicht vorab an
         Testkörpern bestimmt, sodass häufig nachgebohrt werden musste. Die Klebestellen erforderten
         viel Nachbearbeitung.
-  \item \textbf{Keine Nutzerstudie:} Anders als zu Neffy~1.0 und 2.0 gibt es zu Neffy~3.0 noch keine
-        Evaluation mit Nutzer:innen.
+  \item \textbf{Noch keine Nutzerstudie:} Zu Neffy~1.0 und 2.0 liegen Studien vor; die Studie zu
+        Neffy~3.0 ist noch in Arbeit.
 \end{itemize}
 
 \section{Eigene Ideen}
@@ -165,6 +203,6 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
 
 \todoi{Bestätigen bzw.\ ergänzen -- Vorschlag: Übernahme und Umsetzung des gesamten Gehäuses aus
 eigener Initiative; modularer Aufbau mit Magneten; Wechsel von passiver zu aktiver Atemerfassung
-über die Taschen (zugleich Touch-Eingabe); Sensoreinsatz zum Einstecken; selbstkalibrierende
-Klick- und Druckerkennung; lernende Raumtemperatur bei der Anwesenheitserkennung;
-LED-Rückmeldung beim Atmen. Wer was (Badre/Younes): ganz am Ende.}
+über die Taschen; Bedienung über die Taschen (links/rechts/beide); Sensoreinsatz zum Einstecken;
+selbstkalibrierende Klick- und Druckerkennung; lernende Raumtemperatur bei der
+Anwesenheitserkennung; LED-Rückmeldung beim Atmen. Wer was (Badre/Younes): ganz am Ende.}

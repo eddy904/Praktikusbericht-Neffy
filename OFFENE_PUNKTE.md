@@ -71,7 +71,11 @@
 ## Kapitel 5 (Stand 22.10.)
 - [x] Atemsensorik aus Messdaten ausgewertet (Tabelle per `daten/tabelle_kennwerte.py`)
 - [ ] Funktionsnachweis: was funktioniert im Zusammenspiel, Foto des fertigen Neffy 3.0
-- [ ] Anwesenheitserkennung: Entfernung, Reaktionszeit, Vorbeigehen, Fehlauslösungen; Thermal-Logs?
+- [x] Anwesenheit: ca. 2–3 m beobachtet, reagiert beim Vorbeigehen, Grenze bei Sonne/Heizung
+- [ ] **Messung Anwesenheit** (später): Erkennung in 0,5/1/1,5/2/2,5/3 m mit `tools/thermal_log.py` → Plot + Zahl für A1
+- [ ] Bedienung über Taschen: was funktioniert nicht perfekt?
+- [ ] Wer führt die laufende Studie zu Neffy 3.0 durch?
+- [ ] Messreihen-IDs A1–A6 → V1–V6 umbenennen (Verwechslung mit Anforderungen A1–A10)? Antwort Badre ausstehend
 - [ ] Tests der Atemerkennung am fertigen Neffy (Erkennungsrate, Einstufung)?
 - [ ] Evaluation A1, A2, A4, A5 bewerten; A3, A6–A9 prüfen
 - [ ] Probleme mit den Schrittmotoren konkret
