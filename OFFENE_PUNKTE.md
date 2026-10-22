@@ -55,7 +55,11 @@
 - [x] Wurde der Dehnungsgurt (Backup) getestet? → nein, nur Idee (Kap. 4.2)
 - [ ] Warum Wechsel von „Sensoren am Pi mit MCP3208“ zum ESP32-Board?
 - [ ] Schaltung der Taschen: Spannungsteiler? Widerstandswert? Schaltplan
-- [ ] Gehäuse-Infos (Badre schickt später)
+- [x] Gehäuse 4.3: Form, Maße, Teilung, Kleben, Magnete, Drucker, PLA, Nachbearbeitung, Lack (Vincent/Hellweg, Montana GOLD)
+- [x] Keine Toleranz-Testkörper (begrenzte Druckkapazität)
+- [ ] 4.3 Rest: Kleber; viertes Teil der Kopfhülle; Kopf-Hinterteil Schraube und/oder Magnete; Foto fertiges Gehäuse
+- [ ] Nachname Kaspar (Kopfmechanik, Team Programmierung); wer hat den Spindelantrieb konstruiert?
+- [ ] Maße der Taschen und der Velostat-Fläche
 - [x] Schnittstelle ESP32 ↔ Pi: UART 115200, Befehlssatz Neffy_UART_Interface
 - [ ] A3/A4: Firmware sendet nur entspannt/normal/gestresst, keine Ein-/Ausatemdauer – Ziel anpassen?
 - [ ] Quelle für Atemfrequenz in Ruhe (12–20/min), Grundlage der Einstufung

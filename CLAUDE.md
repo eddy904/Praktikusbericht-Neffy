@@ -83,7 +83,8 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
 - Konstruktion: eiförmige Schale, gespiegelte Hälften, in druckbare Teile mit abnehmbarem Deckel geteilt;
   Ausrichtung über Passstifte Ø5/Ø6 mm mit Rundloch-plus-Langloch-Prinzip.
 - Herausforderungen: SolidWorks neu lernen, Druckbettgröße, lange Druckzeiten, Laborzeiten koordinieren,
-  FDM-Toleranzen (empirisch über Testkörper ermittelt statt ISO-Passungen) → bisher nur eine Gehäuseversion.
+  FDM-Toleranzen (angenommen 0,1 mm; **keine Testkörper** wegen begrenzter Druckkapazität, nur kleine Teile wie
+  Aufnahmen für Netzteilbuchse, Schalter, Kopfhörer vorab getestet; Hülle nur einmal gedruckt) → eine Gehäuseversion.
 - Atemkurven liegen in `daten/Messdaten_Atemsensorik/` (Übersicht + Kennwerte: `LIESMICH.txt`,
   `00_Uebersicht_Kennwerte.csv`): F1–F3 FSR SEN-Pressure10, P1–P2 Velostat mit nur aufgelegten Händen
   (passiv, bestätigt), A1–A6 Velostat mit aktivem Mitdrücken. Gemessen im April 2026 auf einem
@@ -122,7 +123,7 @@ Kopfmechanik: Kaspar (Team Programmierung). Pi sitzt im Kopf. Schwachstelle: Hä
 hoch → Kissen (Kap. 5/6). Druckerverfügbarkeit eingeschränkt → neutral in Kap. 7.
 Material PLA. Nachbearbeitung: Klebekanten mit Sekundenkleber gefüllt, von Hand geschliffen (Elektroschleifer
 beschädigt PLA), Spachteln wäre an manchen Stellen besser gewesen. Lack: Kunststoffprimer → Haftgrund
-(Hersteller offen) → 2–3 Schichten Montana GOLD „Sahara Beige“; lange Trockenzeiten. Ausblick: Teile möglichst
+(Vincent, Hellweg) → 2–3 Schichten Montana GOLD „Sahara Beige“; lange Trockenzeiten. Ausblick: Teile möglichst
 am Stück drucken und Stützmaterial in Kauf nehmen, spart Nacharbeit.
 
 ## Öffentliches Repo – Datenschutz
@@ -197,7 +198,7 @@ Zeitraum und Dauer (Stunden) gehören in Kap. 2 (Projektorganisation), nicht auf
    - Hardware / Sensorik: Lösungsauswahl mit Begründung (Bewertungsmatrix), v. a. Vergleich der
      getesteten Drucksensoren → Entscheidung für Velostat; Messaufbau, Schaltung
    - Konstruktion Gehäuse: Iterationen mit Abbildungen (CAD → Teilung → Druck → Nachbearbeitung),
-     Entscheidungen begründen (Teilung, Passstifte, Toleranz-Testkörper)
+     Entscheidungen begründen (Teilung, Kleben statt Passstifte, Magnete/Modularität, Toleranzen)
    - Software: Signalverarbeitung/Atemerkennung, Struktur, Softwareablage (Repo, Build), KI-Nutzung transparent nennen
 5. **Diskussion der Ergebnisse** (~3–4 S.)
    - Funktionsnachweis (Fotos des fertigen Neffy)

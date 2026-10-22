@@ -288,12 +288,11 @@ die Hubbewegung bereitzustellen.
 \todo{Motor-Modell, Datenblatt; wer hat den Spindelantrieb konstruiert?}
 Der Körper wird über eine Gewindespindel mit 8\,mm Steigung bewegt und hat einen Hubweg von
 85\,mm; Neffy~2 erreichte mit seinem Riementrieb maximal 25\,mm~\cite{goerke2025neffy2}.
-\todo{Bild Spindelantrieb (innen explosion.png)}
 Die Kopfmechanik wurde von Kaspar aus dem Team Programmierung konstruiert. Ein Schrittmotor im
 Kopf treibt über ein Zahnradpaar mit 30 und 40 Zähnen eine Welle an, die mit dem feststehenden
 Hals verbunden ist, sodass sich der Kopf auf dem Hals neigt. Er nutzt 32° seines mechanischen
 Bewegungsbereichs von etwa 34°.
-\todo{Nachname Kaspar? Bild Kopfmechanik (kopf explosion.png)} Angesteuert werden beide Motoren über
+\todo{Nachname Kaspar?} Angesteuert werden beide Motoren über
 TMC2225-Treiber mit vier Mikroschritten. Bei jedem Start fahren beide Achsen gegen einen
 Endschalter, um ihre Nullposition zu bestimmen (Referenzfahrt).
 
@@ -320,15 +319,15 @@ Schrittmotor der Kopfbewegung.
   \centering
   \begin{subfigure}[b]{0.36\linewidth}
     \centering
-    \platzhalter[\linewidth]{CAD-Frontansicht (normal vorne)}
-    \caption{CAD-Modell, Ansicht von vorne}
+    \platzhalter[\linewidth]{Foto des fertigen Gehäuses}
+    \caption{Fertiges Gehäuse}
   \end{subfigure}\hfill
   \begin{subfigure}[b]{0.6\linewidth}
     \centering
     \includegraphics[width=\linewidth]{neffy exp ganz.png}
     \caption{Explosionsansicht mit allen Gehäuseteilen}
   \end{subfigure}
-  \caption{CAD-Modell des Gehäuses von Neffy~3.0}
+  \caption{Gehäuse von Neffy~3.0}
   \label{fig:gehaeuse}
 \end{figure}
 
@@ -398,19 +397,22 @@ abnehmen und wieder anbringen lässt; das Vorderteil wird über zwei Stifte geha
 \subsection{Fertigung und Nachbearbeitung}
 \label{sec:gehaeuse_fertigung}
 
-Bei der Konstruktion wurde von einer Fertigungstoleranz von 0{,}1\,mm ausgegangen. In der
-Praxis mussten Bohrungen dennoch häufig mit einer Ständerbohrmaschine nachgebohrt werden. Ein
-bis zwei Teile mussten neu gedruckt werden, keines der großen Teile.
-\todo{Toleranz-Testkörper gedruckt? Wenn ja: welche Maße, welches Ergebnis}
+Bei der Konstruktion wurde von einer Fertigungstoleranz von 0{,}1\,mm ausgegangen. Eigene
+Testkörper zur Bestimmung der Toleranzen wurden wegen der begrenzten Druckkapazität nicht
+gedruckt. Getestet wurden stattdessen einzelne kleinere Teile vorab, etwa die Aufnahmen auf der
+Rückseite für Netzteilbuchse, Schalter und Kopfhöreranschluss. Die großen Hüllenteile wurden
+dagegen jeweils nur einmal gedruckt. In der Praxis mussten Bohrungen häufig mit einer
+Ständerbohrmaschine nachgebohrt werden. Ein bis zwei kleinere Teile mussten neu gedruckt werden,
+keines der großen Teile.
 An den Klebestellen der PLA-Teile entstanden zwangsläufig kleine Kanten und Löcher. Sie wurden
 mit Sekundenkleber gefüllt und anschließend geschliffen. Dabei zeigte sich, dass ein elektrisches
 Schleifgerät das PLA sehr schnell beschädigt; dieser Effekt wurde zunächst unterschätzt. Die
 besten Ergebnisse lieferte das Schleifen von Hand mit schrittweise feinerem Schleifpapier. An
 einzelnen Stellen hätte zusätzliches Spachteln die Oberfläche noch weiter verbessert.
 
-Lackiert wurde in drei Stufen: Auf einen Kunststoffprimer folgte ein Haftgrund und darauf zwei
+Lackiert wurde in drei Stufen: Auf einen Kunststoffprimer folgte ein Haftgrund (beide von
+Vincent, Hellweg) und darauf zwei
 bis drei Schichten Sprühlack von Montana GOLD im Farbton Sahara Beige.
-\todo{Hersteller von Primer und Haftgrund?}
 Wichtig war, zwischen den Schichten ausreichend lange trocknen zu lassen, damit der Lack gut
 haftet. Mit genügend Zeit lässt sich PLA so nachbearbeiten, dass sehr saubere Oberflächen
 entstehen; der Aufwand dafür ist allerdings groß.

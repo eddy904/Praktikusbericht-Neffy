@@ -26,42 +26,39 @@
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ So richtig beschrieben? (Klebeseite zum Grundkörper, leitende Seite zum Velostat)}{14}{section*.34}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Endgültiger Festwiderstand der Taschen? (LIESMICH der Messdaten nennt 10\,k$\Omega $) Kurz begründen, warum dieser Wert; Schaltplan}{14}{section*.36}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Motor-Modell, Datenblatt; wer hat den Spindelantrieb konstruiert?}{14}{section*.37}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bild Spindelantrieb (innen explosion.png)}{14}{section*.38}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname Kaspar? Bild Kopfmechanik (kopf explosion.png)}{14}{section*.39}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ viertes Teil?}{16}{section*.42}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Drucker-Modelle so richtig?}{16}{section*.43}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Welcher Kleber?}{16}{section*.44}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Verteilung der Magnete im Kopf prüfen (Hinterteil: Schraube und/oder Magnete?)}{16}{section*.45}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Toleranz-Testkörper gedruckt? Wenn ja: welche Maße, welches Ergebnis}{17}{section*.46}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Hersteller von Primer und Haftgrund?}{17}{section*.47}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Foto des fertigen, lackierten Gehäuses}{17}{section*.48}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ KI-Angabe mit Prof.\ Buchem abstimmen (welche Form erwartet die BHT?); danach diesen Abschnitt und die Eigenständigkeitserklärung anpassen}{19}{section*.50}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}{19}{section*.51}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Velostat-Spannungsverlauf (481 Werte, 50-ms-Takt) als Diagramm direkt aus der Datei in daten/ erzeugen; weitere Messreihen.}{21}{section*.53}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergebnis: Hand auf der Schulter -- Signal zu verrauscht. Mit Zahlen und Ursachen.}{21}{section*.55}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergebnis: Drücken beim Einatmen, Loslassen beim Ausatmen -- klare Flanken.}{22}{section*.56}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{22}{section*.58}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{22}{section*.59}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{22}{section*.60}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{22}{section*.61}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{22}{section*.62}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{22}{section*.63}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{22}{section*.64}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{22}{section*.65}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Konkret mit Zahlen und Ursachen; auch was nicht funktioniert hat.}{22}{section*.66}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergonomie: Durch die Größe von Neffy~3.0 liegen Hände bzw.\ Ellbogen etwas zu hoch; im Entwurf zu wenig beachtet. Lösung: kleine Kissen links und rechts für die Ellbogen.}{22}{section*.67}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Explizit benennen, welche Ideen vom Team Sensorik bzw.\ individuell stammen.}{22}{section*.68}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Antwort auf die übergeordnete Fragestellung (Abschnitt~\ref {sec:fragestellung}).}{23}{section*.69}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Probleme mit den Schrittmotoren, die die Dynamixel-Motoren ersetzt haben (mehr Kraft benötigt): welche Probleme, Ursachen, Folgen.}{23}{section*.70}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Konkret: Taster statt Velostat, nächste Gehäuseversion (Höhe der Hände/Ellbogen anpassen, mehr auf Kleben auslegen, weniger Bohrungen; Teile möglichst als Ganzes drucken und dafür mehr Stützmaterial in Kauf nehmen, weil das viel Nachbearbeitung an Klebestellen spart), Materialwahl, \dots }{23}{section*.71}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bezug zu Studieninhalten.}{24}{section*.72}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf einer typischen Woche, Laborzeiten; neutral: Verfügbarkeit der Drucker im Labor war eingeschränkt, große Teile (je 15\,h+) mussten eingeplant werden.}{24}{section*.73}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Erwartungen vorher -- was davon eingetreten ist.}{24}{section*.74}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Selbstständigkeit, Motivation, Teamarbeit -- mit konkreten Beispielen (z.\,B. eigene Initiative Gehäuse, SolidWorks im Praktikum vertieft (starke Rundungen anspruchsvoll), Learning: viel kleben statt bohren; Nachbearbeitung und Lackieren: Geduld zwischen den Schichten, von Hand schleifen, man wird perfektionistisch).}{24}{section*.75}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Persönliches Fazit.}{24}{section*.76}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Atemerkennungs-Modul (.cpp/.h) per \textbackslash lstinputlisting einbinden.}{30}{section*.81}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Technische Zeichnungen des Gehäuses.}{31}{section*.82}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Schaltplan Neffy Board / Sensoranschluss.}{32}{section*.83}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Verweis auf Dateien in daten/ bzw.\ Repository.}{33}{section*.84}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Vorgegebenen Wortlaut der BHT bzw.\ des Fachbereichs einsetzen.}{34}{section*.86}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname}{34}{section*.87}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname Kaspar?}{14}{section*.38}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ viertes Teil?}{16}{section*.41}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Drucker-Modelle so richtig?}{16}{section*.42}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Welcher Kleber?}{16}{section*.43}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Verteilung der Magnete im Kopf prüfen (Hinterteil: Schraube und/oder Magnete?)}{16}{section*.44}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Foto des fertigen, lackierten Gehäuses}{17}{section*.45}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ KI-Angabe mit Prof.\ Buchem abstimmen (welche Form erwartet die BHT?); danach diesen Abschnitt und die Eigenständigkeitserklärung anpassen}{19}{section*.47}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}{19}{section*.48}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Velostat-Spannungsverlauf (481 Werte, 50-ms-Takt) als Diagramm direkt aus der Datei in daten/ erzeugen; weitere Messreihen.}{21}{section*.50}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergebnis: Hand auf der Schulter -- Signal zu verrauscht. Mit Zahlen und Ursachen.}{21}{section*.52}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergebnis: Drücken beim Einatmen, Loslassen beim Ausatmen -- klare Flanken.}{22}{section*.53}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{22}{section*.55}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{22}{section*.56}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{22}{section*.57}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{22}{section*.58}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{22}{section*.59}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{22}{section*.60}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Status}{22}{section*.61}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Begründung}{22}{section*.62}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Konkret mit Zahlen und Ursachen; auch was nicht funktioniert hat.}{22}{section*.63}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ergonomie: Durch die Größe von Neffy~3.0 liegen Hände bzw.\ Ellbogen etwas zu hoch; im Entwurf zu wenig beachtet. Lösung: kleine Kissen links und rechts für die Ellbogen.}{22}{section*.64}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Explizit benennen, welche Ideen vom Team Sensorik bzw.\ individuell stammen.}{22}{section*.65}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Antwort auf die übergeordnete Fragestellung (Abschnitt~\ref {sec:fragestellung}).}{23}{section*.66}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Probleme mit den Schrittmotoren, die die Dynamixel-Motoren ersetzt haben (mehr Kraft benötigt): welche Probleme, Ursachen, Folgen.}{23}{section*.67}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Konkret: Taster statt Velostat, nächste Gehäuseversion (Höhe der Hände/Ellbogen anpassen, mehr auf Kleben auslegen, weniger Bohrungen; Teile möglichst als Ganzes drucken und dafür mehr Stützmaterial in Kauf nehmen, weil das viel Nachbearbeitung an Klebestellen spart), Materialwahl, \dots }{23}{section*.68}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bezug zu Studieninhalten.}{24}{section*.69}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf einer typischen Woche, Laborzeiten; neutral: Verfügbarkeit der Drucker im Labor war eingeschränkt, große Teile (je 15\,h+) mussten eingeplant werden.}{24}{section*.70}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Erwartungen vorher -- was davon eingetreten ist.}{24}{section*.71}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Selbstständigkeit, Motivation, Teamarbeit -- mit konkreten Beispielen (z.\,B. eigene Initiative Gehäuse, SolidWorks im Praktikum vertieft (starke Rundungen anspruchsvoll), Learning: viel kleben statt bohren; Nachbearbeitung und Lackieren: Geduld zwischen den Schichten, von Hand schleifen, man wird perfektionistisch).}{24}{section*.72}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Persönliches Fazit.}{24}{section*.73}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Atemerkennungs-Modul (.cpp/.h) per \textbackslash lstinputlisting einbinden.}{30}{section*.78}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Technische Zeichnungen des Gehäuses.}{31}{section*.79}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Schaltplan Neffy Board / Sensoranschluss.}{32}{section*.80}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Verweis auf Dateien in daten/ bzw.\ Repository.}{33}{section*.81}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Vorgegebenen Wortlaut der BHT bzw.\ des Fachbereichs einsetzen.}{34}{section*.83}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname}{34}{section*.84}%
