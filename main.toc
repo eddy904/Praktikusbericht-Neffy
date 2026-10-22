@@ -35,27 +35,30 @@
 \contentsline {chapter}{\numberline {5}Diskussion der Ergebnisse}{21}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Funktionsnachweis}{21}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Messwerte und Auswertung}{21}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Passive Atemerkennung}{21}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Aktive Atemerkennung}{22}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Evaluation gegen die Anforderungen}{22}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Schwachstellen}{22}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Eigene Ideen}{22}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Fazit}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Zusammenfassung}{23}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ausblick}{23}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Unsere Einschätzung zum Praktikum}{24}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Studium und Praktikum}{24}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Praktikumsalltag}{24}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Erwartungen}{24}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Erfahrungen}{24}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Persönliches Fazit}{24}{section.7.5}%
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{25}{chapter*.74}%
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{26}{chapter*.75}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{28}{chapter*.77}%
+\contentsline {subsection}{\numberline {5.2.1}Messreihen zur Atemsensorik}{21}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Vergleich von FSR und Velostat}{22}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Passive Atemerkennung}{22}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Aktive Atemerkennung}{22}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Anwesenheitserkennung}{23}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.3}Evaluation gegen die Anforderungen}{23}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Schwachstellen}{25}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Eigene Ideen}{25}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Fazit}{26}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Zusammenfassung}{26}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ausblick}{26}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Unsere Einschätzung zum Praktikum}{27}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Studium und Praktikum}{27}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Praktikumsalltag}{27}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Erwartungen}{27}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Erfahrungen}{27}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Persönliches Fazit}{27}{section.7.5}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{28}{chapter*.73}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{29}{chapter*.74}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{31}{chapter*.76}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Code-Auszüge}{30}{appendix.A}%
-\contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{31}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Schaltplan}{32}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Rohdaten}{33}{appendix.D}%
-\contentsline {chapter}{Eigenständigkeitserklärung}{34}{chapter*.82}%
+\contentsline {chapter}{\numberline {A}Code-Auszüge}{33}{appendix.A}%
+\contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{34}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Schaltplan}{35}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Rohdaten}{36}{appendix.D}%
+\contentsline {chapter}{Eigenständigkeitserklärung}{37}{chapter*.81}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

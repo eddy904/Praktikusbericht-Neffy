@@ -239,8 +239,9 @@ Nutzer:innen ihre Hände legen. Der Drucksensor sitzt in einem eigenen Sensorein
 unten durch eine parallelogrammförmige Öffnung in die Tasche gesteckt und dort verschraubt wird.
 Der Einsatz besteht aus mehreren Lagen (Abbildung~\ref{fig:taschenaufbau}): einem
 3D-gedruckten Grundkörper, einer Kupferfolie als erster Elektrode, dem Velostat, einer zweiten
-Kupferfolie als zweiter Elektrode und einem Silikonstück. Darauf sitzt ein 3D-gedruckter Rahmen
-mit Gewinden, über den der Einsatz zusammengehalten und in der Tasche verschraubt wird. In jeder
+Kupferfolie als zweiter Elektrode und einem 3D-gedruckten Rahmen mit Gewinden, über den der
+Einsatz zusammengehalten und in der Tasche verschraubt wird. Den oberen Abschluss bildet ein
+Silikonstück. In jeder
 Tasche liegen außerdem zwei Reihen mit je vier \acp{LED}.
 \todo{Maße der Taschen und der Velostat-Fläche}
 
@@ -253,18 +254,18 @@ genutzt. Mit diesem Aufbau funktionierten die Taschen nach einigen Tests zufried
 
 \begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}[font=\small, layer/.style={draw, minimum width=7cm, anchor=south west}]
-    \node[layer, minimum height=0.9cm, fill=gray!20]   (base) at (0,0)    {3D-gedruckter Grundkörper};
-    \node[layer, minimum height=0.3cm, fill=orange!50] (cu1)  at (0,0.9)  {};
-    \node[layer, minimum height=0.5cm, fill=black!70, text=white] (vel) at (0,1.2) {Velostat};
-    \node[layer, minimum height=0.3cm, fill=orange!50] (cu2)  at (0,1.7)  {};
-    \node[layer, minimum height=0.5cm, fill=blue!10]   (sil)  at (0,2.0)  {Silikon};
-    \node[layer, minimum height=0.5cm, fill=gray!20]   (rah)  at (0,2.5)  {3D-gedruckter Rahmen mit Gewinden};
-    \draw[<-] (7,1.05) -- (7.8,1.05) node[right]{Kupferfolie (Elektrode)};
-    \draw[<-] (7,1.85) -- (7.8,1.85) node[right]{Kupferfolie (Elektrode)};
-    \draw[->, thick] (-0.6,1.05) -- (0,1.05);
-    \draw[->, thick] (-0.6,1.85) -- (0,1.85);
-    \node[left, align=right, font=\scriptsize] at (-0.6,1.45) {zum\\ESP32-S3};
+  \begin{tikzpicture}[font=\small, layer/.style={draw, minimum width=7cm, anchor=south west, inner sep=1pt}]
+    \node[layer, minimum height=0.45cm, fill=gray!20, font=\footnotesize] at (0,0)    {3D-gedruckter Grundkörper};
+    \node[layer, minimum height=0.25cm, fill=orange!50] at (0,0.45) {};
+    \node[layer, minimum height=0.5cm, fill=black!70, text=white] at (0,0.7) {Velostat};
+    \node[layer, minimum height=0.25cm, fill=orange!50] at (0,1.2)  {};
+    \node[layer, minimum height=0.45cm, fill=gray!20, font=\footnotesize] at (0,1.45) {3D-gedruckter Rahmen mit Gewinden};
+    \node[layer, minimum height=0.55cm, fill=blue!10] at (0,1.9)  {Silikon};
+    \draw[<-] (7,0.575) -- (7.8,0.575) node[right]{Kupferfolie (Elektrode)};
+    \draw[<-] (7,1.325) -- (7.8,1.325) node[right]{Kupferfolie (Elektrode)};
+    \draw[->, thick] (-0.6,0.575) -- (0,0.575);
+    \draw[->, thick] (-0.6,1.325) -- (0,1.325);
+    \node[left, align=right, font=\scriptsize] at (-0.6,0.95) {zum\\ESP32-S3};
   \end{tikzpicture}
   \caption{Schematischer Lagenaufbau eines Sensoreinsatzes (nicht maßstäblich)}
   \label{fig:taschenaufbau}
@@ -357,8 +358,8 @@ Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
                 & Hälften in der Mitte mit Magneten verbunden, ohne Werkzeug abnehmbar \\
     Unterkörper & 6 & verklebt zu einer Schale und einer hinteren Klappe (aus zwei Teilen)
                 & Klappe mit zwei Schrauben seitlich und vier Schrauben im Boden befestigt \\
-    Kopfhülle   & 4 & Deckel, Vorder- und Hinterteil abnehmbar \todoi{viertes Teil?}
-                & Deckel mit Magneten; Hinterteil verschraubt; Vorderteil über zwei Stifte \\
+    Kopfhülle   & 4 & Boden, Hinterteil und Vorderteil zu einer Einheit verschraubt bzw.\ gesteckt
+                & Deckel mit Magneten, ohne Werkzeug abnehmbar \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -388,11 +389,10 @@ sich ohne Werkzeug abnehmen; darunter liegen das Innenleben des Oberkörpers und
 von unten verschraubten Sensoreinsätze der Taschen besitzen jeweils vier weitere Magnete, sodass
 im Oberkörper insgesamt 24 Magnete sitzen. Die Verbindung hält zuverlässig. Die hintere Klappe des
 Unterkörpers ist verschraubt und gibt nach dem Lösen von sechs Schrauben die Elektronik frei,
-etwa das Neffy Board. Im Kopf sind Boden, Deckel und Rückseite ebenfalls über Magnete verbunden, insgesamt 24.
-\todo{Verteilung der Magnete im Kopf prüfen (Hinterteil: Schraube und/oder Magnete?)}
-Das Hinterteil des Kopfes
-besitzt Langlöcher mit einer Gewindebohrung und wird verschraubt, sodass es sich einfach
-abnehmen und wieder anbringen lässt; das Vorderteil wird über zwei Stifte gehalten.
+etwa das Neffy Board. Der Kopf besteht aus Boden, Hinterteil, Vorderteil und Deckel
+(Abbildung~\ref{fig:gehaeuse}\,b). Boden und Hinterteil sind über Langlöcher verschraubt, das
+Vorderteil sitzt per Presspassung auf Stiften. Zusammen bilden sie eine Einheit, auf die der
+Deckel mit weiteren Magneten aufgesetzt wird.
 
 \subsection{Fertigung und Nachbearbeitung}
 \label{sec:gehaeuse_fertigung}

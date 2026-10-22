@@ -67,3 +67,12 @@
 - [x] KI-Nutzung (Claude Code) bei Firmware und Bericht offenlegen → Kap. 4.4.7; Literatursuche nicht mehr als KI-Nutzung genannt (Entscheidung 21.10.2026)
 - [ ] **Bei Prof. Buchem nachfragen, welche Form der KI-Angabe die BHT erwartet** → danach Kap. 4.4.7 und Eigenständigkeitserklärung anpassen
 - [ ] Welche weiteren Messungen gibt es?
+
+## Kapitel 5 (Stand 22.10.)
+- [x] Atemsensorik aus Messdaten ausgewertet (Tabelle per `daten/tabelle_kennwerte.py`)
+- [ ] Funktionsnachweis: was funktioniert im Zusammenspiel, Foto des fertigen Neffy 3.0
+- [ ] Anwesenheitserkennung: Entfernung, Reaktionszeit, Vorbeigehen, Fehlauslösungen; Thermal-Logs?
+- [ ] Tests der Atemerkennung am fertigen Neffy (Erkennungsrate, Einstufung)?
+- [ ] Evaluation A1, A2, A4, A5 bewerten; A3, A6–A9 prüfen
+- [ ] Probleme mit den Schrittmotoren konkret
+- [ ] Eigene Ideen bestätigen
