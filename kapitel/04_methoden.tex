@@ -305,10 +305,9 @@ Endschalter, um ihre Nullposition zu bestimmen (Referenzfahrt).
 
 Das Gehäuse wurde in SolidWorks konstruiert. Grundlage waren das Zielbild
 (Abbildung~\ref{fig:zielbild}) und ein Vergleich mit der Größe von Neffy~2. Daraus wurden
-ungefähre Hauptmaße abgeleitet; die Form selbst entstand frei nach dem Zielbild. Da das Team
-SolidWorks während des Praktikums erst vertiefen musste und die starken Rundungen anspruchsvoll
-zu modellieren waren, lag der Schwerpunkt darauf, die gewünschte Form umzusetzen. Abweichungen
-von wenigen Millimetern sind für den Zweck des Roboters unerheblich.
+ungefähre Hauptmaße abgeleitet; die Form selbst entstand frei nach dem Zielbild. Im Vordergrund
+stand, die gewünschte Gesamtform umzusetzen; Abweichungen von wenigen Millimetern sind für den
+Zweck des Roboters unerheblich.
 
 Das Gehäuse hat die Form einer weitgehend eiförmigen Schale (Abbildung~\ref{fig:gehaeuse}\,a):
 Ober- und Unterseite sind eben, damit der Roboter sicher steht, während die Seiten stark
@@ -379,18 +378,24 @@ vorgesehenen Bohrungen wurden dadurch nicht mehr benötigt. Eine wichtige Erkenn
 Konstruktion war, dass sich mit Kleben deutlich mehr lösen lässt als zunächst angenommen.
 \todo{Welcher Kleber?}
 
-Lösbare Verbindungen gibt es nur dort, wo das Innenleben zugänglich bleiben muss
-(Anforderung~A8), und dafür werden vor allem Magnete eingesetzt. Die beiden Hälften des
-Oberkörpers sind in der Mitte magnetisch verbunden und lassen sich ohne Werkzeug abnehmen;
-darunter liegen das Innenleben des Oberkörpers und die Kabel. Die hintere Klappe des
-Unterkörpers ist verschraubt und gibt nach dem Lösen von sechs Schrauben die Elektronik frei,
-etwa das Neffy Board. Am Kopf ist der Deckel mit Magneten befestigt. Das Hinterteil des Kopfes
-besitzt Langlöcher mit einer Gewindebohrung und wird verschraubt, sodass es sich einfach
-abnehmen und wieder anbringen lässt; das Vorderteil wird über zwei Stifte gehalten. Insgesamt
-ist das Gehäuse damit modular aufgebaut.
-\todo{Anzahl und Art der Magnete?}
+Lösbare Verbindungen gibt es dort, wo das Innenleben zugänglich bleiben muss (Anforderung~A8).
+Dafür werden vor allem Neodym-Magnete eingesetzt. Ein modularer Aufbau war ein bewusstes
+Konstruktionsziel: Der Roboter soll sich vollständig zerlegen und wieder zusammensetzen lassen,
+um Änderungen vorzunehmen oder defekte Teile zu tauschen. Wie wichtig das ist, zeigte sich
+bereits während des Projekts, in dem der Roboter immer wieder geöffnet werden musste.
 
-\subsection{Toleranzen und Fertigung}
+Die beiden Hälften des Oberkörpers sind in der Mitte über je acht Magnete verbunden und lassen
+sich ohne Werkzeug abnehmen; darunter liegen das Innenleben des Oberkörpers und die Kabel. Die
+von unten verschraubten Sensoreinsätze der Taschen besitzen jeweils vier weitere Magnete, sodass
+im Oberkörper insgesamt 24 Magnete sitzen. Die Verbindung hält zuverlässig. Die hintere Klappe des
+Unterkörpers ist verschraubt und gibt nach dem Lösen von sechs Schrauben die Elektronik frei,
+etwa das Neffy Board. Im Kopf sind Boden, Deckel und Rückseite ebenfalls über Magnete verbunden, insgesamt 24.
+\todo{Verteilung der Magnete im Kopf prüfen (Hinterteil: Schraube und/oder Magnete?)}
+Das Hinterteil des Kopfes
+besitzt Langlöcher mit einer Gewindebohrung und wird verschraubt, sodass es sich einfach
+abnehmen und wieder anbringen lässt; das Vorderteil wird über zwei Stifte gehalten.
+
+\subsection{Fertigung und Nachbearbeitung}
 \label{sec:gehaeuse_fertigung}
 
 Bei der Konstruktion wurde von einer Fertigungstoleranz von 0{,}1\,mm ausgegangen. In der

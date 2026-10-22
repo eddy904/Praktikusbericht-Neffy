@@ -23,39 +23,39 @@
 \contentsline {subsection}{\numberline {4.3.1}Entwurf und Form}{15}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Teilung in druckbare Teile}{15}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Verbindung der Teile}{16}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Toleranzen und Fertigung}{16}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.4}Fertigung und Nachbearbeitung}{17}{subsection.4.3.4}%
 \contentsline {section}{\numberline {4.4}Software}{17}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Aufbau der Firmware}{17}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Anwesenheitserkennung}{17}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.2}Anwesenheitserkennung}{18}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Klick- und Druckerkennung}{18}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}Atemerkennung}{18}{subsection.4.4.4}%
 \contentsline {subsection}{\numberline {4.4.5}Rückmeldung über die \acp {LED}}{19}{subsection.4.4.5}%
 \contentsline {subsection}{\numberline {4.4.6}Softwareablage, Build und Tests}{19}{subsection.4.4.6}%
 \contentsline {subsection}{\numberline {4.4.7}Einsatz von KI-Werkzeugen}{19}{subsection.4.4.7}%
-\contentsline {chapter}{\numberline {5}Diskussion der Ergebnisse}{20}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Funktionsnachweis}{20}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Messwerte und Auswertung}{20}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Passive Atemerkennung}{20}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Aktive Atemerkennung}{21}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Evaluation gegen die Anforderungen}{21}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Schwachstellen}{21}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Eigene Ideen}{21}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Fazit}{22}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Zusammenfassung}{22}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ausblick}{22}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Unsere Einschätzung zum Praktikum}{23}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Studium und Praktikum}{23}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Praktikumsalltag}{23}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Erwartungen}{23}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Erfahrungen}{23}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Persönliches Fazit}{23}{section.7.5}%
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{24}{chapter*.77}%
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{25}{chapter*.78}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{27}{chapter*.80}%
+\contentsline {chapter}{\numberline {5}Diskussion der Ergebnisse}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Funktionsnachweis}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Messwerte und Auswertung}{21}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Passive Atemerkennung}{21}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Aktive Atemerkennung}{22}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Evaluation gegen die Anforderungen}{22}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Schwachstellen}{22}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Eigene Ideen}{22}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Fazit}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Zusammenfassung}{23}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ausblick}{23}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Unsere Einschätzung zum Praktikum}{24}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Studium und Praktikum}{24}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Praktikumsalltag}{24}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Erwartungen}{24}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Erfahrungen}{24}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Persönliches Fazit}{24}{section.7.5}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{25}{chapter*.77}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{26}{chapter*.78}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{28}{chapter*.80}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Code-Auszüge}{29}{appendix.A}%
-\contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{30}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Schaltplan}{31}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Rohdaten}{32}{appendix.D}%
-\contentsline {chapter}{Eigenständigkeitserklärung}{33}{chapter*.85}%
+\contentsline {chapter}{\numberline {A}Code-Auszüge}{30}{appendix.A}%
+\contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{31}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Schaltplan}{32}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Rohdaten}{33}{appendix.D}%
+\contentsline {chapter}{Eigenständigkeitserklärung}{34}{chapter*.85}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
