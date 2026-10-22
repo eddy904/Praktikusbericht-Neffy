@@ -156,6 +156,9 @@ Kapitel für Kapitel, im Interview:
    - Anregungen, was im Kapitel noch fehlt oder besser belegt werden sollte.
 Die Kennzeichnung „wer hat was gemacht“ erfolgt erst am Ende.
 
+**Git:** Nach Änderungen nur **lokal committen**. **Gepusht wird erst, wenn Badre es ausdrücklich sagt**
+(Wunsch vom 22.10.2026).
+
 ## KI-Nutzung
 Als KI-Werkzeug wurde ausschließlich **Claude Code** verwendet. Das wird in Kap. 4.4.7
 („Einsatz von KI-Werkzeugen“) offengelegt: Gliederung, Formulieren, LaTeX-Satz, Analyse der Firmware
