@@ -2,16 +2,16 @@
 \babel@toc {ngerman}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Anforderungen an Neffy~3.0 im Aufgabenbereich des Teams Sensorik (F = funktional, NF = nicht-funktional)}}{4}{table.caption.11}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Anforderungen an Neffy~3.0 im Aufgabenbereich des Teams Sensorik (F = funktional, NF = nicht-funktional)}}{5}{table.caption.11}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Vergleich der Generationen von Neffy}}{8}{table.caption.22}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Vergleich der Generationen von Neffy}}{9}{table.caption.22}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Befehle der \ac {UART}-Schnittstelle nach Gruppen}}{10}{table.caption.27}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Vergleich der getesteten Drucksensoren (+ geeignet, $\circ $ eingeschränkt, -- ungeeignet)}}{12}{table.caption.31}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Teilung des Gehäuses}}{14}{table.caption.41}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Module der Firmware}}{16}{table.caption.47}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Befehle der \ac {UART}-Schnittstelle nach Gruppen}}{11}{table.caption.27}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Vergleich der getesteten Drucksensoren (+ geeignet, $\circ $ eingeschränkt, -- ungeeignet)}}{13}{table.caption.31}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Teilung des Gehäuses}}{16}{table.caption.41}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Module der Firmware}}{17}{table.caption.48}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Erfüllungsgrad der Anforderungen aus Tabelle~\ref {tab:anforderungen}}}{20}{table.caption.55}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Erfüllungsgrad der Anforderungen aus Tabelle~\ref {tab:anforderungen}}}{21}{table.caption.56}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

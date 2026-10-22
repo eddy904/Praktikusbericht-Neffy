@@ -234,11 +234,15 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
 \subsection{Aufbau der Drucksensor-Taschen}
 \label{sec:hw_taschen}
 
-Jede Tasche besteht aus mehreren Lagen (Abbildung~\ref{fig:taschenaufbau}): Auf den
-3D-gedruckten Grundkörper folgt eine Kupferfolie als untere Elektrode, darüber das
-Velostat und eine zweite Kupferfolie als obere Elektrode. Ein Rahmen zwischen den Lagen
-ermöglicht den Zusammenbau; abschließend wird die Tasche mit Silikon verschlossen.
-\todo{Fläche des Velostats pro Tasche (geplant ca.\ 10\,$\times$\,10\,cm)?}
+Als Taschen werden die beiden länglichen Öffnungen im Oberkörper bezeichnet, in die die
+Nutzer:innen ihre Hände legen. Der Drucksensor sitzt in einem eigenen Sensoreinsatz, der von
+unten durch eine parallelogrammförmige Öffnung in die Tasche gesteckt und dort verschraubt wird.
+Der Einsatz besteht aus mehreren Lagen (Abbildung~\ref{fig:taschenaufbau}): einem
+3D-gedruckten Grundkörper, einer Kupferfolie als erster Elektrode, dem Velostat, einer zweiten
+Kupferfolie als zweiter Elektrode und einem Silikonstück. Darauf sitzt ein 3D-gedruckter Rahmen
+mit Gewinden, über den der Einsatz zusammengehalten und in der Tasche verschraubt wird. In jeder
+Tasche liegen außerdem zwei Reihen mit je vier \acp{LED}.
+\todo{Maße der Taschen und der Velostat-Fläche}
 
 Im ersten Aufbau wurde die Kupferfolie mit ihrer Klebeseite zum Velostat verklebt. Die
 Klebeseite leitete jedoch nicht zuverlässig genug. Da lediglich beidseitig Kontakt mit
@@ -255,13 +259,14 @@ genutzt. Mit diesem Aufbau funktionierten die Taschen nach einigen Tests zufried
     \node[layer, minimum height=0.5cm, fill=black!70, text=white] (vel) at (0,1.2) {Velostat};
     \node[layer, minimum height=0.3cm, fill=orange!50] (cu2)  at (0,1.7)  {};
     \node[layer, minimum height=0.5cm, fill=blue!10]   (sil)  at (0,2.0)  {Silikon};
+    \node[layer, minimum height=0.5cm, fill=gray!20]   (rah)  at (0,2.5)  {3D-gedruckter Rahmen mit Gewinden};
     \draw[<-] (7,1.05) -- (7.8,1.05) node[right]{Kupferfolie (Elektrode)};
     \draw[<-] (7,1.85) -- (7.8,1.85) node[right]{Kupferfolie (Elektrode)};
     \draw[->, thick] (-0.6,1.05) -- (0,1.05);
     \draw[->, thick] (-0.6,1.85) -- (0,1.85);
     \node[left, align=right, font=\scriptsize] at (-0.6,1.45) {zum\\ESP32-S3};
   \end{tikzpicture}
-  \caption{Schematischer Lagenaufbau einer Drucksensor-Tasche (nicht maßstäblich; Rahmen nicht dargestellt)}
+  \caption{Schematischer Lagenaufbau eines Sensoreinsatzes (nicht maßstäblich)}
   \label{fig:taschenaufbau}
 \end{figure}
 
@@ -280,106 +285,120 @@ umgerechnet, da der \ac{ADC} des ESP32-S3 nicht linear ist. Beide Taschen werden
 
 Die Dynamixel-Motoren von Neffy~2 wurden durch Schrittmotoren ersetzt, um mehr Kraft für
 die Hubbewegung bereitzustellen.
-\todo{Motor-Modell, Datenblatt; wer hat die Mechanik konstruiert?}
+\todo{Motor-Modell, Datenblatt; wer hat den Spindelantrieb konstruiert?}
 Der Körper wird über eine Gewindespindel mit 8\,mm Steigung bewegt und hat einen Hubweg von
-85\,mm; Neffy~2 erreichte mit seinem Riementrieb maximal 25\,mm~\cite{goerke2025neffy2}. Der
-Kopf wird über ein Zahnradpaar mit 30 und 40 Zähnen geneigt und nutzt 32° seines
-mechanischen Bewegungsbereichs von etwa 34°. Angesteuert werden beide Motoren über
+85\,mm; Neffy~2 erreichte mit seinem Riementrieb maximal 25\,mm~\cite{goerke2025neffy2}.
+\todo{Bild Spindelantrieb (innen explosion.png)}
+Die Kopfmechanik wurde von Kaspar aus dem Team Programmierung konstruiert. Ein Schrittmotor im
+Kopf treibt über ein Zahnradpaar mit 30 und 40 Zähnen eine Welle an, die mit dem feststehenden
+Hals verbunden ist, sodass sich der Kopf auf dem Hals neigt. Er nutzt 32° seines mechanischen
+Bewegungsbereichs von etwa 34°.
+\todo{Nachname Kaspar? Bild Kopfmechanik (kopf explosion.png)} Angesteuert werden beide Motoren über
 TMC2225-Treiber mit vier Mikroschritten. Bei jedem Start fahren beide Achsen gegen einen
 Endschalter, um ihre Nullposition zu bestimmen (Referenzfahrt).
 
 \section{Konstruktion des Gehäuses}
 \label{sec:gehaeuse}
 
-\subsection{Form und Aufbau}
+\subsection{Entwurf und Form}
 \label{sec:gehaeuse_form}
 
-Das Gehäuse wurde in SolidWorks nach dem Zielbild (Abbildung~\ref{fig:zielbild}) konstruiert.
-\todo{Kurz: Wie wurde vom Zielbild zum CAD-Modell gearbeitet?}
-Es hat die Form einer weitgehend eiförmigen Schale: Ober- und Unterseite sind eben, damit der
-Roboter sicher steht und oben die Bewegung möglich ist, während die Seiten stark abgerundet
-sind. So entsteht statt eines reinen Kastens die weichere, weniger kantige Form, die das Zielbild
-vorgibt (Anforderung~A6). Neffy~3.0 ist 43\,cm breit, 21{,}5\,cm tief und 45\,cm hoch.
-\todo{Gewicht? Kopf: eigenes Bauteil, wie aufgebaut?}
+Das Gehäuse wurde in SolidWorks konstruiert. Grundlage waren das Zielbild
+(Abbildung~\ref{fig:zielbild}) und ein Vergleich mit der Größe von Neffy~2. Daraus wurden
+ungefähre Hauptmaße abgeleitet; die Form selbst entstand frei nach dem Zielbild. Da das Team
+SolidWorks während des Praktikums erst vertiefen musste und die starken Rundungen anspruchsvoll
+zu modellieren waren, lag der Schwerpunkt darauf, die gewünschte Form umzusetzen. Abweichungen
+von wenigen Millimetern sind für den Zweck des Roboters unerheblich.
+
+Das Gehäuse hat die Form einer weitgehend eiförmigen Schale (Abbildung~\ref{fig:gehaeuse}\,a):
+Ober- und Unterseite sind eben, damit der Roboter sicher steht, während die Seiten stark
+abgerundet sind. So entsteht statt eines reinen Kastens die weichere, weniger kantige Form des
+Zielbilds (Anforderung~A6). Neffy~3.0 ist 43\,cm breit, 21{,}5\,cm tief und 45\,cm hoch. Auch
+der Kopf ist rund bis oval geformt. In ihm sitzen der Bildschirm, der Raspberry Pi und der
+Schrittmotor der Kopfbewegung.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.36\linewidth}
+    \centering
+    \platzhalter[\linewidth]{CAD-Frontansicht (normal vorne)}
+    \caption{CAD-Modell, Ansicht von vorne}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.6\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{neffy exp ganz.png}
+    \caption{Explosionsansicht mit allen Gehäuseteilen}
+  \end{subfigure}
+  \caption{CAD-Modell des Gehäuses von Neffy~3.0}
+  \label{fig:gehaeuse}
+\end{figure}
 
 \subsection{Teilung in druckbare Teile}
 \label{sec:gehaeuse_teilung}
 
-Da die Bauteile deutlich größer sind als der Bauraum des 3D-Druckers, musste das Gehäuse in
-mehrere druckbare Teile zerlegt werden (Tabelle~\ref{tab:gehaeuse_teile}, Anforderung~A9).
-\todo{Drucker und Bauraum (Druckbettgröße) angeben}
-Der Oberkörper ist in eine linke und eine rechte Schulter geteilt, die jeweils aus drei
-Druckteilen bestehen. Der Unterkörper besteht aus sechs Druckteilen, die zu zwei Hälften
-verklebt wurden. Die Hälften sind spiegelbildlich aufgebaut.
+Wegen der starken Rundungen ließen sich Ober- und Unterkörper nicht am Stück drucken: Sie sind
+größer als der Bauraum der Drucker, und selbst einzelne große Teile hätten sehr viel
+Stützmaterial erfordert. Besonders anspruchsvoll waren die Rundungen um die Taschen. Das Gehäuse
+wurde deshalb in mehrere druckbare Teile zerlegt (Tabelle~\ref{tab:gehaeuse_teile},
+Abbildung~\ref{fig:gehaeuse}\,b; Anforderung~A9). Der Aufbau folgt dabei stets demselben
+Prinzip: Zwei Seitenstücke bilden zusammen mit einem Vorder- und einem Hinterteil eine
+Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
 
 \begin{table}[htbp]
   \centering
   \caption{Teilung des Gehäuses}
   \label{tab:gehaeuse_teile}
   \small
-  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm} c
-                    >{\raggedright\arraybackslash}p{3.8cm}
-                    >{\raggedright\arraybackslash}p{4.8cm}@{}}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.3cm} c
+                    >{\raggedright\arraybackslash}p{4.4cm}
+                    >{\raggedright\arraybackslash}p{4.6cm}@{}}
     \toprule
-    Baugruppe & Druckteile & Verbindung der Druckteile & Befestigung am Roboter \\
+    Baugruppe & Druckteile & Zusammenbau & Öffnen \\
     \midrule
-    Schulter links  & 3 & verklebt, ausgerichtet über Passstifte & Magnete, ohne Werkzeug abnehmbar \\
-    Schulter rechts & 3 & verklebt, ausgerichtet über Passstifte & Magnete, ohne Werkzeug abnehmbar \\
-    Unterkörper     & 6 & zu zwei Hälften verklebt, ausgerichtet über Passstifte
-                    & beide Hälften verschraubt \\
+    Oberkörper  & 6 & je drei Teile zur linken und rechten Hälfte verklebt
+                & Hälften in der Mitte mit Magneten verbunden, ohne Werkzeug abnehmbar \\
+    Unterkörper & 6 & verklebt zu einer Schale und einer hinteren Klappe (aus zwei Teilen)
+                & Klappe mit zwei Schrauben seitlich und vier Schrauben im Boden befestigt \\
+    Kopfhülle   & 4 & Deckel, Vorder- und Hinterteil abnehmbar \todoi{viertes Teil?}
+                & Deckel mit Magneten; Hinterteil verschraubt; Vorderteil über zwei Stifte \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-Damit die Druckteile beim Verkleben exakt zueinander ausgerichtet sind, werden sie über
-Passstifte mit 5 bzw.\ 6\,mm Durchmesser verbunden. Dabei sitzt der Stift auf der einen Seite in
-einem Rundloch und auf der anderen in einem Langloch: Das Rundloch legt die Position fest, das
-Langloch lässt in einer Richtung Spiel und gleicht so Maßabweichungen des Drucks aus, ohne dass
-sich die Teile verspannen.
-\todo{Passstift-Prinzip so bestätigen; Material der Stifte, Kleber?}
+Jedes der großen Teile benötigte 15 Stunden Druckzeit oder mehr. Gedruckt wurde auf
+Druckern vom Typ Prusa MK4S und Prusa i3 MK3S im \ac{FDM}-Verfahren.
+\todo{Drucker-Modelle so richtig? Material (PLA/PETG)?}
 
-\subsection{Zugang zum Innenleben}
-\label{sec:gehaeuse_zugang}
+\subsection{Verbindung der Teile}
+\label{sec:gehaeuse_verbindung}
 
-Die Teilung berücksichtigt, dass die Elektronik zugänglich bleiben muss (Anforderung~A8). Die
-beiden Schultern sind mit Magneten befestigt und lassen sich ohne Werkzeug abnehmen und wieder
-aufsetzen. Darunter liegen das Innenleben des Oberkörpers und die Kabel. Der Unterkörper ist
-verschraubt; nach dem Lösen mehrerer Schrauben ist die Elektronik im Unterkörper, etwa das
-Neffy Board, zugänglich.
-\todo{Wie viele Magnete/Schrauben? Was sitzt wo (Pi, Board, Netzteil, Motoren, Spindel)?}
+Ursprünglich war vorgesehen, die Teile über Passstifte nach dem Prinzip Rundloch und Langloch
+auszurichten. In der Umsetzung wurden jedoch zunächst nur Rundlöcher verwendet, und schließlich
+wurden die Teile von Ober- und Unterkörper fast überall direkt miteinander verklebt. Viele der
+vorgesehenen Bohrungen wurden dadurch nicht mehr benötigt. Eine wichtige Erkenntnis aus der
+Konstruktion war, dass sich mit Kleben deutlich mehr lösen lässt als zunächst angenommen.
+\todo{Welcher Kleber?}
 
-\subsection{Toleranzen im \acs{FDM}-Druck}
-\label{sec:gehaeuse_toleranz}
+Lösbare Verbindungen gibt es nur dort, wo das Innenleben zugänglich bleiben muss
+(Anforderung~A8), und dafür werden vor allem Magnete eingesetzt. Die beiden Hälften des
+Oberkörpers sind in der Mitte magnetisch verbunden und lassen sich ohne Werkzeug abnehmen;
+darunter liegen das Innenleben des Oberkörpers und die Kabel. Die hintere Klappe des
+Unterkörpers ist verschraubt und gibt nach dem Lösen von sechs Schrauben die Elektronik frei,
+etwa das Neffy Board. Am Kopf ist der Deckel mit Magneten befestigt. Das Hinterteil des Kopfes
+besitzt Langlöcher mit einer Gewindebohrung und wird verschraubt, sodass es sich einfach
+abnehmen und wieder anbringen lässt; das Vorderteil wird über zwei Stifte gehalten. Insgesamt
+ist das Gehäuse damit modular aufgebaut.
+\todo{Anzahl und Art der Magnete?}
 
-\todoi{Testkörper: Wie sahen sie aus, welche Spaltmaße wurden getestet, welches Ergebnis
-(z.\,B.\ Bohrung $+0{,}2$\,mm)? Warum empirisch statt ISO-Passungen?}
-
-\subsection{Fertigung und Nachbearbeitung}
+\subsection{Toleranzen und Fertigung}
 \label{sec:gehaeuse_fertigung}
 
-\todoi{Drucker, Material, Schichthöhe/Füllung, Druckzeiten (gesamt, größtes Teil), Fehldrucke;
-Schleifen, Spachteln, Grundieren, Lackieren (Farbe, Aufwand).}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.31\linewidth}
-    \centering
-    \platzhalter[\linewidth]{CAD-Modell}
-    \caption{CAD-Modell}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.31\linewidth}
-    \centering
-    \platzhalter[\linewidth]{Teilung}
-    \caption{Teilung}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.31\linewidth}
-    \centering
-    \platzhalter[\linewidth]{Druckteil}
-    \caption{Druck}
-  \end{subfigure}
-  \caption{Entwicklungsschritte des Gehäuses}
-  \label{fig:gehaeuse_schritte}
-\end{figure}
+Bei der Konstruktion wurde von einer Fertigungstoleranz von 0{,}1\,mm ausgegangen. In der
+Praxis mussten Bohrungen dennoch häufig mit einer Ständerbohrmaschine nachgebohrt werden. Ein
+bis zwei Teile mussten neu gedruckt werden, keines der großen Teile.
+\todo{Toleranz-Testkörper gedruckt? Wenn ja: welche Maße, welches Ergebnis}
+\todoi{Nachbearbeitung: Schleifen, Spachteln, Grundieren, Lackieren (Farbe, Aufwand); Foto
+fertiges Gehäuse.}
 
 \section{Software}
 \label{sec:software}

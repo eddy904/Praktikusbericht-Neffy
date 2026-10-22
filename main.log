@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  22 OCT 2026 16:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  22 OCT 2026 16:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1678,9 +1678,7 @@ Overfull \hbox (3.22318pt too wide) in paragraph at lines 18--18
 
 [4
 
-] [5{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.
-enc}{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
-{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}
+] [5{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
 ])
 \tf@tdo=\write6
 \openout6 = `main.tdo'.
@@ -1713,20 +1711,25 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2
 
-{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [
-3]
+{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+<abbildungen/idee neffy.jpeg, id=338, 1407.2575pt x 1126.2075pt>
+File: abbildungen/idee neffy.jpeg Graphic file (type jpg)
+<use abbildungen/idee neffy.jpeg>
+Package pdftex.def Info: abbildungen/idee neffy.jpeg  used on input line 66.
+(pdftex.def)             Requested size: 234.73654pt x 187.844pt.
+ [3 <./abbildungen/idee neffy.jpeg>]
 Underfull \hbox (badness 2012) in paragraph at lines 139--140
 \T1/lmr/m/n/10.95 (+20) ab-nehm-bar, Un-ter-kör-per
  []
 
-[4]
+[4] [5]
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 182--182
 [] 
  []
 
-) (kapitel/03_stand_der_technik.tex [5]
+) (kapitel/03_stand_der_technik.tex [6]
 chapter 3.
-[6
+[7
 
 ]
 Overfull \hbox (7.3373pt too wide) in paragraph at lines 61--61
@@ -1738,7 +1741,7 @@ Overfull \hbox (7.3373pt too wide) in paragraph at lines 61--61
 \T1/lmr/m/n/10 (-20) ra/Datenschutz 
  []
 
-<abbildungen/neffy1.jpg, id=390, 513.92pt x 422.57875pt>
+<abbildungen/neffy1.jpg, id=397, 513.92pt x 422.57875pt>
 File: abbildungen/neffy1.jpg Graphic file (type jpg)
 <use abbildungen/neffy1.jpg>
 Package pdftex.def Info: abbildungen/neffy1.jpg  used on input line 93.
@@ -1748,7 +1751,7 @@ Overfull \hbox (3.45222pt too wide) in paragraph at lines 93--94
  [][] 
  []
 
-<abbildungen/neffy2.jpg, id=393, 1104.125pt x 1405.25pt>
+<abbildungen/neffy2.jpg, id=400, 1104.125pt x 1405.25pt>
 File: abbildungen/neffy2.jpg Graphic file (type jpg)
 <use abbildungen/neffy2.jpg>
 Package pdftex.def Info: abbildungen/neffy2.jpg  used on input line 98.
@@ -1763,7 +1766,8 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 103--104
  [][] 
  []
 
-[7]) (kapitel/04_methoden.tex [8 <./abbildungen/neffy1.jpg> <./abbildungen/neff
+[8]) (kapitel/04_methoden.tex [9{C:/Users/Admin/AppData/Local/Programs/MiKTeX/f
+onts/enc/dvips/lm/lm-mathit.enc} <./abbildungen/neffy1.jpg> <./abbildungen/neff
 y2.jpg>]
 chapter 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1782,71 +1786,70 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [9
+ [10
 
+{C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
 ]
-[10] [11]
-<abbildungen/plots/fsr_F1.pdf, id=478, 210.55063pt x 136.57324pt>
+[11] [12]
+<abbildungen/plots/fsr_F1.pdf, id=486, 210.55063pt x 136.57324pt>
 File: abbildungen/plots/fsr_F1.pdf Graphic file (type pdf)
 <use abbildungen/plots/fsr_F1.pdf>
 Package pdftex.def Info: abbildungen/plots/fsr_F1.pdf  used on input line 221.
 (pdftex.def)             Requested size: 204.85802pt x 132.88223pt.
-<abbildungen/plots/velostat_aktiv_A5.pdf, id=481, 210.55063pt x 136.57324pt>
+<abbildungen/plots/velostat_aktiv_A5.pdf, id=489, 210.55063pt x 136.57324pt>
 File: abbildungen/plots/velostat_aktiv_A5.pdf Graphic file (type pdf)
 <use abbildungen/plots/velostat_aktiv_A5.pdf>
 Package pdftex.def Info: abbildungen/plots/velostat_aktiv_A5.pdf  used on input
  line 226.
 (pdftex.def)             Requested size: 204.85802pt x 132.88223pt.
- [12 <./abbildungen/plots/fsr_F1.pdf> <./abbildungen/plots/velostat_aktiv_A5.pd
+ [13 <./abbildungen/plots/fsr_F1.pdf> <./abbildungen/plots/velostat_aktiv_A5.pd
 f>]
-
-LaTeX Warning: Marginpar on page 13 moved.
-
-[13]
 
 LaTeX Warning: Marginpar on page 14 moved.
 
 
-Overfull \hbox (2.40614pt too wide) in paragraph at lines 349--349
-\T1/lmr/m/n/10 (-20) te/Schrauben? 
- []
+LaTeX Warning: Marginpar on page 14 moved.
 
 
-Overfull \hbox (2.40614pt too wide) in paragraph at lines 349--349
-\T1/lmr/m/n/10 (-20) te/Schrauben? 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 355--355
-[] 
- []
+LaTeX Warning: Marginpar on page 14 moved.
 
 [14]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 361--361
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 324--325
+ [][] 
+ []
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 325--325
+[][][]|\T1/lmr/m/n/10.95 (+20) CAD-Modell, An-sicht von
+ []
+
+<abbildungen/neffy exp ganz.png, id=554, 646.66594pt x 562.35094pt>
+File: abbildungen/neffy exp ganz.png Graphic file (type png)
+<use abbildungen/neffy exp ganz.png>
+Package pdftex.def Info: abbildungen/neffy exp ganz.png  used on input line 329
+.
+(pdftex.def)             Requested size: 256.07741pt x 222.68822pt.
+[15 <./abbildungen/neffy exp ganz.png>]
+Overfull \hbox (4.27107pt too wide) in paragraph at lines 370--370
+\T1/lmr/m/n/10 (-20) (PLA/PETG)?[]  
+ []
+
+
+Overfull \hbox (4.27107pt too wide) in paragraph at lines 370--370
+\T1/lmr/m/n/10 (-20) (PLA/PETG)?[]  
+ []
+
+
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 401--401
 [] 
  []
 
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 367--368
- [][] 
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 372--373
- [][] 
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 377--378
- [][] 
- []
-
-[15] [16] [17]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 516--516
+[16] [17] [18]
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 535--535
 [] 
  []
 
-) (kapitel/05_diskussion.tex [18]
+) (kapitel/05_diskussion.tex [19]
 chapter 5.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 21--21
@@ -1863,7 +1866,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 38--38
 [] 
  []
 
-[19
+[20
 
 ]
 Overfull \hbox (11.42696pt too wide) in paragraph at lines 52--52
@@ -1876,11 +1879,16 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 63--63
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 68--68
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 66--66
 [] 
  []
 
-) (kapitel/06_fazit.tex [20]
+
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 71--71
+[] 
+ []
+
+) (kapitel/06_fazit.tex [21]
 chapter 6.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 10--10
@@ -1897,36 +1905,36 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 18--18
 [] 
  []
 
-) (kapitel/07_einschaetzung.tex [21
+) (kapitel/07_einschaetzung.tex [22
 
 ]
 chapter 7.
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 10--10
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 9--9
 [] 
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 13--13
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 12--12
 [] 
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 16--16
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 15--15
 [] 
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 19--19
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 18--18
 [] 
  []
 
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 22--22
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 21--21
 [] 
  []
 
-) [22
+) [23
 
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 12
@@ -1935,7 +1943,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 12
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [23
+ [24
 
 ]
 Package tocbasic Info: character protrusion at lot deactivated on input line 13
@@ -1944,7 +1952,7 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 13
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [24
+ [25
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
@@ -1957,23 +1965,23 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [25
+ [26
 
 ]
 chapter without number
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-[26
+[27
 
-] (anhang/anhang.tex [27]
+] (anhang/anhang.tex [28]
 chapter A.
 
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 6--6
 [] 
  []
 
-[28
+[29
 
 ]
 chapter B.
@@ -1982,7 +1990,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 10--10
 [] 
  []
 
-[29
+[30
 
 ]
 chapter C.
@@ -1991,7 +1999,7 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 14--14
 [] 
  []
 
-[30
+[31
 
 ]
 chapter D.
@@ -2000,14 +2008,14 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 18--18
 [] 
  []
 
-) (kapitel/eigenstaendigkeit.tex [31
+) (kapitel/eigenstaendigkeit.tex [32
 
 ]
 Overfull \hbox (11.24983pt too wide) in paragraph at lines 7--7
 [] 
  []
 
-) [32
+) [33
 
 ] (main.aux)
  ***********
@@ -2019,11 +2027,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58895 strings out of 467871
- 1413890 string characters out of 5418375
- 2490437 words of memory out of 5000000
- 86592 multiletter control sequences out of 15000+600000
- 731293 words of font info for 218 fonts, out of 8000000 for 9000
+ 58923 strings out of 467871
+ 1414625 string characters out of 5418375
+ 2492462 words of memory out of 5000000
+ 86617 multiletter control sequences out of 15000+600000
+ 731377 words of font info for 219 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,107p,11209b,2970s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
@@ -2045,9 +2053,9 @@ Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/User
 s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/User
 s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/User
 s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (38 pages, 800081 bytes).
+Output written on main.pdf (39 pages, 1052543 bytes).
 PDF statistics:
- 1007 PDF objects out of 1200 (max. 8388607)
- 207 named destinations out of 1000 (max. 500000)
- 56822 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1019 PDF objects out of 1200 (max. 8388607)
+ 208 named destinations out of 1000 (max. 500000)
+ 56824 words of extra memory for PDF output out of 61914 (max. 10000000)
 
