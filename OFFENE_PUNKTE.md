@@ -63,7 +63,7 @@
 - [x] Gehäuse 4.3: Form, Maße, Teilung, Kleben, Magnete, Drucker, PLA, Nachbearbeitung, Lack (Vincent/Hellweg, Montana GOLD)
 - [x] Keine Toleranz-Testkörper (begrenzte Druckkapazität)
 - [ ] 4.3 Rest: Kleber; viertes Teil der Kopfhülle; Kopf-Hinterteil Schraube und/oder Magnete; Foto fertiges Gehäuse
-- [ ] Nachname Kaspar (Kopfmechanik, Team Programmierung); Spindelantrieb: fertige Lineareinheit bereitgestellt, 3D-gedrucktes Verbindungsteil von Charly Goerke (Kap. 4.2) ✔
+- [ ] Nachname Kaspar (Kopfmechanik, Team Programmierung); Spindelantrieb: Lineareinheit aus Kaufteilen, Verbindungsteil Schlitten → Sensoreinsätze vom Team konstruiert (Kap. 4.2) ✔
 - [ ] Maße der Taschen und der Velostat-Fläche
 - [x] Schnittstelle ESP32 ↔ Pi: UART 115200, Befehlssatz Neffy_UART_Interface
 - [ ] A3/A4: Firmware sendet nur entspannt/normal/gestresst, keine Ein-/Ausatemdauer – Ziel anpassen?

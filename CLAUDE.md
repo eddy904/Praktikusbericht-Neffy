@@ -47,7 +47,8 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
     nur eine Idee und wurde nicht getestet.
   - Geändert: Die Dynamixel-Motoren von Neffy 2.0 wurden durch **Schrittmotoren** ersetzt, weil mehr
     Kraft benötigt wurde (**NEMA 17**, Körper und Kopf; Körper: fertige Lineareinheit mit Spindel, Schlitten und Schiene,
-    3D-gedrucktes Verbindungsteil zum Oberkörper von Charly Goerke – nicht Eigenleistung). Damit gab es Probleme → im Fazit ansprechen
+    Kaufteile; das 3D-gedruckte Verbindungsteil Schlitten → Sensoreinsätze hat **das Team konstruiert**.
+    Charly Goerke hat Motor und Schiene bereitgestellt und den Aufbau gezeigt – im Bericht nicht erwähnen). Damit gab es Probleme → im Fazit ansprechen
     [welche Probleme? welches Team war zuständig?].
 - Ziele 3.0 (gesamt): sensorbasierte Interaktion, besserer Touch, Atemübungen per Interaktion auswählbar.
 - Ursprünglicher Auftrag Team Sensorik:
