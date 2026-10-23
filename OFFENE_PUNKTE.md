@@ -44,7 +44,7 @@
 ## Inhalt
 - [x] Neffy 3.0 baut auf Neffy 2.0 auf (Raspberry Pi, Schulter- und Kopfbewegung)
 - [x] Dynamixel → Schrittmotoren (mehr Kraft benötigt)
-- [x] Schrittmotor: Baugröße NEMA 17 (Kap. 4.2) – [ ] Kopfmotor auch? genaues Modell/Haltemoment, falls bekannt
+- [x] Schrittmotoren Körper und Kopf: Baugröße NEMA 17 (Kap. 4.2) – [ ] genaues Modell/Haltemoment, falls bekannt
 - [ ] Probleme mit den Schrittmotoren (fürs Fazit) – und welches Team war zuständig?
 - [x] Haptisches Feedback kam bei Neffy 1 und 2 gut an → Schulter-/Kopfbewegung übernommen
 - [ ] Beleg dafür (Studie/Feedback), falls vorhanden
