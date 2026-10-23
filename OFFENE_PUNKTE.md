@@ -19,6 +19,7 @@
   - Logs aus der Firmware: `logs/pocket-*.csv`, `logs/thermal-*.csv`
   - Velostat-Messreihe mit 481 Werten à 50 ms: identisch mit einer der atemkurve-Dateien?
 - [ ] Fotos, CAD-Screenshots, Schaltplan in `abbildungen/`
+  - [ ] CAD: Gehäuse mit farbig markierten Druckteilen (weißer Hintergrund, keine Auswahl-Markierung) → Abb. Gehäuse (b); alte Explosionsansicht gelöscht (23.10.2026)
 - [x] Firmware-Repo gesichtet → `notizen/analyse_firmware.md`
 - [ ] **Log-Dateien** `logs/pocket-*.csv` und `logs/thermal-*.csv` (per .gitignore nicht im Repo) → nach `daten/`
 - [ ] Präsentation, Notizen in `notizen/`
