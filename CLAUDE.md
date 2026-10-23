@@ -81,7 +81,8 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
 - Wendepunkt: Team Sensorik hat zusätzlich das komplette neue Gehäuse übernommen
   (SolidWorks-Konstruktion, FDM-3D-Druck, Nachbearbeitung, Lackierung) – größter Zeitanteil.
 - Konstruktion: eiförmige Schale, gespiegelte Hälften, in druckbare Teile mit abnehmbarem Deckel geteilt;
-  Ausrichtung über Passstifte Ø5/Ø6 mm mit Rundloch-plus-Langloch-Prinzip.
+  Rundloch-plus-Langloch war geplant, umgesetzt wurde fast überall **Kleben**; lösbar über Neodym-Magnete
+  (Oberkörper, Kopfdeckel) bzw. Schrauben (hintere Klappe). 16 Druckteile (6 + 6 + 4), PLA (siehe Kap. 4.3).
 - Herausforderungen: SolidWorks neu lernen, Druckbettgröße, lange Druckzeiten, Laborzeiten koordinieren,
   FDM-Toleranzen (angenommen 0,1 mm; **keine Testkörper** wegen begrenzter Druckkapazität, nur kleine Teile wie
   Aufnahmen für Netzteilbuchse, Schalter, Kopfhörer vorab getestet; Hülle nur einmal gedruckt) → eine Gehäuseversion.
@@ -96,17 +97,18 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
 - Noch nicht im Ordner: Firmware-Logs `logs/pocket-*.csv` und `logs/thermal-*.csv`.
   Thermalsensor D6T-1A-02 ist final integriert.
 
-## Arbeitsstand (21.10.2026)
+## Arbeitsstand (23.10.2026)
 | Kapitel | Stand |
 |---|---|
 | Titelblatt | fertig nach Neffy-2-Vorlage; fehlen: Nachname Badre, Matrikelnummern |
 | 1 Einleitung | offen (wird am Schluss geschrieben) |
-| 2 Ziel der Arbeit | Fließtext fertig; fehlen: Zahlen für A1/A5/A7/A9, Zeitraum/Stunden, KI-Zielbild |
-| 3 Stand der Technik | Fließtext fertig; Vergleich Neffy 1.0/2.0/3.0 nach Vorgabe der Betreuerin |
-| 4 Methoden | Fließtext fertig außer **4.3 Gehäuse** (Infos folgen); Plots fehlen; mit 8 S. zu lang → später kürzen |
-| 5 Diskussion | offen, wartet auf Messdaten |
+| 2 Ziel der Arbeit | Fließtext fertig; Anforderungen A1–A10 – **Überarbeitung vorgeschlagen (23.10.), wartet auf OK**; fehlen: Zeitraum/Stunden, KI-Zielbild |
+| 3 Stand der Technik | Fließtext fertig; Vergleich Neffy 1.0/2.0/3.0; Foto Neffy 3.0 fehlt |
+| 4 Methoden | Fließtext fertig inkl. 4.3 Gehäuse und Plots; Bilder fehlen (CAD-Teilung Körper + Kopf, Fotos); zu lang → kürzen |
+| 5 Diskussion | Entwurf fertig (Messwerte, Evaluation A1–A10, Schwachstellen); offen: Reichweitenmessung Thermal, Fotos |
 | 6 Fazit, 7 Einschätzung | offen |
-Reihenfolge danach: 5 → 6 → 1 → 7 → Kürzen → Kennzeichnung „wer was“.
+Seitenstand: Kap. 1–5 ≈ 25 S. (mit todo-Boxen) → mit 6, 1, 7 ca. 30 S. gegenüber Ziel ~20 S.
+Reihenfolge danach: Anforderungen klären → 6 → 1 → 7 → Kürzen → Kennzeichnung „wer was“.
 
 Wichtige Einordnung (Kap. 3/4): Ommie bestimmt die Atemphase trotz Eigenbewegung des Roboters mit einem
 eigenen Datensatz und einem neuronalen Netz (`matheus2023phase`). Unser Argument gegen den
