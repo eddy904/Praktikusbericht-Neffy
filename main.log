@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  23 OCT 2026 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  23 OCT 2026 17:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1850,17 +1850,17 @@ LaTeX Warning: Marginpar on page 14 moved.
 
 [14 <./abbildungen/plots/fsr_F1.pdf> <./abbildungen/plots/velostat_aktiv_A5.pdf
 >]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 329--330
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 330--331
  [][] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 334--335
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 335--336
  [][] 
  []
 
 [15] [16] [17] [18] [19]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 561--561
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 562--562
 [] 
  []
 
@@ -1884,7 +1884,7 @@ Overfull \hbox (10.60567pt too wide) in paragraph at lines 2--57
 [21
 
 ]
-<abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf, id=616, 426.79147pt x 241.8
+<abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf, id=617, 426.79147pt x 241.8
 4753pt>
 File: abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf Graphic file (type pdf)
 
@@ -2041,11 +2041,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59459 strings out of 467871
- 1421096 string characters out of 5418375
+ 59464 strings out of 467871
+ 1421188 string characters out of 5418375
  2489876 words of memory out of 5000000
- 87115 multiletter control sequences out of 15000+600000
- 735749 words of font info for 244 fonts, out of 8000000 for 9000
+ 87116 multiletter control sequences out of 15000+600000
+ 735897 words of font info for 246 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,107p,11209b,2970s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
@@ -2069,9 +2069,9 @@ s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/User
 s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/User
 s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb>
-Output written on main.pdf (44 pages, 946322 bytes).
+Output written on main.pdf (44 pages, 946845 bytes).
 PDF statistics:
- 1082 PDF objects out of 1200 (max. 8388607)
+ 1083 PDF objects out of 1200 (max. 8388607)
  200 named destinations out of 1000 (max. 500000)
  57368 words of extra memory for PDF output out of 61914 (max. 10000000)
 

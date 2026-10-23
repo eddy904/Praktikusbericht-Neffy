@@ -91,4 +91,4 @@
 - [x] Schwachstelle „Stress-Einstufung nicht validiert“ ergänzt, Ausblick vorgemerkt
 - [ ] A7: prüfbares Kriterium (Taschenmaße vs. Handmaße, z. B. DIN 33402-2 – erst prüfen)
 - [ ] Tests am Roboter (Metronom-Test Atemerkennung, Lasttest A5) – derzeit nicht möglich, Kap. 5 nennt sie als nicht systematisch gemessen
-- [x] Tatsächlicher Hub: nicht wichtig, Ziel war mehr Kraft, nicht mehr Hub; kein Vergleich 85 vs. 25 mm im Bericht (23.10.2026)
+- [x] Tatsächlicher Hub bei Übungen: max. 20 mm (ähnlich Neffy 2 mit 25 mm); Ziel war mehr Kraft (Kap. 4.2.4)
