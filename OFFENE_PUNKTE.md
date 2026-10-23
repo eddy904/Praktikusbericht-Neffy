@@ -45,7 +45,7 @@
 - [x] Neffy 3.0 baut auf Neffy 2.0 auf (Raspberry Pi, Schulter- und Kopfbewegung)
 - [x] Dynamixel → Schrittmotoren (mehr Kraft benötigt)
 - [x] Schrittmotoren Körper und Kopf: Baugröße NEMA 17 (Kap. 4.2) – [ ] genaues Modell/Haltemoment, falls bekannt
-- [ ] Probleme mit den Schrittmotoren (fürs Fazit) – und welches Team war zuständig?
+- [x] Probleme mit den Schrittmotoren: bei sehr starkem Drücken Stillstand + Geräusche (Kap. 5.4, 6)
 - [x] Haptisches Feedback kam bei Neffy 1 und 2 gut an → Schulter-/Kopfbewegung übernommen
 - [ ] Beleg dafür (Studie/Feedback), falls vorhanden
 - [ ] Zeitraum und Stunden pro Person (für Kap. 2, Zeitaufteilung)
@@ -83,7 +83,7 @@
 - [ ] Messreihen-IDs A1–A6 → V1–V6 umbenennen (Verwechslung mit Anforderungen A1–A10)? Antwort Badre ausstehend
 - [ ] Tests der Atemerkennung am fertigen Neffy (Erkennungsrate, Einstufung)?
 - [ ] Evaluation A1, A2, A4, A5 bewerten; A3, A6–A9 prüfen
-- [ ] Probleme mit den Schrittmotoren konkret
+- [x] Probleme mit den Schrittmotoren konkret (s. o.)
 - [ ] Eigene Ideen bestätigen
 
 ## Anforderungen (Durchsicht 23.10.2026)
@@ -92,3 +92,5 @@
 - [ ] A7: prüfbares Kriterium (Taschenmaße vs. Handmaße, z. B. DIN 33402-2 – erst prüfen)
 - [ ] Tests am Roboter (Metronom-Test Atemerkennung, Lasttest A5) – derzeit nicht möglich, Kap. 5 nennt sie als nicht systematisch gemessen
 - [x] Tatsächlicher Hub bei Übungen: max. 20 mm (ähnlich Neffy 2 mit 25 mm); Ziel war mehr Kraft (Kap. 4.2.4)
+- [ ] Kap. 6: Zusammenfassung prüfen – wichtigstes Ergebnis richtig gewichtet?
+- [ ] Schwachstelle `DISABLE_MOTORS` (Name passt nicht zur Funktion, laut Code-Kommentar) behalten oder streichen?

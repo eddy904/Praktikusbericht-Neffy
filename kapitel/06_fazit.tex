@@ -7,12 +7,53 @@
 \section{Zusammenfassung}
 \label{sec:zusammenfassung}
 
-\todoi{Antwort auf die übergeordnete Fragestellung (Abschnitt~\ref{sec:fragestellung}).}
+Ausgangspunkt war die Frage, wie Neffy durch Sensorik und ein neu gestaltetes Gehäuse von
+einem ablaufgesteuerten Objekt zu einem Roboter weiterentwickelt werden kann, der seine
+Umgebung wahrnimmt und mit den Nutzer:innen interagiert (Abschnitt~\ref{sec:fragestellung}).
+Neffy~3.0 zeigt, dass dies mit einfacher und kostengünstiger Sensorik möglich ist, allerdings
+nicht in jeder Hinsicht so, wie es ursprünglich geplant war.
 
-\todoi{Schrittmotoren: im Betrieb zuverlässig, Probleme nur bei starkem Drücken; Referenzfahrt
-anfangs fehlerhaft (behoben). Kurz einordnen.}
+Ein Thermalsensor erkennt, wenn sich eine Person vor dem Roboter befindet; der Raspberry Pi
+reagiert darauf mit einer kurzen Bewegung und lädt so zur Nutzung ein. Über Velostat-Sensoren
+in den Schultertaschen wird der Atemrhythmus erfasst und als entspannt, normal oder gestresst
+eingestuft, woraufhin eine passende Atemübung startet. Dieselben Taschen dienen zusätzlich als
+Bedienelement. Das ursprüngliche Ziel, die Atmung passiv über die aufliegenden Hände zu
+erkennen, wurde nicht erreicht: Der Signalhub lag dabei mit 107 bis 455 ADC-Einheiten weit
+unter den 1410 bis 3360 ADC-Einheiten beim aktiven Mitdrücken und ließ sich nicht von
+zufälligen Handbewegungen trennen. Die aktive Erfassung funktioniert dagegen zuverlässig,
+setzt aber die bewusste Mitwirkung der Nutzer:innen voraus.
+
+Über den ursprünglichen Auftrag hinaus hat das Team Sensorik das Gehäuse vollständig neu
+konstruiert, gedruckt und lackiert. Es setzt die runde Form des Zielbilds um, bietet mit den
+Taschen sicheren Halt für die Hände und lässt sich dank Magnetverbindungen ohne Werkzeug
+öffnen. Die Schrittmotoren bringen im normalen Betrieb ausreichend Kraft auf; nur wenn sehr
+stark auf den Roboter gedrückt wird, bleibt der Körper stehen und der Motor macht Geräusche.
+
+Neffy~3.0 nimmt damit Anwesenheit und Atemrhythmus wahr und reagiert darauf. Offen sind
+die Messung der Reichweite der Anwesenheitserkennung, die Überprüfung der Stress-Einstufung
+und eine Studie mit Nutzer:innen (Abschnitt~\ref{sec:schwachstellen}).
 
 \section{Ausblick}
 \label{sec:ausblick}
 
-\todoi{Konkret: Taster statt Velostat, nächste Gehäuseversion (Höhe der Hände/Ellbogen anpassen, mehr auf Kleben auslegen, weniger Bohrungen; Teile möglichst als Ganzes drucken und dafür mehr Stützmaterial in Kauf nehmen, weil das viel Nachbearbeitung an Klebestellen spart), Materialwahl, Grenzen der Stress-Einstufung mit Daten aus Studien mit Neffy überprüfen, \dots}
+Für eine nächste Version ergeben sich folgende Ansätze:
+
+\begin{itemize}
+  \item \textbf{Taster statt Velostat:} Velostat wurde gewählt, weil es eine passive, flächige
+        Druckmessung versprach. Da die Atemerfassung nun ohnehin bewusstes Drücken erfordert,
+        genügt ein einfacher Taster. Er ist robuster, einfacher auszuwerten und driftet nicht,
+        sodass die aufwendige Selbstkalibrierung entfällt.
+  \item \textbf{Kleineres Gehäuse mit angepasster Handposition:} Das Gehäuse sollte insgesamt
+        etwas kleiner werden und die Position der Hände gezielt auslegen, damit Hände und
+        Ellbogen nicht zu hoch liegen.
+  \item \textbf{Fertigung:} Große Teile sollten möglichst am Stück gedruckt werden, auch wenn
+        dafür mehr Stützmaterial nötig ist; das spart viel Nacharbeit an den Klebestellen. Die
+        Konstruktion kann von vornherein auf Kleben ausgelegt werden und braucht dann weniger
+        Bohrungen.
+  \item \textbf{Antrieb:} Für den Körper wäre ein stärkerer Schrittmotor oder ein Servomotor
+        sinnvoll, damit der Hub auch bei starkem Druck nicht stehen bleibt. Die gedruckten
+        Zahnräder der Kopfmechanik haben Spiel; Metallzahnräder oder besser ein Riemengetriebe
+        würden es verringern.
+  \item \textbf{Validierung:} Die Grenzen der Stress-Einstufung sollten mit Daten aus Studien
+        mit Neffy überprüft und angepasst werden.
+\end{itemize}

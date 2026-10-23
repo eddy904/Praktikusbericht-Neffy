@@ -48,8 +48,9 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
   - Geändert: Die Dynamixel-Motoren von Neffy 2.0 wurden durch **Schrittmotoren** ersetzt, weil mehr
     Kraft benötigt wurde (**NEMA 17**, Körper und Kopf; Körper: fertige Lineareinheit mit Spindel, Schlitten und Schiene,
     Kaufteile; das 3D-gedruckte Verbindungsteil Schlitten → Sensoreinsätze hat **das Team konstruiert**.
-    Charly Goerke hat Motor und Schiene bereitgestellt und den Aufbau gezeigt – im Bericht nicht erwähnen). Damit gab es Probleme → im Fazit ansprechen
-    [welche Probleme? welches Team war zuständig?].
+    Charly Goerke hat Motor und Schiene bereitgestellt und den Aufbau gezeigt – im Bericht nicht erwähnen).
+    Problem: Bei sehr starkem Drücken bleibt der Körper stehen, Motor macht Geräusche (Ausblick: stärkerer Motor/Servo).
+    Kopf: gedruckte Zahnräder haben Spiel (Ausblick: Metall oder Riemengetriebe).
 - Ziele 3.0 (gesamt): sensorbasierte Interaktion, besserer Touch, Atemübungen per Interaktion auswählbar.
 - Ursprünglicher Auftrag Team Sensorik:
   - Anwesenheitserkennung mit Thermalsensor Omron D6T-1A-02 (I²C) → Neffy „wacht auf“
@@ -108,9 +109,10 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
 | 3 Stand der Technik | Fließtext fertig; Vergleich Neffy 1.0/2.0/3.0; Foto Neffy 3.0 fehlt |
 | 4 Methoden | Fließtext fertig inkl. 4.3 Gehäuse und Plots; Bilder fehlen (CAD-Teilung Körper + Kopf, Fotos); zu lang → kürzen |
 | 5 Diskussion | Entwurf fertig (Messwerte, Evaluation A1–A10, Schwachstellen); offen: Reichweitenmessung Thermal, Fotos |
-| 6 Fazit, 7 Einschätzung | offen |
+| 6 Fazit | Entwurf fertig (23.10.): Zusammenfassung + Ausblick (Taster, kleineres Gehäuse, am Stück drucken, stärkerer Motor/Servo, Kopf: Metallzahnräder/Riemen, Validierung) |
+| 7 Einschätzung | offen |
 Seitenstand: Kap. 1–5 ≈ 25 S. (mit todo-Boxen) → mit 6, 1, 7 ca. 30 S.; Ziel ~20 S. ist nicht streng.
-Reihenfolge danach: 6 → 1 → 7 → Kürzen → Kennzeichnung „wer was“.
+Reihenfolge danach: 1 → 7 → Kürzen → Kennzeichnung „wer was“.
 
 Wichtige Einordnung (Kap. 3/4): Ommie bestimmt die Atemphase trotz Eigenbewegung des Roboters mit einem
 eigenen Datensatz und einem neuronalen Netz (`matheus2023phase`). Unser Argument gegen den
@@ -211,7 +213,7 @@ Zeitraum und Dauer (Stunden) gehören in Kap. 2 (Projektorganisation), nicht auf
    - Schwachstellen ehrlich und konkret (Zahlen, Ursachen), auch was nicht funktioniert hat
 6. **Fazit** (~1 S.)
    - Zusammenfassung
-   - Ausblick (konkret: z. B. Taster statt Velostat, nächste Gehäuseversion, Materialwahl)
+   - Ausblick (konkret: z. B. Taster statt Velostat, nächste Gehäuseversion, Antrieb)
 7. **Meine/Unsere Einschätzung zum Praktikum** (~2–3 S.) – Ich-/Wir-Form erlaubt
    - Studium und Praktikum · Praktikumsalltag · Erwartungen · Erfahrungen
      (hier Selbstständigkeit, Motivation, Teamarbeit mit konkreten Beispielen) · Persönliches Fazit

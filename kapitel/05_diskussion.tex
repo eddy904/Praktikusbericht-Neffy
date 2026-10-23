@@ -201,11 +201,10 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
   \item \textbf{Ergonomie:} Durch die Größe von Neffy~3.0 liegen Hände und Ellbogen etwas zu hoch;
         dieser Punkt wurde im Entwurf zu wenig beachtet. Als einfache Abhilfe dienen kleine Kissen
         links und rechts unter den Ellbogen.
-  \item \textbf{Antrieb:} Im normalen Betrieb schafft der Antrieb den Hub zuverlässig. Probleme traten
-        nur auf, wenn stark auf den Roboter gedrückt wurde. Bei der Referenzfahrt verloren die
-        Schrittmotoren anfangs Schritte, wenn eine Achse beim Start auf dem Endschalter stand; dies
-        wurde in der Firmware behoben.
-        \todo{Was passierte bei starkem Drücken genau (Schrittverlust, Stillstand)?}
+  \item \textbf{Antrieb:} Im normalen Betrieb schafft der Antrieb den Hub zuverlässig. Wird sehr
+        stark auf den Roboter gedrückt, bleibt der Körper jedoch stehen und der Motor macht
+        Geräusche. Bei der Referenzfahrt verloren die Schrittmotoren anfangs Schritte, wenn eine
+        Achse beim Start auf dem Endschalter stand; dies wurde in der Firmware behoben.
   \item \textbf{Zweckentfremdeter Befehl:} Der Befehl \texttt{DISABLE\_MOTORS} schaltet die Motoren
         nicht ab, sondern dient als Startsignal einer Übung. Der Name passt nicht zur Bedeutung und
         erschwert die Wartung der Schnittstelle.
