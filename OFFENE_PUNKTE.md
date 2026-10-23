@@ -19,7 +19,10 @@
   - Logs aus der Firmware: `logs/pocket-*.csv`, `logs/thermal-*.csv`
   - Velostat-Messreihe mit 481 Werten à 50 ms: identisch mit einer der atemkurve-Dateien?
 - [ ] Fotos, CAD-Screenshots, Schaltplan in `abbildungen/`
-  - [ ] CAD: Gehäuse mit farbig markierten Druckteilen (weißer Hintergrund, keine Auswahl-Markierung) → Abb. Gehäuse (b); alte Explosionsansicht gelöscht (23.10.2026)
+  - [ ] CAD (a): Körper zusammengebaut, jedes Druckteil in eigener Farbe (weißer Hintergrund, keine Auswahl-Markierung); alte Explosionsansicht gelöscht (23.10.2026)
+  - [ ] CAD (b): Kopf explodiert, nur Boden/Hinterteil/Vorderteil/Deckel
+  - [ ] Fotos Kap. 5: Neffy frontal (auch für Kap. 3) + Hände in den Taschen
+  - [ ] optional: geöffneter Oberkörper mit Magneten, Innenseite mit Klebenaht
 - [x] Firmware-Repo gesichtet → `notizen/analyse_firmware.md`
 - [ ] **Log-Dateien** `logs/pocket-*.csv` und `logs/thermal-*.csv` (per .gitignore nicht im Repo) → nach `daten/`
 - [ ] Präsentation, Notizen in `notizen/`
@@ -36,12 +39,12 @@
 - [ ] „Praxisbericht“ oder „Praktikumsbericht“? (Neffy 2 nutzt „Praxisbericht“)
 - [ ] Arbeitstitel bestätigen
 - [ ] Wortlaut der Eigenständigkeitserklärung (BHT-Vorgabe)
-- [ ] Umfang ~20 Seiten ohne Verzeichnisse/Anhang bestätigen
+- [x] Umfang ~20 Seiten: nicht streng (Badre, 23.10.2026)
 
 ## Inhalt
 - [x] Neffy 3.0 baut auf Neffy 2.0 auf (Raspberry Pi, Schulter- und Kopfbewegung)
 - [x] Dynamixel → Schrittmotoren (mehr Kraft benötigt)
-- [ ] Genaues Schrittmotor-Modell (Datenblatt)
+- [x] Schrittmotor: Baugröße NEMA 17 (Kap. 4.2) – [ ] Kopfmotor auch? genaues Modell/Haltemoment, falls bekannt
 - [ ] Probleme mit den Schrittmotoren (fürs Fazit) – und welches Team war zuständig?
 - [x] Haptisches Feedback kam bei Neffy 1 und 2 gut an → Schulter-/Kopfbewegung übernommen
 - [ ] Beleg dafür (Studie/Feedback), falls vorhanden
@@ -51,7 +54,8 @@
 - [ ] Aufgabenverteilung „Wer macht was“
 - [x] Thermalsensor D6T-1A-02 integriert
 - [ ] Datenblätter: D6T-1A-02, TMC2225, Schrittmotoren, Velostat
-- [ ] Anforderung Anwesenheit: „nicht bei Vorbeigehen in 2–3 m“ (Notiz) vs. „reagiert kurz beim Vorbeigehen“ – was gilt?
+- [x] Anforderung Anwesenheit: A1 = sitzende Person erkennen, A2 = Meldung an Pi; Pi reagiert auch beim Vorbeigehen (23.10.2026)
+- [ ] **Reichweite Thermalsensor messen** (Daten folgen von Badre); 2–3 m prüfen – nach Firmware-Werten eher geringer; ruhig sitzende Person > 20 s erkannt?
 - [x] Drucksensoren: FSR (Joy-IT) vs. Velostat, Gründe geklärt
 - [x] Wurde der Dehnungsgurt (Backup) getestet? → nein, nur Idee (Kap. 4.2)
 - [ ] Warum Wechsel von „Sensoren am Pi mit MCP3208“ zum ESP32-Board?
@@ -59,7 +63,7 @@
 - [x] Gehäuse 4.3: Form, Maße, Teilung, Kleben, Magnete, Drucker, PLA, Nachbearbeitung, Lack (Vincent/Hellweg, Montana GOLD)
 - [x] Keine Toleranz-Testkörper (begrenzte Druckkapazität)
 - [ ] 4.3 Rest: Kleber; viertes Teil der Kopfhülle; Kopf-Hinterteil Schraube und/oder Magnete; Foto fertiges Gehäuse
-- [ ] Nachname Kaspar (Kopfmechanik, Team Programmierung); wer hat den Spindelantrieb konstruiert?
+- [ ] Nachname Kaspar (Kopfmechanik, Team Programmierung); Spindelantrieb: fertige Lineareinheit bereitgestellt, 3D-gedrucktes Verbindungsteil von Charly Goerke (Kap. 4.2) ✔
 - [ ] Maße der Taschen und der Velostat-Fläche
 - [x] Schnittstelle ESP32 ↔ Pi: UART 115200, Befehlssatz Neffy_UART_Interface
 - [ ] A3/A4: Firmware sendet nur entspannt/normal/gestresst, keine Ein-/Ausatemdauer – Ziel anpassen?
@@ -81,3 +85,9 @@
 - [ ] Evaluation A1, A2, A4, A5 bewerten; A3, A6–A9 prüfen
 - [ ] Probleme mit den Schrittmotoren konkret
 - [ ] Eigene Ideen bestätigen
+
+## Anforderungen (Durchsicht 23.10.2026)
+- [x] A1–A3 neu formuliert (A3 = ursprüngliches passives Ziel → Evaluation „teilweise“)
+- [x] Schwachstelle „Stress-Einstufung nicht validiert“ ergänzt, Ausblick vorgemerkt
+- [ ] A7: prüfbares Kriterium (Taschenmaße vs. Handmaße, z. B. DIN 33402-2 – erst prüfen)
+- [ ] Tests am Roboter (Metronom-Test Atemerkennung, Lasttest A5) – derzeit nicht möglich, Kap. 5 nennt sie als nicht systematisch gemessen

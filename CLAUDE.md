@@ -13,7 +13,7 @@
 - Die **Firmware im Repo ist maßgeblich**: Bei Widersprüchen zu Notizen gilt der Code.
 - Bericht: **ein gemeinsamer Teambericht**. Wer was gemacht hat, wird erst ganz am Ende gekennzeichnet.
 - Abgabeformat: LaTeX (VS Code + LaTeX Workshop), Literatur über biblatex (`literatur.bib`)
-- Umfang: **ca. 20 Seiten** von Einleitung bis Ende der Einschätzung; Titelblatt, Verzeichnisse,
+- Umfang: **ca. 20 Seiten** (laut Badre nicht streng, 23.10.2026) von Einleitung bis Ende der Einschätzung; Titelblatt, Verzeichnisse,
   Literatur, Anhang und Eigenständigkeitserklärung zählen nicht mit [bitte bestätigen]
 - Abgabe: **26.10.2026**
 - Sprache: Deutsch
@@ -46,7 +46,8 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
   - Atemgurte werden nur in Studien als Referenzmessung genutzt. Ein Gurt als Rückfallebene war bei uns
     nur eine Idee und wurde nicht getestet.
   - Geändert: Die Dynamixel-Motoren von Neffy 2.0 wurden durch **Schrittmotoren** ersetzt, weil mehr
-    Kraft benötigt wurde [genaues Modell folgt]. Damit gab es Probleme → im Fazit ansprechen
+    Kraft benötigt wurde (**NEMA 17**; Körper: fertige Lineareinheit mit Spindel, Schlitten und Schiene,
+    3D-gedrucktes Verbindungsteil zum Oberkörper von Charly Goerke – nicht Eigenleistung). Damit gab es Probleme → im Fazit ansprechen
     [welche Probleme? welches Team war zuständig?].
 - Ziele 3.0 (gesamt): sensorbasierte Interaktion, besserer Touch, Atemübungen per Interaktion auswählbar.
 - Ursprünglicher Auftrag Team Sensorik:
@@ -102,13 +103,13 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
 |---|---|
 | Titelblatt | fertig nach Neffy-2-Vorlage; fehlen: Nachname Badre, Matrikelnummern |
 | 1 Einleitung | offen (wird am Schluss geschrieben) |
-| 2 Ziel der Arbeit | Fließtext fertig; Anforderungen A1–A10 – **Überarbeitung vorgeschlagen (23.10.), wartet auf OK**; fehlen: Zeitraum/Stunden, KI-Zielbild |
+| 2 Ziel der Arbeit | Fließtext fertig; Anforderungen A1–A3 überarbeitet (23.10.), A7 ohne prüfbares Kriterium; fehlen: Zeitraum/Stunden, KI-Zielbild |
 | 3 Stand der Technik | Fließtext fertig; Vergleich Neffy 1.0/2.0/3.0; Foto Neffy 3.0 fehlt |
 | 4 Methoden | Fließtext fertig inkl. 4.3 Gehäuse und Plots; Bilder fehlen (CAD-Teilung Körper + Kopf, Fotos); zu lang → kürzen |
 | 5 Diskussion | Entwurf fertig (Messwerte, Evaluation A1–A10, Schwachstellen); offen: Reichweitenmessung Thermal, Fotos |
 | 6 Fazit, 7 Einschätzung | offen |
-Seitenstand: Kap. 1–5 ≈ 25 S. (mit todo-Boxen) → mit 6, 1, 7 ca. 30 S. gegenüber Ziel ~20 S.
-Reihenfolge danach: Anforderungen klären → 6 → 1 → 7 → Kürzen → Kennzeichnung „wer was“.
+Seitenstand: Kap. 1–5 ≈ 25 S. (mit todo-Boxen) → mit 6, 1, 7 ca. 30 S.; Ziel ~20 S. ist nicht streng.
+Reihenfolge danach: 6 → 1 → 7 → Kürzen → Kennzeichnung „wer was“.
 
 Wichtige Einordnung (Kap. 3/4): Ommie bestimmt die Atemphase trotz Eigenbewegung des Roboters mit einem
 eigenen Datensatz und einem neuronalen Netz (`matheus2023phase`). Unser Argument gegen den

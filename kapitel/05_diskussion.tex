@@ -17,8 +17,17 @@ daraufhin eine Atemübung startet. Körper und Kopf bewegen sich dabei im Atemrh
 
 \begin{figure}[htbp]
   \centering
-  \platzhalter{Foto des fertigen Neffy~3.0}
-  \caption{Neffy~3.0 im aufgebauten Zustand}
+  \begin{subfigure}[b]{0.48\linewidth}
+    \centering
+    \platzhalter[\linewidth]{Foto Neffy~3.0 frontal}
+    \caption{Aufgebauter Roboter}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.48\linewidth}
+    \centering
+    \platzhalter[\linewidth]{Foto: Hände in den Taschen während einer Übung}
+    \caption{Hände in den Taschen}
+  \end{subfigure}
+  \caption{Neffy~3.0 im aufgebauten Zustand und in Benutzung}
   \label{fig:neffy_fertig}
 \end{figure}
 
@@ -114,7 +123,10 @@ wieder herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Inne
 auch bei normalem Tageslicht keine Probleme auf.
 \todoi{Messung ausstehend: Erkennung in 0{,}5 / 1 / 1{,}5 / 2 / 2{,}5 / 3\,m mit
 \texttt{tools/thermal\_log.py} aufzeichnen; danach Plot \enquote{Temperaturdifferenz über
-Entfernung} und genaue Reichweite eintragen.}
+Entfernung} und genaue Reichweite eintragen. Plausibilität: Nach den Firmware-Werten
+(+2\,K in 1\,m, Schwelle mindestens 1\,K) wäre eine geringere Reichweite als 2--3\,m zu erwarten.
+Außerdem prüfen, ob eine sehr ruhig sitzende Person länger als 20\,s erkannt bleibt
+(Neulernen der Raumtemperatur bei flachem Signal).}
 
 Eine Grenze ergibt sich aus dem Verfahren selbst: Die gelernte Raumtemperatur steigt nur langsam,
 folgt einem Absinken aber sofort (Abschnitt~\ref{sec:sw_anwesenheit}). Scheint die Sonne längere
@@ -139,16 +151,17 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
     \toprule
     Nr. & Anforderung & Status & Begründung \\
     \midrule
-    A1 & Anwesenheit erkennen & \checkmark
-       & Zuverlässig bis etwa 2--3\,m (beobachtet, Messung ausstehend); Grenze bei direkter Sonne
+    A1 & Sitzende Person erkennen & \checkmark
+       & Im Betrieb zuverlässig erkannt (beobachtet, Messung ausstehend); Grenze bei direkter Sonne
          oder Heizung \\
-    A2 & Reaktion auf Anwesenheit & \checkmark
-       & Kurze Hubbewegung bei Annäherung und beim Vorbeigehen \\
-    A3 & Einatemzüge erkennen, Atemfrequenz bestimmen & \checkmark
-       & Funktioniert am fertigen Roboter; Labormessung 9{,}7--15{,}2/min; Erkennungsrate nicht
-         quantifiziert \\
+    A2 & Anwesenheit an den Pi melden & \checkmark
+       & Meldung bei jeder Änderung und zusätzlich alle 500\,ms; der Pi reagiert mit einer kurzen
+         Hubbewegung, auch beim Vorbeigehen \\
+    A3 & Atemrhythmus über die Hände erfassen & $\circ$
+       & Passiv nicht möglich (Abschnitt~\ref{sec:erg_passiv}); mit aktivem Mitdrücken zuverlässig,
+         Labormessung 9{,}7--15{,}2/min; Erkennungsrate nicht quantifiziert \\
     A4 & Einstufung an den Raspberry Pi & \checkmark
-       & Ergebnis kommt an, Pi startet passende Übung \\
+       & Ergebnis kommt an, Pi startet passende Übung; Grenzen der Einstufung nicht validiert \\
     A5 & Hub mit beiden Händen & \checkmark
        & Auch mit schwerer aufliegenden Händen; Probleme nur bei starkem Drücken auf den Roboter \\
     A6 & Gestaltung nach Zielbild & \checkmark
@@ -172,6 +185,11 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
   \item \textbf{Keine passive Atemerkennung:} Das ursprüngliche Ziel, die Atmung allein über die
         aufgelegten Hände zu erkennen, wurde nicht erreicht (Abschnitt~\ref{sec:erg_passiv}). Die
         aktive Erfassung erfordert, dass die Nutzer:innen bewusst mitdrücken.
+  \item \textbf{Einstufung nicht validiert:} Die Grenzen zwischen entspannt, normal und gestresst
+        sind aus der üblichen Atemfrequenz in Ruhe abgeleitet~\cite{nicolo2020rr} und wurden nicht
+        mit Nutzer:innen überprüft; die Einstufung ist damit eine Abschätzung. Zudem kann das
+        bewusste Mitdrücken die Atmung selbst verändern. Neffy dient im Labor als Plattform für
+        Studien, deren Ergebnisse genutzt werden können, um die Grenzen zu prüfen und anzupassen.
   \item \textbf{Sättigung bei festem Druck:} Wird zu fest gedrückt, erreicht das Signal das obere
         Ende des Messbereichs (A3, A4). Die Erkennung bleibt möglich, die Signalform geht aber
         verloren.

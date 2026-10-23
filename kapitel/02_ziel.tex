@@ -116,14 +116,16 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
     \toprule
     Nr. & Anforderung & Art & Prüfkriterium \\
     \midrule
-    A1 & Eine Person vor dem Roboter wird zuverlässig erkannt, auch auf größere Entfernung.
-       & F & Erkennung bis ca.\ 2--3\,m \\
-    A2 & Bei erkannter Anwesenheit, auch beim Vorbeigehen, reagiert der Roboter mit einer
-         kurzen Hubbewegung und lädt so zur Nutzung ein.
-       & F & Bewegung wird bei Annäherung ausgelöst \\
-    A3 & Einatemzüge werden über Drücken und Loslassen der Sensoren in den Schultertaschen
-         erkannt; aus einer Messung von 30\,s wird die Atemfrequenz bestimmt.
-       & F & Atemzüge im Signal klar erkennbar \\
+    A1 & Eine Person, die vor dem Roboter sitzt, wird erkannt, auch wenn sie sich kaum bewegt;
+         ohne Person erfolgt keine Meldung.
+       & F & Person auf dem Platz vor Neffy erkannt; leerer Raum ohne Meldung \\
+    A2 & Änderungen der Anwesenheit werden ohne merkliche Verzögerung an den Raspberry Pi
+         gemeldet, sodass dieser reagieren kann, etwa mit einer kurzen Hubbewegung.
+       & F & Meldung bei jeder Änderung, spätestens alle 0{,}5\,s \\
+    A3 & Der Atemrhythmus wird allein über die in den Schultertaschen aufliegenden Hände
+         erfasst (passiv), ohne zusätzliche Hardware am Körper; aus einer Messung von 30\,s
+         wird die Atemfrequenz bestimmt.
+       & F & Einatemzüge im Signal vom Rauschen unterscheidbar \\
     A4 & Die Atemfrequenz wird als entspannt, normal oder gestresst eingestuft und an den
          Raspberry Pi übermittelt.
        & F & Einstufung kommt am Pi an \\
