@@ -11,7 +11,7 @@
 | Mikrocontroller | ESP32-S3 („Mainboard“, eigene Board-Definition), Arduino-Framework, PlatformIO |
 | Anwesenheit | Omron D6T, Einzelpixel (D6T-1A, genaue Variante -01/-02 nicht im Code), I²C 100 kHz, alle 100 ms gelesen |
 | Taschen | 2 Velostat-Drucksensoren, ADC 12 bit, 11 dB, eFuse-kalibriert, Mittel aus 8 Werten, alle 20 ms |
-| Körper-Achse | Schrittmotor, **Gewindespindel 8 mm Steigung**, Hub **85 mm**, Referenzfahrt gegen Endschalter |
+| Körper-Achse | Schrittmotor, **Gewindespindel 8 mm Steigung**, Verfahrweg max. **85 mm** (`MAX_POSITION_BODY_MM`, Software-Grenze), Referenzfahrt gegen Endschalter |
 | Kopf-Achse | Schrittmotor, Zahnräder 30 → 40 Zähne, ca. 34° mechanisch, **32° genutzt** |
 | Treiber | TMC2225, 4 Mikroschritte (auf der Platine fest eingestellt) |
 | LEDs | WS2812B: je 8 unter jeder Tasche, Ring mit 12 LEDs; warmes Gelb; Helligkeit folgt dem Kopf |
@@ -19,7 +19,7 @@
 | Aufteilung | Motoren auf Kern 0, UART/Sensoren/LEDs auf Kern 1 (Schrittmotor-Interrupt mit 50 kHz und FastLED vertragen sich nicht auf einem Kern) |
 
 Vergleich zu Neffy 2: Dort war es ein Riementrieb mit max. 25 mm Hub und Dynamixel-Motoren.
-In Neffy 3.0 sind es Gewindespindel und Schrittmotoren mit 85 mm Hub.
+In Neffy 3.0 sind es Gewindespindel und Schrittmotoren mit max. 85 mm Verfahrweg (Software-Grenze; tatsächlicher Hub vom Pi vorgegeben).
 
 ## Erkennungsverfahren
 **Anwesenheit (`PersonSensor.cpp`)**

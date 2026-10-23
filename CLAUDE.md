@@ -58,7 +58,7 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
   Raspberry Pi über UART (115200 Baud, Bibliothek Neffy_UART_Interface); WS2812B-LEDs (FastLED, PlatformIO).
   Firmware: https://github.com/YounesJamil/Neffy-3.0-Mainboard. Analyse: `notizen/analyse_firmware.md`
   (Hardware-Eckdaten, Erkennungsverfahren, Protokoll, Auffälligkeiten).
-- Antrieb laut Firmware: Körper über Gewindespindel (8 mm Steigung, 85 mm Hub), Kopf über Zahnräder
+- Antrieb laut Firmware: Körper über Gewindespindel (8 mm Steigung, Verfahrweg in der Firmware auf max. 85 mm begrenzt; tatsächlicher Hub bei Übungen gibt der Pi vor – offen), Kopf über Zahnräder
   30 → 40 Zähne (32°), TMC2225-Treiber, Referenzfahrt gegen Endschalter.
 - Auswahl Drucksensor: getestet wurden FSR (verschiedene Größen) und Velostat. In den getesteten Aufbauten
   verhielt sich der FSR nahezu binär (sofort volle Spannung, keine abgestufte Kurve). Velostat war
