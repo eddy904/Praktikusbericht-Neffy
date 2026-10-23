@@ -2404,11 +2404,10 @@
     <bcf:citekey order="28" intorder="1">shokrollahi2024pir</bcf:citekey>
     <bcf:citekey order="29" intorder="1">omron2017d6t</bcf:citekey>
     <bcf:citekey order="30" intorder="1">omron2017d6t</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">goerke2025neffy2</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">jamil2026mainboard</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">nicolo2020rr</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">jamil2026mainboard</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">nicolo2020rr</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">jamil2026mainboard</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">nicolo2020rr</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">jamil2026mainboard</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">nicolo2020rr</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -91,4 +91,4 @@
 - [x] Schwachstelle „Stress-Einstufung nicht validiert“ ergänzt, Ausblick vorgemerkt
 - [ ] A7: prüfbares Kriterium (Taschenmaße vs. Handmaße, z. B. DIN 33402-2 – erst prüfen)
 - [ ] Tests am Roboter (Metronom-Test Atemerkennung, Lasttest A5) – derzeit nicht möglich, Kap. 5 nennt sie als nicht systematisch gemessen
-- [ ] Tatsächlicher Hub bei einer Übung (mm)? Firmware begrenzt nur auf max. 85 mm (Kap. 4.2.4)
+- [x] Tatsächlicher Hub: nicht wichtig, Ziel war mehr Kraft, nicht mehr Hub; kein Vergleich 85 vs. 25 mm im Bericht (23.10.2026)

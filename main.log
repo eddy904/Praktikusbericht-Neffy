@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  23 OCT 2026 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  23 OCT 2026 17:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1708,7 +1708,7 @@ Overfull \hbox (3.22318pt too wide) in paragraph at lines 14--14
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-3.
+2.
  (C:\Users\youne\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1750,7 +1750,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2
 
 {C:/Users/youne/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-<abbildungen/idee neffy.jpeg, id=326, 1407.2575pt x 1126.2075pt>
+<abbildungen/idee neffy.jpeg, id=324, 1407.2575pt x 1126.2075pt>
 File: abbildungen/idee neffy.jpeg Graphic file (type jpg)
 <use abbildungen/idee neffy.jpeg>
 Package pdftex.def Info: abbildungen/idee neffy.jpeg  used on input line 66.
@@ -1784,7 +1784,7 @@ Overfull \hbox (7.3373pt too wide) in paragraph at lines 61--61
 \T1/lmr/m/n/10 (-20) ra/Datenschutz 
  []
 
-<abbildungen/neffy1.jpg, id=385, 513.92pt x 422.57875pt>
+<abbildungen/neffy1.jpg, id=383, 513.92pt x 422.57875pt>
 File: abbildungen/neffy1.jpg Graphic file (type jpg)
 <use abbildungen/neffy1.jpg>
 Package pdftex.def Info: abbildungen/neffy1.jpg  used on input line 93.
@@ -1794,7 +1794,7 @@ Overfull \hbox (3.45222pt too wide) in paragraph at lines 93--94
  [][] 
  []
 
-<abbildungen/neffy2.jpg, id=388, 1104.125pt x 1405.25pt>
+<abbildungen/neffy2.jpg, id=386, 1104.125pt x 1405.25pt>
 File: abbildungen/neffy2.jpg Graphic file (type jpg)
 <use abbildungen/neffy2.jpg>
 Package pdftex.def Info: abbildungen/neffy2.jpg  used on input line 98.
@@ -1824,12 +1824,12 @@ Overfull \hbox (2.75099pt too wide) in paragraph at lines 52--53
 
 {C:/Users/youne/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
 ] [11] [12]
-<abbildungen/plots/fsr_F1.pdf, id=473, 210.55063pt x 136.57324pt>
+<abbildungen/plots/fsr_F1.pdf, id=471, 210.55063pt x 136.57324pt>
 File: abbildungen/plots/fsr_F1.pdf Graphic file (type pdf)
 <use abbildungen/plots/fsr_F1.pdf>
 Package pdftex.def Info: abbildungen/plots/fsr_F1.pdf  used on input line 222.
 (pdftex.def)             Requested size: 204.85802pt x 132.88223pt.
-<abbildungen/plots/velostat_aktiv_A5.pdf, id=476, 210.55063pt x 136.57324pt>
+<abbildungen/plots/velostat_aktiv_A5.pdf, id=474, 210.55063pt x 136.57324pt>
 File: abbildungen/plots/velostat_aktiv_A5.pdf Graphic file (type pdf)
 <use abbildungen/plots/velostat_aktiv_A5.pdf>
 Package pdftex.def Info: abbildungen/plots/velostat_aktiv_A5.pdf  used on input
@@ -1850,21 +1850,17 @@ LaTeX Warning: Marginpar on page 14 moved.
 
 [14 <./abbildungen/plots/fsr_F1.pdf> <./abbildungen/plots/velostat_aktiv_A5.pdf
 >]
-
-LaTeX Warning: Marginpar on page 15 moved.
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 330--331
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 329--330
  [][] 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 335--336
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 334--335
  [][] 
  []
 
 [15] [16] [17] [18] [19]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 562--562
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 561--561
 [] 
  []
 
@@ -1888,7 +1884,7 @@ Overfull \hbox (10.60567pt too wide) in paragraph at lines 2--57
 [21
 
 ]
-<abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf, id=619, 426.79147pt x 241.8
+<abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf, id=616, 426.79147pt x 241.8
 4753pt>
 File: abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf Graphic file (type pdf)
 
@@ -2045,11 +2041,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59470 strings out of 467871
- 1421322 string characters out of 5418375
- 2493023 words of memory out of 5000000
- 87123 multiletter control sequences out of 15000+600000
- 735823 words of font info for 245 fonts, out of 8000000 for 9000
+ 59459 strings out of 467871
+ 1421096 string characters out of 5418375
+ 2489876 words of memory out of 5000000
+ 87115 multiletter control sequences out of 15000+600000
+ 735749 words of font info for 244 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,107p,11209b,2970s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
@@ -2073,9 +2069,9 @@ s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/User
 s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/User
 s/youne/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb>
-Output written on main.pdf (44 pages, 947099 bytes).
+Output written on main.pdf (44 pages, 946322 bytes).
 PDF statistics:
- 1085 PDF objects out of 1200 (max. 8388607)
- 201 named destinations out of 1000 (max. 500000)
+ 1082 PDF objects out of 1200 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
  57368 words of extra memory for PDF output out of 61914 (max. 10000000)
 
