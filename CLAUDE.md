@@ -5,7 +5,15 @@
 - Hauptbetreuerin: Prof. Dr. Ilona Buchem (Titelblatt: „Lehrkraft“)
 - Betreuer: Prof. Dr. Manfred Hild (Studiengangsleiter; Titelblatt: „Betreuer“)
 - Durchgeführt im **Labor für Kommunikation** der BHT
-- Gruppenprojekt mit drei Teams: Sensorik, Programmierung, Design
+- Gruppenprojekt: Team Sensorik und Team Programmierung; **kein eigenes Team Design** – eine Mitarbeiterin
+  war für die grafische Gestaltung (z. B. Gesicht/Augen) zuständig. Abstimmung bei Bedarf in Online-Meetings
+  mit gemeinsamer Abstimmung, dazu Umfragen zur Wahrnehmung der Gestaltung.
+- Zielbild (Abb. 2.1) wurde von Prof. Buchem mit ChatGPT erzeugt.
+- Display Neffy 3.0: Waveshare 4,3" DSI LCD, 800 × 480, kapazitiver Touch (`waveshare43dsi`).
+- Antrieb: Dynamixel XL430-W250 (Neffy 2) zu schwach und laut → NEMA 17; Körper mit integrierter T8-Spindel
+  (Hersteller vermutlich Iverntech, kürzere Spindel als 100 mm) → mehr Kraft, leiser. ESP32-Board ersetzt
+  U2D2 + Power Hub (zu viel Platz); ESP32 erzeugt die Schrittimpulse.
+- Kap. 2.2, 2.3 und 3.1 sind mit `\unsicher{}` grau markiert (Abstimmung Badre/Younes) – nicht löschen.
 - Unser Team: **Sensorik, 2 Personen** – Badre und Younes Jamil
 - Charly Goerke (GitHub „LegitimateShake“) ist Mitarbeiter im Labor für Kommunikation und Mitautor des
   Neffy-2-Berichts. Von ihm stammen der Entwurf des Neffy Boards und die UART-Bibliothek

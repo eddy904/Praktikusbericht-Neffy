@@ -20,8 +20,7 @@ Neffy~3.0 (siehe Abschnitt~\ref{sec:sdt_roboter}).
 Im Betrieb von Neffy~2 zeigten sich jedoch mehrere Schwächen. Der Touchscreen
 reagierte nur schwach und war insgesamt fehleranfällig. Die Motoren waren zu schwach
 dimensioniert: Lagen beide Hände auf den Schultern, konnte der Roboter teilweise nicht
-mehr genügend Kraft aufbringen, um nach oben zu fahren.
-\todo{Wie oft/unter welcher Last trat das auf? (Neffy-2-Bericht rechnet mit 2--4\,kg durch beide Hände)}
+mehr genügend Kraft aufbringen, um nach oben zu fahren. Zudem liefen sie relativ laut.
 Zudem verfügte Neffy~2 über keinerlei Sensorik und damit über kein Feedback darüber,
 was in seiner Umgebung geschieht. Eine Interaktion fand nur statt, nachdem die
 Übung über den Bildschirm gestartet wurde; davor war der Roboter ein rein passives
@@ -44,10 +43,11 @@ dieses reagieren. Daraus ergaben sich für das Gesamtprojekt folgende Ziele:
         mit unterschiedlichem Rhythmus von Ein- und Ausatmen zur Verfügung stehen, die
         zusätzlich personalisiert werden können.
   \item \textbf{Neuer Bildschirm:} Der fehleranfällige Touchscreen von Neffy~2 wird
-        durch einen leistungsfähigeren Bildschirm mit höherer Bildwiederholrate ersetzt.
-        \todo{Genaues Display-Modell (OLED?) und Datenblatt}
+        durch ein leistungsfähigeres 4{,}3-Zoll-Touchdisplay von Waveshare mit
+        DSI-Anschluss ersetzt (800\,$\times$\,480 Pixel, kapazitiver Touch)~\cite{waveshare43dsi}.
   \item \textbf{Stärkerer Antrieb:} Die Dynamixel-Motoren von Neffy~2 werden durch
-        Schrittmotoren ersetzt, um mehr Kraft für die Hubbewegung bereitzustellen.
+        Schrittmotoren ersetzt, die mehr Kraft für die Hubbewegung bereitstellen und
+        deutlich leiser laufen.
   \item \textbf{Neue Gestaltung:} Als gestalterische Vorgabe diente ein
         \ac{KI}-generiertes Bild, das die Vorstellung der Betreuerin von Neffy~3.0
         wiedergibt (Abbildung~\ref{fig:zielbild}). Der Roboter sollte
@@ -64,10 +64,9 @@ es für das Verständnis der Schnittstellen nötig ist.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.55\linewidth]{idee neffy.jpeg}
-  \caption{Gestalterische Vorgabe für Neffy~3.0 (\ac{KI}-generiertes Zielbild der Betreuerin)}
+  \caption{Gestalterische Vorgabe für Neffy~3.0 (mit ChatGPT erzeugt von Prof.\ Dr.\ Ilona Buchem)}
   \label{fig:zielbild}
 \end{figure}
-\todo{Mit welchem KI-Werkzeug wurde das Zielbild erzeugt, und von wem?}
 
 \subsection*{Auftrag des Teams Sensorik und Erweiterung des Aufgabenfelds}
 
@@ -96,22 +95,24 @@ Raspberry Pi umsetzt, etwa zur Ansteuerung der Motoren. Die Platine selbst wurde
 Charly Goerke, Mitarbeiter im Labor für Kommunikation, entworfen und bereitgestellt. Nicht zum Aufgabengebiet des
 Teams gehörten die Animationen und alle Inhalte, die über den Raspberry Pi auf dem
 Bildschirm dargestellt werden. Damit war das Team Sensorik im Ergebnis für den Entwurf
-eines weitgehend neuen Roboters verantwortlich.
-\todo{Was war ursprünglich die Aufgabe des Teams Design?}
+eines weitgehend neuen Roboters verantwortlich. Ein eigenes Team für die Konstruktion gab
+es nicht; für die grafische Gestaltung, etwa das Gesicht von Neffy auf dem Bildschirm, war
+eine Mitarbeiterin zuständig.
 
 \section{Anforderungsdefinition}
 \label{sec:anforderungen}
 
-Aus der Zielstellung wurden die Anforderungen in Tabelle~\ref{tab:anforderungen}
+\unsicher{Abschnitt 2.2 noch offen: behalten oder überarbeiten? (Abstimmung Badre/Younes)}
+{\color{gray}Aus der Zielstellung wurden die Anforderungen in Tabelle~\ref{tab:anforderungen}
 abgeleitet. Sie beziehen sich auf die Aufgaben des Teams Sensorik und dienen in
-Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
+Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.}
 
 \begin{table}[htbp]
   \centering
   \caption{Anforderungen an Neffy~3.0 im Aufgabenbereich des Teams Sensorik
     (F = funktional, NF = nicht-funktional)}
   \label{tab:anforderungen}
-  \small
+  \small\color{gray}
   \begin{tabular}{@{}l p{7.4cm} l p{4.4cm}@{}}
     \toprule
     Nr. & Anforderung & Art & Prüfkriterium \\
@@ -135,7 +136,7 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
        & NF & Abgleich mit Zielbild \\
     A7 & Die Hände liegen gesichert und angenehm in Schultertaschen und rutschen nicht ab;
          auch größere Hände finden Platz.
-       & NF & \todoi{Maße der Taschen / Test mit Personen?} \\
+       & NF & Taschenmaße aus großen Handmaßen plus Zuschlag \todoi{Maße, Quelle} \\
     A8 & Schultern bzw.\ Deckel sind abnehmbar, sodass Innenleben und Elektronik gut
          zugänglich sind.
        & NF & Schultern ohne Werkzeug abnehmbar, Unterkörper verschraubt \\
@@ -151,28 +152,33 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
 \section{Übergeordnete Fragestellung}
 \label{sec:fragestellung}
 
-Aus der Zielstellung ergibt sich die übergeordnete Fragestellung dieser Arbeit:
+\unsicher{Abschnitt 2.3 noch offen: Fragestellung behalten? (Abstimmung Badre/Younes)}
+{\color{gray}Aus der Zielstellung ergibt sich die übergeordnete Fragestellung dieser Arbeit:
 
 \begin{center}
   \fbox{\parbox{0.85\linewidth}{\centering\itshape
     Wie kann Neffy durch Sensorik und ein neu gestaltetes Gehäuse von einem
     ablaufgesteuerten Objekt zu einem Roboter weiterentwickelt werden, der seine
     Umgebung wahrnimmt und mit den Nutzer:innen interagiert?}}
-\end{center}
-\todo{Fragestellung ist ein Vorschlag -- passt sie?}
+\end{center}}
 
 \section{Projektorganisation}
 \label{sec:organisation}
 
-Das Projekt wurde von drei Teams bearbeitet: Sensorik, Programmierung und Design.
-Zu Beginn trafen sich die Teams in mehreren Meetings und legten eine gemeinsame
-Grundstruktur fest. Die Organisation lief anschließend über ein gemeinsames Google
+Das Projekt wurde von den Teams Sensorik und Programmierung bearbeitet; für die
+grafische Gestaltung war eine weitere Mitarbeiterin zuständig. Zu Beginn trafen sich alle
+Beteiligten in mehreren Meetings und legten eine gemeinsame Grundstruktur fest. Auch im
+weiteren Verlauf stimmten sich die Teams regelmäßig ab: Wurde Feedback benötigt, etwa zur
+Gestaltung der Augen, trafen sich alle in einem Online-Meeting und stimmten gemeinsam ab.
+Zusätzlich wurden Umfragen durchgeführt, um herauszufinden, welche Gestaltung am besten
+wahrgenommen wird. Die Organisation lief anschließend über ein gemeinsames Google
 Drive, in dem unter anderem die Liste der benötigten Bauteile geführt wurde. Um die
 Beschaffung kümmerte sich hauptsächlich das Team Sensorik; Bauteile für einzelne
 Komponenten, etwa den Bildschirm, wurden von den jeweils zuständigen Personen
-beschafft. Zusätzlich stand ein GitHub-Repository zur Verfügung, das die Daten und
-die SolidWorks-Baugruppen der Vorgängerversionen enthielt.
-\todo{Repo-Link; regelmäßige Treffen während des Projekts? Zeitraum und Stunden}
+beschafft. In einem gemeinsamen GitHub-Repository lagen vor allem die Daten und
+SolidWorks-Baugruppen der Vorgängerversionen, sodass etwa Maße von Bauteilen nachgeschlagen
+werden konnten.
+\todo{Zeitraum und Stunden des Praktikums}
 
 Die zentrale Schnittstelle zwischen den Teams ist die Verbindung zwischen dem
 Raspberry Pi (Team Programmierung) und dem ESP32-S3 auf dem Neffy Board (Team

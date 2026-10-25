@@ -19,7 +19,10 @@ Ursprünglich war vorgesehen, die Sensoren direkt am Raspberry Pi zu betreiben. 
 keine analogen Eingänge besitzt, wäre für die Drucksensoren ein externer \ac{ADC}
 (MCP3208) nötig gewesen. Im finalen Aufbau übernimmt der ESP32-S3 diese Aufgabe mit seinen
 integrierten \acp{ADC}.
-\todo{Warum der Wechsel aufs ESP32-Board? (z.\,B. Motorsteuerung in Echtzeit, Entlastung des Pi)}
+Zugleich ersetzt das Neffy Board den Aufbau aus U2D2-Adapter und Power Hub, mit dem bei
+Neffy~2 die Dynamixel-Motoren angesteuert wurden und der viel Platz einnahm. Für die
+Schrittmotoren muss der ESP32-S3 die Schrittimpulse zeitgenau erzeugen; diese Aufgabe nimmt
+er dem Raspberry Pi ab.
 
 \begin{figure}[htbp]
   \centering
@@ -285,9 +288,12 @@ umgerechnet, da der \ac{ADC} des ESP32-S3 nicht linear ist. Beide Taschen werden
 \subsection{Antrieb}
 \label{sec:hw_antrieb}
 
-Die Dynamixel-Motoren von Neffy~2 wurden für Körper und Kopf durch Schrittmotoren der
-Baugröße NEMA~17 ersetzt, um mehr Kraft für die Hubbewegung bereitzustellen.
-\todo{Genaues Modell/Haltemoment, falls bekannt}
+Die Dynamixel-Motoren (XL430-W250) von Neffy~2 waren für die Hubbewegung zu schwach und
+liefen relativ laut. Sie wurden für Körper und Kopf durch Schrittmotoren der Baugröße NEMA~17
+ersetzt. Für den Körper wird ein Schrittmotor mit integrierter T8-Gewindespindel eingesetzt,
+wie er auch in 3D-Druckern verwendet wird; die Spindel ist kürzer als in der Standardausführung
+mit 100\,mm. Dieser Antrieb bringt deutlich mehr Kraft auf und ist zugleich leiser.
+\todo{Hersteller (Iverntech?) bestätigen; Haltemoment, falls bekannt}
 Der Körper wird über eine Lineareinheit aus Kaufteilen bewegt: Der Schrittmotor treibt eine
 Gewindespindel mit 8\,mm Steigung an, deren Mutter in einem Schlitten sitzt, der auf einer
 Schiene geführt wird. Ein eigens konstruiertes, 3D-gedrucktes Verbindungsteil verbindet den
