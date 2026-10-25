@@ -59,13 +59,16 @@ er dem Raspberry Pi ab.
 
 \subsection*{Schnittstelle zum Raspberry Pi}
 
-Beide Steuereinheiten kommunizieren über \ac{UART} mit 115\,200\,Baud. Jede Nachricht hat
+\unsicher{Schnittstelle und Abbildung zum Ablauf: Inhalt noch offen (Abstimmung Badre/Younes)}
+{\color{gray}Beide Steuereinheiten kommunizieren über \ac{UART} mit 115\,200\,Baud. Jede Nachricht hat
 das Format \texttt{FA <ID> <Länge> <Nutzdaten>}; Zahlenwerte werden als ganze Zahlen mit
 dem Faktor~10 übertragen, etwa Positionen in Zehntelmillimetern. Der Befehlssatz ist in
 der gemeinsamen Bibliothek Neffy\_UART\_Interface festgelegt, die vom Labor bereitgestellt
-wurde~\cite{goerke2026uart}. Tabelle~\ref{tab:uart} fasst die Befehle nach Gruppen
-zusammen; die vollständige Liste befindet sich in Anhang~\ref{anh:code}.
+wurde~\cite{goerke2026uart}. Die vollständige Befehlsliste befindet sich in
+Anhang~\ref{anh:code}.
 
+% Tabelle UART-Befehle nach Gruppen: aus Platzgründen herausgenommen (Lesedurchgang 25.10.)
+\iffalse
 \begin{table}[htbp]
   \centering
   \caption{Befehle der \ac{UART}-Schnittstelle nach Gruppen}
@@ -91,12 +94,14 @@ zusammen; die vollständige Liste befindet sich in Anhang~\ref{anh:code}.
     \bottomrule
   \end{tabular}
 \end{table}
+\fi
 
 Abbildung~\ref{fig:sequenz} zeigt beispielhaft, wie die Befehle während einer
-Interaktion zusammenspielen.
+Interaktion zusammenspielen.}
 
 \begin{figure}[htbp]
   \centering
+  \color{gray}
   \begin{tikzpicture}[
       >={Stealth}, font=\small,
       msg/.style = {->, shorten >=1pt},
@@ -302,11 +307,11 @@ Bewegung auf den Oberkörper. Ziel des neuen Antriebs war mehr Kraft, nicht ein 
 In der Firmware ist der Verfahrweg zwar auf 85\,mm ab dem Endschalter begrenzt, bei den Übungen
 fährt der Körper jedoch höchstens 20\,mm. Der Hub bleibt damit in derselben Größenordnung wie
 bei Neffy~2 (bis 25\,mm~\cite{goerke2025neffy2}), dessen Bewegung sich bewährt hatte.
-Die Kopfmechanik wurde von Kaspar aus dem Team Programmierung konstruiert. Ein Schrittmotor im
+Die Kopfmechanik wurde von Kaspar\todo{Nachname Kaspar (liefert Badre)} aus dem Team
+Programmierung konstruiert. Ein Schrittmotor im
 Kopf treibt über ein Zahnradpaar mit 30 und 40 Zähnen eine Welle an, die mit dem feststehenden
 Hals verbunden ist, sodass sich der Kopf auf dem Hals neigt. Er nutzt 32° seines mechanischen
-Bewegungsbereichs von etwa 34°.
-\todo{Nachname Kaspar?} Angesteuert werden beide Motoren über
+Bewegungsbereichs von etwa 34°. Angesteuert werden beide Motoren über
 TMC2225-Treiber mit vier Mikroschritten. Bei jedem Start fahren beide Achsen gegen einen
 Endschalter, um ihre Nullposition zu bestimmen (Referenzfahrt).
 
@@ -424,8 +429,8 @@ Bei der Konstruktion wurde von einer Fertigungstoleranz von 0{,}1\,mm ausgegange
 Testkörper zur Bestimmung der Toleranzen wurden wegen der begrenzten Druckkapazität nicht
 gedruckt. Getestet wurden stattdessen einzelne kleinere Teile vorab, etwa die Aufnahmen auf der
 Rückseite für Netzteilbuchse, Schalter und Kopfhöreranschluss. Die großen Hüllenteile wurden
-dagegen jeweils nur einmal gedruckt. In der Praxis mussten Bohrungen häufig mit einer
-Ständerbohrmaschine nachgebohrt werden. Ein bis zwei kleinere Teile mussten neu gedruckt werden,
+dagegen jeweils nur einmal gedruckt. Bohrungen wurden, wie im \ac{FDM}-Druck
+üblich, mit einer Ständerbohrmaschine auf das genaue Maß aufgerieben. Ein bis zwei kleinere Teile mussten neu gedruckt werden,
 keines der großen Teile.
 An den Klebestellen der PLA-Teile entstanden zwangsläufig kleine Kanten und Löcher. Sie wurden
 mit Sekundenkleber gefüllt und anschließend geschliffen. Dabei zeigte sich, dass ein elektrisches

@@ -7,13 +7,14 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Die drei Generationen von Neffy}}{9}{figure.caption.15}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Systemarchitektur von Neffy~3.0 (Aufgabenbereich Team Sensorik: links und unten)}}{10}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}}{12}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}}{11}{figure.caption.21}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Spannungsverlauf bei rhythmischem Drücken im Atemtakt: \ac {FSR} und Velostat im Vergleich (eigene Messung am ESP32-Entwicklungsboard)}}{13}{figure.caption.24}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Schematischer Lagenaufbau eines Sensoreinsatzes (nicht maßstäblich)}}{14}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces CAD-Modell des Gehäuses von Neffy~3.0; in (b) und (c) ist jedes Druckteil farbig markiert (Explosionsansicht)}}{16}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces CAD-Modell des Gehäuses von Neffy~3.0; in (b) und (c) ist jedes Druckteil farbig markiert (Explosionsansicht)}}{15}{figure.caption.31}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Neffy~3.0 im aufgebauten Zustand und in Benutzung}}{21}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Velostat mit nur aufgelegten Händen (a, P2) und mit aktivem Mitdrücken beim Einatmen (b, A5); Punkte markieren die erkannten Atemzüge}}{23}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Kennwerte der Messreihen zur Atemsensorik: (a) Verteilung der Messwerte über den Messbereich des \acs {ADC}, (b) Signalhub mit erkannter Atemfrequenz (erzeugt aus den Rohdaten, Tabelle~\ref {tab:kennwerte} in Anhang~\ref {anh:rohdaten})}}{22}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Velostat mit nur aufgelegten Händen (a, P2) und mit aktivem Mitdrücken beim Einatmen (b, A5); Punkte markieren die erkannten Atemzüge}}{23}{figure.caption.42}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

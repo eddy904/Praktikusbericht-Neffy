@@ -41,20 +41,22 @@ Für die Atemsensorik wurden elf Messreihen in drei Gruppen aufgezeichnet: drei 
 (F1--F3), zwei mit Velostat und nur aufgelegten Händen (P1, P2) und sechs mit Velostat und aktivem
 Mitdrücken beim Einatmen (A1--A6). Gemessen wurde mit dem in Abschnitt~\ref{sec:hw_drucksensor}
 beschriebenen Aufbau am ESP32-Entwicklungsboard; beim Velostat lag ein Festwiderstand von
-10\,k$\Omega$ im Spannungsteiler. Tabelle~\ref{tab:kennwerte} fasst die Kennwerte zusammen. Der
+10\,k$\Omega$ im Spannungsteiler. Abbildung~\ref{fig:kennwerte} fasst die Kennwerte zusammen;
+die vollständige Tabelle befindet sich in Anhang~\ref{anh:rohdaten}. Der
 Anteil der Messwerte bei 0 bzw.\ am oberen Ende des Messbereichs (4095) zeigt, wie oft der Sensor
 nur \enquote{aus} oder \enquote{voll} meldet. Der Signalhub ist die Differenz zwischen dem 95.- und dem
 5.-Perzentil, solange die Hand auf dem Sensor liegt. Die Atemzüge wurden offline aus dem
 geglätteten Signal bestimmt (gleitender Mittelwert über sieben Werte, Mindesthöhe eines Maximums
 700 ADC-Einheiten, Mindestabstand 1{,}5\,s); daraus folgen mittlere Atemperiode und Atemfrequenz.
 
-\begin{table}[htbp]
+\begin{figure}[htbp]
   \centering
-  \caption{Kennwerte der Messreihen zur Atemsensorik (erzeugt aus den Rohdaten, Anhang~\ref{anh:rohdaten})}
-  \label{tab:kennwerte}
-  \small
-  \input{daten/tab_kennwerte.tex}
-\end{table}
+  \includegraphics[width=\linewidth]{plots/kennwerte_atemsensorik.pdf}
+  \caption{Kennwerte der Messreihen zur Atemsensorik: (a) Verteilung der Messwerte über den
+    Messbereich des \acs{ADC}, (b) Signalhub mit erkannter Atemfrequenz (erzeugt aus den
+    Rohdaten, Tabelle~\ref{tab:kennwerte} in Anhang~\ref{anh:rohdaten})}
+  \label{fig:kennwerte}
+\end{figure}
 
 \subsection{Vergleich von FSR und Velostat}
 \label{sec:erg_fsr}
@@ -109,8 +111,12 @@ bestimmt.
 
 Zusätzlich zur Atemerkennung lassen sich die Taschen zur Bedienung nutzen: Ein Klick links oder
 rechts dient der Navigation, gleichzeitiges Drücken beider Taschen der Auswahl. Diese Funktion
-arbeitet, aber noch nicht in allen Fällen zuverlässig.
-\todo{Was genau funktioniert nicht perfekt? (z.\,B. Klicks nicht erkannt, Fehlklicks bei aufliegender Hand, beide gleichzeitig schwer zu treffen)}
+arbeitet, aber noch nicht in allen Fällen zuverlässig. Die meisten Menschen sind kapazitive
+Touchpads und Touchscreens oder Tasten mit spürbarem und hörbarem Klick gewohnt und verlassen
+sich auf genau diese Druckstärke und Rückmeldung. Die Taschen geben keine solche Rückmeldung
+und reagieren erst ab einer bestimmten Druckstärke und -dauer. Weicht der eigene Druck davon ab,
+wird der Klick nicht oder ungewollt erkannt. Ohne Übung fällt es daher schwer, einen Klick
+zuverlässig zu wiederholen.
 
 \subsection{Anwesenheitserkennung}
 \label{sec:erg_anwesenheit}
@@ -194,7 +200,8 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
         Ende des Messbereichs (A3, A4). Die Erkennung bleibt möglich, die Signalform geht aber
         verloren.
   \item \textbf{Bedienung über die Taschen:} Navigation und Auswahl über Klicks funktionieren noch
-        nicht in allen Fällen zuverlässig (Abschnitt~\ref{sec:erg_bedienung}).
+        nicht in allen Fällen zuverlässig, da eine gewohnte Rückmeldung wie bei Touchpad oder Taste
+        fehlt (Abschnitt~\ref{sec:erg_bedienung}).
   \item \textbf{Anwesenheit bei Wärmequellen:} Direkte Sonne oder ein Heizkörper im Sichtfeld
         verhindern die Erkennung (Abschnitt~\ref{sec:erg_anwesenheit}). Die Reichweite wurde
         bislang nur beobachtet, nicht gemessen.
@@ -209,8 +216,7 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
         nicht ab, sondern dient als Startsignal einer Übung. Der Name passt nicht zur Bedeutung und
         erschwert die Wartung der Schnittstelle.
   \item \textbf{Fertigung:} Es gibt nur eine Gehäuseversion; Toleranzen wurden nicht vorab an
-        Testkörpern bestimmt, sodass häufig nachgebohrt werden musste. Die Klebestellen erforderten
-        viel Nachbearbeitung.
+        Testkörpern bestimmt. Die Klebestellen erforderten viel Nachbearbeitung.
   \item \textbf{Noch keine Nutzerstudie:} Zu Neffy~1.0 und 2.0 liegen Studien vor; die Studie zu
         Neffy~3.0 ist noch in Arbeit.
 \end{itemize}

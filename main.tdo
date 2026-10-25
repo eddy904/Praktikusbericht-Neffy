@@ -13,29 +13,29 @@
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Quelle Kamera/Datenschutz oder Punkt kürzen}{8}{section*.14}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Modell}{9}{section*.17}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Neffy 1.0: keine Sensoren? Antrieb genauer?}{9}{section*.18}%
+\contentsline {todo}{\fcolorbox {black}{yellow!60}{\textcolor {yellow!60}{o}}\ UNSICHER: Schnittstelle und Abbildung zum Ablauf: Inhalt noch offen (Abstimmung Badre/Younes)}{10}{section*.20}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf aus Sicht des Pi so richtig? (z.\,B. Begrüßung, Übungsauswahl)}{11}{section*.22}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Maße der Taschen und der Velostat-Fläche}{14}{section*.25}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Maße der Taschen und der Velostat-Fläche}{13}{section*.25}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ So richtig beschrieben? (Klebeseite zum Grundkörper, leitende Seite zum Velostat)}{14}{section*.26}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Endgültiger Festwiderstand der Taschen? (LIESMICH der Messdaten nennt 10\,k$\Omega $) Kurz begründen, warum dieser Wert; Schaltplan}{14}{section*.28}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Hersteller (Iverntech?) bestätigen; Haltemoment, falls bekannt}{14}{section*.29}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname Kaspar?}{15}{section*.30}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Drucker-Modelle so richtig?}{15}{section*.33}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Welcher Kleber?}{17}{section*.34}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname Kaspar (liefert Badre)}{14}{section*.30}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Drucker-Modelle so richtig?}{16}{section*.33}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Welcher Kleber?}{16}{section*.34}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Foto des fertigen, lackierten Gehäuses}{17}{section*.35}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ KI-Angabe mit Prof.\ Buchem abstimmen (welche Form erwartet die BHT?); danach diesen Abschnitt und die Eigenständigkeitserklärung anpassen}{20}{section*.37}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}{20}{section*.38}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wer führt die Studie durch (Labor/Prof.\ Buchem)? Zeitraum?}{21}{section*.39}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Was genau funktioniert nicht perfekt? (z.\,B. Klicks nicht erkannt, Fehlklicks bei aufliegender Hand, beide gleichzeitig schwer zu treffen)}{23}{section*.43}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Messung ausstehend: Erkennung in 0{,}5 / 1 / 1{,}5 / 2 / 2{,}5 / 3\,m mit \texttt {tools/thermal\_log.py} aufzeichnen; danach Plot \enquote {Temperaturdifferenz über Entfernung} und genaue Reichweite eintragen. Plausibilität: Nach den Firmware-Werten (+2\,K in 1\,m, Schwelle mindestens 1\,K) wäre eine geringere Reichweite als 2--3\,m zu erwarten. Außerdem prüfen, ob eine sehr ruhig sitzende Person länger als 20\,s erkannt bleibt (Neulernen der Raumtemperatur bei flachem Signal).}{24}{section*.44}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bestätigen bzw.\ ergänzen -- Vorschlag: Übernahme und Umsetzung des gesamten Gehäuses aus eigener Initiative; modularer Aufbau mit Magneten; Wechsel von passiver zu aktiver Atemerfassung über die Taschen; Bedienung über die Taschen (links/rechts/beide); Sensoreinsatz zum Einstecken; Verbindungsteil zwischen Schlitten der Lineareinheit und Sensoreinsätzen; selbstkalibrierende Klick- und Druckerkennung; lernende Raumtemperatur bei der Anwesenheitserkennung; LED-Rückmeldung beim Atmen. Wer was (Badre/Younes): ganz am Ende.}{26}{section*.46}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bezug zu Studieninhalten.}{29}{section*.47}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf einer typischen Woche, Laborzeiten; neutral: Verfügbarkeit der Drucker im Labor war eingeschränkt, große Teile (je 15\,h+) mussten eingeplant werden.}{29}{section*.48}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Erwartungen vorher -- was davon eingetreten ist.}{29}{section*.49}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Selbstständigkeit, Motivation, Teamarbeit -- mit konkreten Beispielen (z.\,B. eigene Initiative Gehäuse, SolidWorks im Praktikum vertieft (starke Rundungen anspruchsvoll), Learning: viel kleben statt bohren; Nachbearbeitung und Lackieren: Geduld zwischen den Schichten, von Hand schleifen, man wird perfektionistisch).}{29}{section*.50}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Persönliches Fazit.}{29}{section*.51}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Atemerkennungs-Modul (.cpp/.h) per \textbackslash lstinputlisting einbinden.}{35}{section*.56}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Technische Zeichnungen des Gehäuses.}{36}{section*.57}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Schaltplan Neffy Board / Sensoranschluss.}{37}{section*.58}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Messung ausstehend: Erkennung in 0{,}5 / 1 / 1{,}5 / 2 / 2{,}5 / 3\,m mit \texttt {tools/thermal\_log.py} aufzeichnen; danach Plot \enquote {Temperaturdifferenz über Entfernung} und genaue Reichweite eintragen. Plausibilität: Nach den Firmware-Werten (+2\,K in 1\,m, Schwelle mindestens 1\,K) wäre eine geringere Reichweite als 2--3\,m zu erwarten. Außerdem prüfen, ob eine sehr ruhig sitzende Person länger als 20\,s erkannt bleibt (Neulernen der Raumtemperatur bei flachem Signal).}{24}{section*.43}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bestätigen bzw.\ ergänzen -- Vorschlag: Übernahme und Umsetzung des gesamten Gehäuses aus eigener Initiative; modularer Aufbau mit Magneten; Wechsel von passiver zu aktiver Atemerfassung über die Taschen; Bedienung über die Taschen (links/rechts/beide); Sensoreinsatz zum Einstecken; Verbindungsteil zwischen Schlitten der Lineareinheit und Sensoreinsätzen; selbstkalibrierende Klick- und Druckerkennung; lernende Raumtemperatur bei der Anwesenheitserkennung; LED-Rückmeldung beim Atmen. Wer was (Badre/Younes): ganz am Ende.}{26}{section*.45}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Bezug zu Studieninhalten.}{29}{section*.46}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf einer typischen Woche, Laborzeiten; neutral: Verfügbarkeit der Drucker im Labor war eingeschränkt, große Teile (je 15\,h+) mussten eingeplant werden.}{29}{section*.47}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Erwartungen vorher -- was davon eingetreten ist.}{29}{section*.48}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Selbstständigkeit, Motivation, Teamarbeit -- mit konkreten Beispielen (z.\,B. eigene Initiative Gehäuse, SolidWorks im Praktikum vertieft (starke Rundungen anspruchsvoll), Learning: viel kleben statt bohren; Nachbearbeitung und Lackieren: Geduld zwischen den Schichten, von Hand schleifen, man wird perfektionistisch).}{29}{section*.49}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Persönliches Fazit.}{29}{section*.50}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Atemerkennungs-Modul (.cpp/.h) per \textbackslash lstinputlisting einbinden.}{35}{section*.55}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Technische Zeichnungen des Gehäuses.}{36}{section*.56}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Schaltplan Neffy Board / Sensoranschluss.}{37}{section*.57}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Verweis auf Dateien in daten/ bzw.\ Repository.}{38}{section*.59}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Vorgegebenen Wortlaut der BHT bzw.\ des Fachbereichs einsetzen.}{39}{section*.61}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname}{39}{section*.62}%
