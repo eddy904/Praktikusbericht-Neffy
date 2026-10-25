@@ -22,15 +22,15 @@
 \contentsline {section}{\numberline {4.3}Konstruktion des Gehäuses}{15}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Entwurf und Form}{15}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Teilung in druckbare Teile}{15}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Verbindung der Teile}{16}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.3}Verbindung der Teile}{17}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Fertigung und Nachbearbeitung}{17}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}Software}{17}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Aufbau der Firmware}{17}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Anwesenheitserkennung}{17}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Klick- und Druckerkennung}{18}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.4}Software}{18}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Aufbau der Firmware}{18}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Anwesenheitserkennung}{18}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Klick- und Druckerkennung}{19}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}Atemerkennung}{19}{subsection.4.4.4}%
 \contentsline {subsection}{\numberline {4.4.5}Rückmeldung über die \acp {LED}}{19}{subsection.4.4.5}%
-\contentsline {subsection}{\numberline {4.4.6}Softwareablage, Build und Tests}{19}{subsection.4.4.6}%
+\contentsline {subsection}{\numberline {4.4.6}Softwareablage, Build und Tests}{20}{subsection.4.4.6}%
 \contentsline {subsection}{\numberline {4.4.7}Einsatz von KI-Werkzeugen}{20}{subsection.4.4.7}%
 \contentsline {chapter}{\numberline {5}Diskussion der Ergebnisse}{21}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Funktionsnachweis}{21}{section.5.1}%

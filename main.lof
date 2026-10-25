@@ -10,7 +10,7 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}}{11}{figure.caption.24}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Spannungsverlauf bei rhythmischem Drücken im Atemtakt: \ac {FSR} und Velostat im Vergleich (eigene Messung am ESP32-Entwicklungsboard)}}{14}{figure.caption.27}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Schematischer Lagenaufbau eines Sensoreinsatzes (nicht maßstäblich)}}{14}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Gehäuse von Neffy~3.0 (CAD)}}{15}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces CAD-Modell des Gehäuses von Neffy~3.0; in (b) und (c) ist jedes Druckteil farbig markiert (Explosionsansicht)}}{16}{figure.caption.34}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Neffy~3.0 im aufgebauten Zustand und in Benutzung}}{21}{figure.caption.43}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Velostat mit nur aufgelegten Händen (a, P2) und mit aktivem Mitdrücken beim Einatmen (b, A5); Punkte markieren die erkannten Atemzüge}}{23}{figure.caption.45}%

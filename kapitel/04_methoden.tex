@@ -325,17 +325,27 @@ Schrittmotor der Kopfbewegung.
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.55\linewidth}
+  \begin{subfigure}[c]{0.4\linewidth}
     \centering
-    \platzhalter[\linewidth]{CAD: Körper zusammengebaut, jedes Druckteil in eigener Farbe}
-    \caption{Körper mit farbig markierten Druckteilen}
+    \includegraphics[width=\linewidth]{cad/gesamt_kopf_offen.png}
+    \caption{Gesamtansicht mit geöffnetem Kopf (Raspberry Pi, Schrittmotor, Zahnräder)}
   \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.41\linewidth}
-    \centering
-    \platzhalter[\linewidth]{CAD: Kopf explodiert (Boden, Hinterteil, Vorderteil, Deckel)}
-    \caption{Teile der Kopfhülle}
-  \end{subfigure}
-  \caption{Gehäuse von Neffy~3.0 (CAD)}
+  \begin{minipage}[c]{0.56\linewidth}
+    \begin{subfigure}{\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{cad/oberkoerper_explosion.png}
+      \caption{Oberkörper: zwei Hälften aus je drei Druckteilen}
+    \end{subfigure}
+
+    \vspace{0.6em}
+    \begin{subfigure}{\linewidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{cad/unterkoerper_explosion.png}
+      \caption{Unterkörper: Schale und hintere Klappe}
+    \end{subfigure}
+  \end{minipage}
+  \caption{CAD-Modell des Gehäuses von Neffy~3.0; in (b) und (c) ist jedes Druckteil farbig
+    markiert (Explosionsansicht)}
   \label{fig:gehaeuse}
 \end{figure}
 
@@ -346,7 +356,7 @@ Wegen der starken Rundungen ließen sich Ober- und Unterkörper nicht am Stück 
 größer als der Bauraum der Drucker, und selbst einzelne große Teile hätten sehr viel
 Stützmaterial erfordert. Besonders anspruchsvoll waren die Rundungen um die Taschen. Das Gehäuse
 wurde deshalb in mehrere druckbare Teile zerlegt (Tabelle~\ref{tab:gehaeuse_teile},
-Abbildung~\ref{fig:gehaeuse}\,a; Anforderung~A9). Der Aufbau folgt dabei stets demselben
+Abbildung~\ref{fig:gehaeuse}\,b und~c; Anforderung~A9). Der Aufbau folgt dabei stets demselben
 Prinzip: Zwei Seitenstücke bilden zusammen mit einem Vorder- und einem Hinterteil eine
 Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
 
@@ -397,7 +407,7 @@ von unten verschraubten Sensoreinsätze der Taschen besitzen jeweils vier weiter
 im Oberkörper insgesamt 24 Magnete sitzen. Die Verbindung hält zuverlässig. Die hintere Klappe des
 Unterkörpers ist verschraubt und gibt nach dem Lösen von sechs Schrauben die Elektronik frei,
 etwa das Neffy Board. Der Kopf besteht aus Boden, Hinterteil, Vorderteil und Deckel
-(Abbildung~\ref{fig:gehaeuse}\,b). Boden und Hinterteil sind über Langlöcher verschraubt, das
+(Abbildung~\ref{fig:gehaeuse}\,a). Boden und Hinterteil sind über Langlöcher verschraubt, das
 Vorderteil sitzt per Presspassung auf Stiften. Zusammen bilden sie eine Einheit, auf die der
 Deckel mit weiteren Magneten aufgesetzt wird.
 
