@@ -102,3 +102,15 @@
 - [x] Spindelkraft: Gleichung F = 2πηM/p
 - [ ] **Haltemoment des Motors** (Produktseite/Datenblatt) + **Wirkungsgrad η mit Quelle** → F ausrechnen, mit 20–40 N vergleichen
 - [ ] Taschenmaße aus Handmaßen (A7) – Maße von Eddy, Quelle (DIN 33402-2?)
+
+## Nach Review 26.10.2026 (`notizen/review_2026-10-26.md`, Textänderungen umgesetzt)
+- [x] A3 → „nicht erfüllt“, neue Zeile A3* (aktive Erfassung); A1 → „vorläufig“ (Test ruhiges Sitzen > 20 s)
+- [x] Beschleunigungssensor an Kap. 3 angeglichen; Verallgemeinerung in Kap. 2 auf eigenen Aufbau beschränkt
+- [x] Antrieb: Heben = Motormoment überschritten, von oben = fehlende Selbsthemmung; Motorstrom erwähnt
+- [x] Klassengrenzen 5,5 / 10,5; „Atemtakt angeben“ in Einleitung/Fazit; Tabelle Anwesenheitssensoren (Tab. 3.1)
+- [x] Keine weiteren Tests am Roboter – Validierung über die laufende Studie (Entscheidung Eddy)
+- [ ] **27 Ω:** Begründung bestätigen (große Elektrodenfläche?), Spannung Ruhe/gedrückt am Roboter; Belastbarkeit prüfen (3 V über 27 Ω ≈ 110 mA, 0,33 W)
+- [ ] **Messreihen:** Wie viele Personen wurden gemessen? (\todo in 5.2.1)
+- [ ] **A6:** Innenmaße der Taschen + Anzahl/Größe der getesteten Hände (\todo in 4.2.3)
+- [ ] Schwächen Neffy 2 (Kap. 2.1): Quelle? Derzeit als „Laborbetrieb“ formuliert
+- [ ] Kap. 7: neuer Absatz „Rückblickend würden wir …“ prüfen (Eddy/Younes)

@@ -15,8 +15,9 @@ nicht in jeder Hinsicht so, wie es ursprünglich geplant war.
 
 Ein Thermalsensor erkennt, wenn sich eine Person vor dem Roboter befindet; der Raspberry Pi
 reagiert darauf mit einer kurzen Bewegung und lädt so zur Nutzung ein. Über Velostat-Sensoren
-in den Schultertaschen wird der Atemrhythmus erfasst und als entspannt, normal oder gestresst
-eingestuft, woraufhin eine passende Atemübung startet. Dieselben Taschen dienen zusätzlich als
+in den Schultertaschen geben die Nutzer:innen ihren Atemtakt an; daraus wird die Atemfrequenz
+geschätzt und als entspannt, normal oder gestresst eingestuft, woraufhin eine passende
+Atemübung startet. Dieselben Taschen dienen zusätzlich als
 Bedienelement. Das ursprüngliche Ziel, die Atmung passiv über die aufliegenden Hände zu
 erkennen, wurde nicht erreicht: Der Signalhub lag dabei mit 107 bis 455 ADC-Einheiten weit
 unter den 1410 bis 3360 ADC-Einheiten beim aktiven Mitdrücken und ließ sich nicht von
@@ -29,7 +30,8 @@ Taschen sicheren Halt für die Hände und lässt sich dank Magnetverbindungen oh
 öffnen. Die Schrittmotoren bringen im normalen Betrieb ausreichend Kraft auf; nur wenn sehr
 stark auf den Roboter gedrückt wird, bleibt der Körper stehen und der Motor macht Geräusche.
 
-Neffy~3.0 nimmt damit Anwesenheit und Atemrhythmus wahr und reagiert darauf. Offen sind
+Neffy~3.0 nimmt damit Anwesenheit wahr, erfasst den von den Nutzer:innen angegebenen
+Atemtakt und reagiert auf beides. Offen sind
 die Messung der Reichweite der Anwesenheitserkennung, die Überprüfung der Stress-Einstufung
 und eine Studie mit Nutzer:innen (Abschnitt~\ref{sec:schwachstellen}).
 
@@ -50,8 +52,9 @@ Für eine nächste Version ergeben sich folgende Ansätze:
         dafür mehr Stützmaterial nötig ist; das spart viel Nacharbeit an den Klebestellen. Die
         Konstruktion kann von vornherein auf Kleben ausgelegt werden und braucht dann weniger
         Bohrungen.
-  \item \textbf{Antrieb:} Für den Körper wäre ein stärkerer Schrittmotor oder ein Servomotor
-        sinnvoll, damit der Hub auch bei starkem Druck nicht stehen bleibt. Die gedruckten
+  \item \textbf{Antrieb:} Zunächst sollte geprüft werden, ob sich der Motorstrom am Treiber
+        erhöhen lässt. Reicht das nicht, wäre für den Körper ein stärkerer Schrittmotor oder ein
+        Servomotor sinnvoll, damit der Hub auch bei starkem Druck nicht stehen bleibt. Die gedruckten
         Zahnräder der Kopfmechanik haben Spiel; Metallzahnräder oder besser ein Riemengetriebe
         würden es verringern.
   \item \textbf{Validierung:} Die Grenzen der Stress-Einstufung sollten mit Daten aus Studien

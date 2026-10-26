@@ -15,7 +15,7 @@ während die Hände der Nutzer:innen auf den Schultern liegen (Abschnitt~\ref{se
 Dieses haptische Prinzip wurde bei Neffy~1 und~2 sehr positiv aufgenommen
 \cite{thomas2025neffy,buchem2026neffy2} und bleibt für Neffy~3.0 erhalten.
 
-Im Betrieb von Neffy~2 zeigten sich jedoch mehrere Schwächen. Der Touchscreen
+Im Laborbetrieb von Neffy~2 zeigten sich jedoch mehrere Schwächen. Der Touchscreen
 reagierte nur schwach und war insgesamt fehleranfällig. Die Motoren waren zu schwach
 dimensioniert: Lagen beide Hände auf den Schultern, konnte der Roboter teilweise nicht
 mehr genügend Kraft aufbringen, um nach oben zu fahren. Zudem liefen sie relativ laut.
@@ -32,7 +32,7 @@ bemängelten, dass ihre Hände nicht gut auf die Schultern passten und leicht ab
 dieses reagieren. Daraus ergaben sich für das Gesamtprojekt folgende Ziele:
 
 \begin{itemize}
-  \item \textbf{Anwesenheitserkennung:} Neffy~3.0 soll erkennen, ob eine Person vor
+  \item \textbf{Anwesenheitserkennung:} Neffy~3.0 soll erkennen, wenn eine Person vor
         ihm sitzt oder an ihm vorbeigeht, und darauf reagieren.
   \item \textbf{Erfassung des Atemrhythmus:} Über Sensoren in den Schultern soll der
         Atemrhythmus der Nutzer:innen erfasst und eingestuft werden, sodass eine zum
@@ -75,13 +75,13 @@ eingesetzt.
 % Sensor: Omron D6T-1A-02 (bestätigt, siehe Abschnitt 4.2.1)
 Die Atmung sollte zunächst passiv erfasst werden: Allein über die aufgelegten Hände
 sollte gemessen werden, wie die Person atmet, ohne dass sie dafür etwas tun muss.
-Es zeigte sich jedoch, dass dies ohne zusätzliches Zubehör, etwa einen Brustgurt,
-oder ohne sehr teure und dennoch wenig genaue Sensorik nicht zuverlässig möglich ist
-(siehe Abschnitt~\ref{sec:sdt_atem} und Abschnitt~\ref{sec:erg_passiv}). Stattdessen wird
-der Atemrhythmus nun aktiv erfasst: Die Nutzer:innen drücken beim Einatmen auf die
-Drucksensoren in den Schultertaschen und lassen beim Ausatmen los. Aus den Zeitpunkten
-der Einatemzüge wird die Atemfrequenz bestimmt und als entspannt, normal oder gestresst
-eingestuft. Auf dieser Grundlage wählt der Raspberry Pi eine passende Atemübung aus.
+Es zeigte sich jedoch, dass dies mit dem gewählten Aufbau nicht zuverlässig möglich ist
+(Abschnitt~\ref{sec:erg_passiv}). Ansätze ohne Sensor am Körper, wie sie für den Roboter
+Ommie entwickelt wurden, erfordern einen erheblichen Aufwand für Datenerhebung und Training
+(Abschnitt~\ref{sec:sdt_atem}). Stattdessen wird der Atemtakt nun aktiv erfasst: Die
+Nutzer:innen drücken beim Einatmen auf die Drucksensoren in den Schultertaschen und lassen
+beim Ausatmen los. Aus den Zeitpunkten der Einatemzüge wird die Atemfrequenz geschätzt und
+als entspannt, normal oder gestresst eingestuft. Auf dieser Grundlage wählt der Raspberry Pi eine passende Atemübung aus.
 
 Im Projektverlauf erweiterte sich das Aufgabenfeld des Teams deutlich. Nach
 Einschätzung des Teams Sensorik wäre ein Neffy~2, der lediglich um Sensoren ergänzt

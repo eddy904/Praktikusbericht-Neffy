@@ -41,13 +41,19 @@ Für die Atemsensorik wurden elf Messreihen in drei Gruppen aufgezeichnet: drei 
 (F1--F3), zwei mit Velostat und nur aufgelegten Händen (P1, P2) und sechs mit Velostat und aktivem
 Mitdrücken beim Einatmen (A1--A6). Gemessen wurde mit dem in Abschnitt~\ref{sec:hw_drucksensor}
 beschriebenen Aufbau am ESP32-Entwicklungsboard; beim Velostat lag ein Festwiderstand von
-10\,k$\Omega$ im Spannungsteiler. Abbildung~\ref{fig:kennwerte} fasst die Kennwerte zusammen;
+10\,k$\Omega$ im Spannungsteiler. Die Messreihen sind damit Versuche zur Sensorauswahl, nicht
+Messungen am fertigen Roboter, der mit einem anderen Festwiderstand und eigenen Sensoreinsätzen
+arbeitet (Abschnitt~\ref{sec:hw_taschen}).
+\todo{Wie viele Personen wurden gemessen?}
+Abbildung~\ref{fig:kennwerte} fasst die Kennwerte zusammen;
 die vollständige Tabelle befindet sich in Anhang~\ref{anh:rohdaten}. Der
 Anteil der Messwerte bei 0 bzw.\ am oberen Ende des Messbereichs (4095) zeigt, wie oft der Sensor
 nur \enquote{aus} oder \enquote{voll} meldet. Der Signalhub ist die Differenz zwischen dem 95.- und dem
 5.-Perzentil, solange die Hand auf dem Sensor liegt. Die Atemzüge wurden offline aus dem
 geglätteten Signal bestimmt (gleitender Mittelwert über sieben Werte, Mindesthöhe eines Maximums
 700 ADC-Einheiten, Mindestabstand 1{,}5\,s); daraus folgen mittlere Atemperiode und Atemfrequenz.
+Die Mindesthöhe wurde für die Messreihen mit aktivem Mitdrücken gewählt. Bei P1 und P2 ist der
+gesamte Signalhub kleiner; sie wurden deshalb anhand des Signalverlaufs beurteilt.
 
 \begin{figure}[htbp]
   \centering
@@ -76,8 +82,11 @@ keine Atemzüge erkennbar waren (Abbildung~\ref{fig:passiv_aktiv}\,a). Der Signa
 455 bzw.\ 107 ADC-Einheiten und lag damit in derselben Größenordnung wie die Schwankungen durch
 kleine, unbeabsichtigte Bewegungen der Hände. Das Gewicht der aufliegenden Hände bestimmt das
 Signal; die Atembewegung verändert den Druck auf den Sensor dagegen kaum. Atmung und zufällige
-Handbewegungen lassen sich so nicht zuverlässig unterscheiden. Die ursprünglich geplante passive
-Erkennung ist mit diesem Aufbau daher nicht umsetzbar.
+Handbewegungen lassen sich so nicht zuverlässig unterscheiden. Das Plateau lag zudem nahe am
+oberen Ende des Messbereichs, wo der Spannungsteiler weniger empfindlich ist
+(Gleichung~\ref{eq:empfindlichkeit}); mit einem angepassten Festwiderstand wäre das Signal etwas
+empfindlicher gewesen. Atemzyklen waren im Verlauf jedoch auch ansatzweise nicht zu erkennen. Die
+ursprünglich geplante passive Erkennung ist mit diesem Aufbau daher nicht umsetzbar.
 
 \begin{figure}[htbp]
   \centering
@@ -99,12 +108,13 @@ der Werte das obere Ende des Messbereichs, weil zu fest gedrückt wurde; die Ate
 trotzdem gut erkennbar. A5 lieferte die saubersten Zyklen ohne Sättigung.
 
 Übertragen auf die Einstufung der Firmware (Abschnitt~\ref{sec:sw_atem}) entsprechen 12{,}1 bis
-15{,}2 Atemzüge pro Minute 6 bis 8 Atemzügen in 30\,s und damit der Stufe \enquote{normal}; die
-langsamste Messreihe A6 mit 9{,}7 pro Minute läge mit knapp 5 Atemzügen in 30\,s bei
-\enquote{entspannt}. Die Messreihen entstanden am Entwicklungsboard und wurden offline
-ausgewertet. Am fertigen Roboter funktioniert die Atemerkennung mit der Erkennung der Firmware im
-praktischen Betrieb zuverlässig; eine Erkennungsrate wurde dort jedoch nicht systematisch
-bestimmt.
+15{,}2 Atemzüge pro Minute 6{,}1 bis 7{,}6 Atemzügen in 30\,s und damit der Stufe
+\enquote{normal}; die langsamste Messreihe A6 mit 9{,}7 pro Minute läge mit 4{,}9 Atemzügen in
+30\,s bei \enquote{entspannt}. Die Stufe \enquote{gestresst} wurde in keiner Messreihe erreicht.
+Die Messreihen entstanden am Entwicklungsboard und wurden offline ausgewertet. Am fertigen
+Roboter funktioniert die Atemerkennung mit der Erkennung der Firmware im praktischen Betrieb
+zuverlässig; eine Erkennungsrate wurde dort jedoch nicht systematisch bestimmt. Die Erprobung mit
+Nutzer:innen ist Teil der laufenden Studie (Abschnitt~\ref{sec:funktionsnachweis}).
 
 \subsection{Bedienung über die Taschen}
 \label{sec:erg_bedienung}
@@ -128,7 +138,9 @@ stand, und um etwa 2\,K in 1\,m Entfernung. Kommt jemand vorbei, fährt der Robo
 wieder herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Innenräumen traten
 auch bei normalem Tageslicht keine Probleme auf. Die Abschätzung aus
 Abschnitt~\ref{sec:hw_anwesenheit} lässt mit den Werten der Abstimmung eine geringere Reichweite
-von etwa 1{,}4 bis 2\,m erwarten; die Messung soll diese Abweichung klären.
+von etwa 1{,}4 bis 2\,m erwarten; die Messung soll diese Abweichung klären. Sie soll außerdem
+zeigen, ob eine sehr ruhig sitzende Person auch länger als 20\,s erkannt bleibt, da die
+Raumtemperatur bei nahezu konstantem Signal neu gelernt wird (Abschnitt~\ref{sec:sw_anwesenheit}).
 \todoi{Messung ausstehend: Erkennung in 0{,}5 / 1 / 1{,}5 / 2 / 2{,}5 / 3\,m mit
 \texttt{tools/thermal\_log.py} aufzeichnen; danach Plot \enquote{Temperaturdifferenz über
 Entfernung} und genaue Reichweite eintragen. Plausibilität: Nach den Firmware-Werten
@@ -147,10 +159,14 @@ Sonne oder einen Heizkörper aufgestellt werden.
 \label{sec:evaluation}
 
 Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anforderungen}.
+Anforderung~A3 verlangte eine passive Erfassung und ist daher nicht erfüllt. Die stattdessen
+umgesetzte aktive Erfassung ist keine ursprüngliche Anforderung; sie wird als A3* gesondert
+bewertet, damit sichtbar bleibt, was erreicht wurde.
 
 \begin{table}[htbp]
   \centering
-  \caption{Erfüllungsgrad der Anforderungen (\checkmark\ erfüllt, $\circ$ teilweise, -- nicht erfüllt)}
+  \caption{Erfüllungsgrad der Anforderungen (\checkmark\ erfüllt, (\checkmark) vorläufig erfüllt,
+    $\circ$ teilweise, -- nicht erfüllt)}
   \label{tab:evaluation}
   \small
   \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{3.6cm}
@@ -159,20 +175,25 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
     \toprule
     Nr. & Anforderung & Status & Begründung \\
     \midrule
-    A1 & Sitzende Person erkennen & \checkmark
-       & Im Betrieb zuverlässig erkannt (beobachtet, Messung ausstehend); Grenze bei direkter Sonne
-         oder Heizung \\
+    A1 & Sitzende Person erkennen & (\checkmark)
+       & Im Betrieb zuverlässig erkannt (beobachtet); Messung ausstehend, auch für ruhiges Sitzen
+         über 20\,s; Grenze bei direkter Sonne oder Heizung \\
          \trenn
     A2 & Anwesenheit an den Pi melden & \checkmark
        & Meldung bei jeder Änderung und zusätzlich alle 500\,ms; der Pi reagiert mit einer kurzen
          Hubbewegung, auch beim Vorbeigehen \\
          \trenn
-    A3 & Atemrhythmus über die Hände erfassen & $\circ$
-       & Passiv nicht möglich (Abschnitt~\ref{sec:erg_passiv}); mit aktivem Mitdrücken zuverlässig,
-         Labormessung 9{,}7--15{,}2/min; Erkennungsrate nicht quantifiziert \\
+    A3 & Atemrhythmus passiv über die Hände erfassen & --
+       & Einatemzüge bei nur aufgelegten Händen nicht vom Rauschen unterscheidbar
+         (Abschnitt~\ref{sec:erg_passiv}) \\
+         \trenn
+    A3* & Atemtakt aktiv über die Taschen erfassen (geänderte Lösung) & \checkmark
+       & Klare Atemzüge in allen sechs Messreihen am Entwicklungsboard (9{,}7--15{,}2/min); am
+         Roboter im Betrieb zuverlässig, Erkennungsrate nicht bestimmt \\
          \trenn
     A4 & Einstufung an den Raspberry Pi & \checkmark
-       & Ergebnis kommt an, Pi startet passende Übung; Grenzen der Einstufung nicht validiert \\
+       & Ergebnis kommt an, Pi startet passende Übung; Grenzen der Einstufung nicht validiert,
+         Stufe \enquote{gestresst} in den Messreihen nicht erreicht \\
        \trenn
     A5 & Hub mit beiden Händen & \checkmark
        & Auch mit schwerer aufliegenden Händen; Probleme nur bei starkem Drücken auf den Roboter \\
@@ -198,10 +219,14 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
   \item \textbf{Atemsensorik:} Die passive Erkennung über die aufgelegten Hände wurde nicht
         erreicht; die aktive Erfassung erfordert bewusstes Mitdrücken
         (Abschnitt~\ref{sec:erg_passiv}). Bei zu festem Druck sättigt das Signal
-        (Abschnitt~\ref{sec:erg_aktiv}).
+        (Abschnitt~\ref{sec:erg_aktiv}). Der abgestufte Signalverlauf, für den Velostat gewählt
+        wurde (Abschnitt~\ref{sec:hw_drucksensor}), wird für die aktive Erfassung kaum noch
+        gebraucht: Die Atemerkennung wertet nur aus, ob eine Tasche gedrückt ist
+        (Abschnitt~\ref{sec:sw_druck}).
   \item \textbf{Einstufung nicht validiert:} Die Grenzen zwischen entspannt, normal und gestresst
         sind aus der üblichen Atemfrequenz in Ruhe abgeleitet~\cite{nicolo2020rr} und wurden nicht
-        mit Nutzer:innen überprüft; die Einstufung ist damit eine Abschätzung. Zudem kann das
+        mit Nutzer:innen überprüft; die Einstufung ist damit eine Abschätzung. In den Messreihen
+        wurden nur die Stufen \enquote{entspannt} und \enquote{normal} erreicht. Zudem kann das
         bewusste Mitdrücken die Atmung selbst verändern. Neffy dient im Labor als Plattform für
         Studien, deren Ergebnisse genutzt werden können, um die Grenzen zu prüfen und anzupassen.
   \item \textbf{Bedienung und Anwesenheit:} Klicks sind ohne gewohnte Rückmeldung schwer
@@ -213,9 +238,13 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
         links und rechts unter den Ellbogen.
   \item \textbf{Antrieb:} Im normalen Betrieb schafft der Antrieb den Hub zuverlässig, wie die
         Abschätzung in Abschnitt~\ref{sec:hw_antrieb} erwarten lässt. Wird sehr stark auf den
-        Roboter gedrückt, bleibt der Körper jedoch stehen und der Motor macht Geräusche. Eine
-        naheliegende Erklärung ist, dass die Spindel nicht selbsthemmend ist: Übersteigt die Kraft
-        von oben das, was das Motordrehmoment halten kann, verliert der Schrittmotor Schritte. Bei der Referenzfahrt verloren die Schrittmotoren anfangs Schritte, wenn eine
+        Roboter gedrückt, bleibt der Körper jedoch stehen und der Motor macht Geräusche. Beim
+        Heben bedeutet das, dass das Lastmoment größer ist als das Moment, das der Schrittmotor
+        bei der gefahrenen Drehzahl aufbringen kann; er verliert dann Schritte. Wo diese Grenze
+        liegt, ist ohne Datenblatt offen; sie hängt auch vom eingestellten Motorstrom ab. Hinzu
+        kommt, dass die Spindel nicht selbsthemmend ist (Abschnitt~\ref{sec:hw_antrieb}): Eine
+        Kraft von oben kann den Körper zurückdrücken, sobald sie mehr verlangt, als der Motor
+        halten kann. Bei der Referenzfahrt verloren die Schrittmotoren anfangs Schritte, wenn eine
         Achse beim Start auf dem Endschalter stand; dies wurde in der Firmware behoben.
   \item \textbf{Zweckentfremdeter Befehl:} Der Befehl \texttt{DISABLE\_MOTORS} schaltet die Motoren
         nicht ab, sondern dient als Startsignal einer Übung. Der Name passt nicht zur Bedeutung und
@@ -234,7 +263,8 @@ Zielbild eines runderen Gehäuses mit Taschen für die Hände (Abbildung~\ref{fi
 modulare Aufbau mit Magneten ist keine neue Idee, er wurde bereits bei Neffy~2.0
 eingesetzt. Das Neffy Board und die \ac{UART}-Bibliothek stammen von
 Charly Goerke (Abschnitt~\ref{sec:architektur}). Wie diese Vorgaben umgesetzt werden, hat das
-Team Sensorik selbst entwickelt:
+Team Sensorik selbst entwickelt. Bei den Ideen zur Firmware stammen Konzept und Funktionsweise
+vom Team, den Quellcode hat Claude Code geschrieben (Abschnitt~\ref{sec:sw_ki}):
 
 \begin{itemize}
   \item \textbf{Gehäuse:} Übernahme der Konstruktion und Fertigung des gesamten Gehäuses aus

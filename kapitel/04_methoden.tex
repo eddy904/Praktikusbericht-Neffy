@@ -10,8 +10,8 @@
 Neffy~3.0 ist auf zwei Steuereinheiten aufgeteilt (Abbildung~\ref{fig:architektur}).
 Der Raspberry Pi (Team Programmierung) steuert den Ablauf der Interaktion, die Atemübungen
 und den Bildschirm. Der ESP32-S3 auf dem Neffy Board liest alle Sensoren aus und steuert
-Motoren, \acp{LED} und die Stummschaltung des Lautsprechers. Er trifft selbst keine
-Entscheidungen, sondern führt die Befehle des Raspberry Pi aus und meldet zurück, was er
+Motoren, \acp{LED} und die Stummschaltung des Lautsprechers. Er trifft keine Entscheidungen
+über den Ablauf, sondern führt die Befehle des Raspberry Pi aus und meldet zurück, was er
 erfasst~\cite{jamil2026mainboard}. Die Platine wurde von Charly Goerke (Labor für
 Kommunikation) entworfen; die Firmware entstand im Team Sensorik.
 
@@ -144,7 +144,7 @@ Entfernung vorbeigehen, keine Reaktion auslösen. Im Projektverlauf wurde stattd
 entschieden, dass Neffy auch auf vorbeigehende Personen kurz reagiert, um zur Nutzung
 einzuladen (Anforderung~A2).
 
-Abstands- und Infrarotsensoren schieden aus, da sie auf jedes Hindernis reagieren bzw.\
+Abstands- und \ac{PIR}-Sensoren schieden aus, da sie auf jedes Hindernis reagieren bzw.\
 still sitzende Personen nicht zuverlässig erkennen (Abschnitt~\ref{sec:sdt_anwesenheit}).
 Gewählt wurde der Thermalsensor Omron D6T-1A-02~\cite{omron2017d6t}, der die Körperwärme
 gegenüber der Raumtemperatur erfasst und so auch unbewegte Personen erkennt. Er besitzt einen
@@ -212,10 +212,11 @@ gleich empfindlich ist. Sie liegt unter der im Betrieb beobachteten Reichweite
 etwa mit Atemgurten (siehe Abschnitt~\ref{sec:sdt_atem}). Für Neffy~3.0 sollte dagegen
 keine zusätzliche Hardware am Menschen nötig sein: Die Nutzer:innen legen lediglich die
 Hände auf die Schultern bzw.\ in die Taschen des Roboters. Ein Beschleunigungssensor in
-den Schultern schied aus, da sich der Roboter selbst im Atemrhythmus bewegt und der Sensor
-nicht unterscheiden kann, ob eine Bewegung vom Menschen oder vom Roboter ausgeht. Für
-diesen Anwendungsfall kamen daher nur Drucksensoren in Frage. Drei Ansätze wurden
-vorgesehen:
+den Schultern wäre grundsätzlich denkbar. Da sich der Roboter aber selbst im Atemrhythmus
+bewegt, müsste die Bewegung des Menschen von der des Roboters getrennt werden. Wie das
+Beispiel Ommie zeigt, gelingt das nur mit einem eigenen Datensatz und einem lernbasierten
+Verfahren (Abschnitt~\ref{sec:sdt_atem}). Das Team entschied sich bewusst für den
+einfacheren Weg über Drucksensoren. Drei Ansätze wurden vorgesehen:
 
 \begin{enumerate}
   \item \textbf{Punktdrucksensor} (\ac{FSR}, Joy-IT): einfacher, günstiger Einstieg zum
@@ -305,6 +306,8 @@ Nutzer:innen ihre Hände legen. Ihre Größe orientiert sich an anthropometrisch
 (Tabelle~\ref{tab:handmasse}): Im Mittel (50.~Perzentil) ist eine Hand etwa 17 bis 19\,cm lang
 und 7{,}5 bis 8{,}6\,cm breit; große Hände (95.~Perzentil der Männer) erreichen etwa 20\,cm Länge
 und gut 9\,cm Breite. Nach Anforderung~A6 sollen auch solche großen Hände Platz finden.
+\todo{Innenmaße der Taschen (Länge $\times$ Breite) im Vergleich zu P95 Männer
+(20{,}0 $\times$ 9{,}1\,cm) ergänzen}
 Die Werte stammen aus Erhebungen in Kolumbien und China,
 für Mitteleuropa können sie etwas abweichen.
 
@@ -381,11 +384,15 @@ Ableitung
 mit $U_\mathrm{B}/4$ maximal. Der Festwiderstand sollte deshalb in der Größenordnung des
 Sensorwiderstands im genutzten Druckbereich liegen. Ist er zu klein, bleibt die Spannung niedrig;
 ist er zu groß, erreicht sie schon bei mäßigem Druck die Sättigung des \ac{ADC} bei etwa
-3{,}1\,V~\cite{jamil2026mainboard}, wie in den Messreihen A3 und A4 bei zu festem Druck
-(Abschnitt~\ref{sec:erg_aktiv}). Anders als beim \ac{FSR} wirkt sich der Festwiderstand beim
+3{,}1\,V~\cite{jamil2026mainboard}. Anders als beim \ac{FSR} wirkt sich der Festwiderstand beim
 Velostat daher deutlich aus. Begonnen wurde mit 4{,}7\,k$\Omega$, die Messreihen entstanden mit
 10\,k$\Omega$. Im fertigen Neffy~3.0 ist ein Festwiderstand von 27\,$\Omega$ eingesetzt
-(Farbcode Rot-Violett-Schwarz-Gold).
+(Farbcode Rot-Violett-Schwarz-Gold). Dass dieser Wert so viel kleiner ist, passt zur Regel
+$R_\mathrm{F} \approx R_\mathrm{S}$: Der Widerstand quer durch die Folie sinkt mit der Fläche der
+Elektroden, und die Kupferfolien in den Taschen sind vermutlich deutlich größer als im
+Versuchsaufbau.
+\todo{27\,$\Omega$: Begründung bestätigen, Spannung am fertigen Roboter (Ruhe/gedrückt) angeben;
+Belastbarkeit prüfen (bei 3\,V über 27\,$\Omega$ ca.\ 110\,mA, 0{,}33\,W)}
 
 \begin{figure}[htbp]
   \centering
@@ -447,10 +454,12 @@ Motordrehmoment
 \end{equation}
 Für die aufgelegten Hände (20 bis 40\,N) sind das nur etwa 3 bis 9\,Ncm; jedes Kilogramm bewegter
 Gehäusemasse erhöht den Bedarf um etwa 2\,Ncm. Umgekehrt erzeugen 10\,Ncm Motordrehmoment eine
-Hubkraft von etwa 46 bis 59\,N. Für das Auflegen der Hände ist der Antrieb damit großzügig
-bemessen.
+Hubkraft von etwa 46 bis 59\,N. Der Bedarf für das Auflegen der Hände ist damit gering. Wie
+viel Drehmoment der Motor tatsächlich bereitstellt, lässt sich ohne Datenblatt nicht angeben;
+es hängt außerdem vom am Treiber eingestellten Motorstrom ab und sinkt mit der Drehzahl. Ob die
+Reserve ausreicht, zeigte sich daher erst im Betrieb (Abschnitt~\ref{sec:schwachstellen}).
 
-Für das Verhalten unter Last ist außerdem wichtig, dass die Spindel nicht selbsthemmend ist:
+Wird von oben auf den Roboter gedrückt, ist außerdem wichtig, dass die Spindel nicht selbsthemmend ist:
 Dafür müsste $\varphi < \rho'$ gelten, hier ist $\varphi \approx 20^\circ$ aber deutlich größer als
 $\rho' \approx 6^\circ$ bis $12^\circ$. Eine Kraft von oben kann die Spindel also zurückdrehen, und
 der Motor muss sie aktiv halten. In dieser Richtung beträgt der Wirkungsgrad
@@ -699,8 +708,9 @@ berechnet:
 \end{equation}
 Dieses Vorgehen ist genauer als das Zählen ganzer Atemzüge, da in 30\,s nur wenige Zyklen
 liegen. Erwachsene atmen in Ruhe 12- bis 20-mal pro Minute~\cite{nicolo2020rr}, also 6- bis
-10-mal in 30\,s. Daraus ergibt sich die Einstufung: Bis zu 5 Atemzüge pro 30\,s gelten als
-entspannt, 6 bis 10 als normal und mehr als 10 als gestresst. Das Ergebnis wird an den
+10-mal in 30\,s. Daraus ergeben sich die Grenzen der Einstufung: Bis 5{,}5 Atemzüge pro 30\,s
+(11 pro Minute) gelten als entspannt, bis 10{,}5 (21 pro Minute) als normal und mehr als
+gestresst. Die Grenzen liegen damit jeweils mittig zwischen ganzen Atemzügen. Das Ergebnis wird an den
 Raspberry Pi gesendet; bei weniger als zwei Einatemzügen wird kein Ergebnis gesendet.
 Während der Messung werden keine Klicks gemeldet, und alle \acp{LED} werden beim Einatmen
 heller und beim Ausatmen dunkler, sodass die Nutzer:innen eine direkte Rückmeldung erhalten.

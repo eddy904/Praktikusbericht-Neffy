@@ -123,7 +123,10 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 | Anhang | A: UART-Befehle + `BreathingDetection.h/.cpp` (Kopie in `anhang/code/`, Commit 2693747); B: Kennwerte + Verweis Rohdaten. CAD- und Schaltplan-Anhang gestrichen (kein Material) | – |
 | Erklärung | übliche Formel in Wir-Form inkl. KI-Hinweis (kein BHT-Wortlaut gefunden) | – |
 
-Umfang: Kap. 1–7 = 33 S., PDF 48 S.; nicht streng (Eddy).
+Umfang: Kap. 1–7 = 36 S., PDF 51 S.; nicht streng (Eddy).
+Review 26.10. (`notizen/review_2026-10-26.md`): Textänderungen umgesetzt (A3 nicht erfüllt + A3*, A1 vorläufig,
+Antrieb, Beschleunigungssensor, Tab. 3.1 Anwesenheitssensoren). Keine weiteren Tests – Validierung über die Studie.
+Offen: 27-Ω-Begründung, Anzahl gemessener Personen, Taschenmaße (siehe `OFFENE_PUNKTE.md`).
 Layout: booktabs + graue Trennlinien `\trenn` (main.tex); Gleitobjektseiten beginnen oben; alle Abbildungen und
 Tabellen am 26.10. auf Ausrichtung geprüft.
 

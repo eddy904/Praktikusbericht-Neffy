@@ -61,6 +61,31 @@ Für die Erkennung von Personen kommen verschiedene Sensorprinzipien in Frage:
         auch die Anwesenheit unbewegter Personen erkennen~\cite{omron2017d6t}.
 \end{itemize}
 
+Tabelle~\ref{tab:anwesenheit} stellt die Prinzipien gegenüber. Wärmebasierte Sensoren
+reagieren dabei nicht auf jedes Hindernis, wohl aber auf andere Wärmequellen wie Heizkörper
+oder Sonneneinstrahlung.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Sensorprinzipien zur Anwesenheitserkennung im Vergleich
+    (+ ja, $\circ$ eingeschränkt, -- nein)}
+  \label{tab:anwesenheit}
+  \small
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.0cm} c c c c@{}}
+    \toprule
+    Kriterium & \acs{PIR} & Abstand & Kamera & Thermopile \\
+    \midrule
+    Erkennt still sitzende Personen          & --      & +  & +  & + \\
+    \trenn
+    Unterscheidet Mensch und Gegenstand      & $\circ$ & -- & +  & $\circ$ \\
+    \trenn
+    Geringer Auswerteaufwand                 & +       & +  & -- & + \\
+    \trenn
+    Kommt ohne Bilder von Personen aus       & +       & +  & -- & + \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \section{Roboter für Atemübungen}
 \label{sec:sdt_roboter}
 
@@ -127,7 +152,7 @@ ihnen sitzt, noch wie die Person atmet.
     & Neffy~1.0 & Neffy~2.0 & Neffy~3.0 \\
     \midrule
     Atembewegung & Kurbelschleife & Riementrieb, bis 25\,mm; Kopf nickt
-                 & Gewindespindel; Kopf neigt sich \\
+                 & Gewindespindel, bis 20\,mm; Kopf nickt \\
                  \trenn
     Antrieb      & Elektromotor & Dynamixel XL430-W250 & Schrittmotoren NEMA~17 \\
     \trenn
