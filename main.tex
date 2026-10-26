@@ -44,6 +44,8 @@
 \setkomafont{pageheadfoot}{\normalfont\small}
 % Überschriften in Serifenschrift (wie Vorlage)
 \setkomafont{disposition}{\normalfont\bfseries}
+% Weniger Abstand vor Kapitelüberschriften (Standard 3,3 Zeilen wirkt unter der Kopfzeile zu groß)
+\RedeclareSectionCommand[beforeskip=-0.5\baselineskip, afterskip=1.2\baselineskip]{chapter}
 
 % --- Abbildungen, Tabellen, Diagramme --------------------------------
 \usepackage{graphicx}
