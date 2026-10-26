@@ -409,10 +409,48 @@ einer Umdrehung: Die zugeführte Arbeit $2\pi M$, vermindert um die Reibungsverl
   \label{eq:spindel}
 \end{equation}
 Bei der Steigung von 8\,mm wirkt die Spindel wie ein starkes Untersetzungsgetriebe. Dem steht die
-Last der aufgelegten Hände gegenüber, die beim Vorgänger auf etwa 2 bis 4\,kg geschätzt
-wurde~\cite{goerke2025neffy2}.
-\todo{Haltemoment $M$ des Motors (Datenblatt/Produktseite) und Wirkungsgrad $\eta$ mit Quelle -- dann $F$ ausrechnen und mit 20--40\,N vergleichen}
-\todo{Hersteller (Iverntech?) bestätigen}
+Last der aufgelegten Hände gegenüber, die beim Vorgänger auf etwa 2 bis 4\,kg, also rund 20 bis
+40\,N, geschätzt wurde~\cite{goerke2025neffy2}.
+
+Da für den Motor kein Datenblatt vorliegt, wird umgekehrt abgeschätzt, welches Drehmoment diese
+Last erfordert. Der Wirkungsgrad folgt aus der Gewindegeometrie. Eine T8-Spindel mit 8\,mm
+Steigung ist in der üblichen Ausführung viergängig mit 2\,mm Teilung; ihr Flankendurchmesser
+beträgt damit $d_2 = d - 0{,}5\,P \approx 7$\,mm. Daraus ergibt sich der Steigungswinkel
+\begin{equation}
+  \tan\varphi = \frac{p}{\pi\,d_2} \approx 0{,}364, \qquad \varphi \approx 20{,}0^\circ .
+  \label{eq:steigungswinkel}
+\end{equation}
+Beim Trapezgewinde mit 30° Flankenwinkel wirkt die Reibungszahl $\mu$ über den Reibungswinkel
+$\rho' = \arctan\left(\mu / \cos 15^\circ\right)$. Für eine Messingmutter auf einer Stahlspindel
+wird $\mu = 0{,}1$ bis $0{,}2$ angenommen; das ergibt $\rho' \approx 5{,}9^\circ$ bis $11{,}7^\circ$
+und den Wirkungsgrad beim Heben
+\begin{equation}
+  \eta = \frac{\tan\varphi}{\tan(\varphi + \rho')} \approx 0{,}59 \text{ bis } 0{,}75 .
+  \label{eq:wirkungsgrad}
+\end{equation}
+Wegen des steilen Gewindes gehen in der Spindel also nur etwa ein Viertel bis zwei Fünftel der
+Leistung verloren. Nach Gleichung~\ref{eq:spindel} umgestellt erfordert die Hubkraft $F$ das
+Motordrehmoment
+\begin{equation}
+  M = \frac{F\,p}{2\pi\,\eta} .
+  \label{eq:moment}
+\end{equation}
+Für die aufgelegten Hände (20 bis 40\,N) sind das nur etwa 3 bis 9\,Ncm; jedes Kilogramm bewegter
+Gehäusemasse erhöht den Bedarf um etwa 2\,Ncm. Umgekehrt erzeugen 10\,Ncm Motordrehmoment eine
+Hubkraft von etwa 46 bis 59\,N. Für das Auflegen der Hände ist der Antrieb damit großzügig
+bemessen.
+
+Für das Verhalten unter Last ist außerdem wichtig, dass die Spindel nicht selbsthemmend ist:
+Dafür müsste $\varphi < \rho'$ gelten, hier ist $\varphi \approx 20^\circ$ aber deutlich größer als
+$\rho' \approx 6^\circ$ bis $12^\circ$. Eine Kraft von oben kann die Spindel also zurückdrehen, und
+der Motor muss sie aktiv halten. In dieser Richtung beträgt der Wirkungsgrad
+\begin{equation}
+  \eta' = \frac{\tan(\varphi - \rho')}{\tan\varphi} \approx 0{,}40 \text{ bis } 0{,}69 .
+  \label{eq:wirkungsgrad_rueck}
+\end{equation}
+Nicht beziffert sind weitere Verluste durch Reibung in der Linearführung, durch Verkanten des
+Schlittens bei außermittigem Druck und durch die Nachgiebigkeit des gedruckten Verbindungsteils.
+
 Der Körper wird über eine Lineareinheit aus Kaufteilen bewegt: Der Schrittmotor treibt eine
 Gewindespindel mit 8\,mm Steigung an, deren Mutter in einem Schlitten sitzt, der auf einer
 Schiene geführt wird. Ein eigens konstruiertes, 3D-gedrucktes Verbindungsteil verbindet den
