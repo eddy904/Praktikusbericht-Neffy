@@ -24,7 +24,7 @@
 - Abgabeformat: LaTeX (VS Code + LaTeX Workshop), Literatur über biblatex (`literatur.bib`)
 - Umfang: **ca. 20 Seiten** (laut Eddy nicht streng, 23.10.2026) von Einleitung bis Ende der Einschätzung; Titelblatt, Verzeichnisse,
   Literatur, Anhang und Eigenständigkeitserklärung zählen nicht mit [bitte bestätigen]
-- Abgabe: **Datum klären** (laut Eddy nicht der 26.10.2026; Titelblatt noch anpassen)
+- Abgabe: **26.10.2026** (am 26.10. bestätigt; steht so auf dem Titelblatt)
 - Sprache: Deutsch
 
 ## Referenzbericht
