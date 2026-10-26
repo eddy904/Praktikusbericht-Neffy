@@ -15,13 +15,13 @@
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Neffy 1.0: keine Sensoren? Antrieb genauer?}{9}{section*.18}%
 \contentsline {todo}{\fcolorbox {black}{yellow!60}{\textcolor {yellow!60}{o}}\ UNSICHER: Schnittstelle und Abbildung zum Ablauf: Inhalt noch offen (Abstimmung Badre/Younes)}{10}{section*.20}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Ablauf aus Sicht des Pi so richtig? (z.\,B. Begrüßung, Übungsauswahl)}{11}{section*.22}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Maße der Taschen und der Velostat-Fläche}{13}{section*.25}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Maße der Taschen und der Velostat-Fläche}{14}{section*.25}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ So richtig beschrieben? (Klebeseite zum Grundkörper, leitende Seite zum Velostat)}{14}{section*.26}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Endgültiger Festwiderstand der Taschen? (LIESMICH der Messdaten nennt 10\,k$\Omega $) Kurz begründen, warum dieser Wert; Schaltplan}{14}{section*.28}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Hersteller (Iverntech?) bestätigen; Haltemoment, falls bekannt}{14}{section*.29}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname Kaspar (liefert Badre)}{14}{section*.30}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Drucker-Modelle so richtig?}{16}{section*.33}%
-\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Welcher Kleber?}{16}{section*.34}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Nachname Kaspar (liefert Badre)}{15}{section*.30}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Drucker-Modelle so richtig?}{15}{section*.33}%
+\contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Welcher Kleber?}{17}{section*.34}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Foto des fertigen, lackierten Gehäuses}{17}{section*.35}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ KI-Angabe mit Prof.\ Buchem abstimmen (welche Form erwartet die BHT?); danach diesen Abschnitt und die Eigenständigkeitserklärung anpassen}{20}{section*.37}%
 \contentsline {todo}{\fcolorbox {black}{orange}{\textcolor {orange}{o}}\ Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}{20}{section*.38}%

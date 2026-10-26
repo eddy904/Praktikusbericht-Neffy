@@ -143,21 +143,16 @@ Entfernung vorbeigehen, keine Reaktion auslösen. Im Projektverlauf wurde stattd
 entschieden, dass Neffy auch auf vorbeigehende Personen kurz reagiert, um zur Nutzung
 einzuladen (Anforderung~A2).
 
-Zunächst wurden Abstands- und Infrarotsensoren betrachtet. Abstandssensoren reagieren
-jedoch auf jedes Hindernis und nicht nur auf Menschen, und passive Infrarotsensoren
-erkennen still sitzende Personen nicht zuverlässig~\cite{shokrollahi2024pir} (siehe
-Abschnitt~\ref{sec:sdt_anwesenheit}). Die Wahl fiel daher auf den Thermalsensor
-Omron D6T-1A-02~\cite{omron2017d6t}, der die Körperwärme einer Person gegenüber
-der Raumtemperatur erfasst. Er erkennt damit auch Personen, die sich nicht bewegen. Der
-Sensor besitzt nur einen Messpunkt mit einem Sichtwinkel von 26{,}5°~\cite{omron2017d6t}.
-Je weiter eine Person entfernt ist, desto kleiner ist der Anteil des Sichtfelds, den sie
-ausfüllt, und desto geringer fällt die gemessene Erwärmung aus. Der Abstand wirkt damit als
-natürlicher Filter gegen weiter entfernte Personen. Der Sensor wird über \ac{I2C}
-angebunden. Mit rund 16\,€ ist er teurer als einfache
-Infrarotsensoren, versprach aber eine deutlich zuverlässigere Erkennung. Ausschlaggebend
-waren zudem das gute Preis-Leistungs-Verhältnis und der etablierte Hersteller. Ein
-Vergleichstest mit anderen Sensoren wurde nicht durchgeführt, da bereits der D6T die
-Anforderungen im Betrieb erfüllte (siehe Abschnitt~\ref{sec:erg_anwesenheit}).
+Abstands- und Infrarotsensoren schieden aus, da sie auf jedes Hindernis reagieren bzw.\
+still sitzende Personen nicht zuverlässig erkennen (Abschnitt~\ref{sec:sdt_anwesenheit}).
+Gewählt wurde der Thermalsensor Omron D6T-1A-02~\cite{omron2017d6t}, der die Körperwärme
+gegenüber der Raumtemperatur erfasst und so auch unbewegte Personen erkennt. Er besitzt einen
+Messpunkt mit 26{,}5° Sichtwinkel~\cite{omron2017d6t}: Je weiter eine Person entfernt ist,
+desto kleiner ist ihr Anteil am Sichtfeld und desto geringer die gemessene Erwärmung, sodass
+der Abstand als natürlicher Filter wirkt. Der über \ac{I2C} angebundene Sensor ist mit rund
+16\,€ teurer als einfache Infrarotsensoren, versprach aber eine zuverlässigere Erkennung bei
+gutem Preis-Leistungs-Verhältnis und von einem etablierten Hersteller. Ein Vergleichstest
+entfiel, da bereits der D6T die Anforderungen erfüllte (Abschnitt~\ref{sec:erg_anwesenheit}).
 
 \subsection{Auswahl des Drucksensors}
 \label{sec:hw_drucksensor}
@@ -406,21 +401,14 @@ vorgesehenen Bohrungen wurden dadurch nicht mehr benötigt. Eine wichtige Erkenn
 Konstruktion war, dass sich mit Kleben deutlich mehr lösen lässt als zunächst angenommen.
 \todo{Welcher Kleber?}
 
-Lösbare Verbindungen gibt es dort, wo das Innenleben zugänglich bleiben muss (Anforderung~A8).
-Dafür werden vor allem Neodym-Magnete eingesetzt. Ein modularer Aufbau war ein bewusstes
+Lösbar sind nur die Verbindungen, über die das Innenleben zugänglich bleibt
+(Tabelle~\ref{tab:gehaeuse_teile}, Anforderung~A8). Ein modularer Aufbau war ein bewusstes
 Konstruktionsziel: Der Roboter soll sich vollständig zerlegen und wieder zusammensetzen lassen,
 um Änderungen vorzunehmen oder defekte Teile zu tauschen. Wie wichtig das ist, zeigte sich
-bereits während des Projekts, in dem der Roboter immer wieder geöffnet werden musste.
-
-Die beiden Hälften des Oberkörpers sind in der Mitte über je acht Magnete verbunden und lassen
-sich ohne Werkzeug abnehmen; darunter liegen das Innenleben des Oberkörpers und die Kabel. Die
-von unten verschraubten Sensoreinsätze der Taschen besitzen jeweils vier weitere Magnete, sodass
-im Oberkörper insgesamt 24 Magnete sitzen. Die Verbindung hält zuverlässig. Die hintere Klappe des
-Unterkörpers ist verschraubt und gibt nach dem Lösen von sechs Schrauben die Elektronik frei,
-etwa das Neffy Board. Der Kopf besteht aus Boden, Hinterteil, Vorderteil und Deckel
-(Abbildung~\ref{fig:gehaeuse}\,a). Boden und Hinterteil sind über Langlöcher verschraubt, das
-Vorderteil sitzt per Presspassung auf Stiften. Zusammen bilden sie eine Einheit, auf die der
-Deckel mit weiteren Magneten aufgesetzt wird.
+bereits im Projekt, in dem der Roboter immer wieder geöffnet werden musste. Dafür werden vor
+allem Neodym-Magnete eingesetzt; allein im Oberkörper sitzen 24, je acht in den beiden Hälften
+und je vier in den Sensoreinsätzen. Die Verbindung hält zuverlässig. Nur am Kopf wird das
+Hinterteil über Langlöcher verschraubt.
 
 \subsection{Fertigung und Nachbearbeitung}
 \label{sec:gehaeuse_fertigung}

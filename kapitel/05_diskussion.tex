@@ -188,23 +188,19 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
 \label{sec:schwachstellen}
 
 \begin{itemize}
-  \item \textbf{Keine passive Atemerkennung:} Das ursprüngliche Ziel, die Atmung allein über die
-        aufgelegten Hände zu erkennen, wurde nicht erreicht (Abschnitt~\ref{sec:erg_passiv}). Die
-        aktive Erfassung erfordert, dass die Nutzer:innen bewusst mitdrücken.
+  \item \textbf{Atemsensorik:} Die passive Erkennung über die aufgelegten Hände wurde nicht
+        erreicht; die aktive Erfassung erfordert bewusstes Mitdrücken
+        (Abschnitt~\ref{sec:erg_passiv}). Bei zu festem Druck sättigt das Signal
+        (Abschnitt~\ref{sec:erg_aktiv}).
   \item \textbf{Einstufung nicht validiert:} Die Grenzen zwischen entspannt, normal und gestresst
         sind aus der üblichen Atemfrequenz in Ruhe abgeleitet~\cite{nicolo2020rr} und wurden nicht
         mit Nutzer:innen überprüft; die Einstufung ist damit eine Abschätzung. Zudem kann das
         bewusste Mitdrücken die Atmung selbst verändern. Neffy dient im Labor als Plattform für
         Studien, deren Ergebnisse genutzt werden können, um die Grenzen zu prüfen und anzupassen.
-  \item \textbf{Sättigung bei festem Druck:} Wird zu fest gedrückt, erreicht das Signal das obere
-        Ende des Messbereichs (A3, A4). Die Erkennung bleibt möglich, die Signalform geht aber
-        verloren.
-  \item \textbf{Bedienung über die Taschen:} Navigation und Auswahl über Klicks funktionieren noch
-        nicht in allen Fällen zuverlässig, da eine gewohnte Rückmeldung wie bei Touchpad oder Taste
-        fehlt (Abschnitt~\ref{sec:erg_bedienung}).
-  \item \textbf{Anwesenheit bei Wärmequellen:} Direkte Sonne oder ein Heizkörper im Sichtfeld
-        verhindern die Erkennung (Abschnitt~\ref{sec:erg_anwesenheit}). Die Reichweite wurde
-        bislang nur beobachtet, nicht gemessen.
+  \item \textbf{Bedienung und Anwesenheit:} Klicks sind ohne gewohnte Rückmeldung schwer
+        reproduzierbar (Abschnitt~\ref{sec:erg_bedienung}); Wärmequellen im Sichtfeld verhindern
+        die Anwesenheitserkennung, und deren Reichweite ist nur beobachtet
+        (Abschnitt~\ref{sec:erg_anwesenheit}).
   \item \textbf{Ergonomie:} Durch die Größe von Neffy~3.0 liegen Hände und Ellbogen etwas zu hoch;
         dieser Punkt wurde im Entwurf zu wenig beachtet. Als einfache Abhilfe dienen kleine Kissen
         links und rechts unter den Ellbogen.
