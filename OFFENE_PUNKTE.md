@@ -112,6 +112,7 @@
 - [x] **27 Ω:** im fertigen Aufbau ausprobiert (größere Velostat-Fläche → kleinerer R_F erwartet), so in 4.2.3 beschrieben (Eddy, 26.10.)
 - [x] A3* auch in Tab. 2.1 als „im Projektverlauf ergänzt“; Sätze „gestresst nicht erreicht“ gestrichen
 - [ ] **Messreihen:** Wie viele Personen wurden gemessen? (\todo in 5.2.1)
-- [ ] **A6:** Innenmaße der Taschen + Anzahl/Größe der getesteten Hände (\todo in 4.2.3)
+- [x] **A6:** Taschen ca. 20 cm lang, im Mittel ca. 7 cm breit; Druckbereich ca. 14,5 cm, mittig drücken (Eddy, 26.10.) → 4.2.3 als Vergleich mit Handmaßen formuliert
+- [ ] A6: Breite 7 cm < Handbreite P50 – im Text mit „Erprobung mit verschiedenen Handgrößen“ begründet; ggf. erklären, warum breitere Hände trotzdem passen
 - [ ] Schwächen Neffy 2 (Kap. 2.1): Quelle? Derzeit als „Laborbetrieb“ formuliert
 - [ ] Kap. 7: neuer Absatz „Rückblickend würden wir …“ prüfen (Eddy/Younes)
