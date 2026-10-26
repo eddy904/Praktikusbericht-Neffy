@@ -40,12 +40,14 @@ gibt den Stand der Firmware wieder~\cite{jamil2026mainboard}.
   \end{tabular}
 \end{table}
 
+\clearpage
 \section*{Modul zur Atemerkennung}
 
 Die folgenden Listings zeigen das Modul zur Atemerkennung (Abschnitt~\ref{sec:sw_atem}) im
 Stand von Commit \texttt{2693747}~\cite{jamil2026mainboard}.
 
 \lstinputlisting[language=C++, caption={\texttt{BreathingDetection.h}}]{anhang/code/BreathingDetection.h}
+\clearpage
 \lstinputlisting[language=C++, caption={\texttt{BreathingDetection.cpp}}]{anhang/code/BreathingDetection.cpp}
 
 \chapter{Rohdaten}
@@ -53,8 +55,8 @@ Stand von Commit \texttt{2693747}~\cite{jamil2026mainboard}.
 
 \begin{table}[htbp]
   \centering
-  \caption{Kennwerte der Messreihen zur Atemsensorik (erzeugt aus
-    \texttt{daten/Messdaten\_Atemsensorik/00\_Uebersicht\_Kennwerte.csv})}
+  \caption{Kennwerte der Messreihen zur Atemsensorik (aus
+    \texttt{00\_Uebersicht\_Kennwerte.csv})}
   \label{tab:kennwerte}
   \small
   \input{daten/tab_kennwerte.tex}

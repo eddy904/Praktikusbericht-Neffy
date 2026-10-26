@@ -53,6 +53,16 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{float}
+% Gleitobjekte: eher mit Text auf eine Seite; reine Abbildungsseiten oben beginnen statt zentriert
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.6}
+\renewcommand{\textfraction}{0.12}
+\renewcommand{\floatpagefraction}{0.75}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt plus 2fil}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
 \usepackage{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows.meta}
@@ -131,6 +141,8 @@
 % --- Verzeichnisse ---------------------------------------------------
 \listoffigures
 \listoftables
+\clearpage
+\markboth{Abkürzungsverzeichnis}{Abkürzungsverzeichnis}
 \printacronyms
 \printbibliography[heading=bibintoc, title=Literaturverzeichnis]
 
