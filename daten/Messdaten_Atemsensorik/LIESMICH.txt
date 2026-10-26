@@ -21,7 +21,7 @@ Kennwerte
 
 Hinweise zur Zuordnung
 - F1 ist im Chat ausdrücklich als FSR benannt. F2 und F3 sind über Chronologie und Signalform (harte Null, sprunghafter Anstieg) dem FSR zugeordnet.
-- P1/P2 (Hände aufgelegt): Dauerplateau ohne erkennbare Atemzyklen; Zuordnung von Badre bestätigt (21.10.2026).
+- P1/P2 (Hände aufgelegt): Dauerplateau ohne erkennbare Atemzyklen; Zuordnung von Eddy bestätigt (21.10.2026).
 - A2 ist gemischt: anfangs aktive Zyklen, ab ~25 s gehaltener Druck mit unregelmäßiger Welligkeit.
 - Bei F2 und P1 wurde die Ruhephase (Nullwerte) am Ende auf 2 s gekürzt; sonst unverändert.
 - Atemkurve 8 wurde im Chat doppelt gesendet und ist nur einmal enthalten.

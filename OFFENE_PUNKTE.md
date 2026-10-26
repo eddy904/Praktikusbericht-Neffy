@@ -35,11 +35,12 @@
 - [x] Abgabe: 26.10.2026
 - [x] Ein gemeinsamer Teambericht; Kennzeichnung „wer was“ ganz am Ende
 - [x] Teampartner: Younes Jamil
-- [ ] Nachname Badre, beide Matrikelnummern
+- [x] Name: Eddy Werk (nicht „Eddy“ – Fehler in der ursprünglichen CLAUDE.md)
+- [ ] Beide Matrikelnummern (erst kurz vor der Abgabe lokal eintragen)
 - [ ] „Praxisbericht“ oder „Praktikumsbericht“? (Neffy 2 nutzt „Praxisbericht“)
 - [ ] Arbeitstitel bestätigen
 - [ ] Wortlaut der Eigenständigkeitserklärung (BHT-Vorgabe)
-- [x] Umfang ~20 Seiten: nicht streng (Badre, 23.10.2026)
+- [x] Umfang ~20 Seiten: nicht streng (Eddy, 23.10.2026)
 
 ## Inhalt
 - [x] Neffy 3.0 baut auf Neffy 2.0 auf (Raspberry Pi, Schulter- und Kopfbewegung)
@@ -55,7 +56,7 @@
 - [x] Thermalsensor D6T-1A-02 integriert
 - [ ] Datenblätter: D6T-1A-02, TMC2225, Schrittmotoren, Velostat
 - [x] Anforderung Anwesenheit: A1 = sitzende Person erkennen, A2 = Meldung an Pi; Pi reagiert auch beim Vorbeigehen (23.10.2026)
-- [ ] **Reichweite Thermalsensor messen** (Daten folgen von Badre); 2–3 m prüfen – nach Firmware-Werten eher geringer; ruhig sitzende Person > 20 s erkannt?
+- [ ] **Reichweite Thermalsensor messen** (Daten folgen von Eddy); 2–3 m prüfen – nach Firmware-Werten eher geringer; ruhig sitzende Person > 20 s erkannt?
 - [x] Drucksensoren: FSR (Joy-IT) vs. Velostat, Gründe geklärt
 - [x] Wurde der Dehnungsgurt (Backup) getestet? → nein, nur Idee (Kap. 4.2)
 - [ ] Warum Wechsel von „Sensoren am Pi mit MCP3208“ zum ESP32-Board?
@@ -80,7 +81,7 @@
 - [ ] **Messung Anwesenheit** (später): Erkennung in 0,5/1/1,5/2/2,5/3 m mit `tools/thermal_log.py` → Plot + Zahl für A1
 - [ ] Bedienung über Taschen: was funktioniert nicht perfekt?
 - [ ] Wer führt die laufende Studie zu Neffy 3.0 durch?
-- [ ] Messreihen-IDs A1–A6 → V1–V6 umbenennen (Verwechslung mit Anforderungen A1–A10)? Antwort Badre ausstehend
+- [ ] Messreihen-IDs A1–A6 → V1–V6 umbenennen (Verwechslung mit Anforderungen A1–A10)? Antwort Eddy ausstehend
 - [ ] Tests der Atemerkennung am fertigen Neffy (Erkennungsrate, Einstufung)?
 - [ ] Evaluation A1, A2, A4, A5 bewerten; A3, A6–A9 prüfen
 - [x] Probleme mit den Schrittmotoren konkret (s. o.)

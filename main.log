@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  26 OCT 2026 13:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.21)  26 OCT 2026 14:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1624,7 +1624,7 @@ Package pdftex.def Info: abbildungen/bht_titelseite.pdf  used on input line 21.
 
 (pdftex.def)             Requested size: 597.50787pt x 845.04504pt.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 29.
+ine 30.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
 0.
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
@@ -1699,7 +1699,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout5 = `main.toc'.
 
  [3] (main.tdo
-Overfull \hbox (3.22318pt too wide) in paragraph at lines 11--11
+Overfull \hbox (3.22318pt too wide) in paragraph at lines 10--10
  [][] [][][][] \T1/lmr/m/n/12 (-20) Zeitauf-tei-lung nach Ar-beits-be-rei-chen 
 (Dia-gramm, vgl. Pra-xis-be-richt Neffy 2 [[]1[]]).[] [][]  
  []
@@ -1708,7 +1708,7 @@ Overfull \hbox (3.22318pt too wide) in paragraph at lines 11--11
 
 {C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-9.
+8.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1751,7 +1751,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2
 
 {C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-<abbildungen/idee neffy.jpeg, id=292, 1407.2575pt x 1126.2075pt>
+<abbildungen/idee neffy.jpeg, id=289, 1407.2575pt x 1126.2075pt>
 File: abbildungen/idee neffy.jpeg Graphic file (type jpg)
 <use abbildungen/idee neffy.jpeg>
 Package pdftex.def Info: abbildungen/idee neffy.jpeg  used on input line 64.
@@ -1801,7 +1801,7 @@ Overfull \hbox (7.3373pt too wide) in paragraph at lines 63--63
 \T1/lmr/m/n/10 (-20) ra/Datenschutz 
  []
 
-<abbildungen/neffy1.jpg, id=350, 513.92pt x 422.57875pt>
+<abbildungen/neffy1.jpg, id=347, 513.92pt x 422.57875pt>
 File: abbildungen/neffy1.jpg Graphic file (type jpg)
 <use abbildungen/neffy1.jpg>
 Package pdftex.def Info: abbildungen/neffy1.jpg  used on input line 95.
@@ -1811,7 +1811,7 @@ Overfull \hbox (3.45222pt too wide) in paragraph at lines 95--96
  [][] 
  []
 
-<abbildungen/neffy2.jpg, id=353, 1104.125pt x 1405.25pt>
+<abbildungen/neffy2.jpg, id=350, 1104.125pt x 1405.25pt>
 File: abbildungen/neffy2.jpg Graphic file (type jpg)
 <use abbildungen/neffy2.jpg>
 Package pdftex.def Info: abbildungen/neffy2.jpg  used on input line 100.
@@ -1845,12 +1845,12 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 62--62
 [10
 
 ] [11]
-<abbildungen/plots/fsr_F1.pdf, id=424, 210.55063pt x 136.57324pt>
+<abbildungen/plots/fsr_F1.pdf, id=421, 210.55063pt x 136.57324pt>
 File: abbildungen/plots/fsr_F1.pdf Graphic file (type pdf)
 <use abbildungen/plots/fsr_F1.pdf>
 Package pdftex.def Info: abbildungen/plots/fsr_F1.pdf  used on input line 225.
 (pdftex.def)             Requested size: 204.85802pt x 132.88223pt.
-<abbildungen/plots/velostat_aktiv_A5.pdf, id=427, 210.55063pt x 136.57324pt>
+<abbildungen/plots/velostat_aktiv_A5.pdf, id=424, 210.55063pt x 136.57324pt>
 File: abbildungen/plots/velostat_aktiv_A5.pdf Graphic file (type pdf)
 <use abbildungen/plots/velostat_aktiv_A5.pdf>
 Package pdftex.def Info: abbildungen/plots/velostat_aktiv_A5.pdf  used on input
@@ -1858,19 +1858,19 @@ Package pdftex.def Info: abbildungen/plots/velostat_aktiv_A5.pdf  used on input
 (pdftex.def)             Requested size: 204.85802pt x 132.88223pt.
  [12] [13 <./abbildungen/plots/fsr_F1.pdf> <./abbildungen/plots/velostat_aktiv_
 A5.pdf>] [14]
-<abbildungen/cad/gesamt_kopf_offen.png, id=500, 1750.54pt x 2007.5pt>
+<abbildungen/cad/gesamt_kopf_offen.png, id=497, 1750.54pt x 2007.5pt>
 File: abbildungen/cad/gesamt_kopf_offen.png Graphic file (type png)
 <use abbildungen/cad/gesamt_kopf_offen.png>
 Package pdftex.def Info: abbildungen/cad/gesamt_kopf_offen.png  used on input l
 ine 336.
 (pdftex.def)             Requested size: 170.71393pt x 195.76875pt.
-<abbildungen/cad/oberkoerper_explosion.png, id=501, 2007.5pt x 1137.24875pt>
+<abbildungen/cad/oberkoerper_explosion.png, id=498, 2007.5pt x 1137.24875pt>
 File: abbildungen/cad/oberkoerper_explosion.png Graphic file (type png)
 <use abbildungen/cad/oberkoerper_explosion.png>
 Package pdftex.def Info: abbildungen/cad/oberkoerper_explosion.png  used on inp
 ut line 342.
 (pdftex.def)             Requested size: 239.0021pt x 135.38808pt.
-<abbildungen/cad/unterkoerper_explosion.png, id=502, 2007.5pt x 1765.59625pt>
+<abbildungen/cad/unterkoerper_explosion.png, id=499, 2007.5pt x 1765.59625pt>
 File: abbildungen/cad/unterkoerper_explosion.png Graphic file (type png)
 <use abbildungen/cad/unterkoerper_explosion.png>
 Package pdftex.def Info: abbildungen/cad/unterkoerper_explosion.png  used on in
@@ -1895,7 +1895,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 27--28
  [][] 
  []
 
-<abbildungen/plots/kennwerte_atemsensorik.pdf, id=569, 426.79147pt x 204.85934p
+<abbildungen/plots/kennwerte_atemsensorik.pdf, id=566, 426.79147pt x 204.85934p
 t>
 File: abbildungen/plots/kennwerte_atemsensorik.pdf Graphic file (type pdf)
 <use abbildungen/plots/kennwerte_atemsensorik.pdf>
@@ -1905,7 +1905,7 @@ input line 54.
 [21
 
 ]
-<abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf, id=585, 426.79147pt x 241.8
+<abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf, id=582, 426.79147pt x 241.8
 4753pt>
 File: abbildungen/plots/velostat_aufgelegt_vs_aktiv.pdf Graphic file (type pdf)
 
@@ -2056,10 +2056,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59437 strings out of 467871
- 1421646 string characters out of 5418375
- 2482075 words of memory out of 5000000
- 87094 multiletter control sequences out of 15000+600000
+ 59434 strings out of 467871
+ 1421592 string characters out of 5418375
+ 2482026 words of memory out of 5000000
+ 87092 multiletter control sequences out of 15000+600000
  735991 words of font info for 247 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,20n,107p,11209b,2970s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2084,9 +2084,9 @@ s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/User
 s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/User
 s/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb>
-Output written on main.pdf (45 pages, 2418245 bytes).
+Output written on main.pdf (45 pages, 2417447 bytes).
 PDF statistics:
- 1084 PDF objects out of 1200 (max. 8388607)
- 193 named destinations out of 1000 (max. 500000)
+ 1080 PDF objects out of 1200 (max. 8388607)
+ 192 named destinations out of 1000 (max. 500000)
  57388 words of extra memory for PDF output out of 61914 (max. 10000000)
 

@@ -13,15 +13,16 @@
 - Antrieb: Dynamixel XL430-W250 (Neffy 2) zu schwach und laut → NEMA 17; Körper mit integrierter T8-Spindel
   (Hersteller vermutlich Iverntech, kürzere Spindel als 100 mm) → mehr Kraft, leiser. ESP32-Board ersetzt
   U2D2 + Power Hub (zu viel Platz); ESP32 erzeugt die Schrittimpulse.
-- Kap. 2.2, 2.3 und 3.1 sind mit `\unsicher{}` grau markiert (Abstimmung Badre/Younes) – nicht löschen.
-- Unser Team: **Sensorik, 2 Personen** – Badre und Younes Jamil
+- Kap. 2.2, 2.3 und 3.1 sind mit `\unsicher{}` grau markiert (Abstimmung Eddy/Younes) – nicht löschen.
+- Unser Team: **Sensorik, 2 Personen** – **Eddy Werk** (GitHub eddy904) und Younes Jamil.
+  Achtung: In früheren Notizen stand fälschlich „Eddy“ – der Name ist Eddy Werk.
 - Charly Goerke (GitHub „LegitimateShake“) ist Mitarbeiter im Labor für Kommunikation und Mitautor des
   Neffy-2-Berichts. Von ihm stammen der Entwurf des Neffy Boards und die UART-Bibliothek
   (Neffy_UART_Interface). Das ist **nicht** Eigenleistung des Teams und muss so gekennzeichnet werden.
 - Die **Firmware im Repo ist maßgeblich**: Bei Widersprüchen zu Notizen gilt der Code.
 - Bericht: **ein gemeinsamer Teambericht**. Wer was gemacht hat, wird erst ganz am Ende gekennzeichnet.
 - Abgabeformat: LaTeX (VS Code + LaTeX Workshop), Literatur über biblatex (`literatur.bib`)
-- Umfang: **ca. 20 Seiten** (laut Badre nicht streng, 23.10.2026) von Einleitung bis Ende der Einschätzung; Titelblatt, Verzeichnisse,
+- Umfang: **ca. 20 Seiten** (laut Eddy nicht streng, 23.10.2026) von Einleitung bis Ende der Einschätzung; Titelblatt, Verzeichnisse,
   Literatur, Anhang und Eigenständigkeitserklärung zählen nicht mit [bitte bestätigen]
 - Abgabe: **26.10.2026**
 - Sprache: Deutsch
@@ -30,7 +31,7 @@
 In `referenz/Praxisbericht.pdf` liegt der **Praxisbericht zu Neffy 2** (Goerke & Kazubski, BHT,
 Labor für Kommunikation, 11.03.2025). Analyse: `notizen/analyse_praxisbericht_neffy2.md`.
 **Die PDF ist per `.gitignore` vom (öffentlichen) Repo ausgeschlossen** und liegt nur lokal. Wer sie braucht,
-bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in der Analyse-Notiz.
+bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in der Analyse-Notiz.
 - **Verbindliche Vorlage für Titelblatt und Formalia** (Titelblatt-Layout, Kopfzeile, Abbildungen,
   Literaturstil). Die BHT-Grafik des Titelblatts liegt als `abbildungen/bht_titelseite.pdf` vor.
 - **Ausgangspunkt und zitierbare Quelle** für Neffy 3.0 (`goerke2025neffy2` in `literatur.bib`).
@@ -67,7 +68,7 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
   Raspberry Pi über UART (115200 Baud, Bibliothek Neffy_UART_Interface); WS2812B-LEDs (FastLED, PlatformIO).
   Firmware: https://github.com/YounesJamil/Neffy-3.0-Mainboard. Analyse: `notizen/analyse_firmware.md`
   (Hardware-Eckdaten, Erkennungsverfahren, Protokoll, Auffälligkeiten).
-- Antrieb laut Firmware: Körper über Gewindespindel (8 mm Steigung, Verfahrweg in der Firmware auf max. 85 mm begrenzt; bei Übungen max. **20 mm** (Badre); Ziel war mehr Kraft, nicht mehr Hub – Hub bleibt in der Größenordnung von Neffy 2 mit 25 mm), Kopf über Zahnräder
+- Antrieb laut Firmware: Körper über Gewindespindel (8 mm Steigung, Verfahrweg in der Firmware auf max. 85 mm begrenzt; bei Übungen max. **20 mm** (Eddy); Ziel war mehr Kraft, nicht mehr Hub – Hub bleibt in der Größenordnung von Neffy 2 mit 25 mm), Kopf über Zahnräder
   30 → 40 Zähne (32°), TMC2225-Treiber, Referenzfahrt gegen Endschalter.
 - Auswahl Drucksensor: getestet wurden FSR (verschiedene Größen) und Velostat. In den getesteten Aufbauten
   verhielt sich der FSR nahezu binär (sofort volle Spannung, keine abgestufte Kurve). Velostat war
@@ -111,7 +112,7 @@ bekommt sie direkt von Badre. Alle für den Bericht wichtigen Fakten stehen in d
 ## Arbeitsstand (23.10.2026)
 | Kapitel | Stand |
 |---|---|
-| Titelblatt | fertig nach Neffy-2-Vorlage; fehlen: Nachname Badre, Matrikelnummern |
+| Titelblatt | fertig nach Neffy-2-Vorlage; fehlen: Matrikelnummern |
 | 1 Einleitung | offen (wird am Schluss geschrieben) |
 | 2 Ziel der Arbeit | Fließtext fertig; Anforderungen A1–A3 überarbeitet (23.10.), A7 ohne prüfbares Kriterium; fehlen: Zeitraum/Stunden, KI-Zielbild |
 | 3 Stand der Technik | Fließtext fertig; Vergleich Neffy 1.0/2.0/3.0; Foto Neffy 3.0 fehlt |
@@ -157,21 +158,21 @@ Messwerte, Entscheidungen) kommen von mir bzw. aus dem Material in diesem Ordner
 ## Arbeitsweise beim Schreiben (vereinbart am 21.10.2026)
 Kapitel für Kapitel, im Interview:
 1. Claude fragt gezielt, was in das Kapitel bzw. den Abschnitt gehört (konkrete Fragen, Bekanntes vorausgefüllt).
-2. Badre beschreibt den Inhalt in Stichpunkten oder frei formuliert.
+2. Eddy beschreibt den Inhalt in Stichpunkten oder frei formuliert.
 3. Claude formuliert daraus den Fließtext in LaTeX, kompiliert und meldet zurück:
    - wo eine Literaturrecherche sinnvoll ist (und was gesucht wird),
    - welche Messdaten/Auswertungen, Bilder/Fotos oder Angaben aus dem Neffy-1/2-Bericht noch fehlen,
    - Anregungen, was im Kapitel noch fehlt oder besser belegt werden sollte.
 Die Kennzeichnung „wer hat was gemacht“ erfolgt erst am Ende.
 
-**Git:** Nach Änderungen nur **lokal committen**. **Gepusht wird erst, wenn Badre es ausdrücklich sagt**
+**Git:** Nach Änderungen nur **lokal committen**. **Gepusht wird erst, wenn Eddy es ausdrücklich sagt**
 (Wunsch vom 22.10.2026).
 
 ## KI-Nutzung
 Als KI-Werkzeug wurde ausschließlich **Claude Code** verwendet. Das wird in Kap. 4.4.7
 („Einsatz von KI-Werkzeugen“) offengelegt: Gliederung, Formulieren, LaTeX-Satz, Analyse der Firmware
 und Entwicklung der Firmware. **Die Literatursuche wird nicht als KI-Nutzung aufgeführt**, und Kap. 3.1
-(Recherchemethodik) nennt nur Datenbanken, Suchbegriffe und Auswahlkriterien (Entscheidung Badre,
+(Recherchemethodik) nennt nur Datenbanken, Suchbegriffe und Auswahlkriterien (Entscheidung Eddy,
 21.10.2026). Der Satz „Inhalte, Messwerte und Entscheidungen stammen vom Team; alle Quellen über DOI bzw.
 Originaldokument geprüft“ bleibt. Offen: bei Prof. Buchem klären, welche Form der KI-Angabe die BHT
 erwartet; danach Kap. 4.4.7 und Eigenständigkeitserklärung anpassen.
