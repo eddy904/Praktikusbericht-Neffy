@@ -88,8 +88,8 @@ desto kleiner ist ihr Anteil am Sichtfeld und desto geringer die gemessene Erwä
 der Abstand als natürlicher Filter wirkt. Der über \ac{I2C} angebundene Sensor ist mit rund
 16\,€ teurer als einfache Infrarotsensoren, versprach aber eine zuverlässigere Erkennung bei
 gutem Preis-Leistungs-Verhältnis und von einem etablierten Hersteller. Ein Vergleichstest
-entfiel, da bereits der D6T die Anforderungen im Betrieb erfüllte; dies beruht bisher auf
-Beobachtung (Abschnitt~\ref{sec:erg_anwesenheit}). Der Sensor hat nur einen Messpunkt und
+entfiel, da bereits der D6T die Anforderungen erfüllte (Abschnitt~\ref{sec:erg_anwesenheit}).
+Der Sensor hat nur einen Messpunkt und
 meldet lediglich, ob sich eine Person im Sichtfeld befindet. Ob sie vor dem Roboter sitzt oder
 an ihm vorbeigeht, ergibt sich jedoch indirekt aus der Dauer der Meldung: Geht jemand vorbei,
 wird die Anwesenheit nur kurz gemeldet; Neffy wacht auf, fährt kurz hoch und gleich wieder
@@ -119,8 +119,8 @@ von 1\,K erreichen (Gleichung~\ref{eq:anwesenheit}), also $a \geq 0{,}2$. Nimmt 
 Entfernung zwischen $1/d$ (die Person füllt die Höhe des Sichtfelds noch aus) und $1/d^2$ (sie ist
 in beiden Richtungen kleiner als das Sichtfeld) ab, ergibt sich eine Reichweite von etwa 1{,}4 bis
 2\,m. Die Abschätzung vernachlässigt unter anderem, dass der Sensor nicht über das ganze Sichtfeld
-gleich empfindlich ist. Sie liegt unter der im Betrieb beobachteten Reichweite
-(Abschnitt~\ref{sec:erg_anwesenheit}).
+gleich empfindlich ist. Die Messung in Abschnitt~\ref{sec:erg_anwesenheit} bestätigt die obere
+Grenze von etwa 2\,m.
 
 \subsection{Auswahl des Drucksensors}
 \label{sec:hw_drucksensor}
@@ -523,14 +523,17 @@ verhindert ein Flackern des Zustands. Die Raumtemperatur folgt der Messung je na
 unterschiedlich schnell: Sinkt die Temperatur, wird sie sofort übernommen, da eine Person den
 Sensor nur erwärmen kann. Steigt sie, wird sie nur langsam nachgeführt, damit eine Person,
 die sich langsam nähert oder etwas weiter entfernt steht, nicht als Raumtemperatur
-\enquote{weggelernt} wird. Als zusätzliche Absicherung wird die Raumtemperatur schneller neu
-gelernt, wenn zwar eine Person gemeldet wird, das Signal aber 20\,s lang nahezu konstant
-bleibt, da eine reale Person die Messung in der Regel innerhalb von Sekunden verändert. Diese
-Absicherung steht in einem Zielkonflikt zu Anforderung~A1: Sie verhindert, dass eine
-Wärmequelle dauerhaft als Person gilt, kann aber auch eine sehr ruhig sitzende Person
-\enquote{weglernen}, wenn deren Signal lange genug nahezu konstant bleibt. Die Parameter
-wurden anhand einer geführten Aufzeichnung abgestimmt (leerer Raum, Annähern, Davorstehen,
-Abstand 1\,m, Vorbeigehen, Weggehen; siehe Abschnitt~\ref{sec:messwerte}).
+\enquote{weggelernt} wird. Solange eine Person gemeldet wird, folgt die Raumtemperatur mit einer
+Zeitkonstante von 900\,s; eine völlig ruhig sitzende Person bleibt so etwa 20 Minuten erkannt.
+Das Weggehen wird zusätzlich an einem schnellen Abfall des Messwerts erkannt.
+
+Beim Einschalten kann bereits jemand vor dem Roboter sitzen und darf dann nicht als
+Raumtemperatur gelernt werden. Der D6T misst deshalb auch seine eigene Gehäusetemperatur
+(PTAT)~\cite{jamil2026mainboard}, die kurz nach dem Einschalten nur wenige Kelvin über der
+Raumtemperatur liegt. Liegt der Messwert in den ersten 3\,s um 1 bis 5\,K darüber, gilt das als
+Person im Sichtfeld, und die Gehäusetemperatur wird vorläufig als Raumtemperatur verwendet. Die
+Parameter wurden anhand mehrerer Aufzeichnungen abgestimmt (leerer Raum, Annähern, Davorstehen,
+Vorbeigehen, Weggehen, Einschalten mit Person davor).
 
 \subsection{Klick- und Druckerkennung}
 \label{sec:sw_druck}
@@ -579,8 +582,8 @@ beschriebenen aktiven Erfassung aufgegeben.
 \label{sec:sw_ablage}
 
 Der Quellcode liegt im Repository \url{https://github.com/YounesJamil/Neffy-3.0-Mainboard}
-\cite{jamil2026mainboard}; dieser Bericht bezieht sich auf den Stand vom 21.10.2026
-(Commit \texttt{2693747}). Board-Definition und Pinbelegung sind im Repository enthalten,
+\cite{jamil2026mainboard}; dieser Bericht bezieht sich auf den Stand vom 26.10.2026
+(Commit \texttt{e05536c}). Board-Definition und Pinbelegung sind im Repository enthalten,
 die verwendeten Bibliotheken (Neffy\_UART\_Interface, TMX222x\_StepperDriver, FastLED)
 werden von PlatformIO in festen Versionen geladen. Die Firmware wird über den USB-Anschluss
 der Platine aufgespielt, ohne dass eine Taste gedrückt werden muss.

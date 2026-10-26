@@ -124,18 +124,28 @@ daher schwer, einen Klick zuverlässig zu wiederholen.
 \subsection{Anwesenheitserkennung}
 \label{sec:erg_anwesenheit}
 
-Im Betrieb erkennt Neffy~3.0 Personen nach Beobachtung des Teams zuverlässig bis zu einer
-Entfernung von etwa 2 bis 3\,m. Bei der Abstimmung der Firmware ergab sich eine Erwärmung des
-Messwerts um 4 bis 6\,K gegenüber der Raumtemperatur, wenn eine Person direkt vor dem Roboter
-stand, und um etwa 2\,K in 1\,m Entfernung. Kommt jemand vorbei, fährt der Roboter kurz hoch und
-wieder herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Innenräumen traten
-auch bei normalem Tageslicht keine Probleme auf. Die Abschätzung aus
-Abschnitt~\ref{sec:hw_anwesenheit} lässt mit den Werten der Abstimmung eine geringere Reichweite
-von etwa 1{,}4 bis 2\,m erwarten; die Messung der Reichweite soll diese Abweichung klären.
-\todoi{Messung ausstehend: Erkennung in 0{,}5 / 1 / 1{,}5 / 2 / 2{,}5 / 3\,m mit
-\texttt{tools/thermal\_log.py} aufzeichnen; danach Plot \enquote{Temperaturdifferenz über
-Entfernung} und genaue Reichweite eintragen. Thermal-Fix (Vergleich mit Sensortemperatur)
-abwarten und 4.4.2, diesen Abschnitt und Tab.~5.1 anpassen.}
+Zur Bestimmung der Reichweite hielt sich eine Person nacheinander in 3, 2, 1{,}5, 1 und 0{,}5\,m
+Entfernung vor dem Roboter auf, je etwa 30\,s (in 3\,m 60\,s); davor und danach war der Platz
+leer. Aufgezeichnet wurden Messwert, gelernte Raumtemperatur und Meldung der Firmware alle
+120\,ms (Abbildung~\ref{fig:thermal_reichweite}). Bis 2\,m wurde die Person durchgehend erkannt;
+die mittlere Erwärmung betrug 3{,}8\,K in 0{,}5\,m, 2{,}7\,K in 1\,m, 1{,}8\,K in 1{,}5\,m und
+1{,}1\,K in 2\,m. In 3\,m lag sie mit 0{,}9\,K knapp unter der Schwelle von 1\,K; die Meldung
+schwankte dort und stand während 66\,\% der Zeit an. Bei leerem Platz wurde zu keinem Zeitpunkt
+Anwesenheit gemeldet, und nach dem Weggehen fiel die Meldung in weniger als einer Sekunde ab.
+Die Reichweite liegt damit bei etwa 2\,m, 3\,m ist der Grenzbereich. Das entspricht der oberen
+Grenze der Abschätzung aus Abschnitt~\ref{sec:hw_anwesenheit}: Die Erwärmung nimmt zwischen den
+beiden Grenzfällen $1/d$ und $1/d^2$ ab, näher an $1/d$. Kommt jemand vorbei, fährt der Roboter kurz hoch und wieder
+herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Innenräumen traten auch bei
+normalem Tageslicht keine Probleme auf.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.66\linewidth]{plots/thermal_reichweite.pdf}
+  \caption{Erwärmung des Thermalsensors gegenüber der gelernten Raumtemperatur in Abhängigkeit von
+    der Entfernung der Person: Mittelwert, Striche vom kleinsten bis zum größten Wert (einschließlich
+    des Positionswechsels), Prozentwerte: Anteil der Zeit mit Meldung \enquote{Person da}}
+  \label{fig:thermal_reichweite}
+\end{figure}
 
 Eine Grenze ergibt sich aus dem Verfahren selbst: Die gelernte Raumtemperatur steigt nur langsam,
 folgt einem Absinken aber sofort (Abschnitt~\ref{sec:sw_anwesenheit}). Scheint die Sonne längere
@@ -154,8 +164,7 @@ Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
 \begin{table}[htbp]
   \centering
   \caption{Erfüllungsgrad der Anforderungen (\checkmark\ Prüfkriterium mit der angegebenen
-    Nachweisart erfüllt, (\checkmark) vorläufig erfüllt, geplante Messung steht aus,
-    $\circ$ teilweise, -- nicht erfüllt)}
+    Nachweisart erfüllt, $\circ$ teilweise, -- nicht erfüllt)}
   \label{tab:evaluation}
   \small
   \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{2.9cm}
@@ -165,9 +174,9 @@ Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
     \toprule
     Nr. & Anforderung & Status & Nachweis & Begründung \\
     \midrule
-    A1 & Sitzende Person erkennen & (\checkmark) & Beobachtung im Betrieb
-       & Im Betrieb zuverlässig erkannt; Reichweitenmessung ausstehend; Grenze bei direkter Sonne
-         oder Heizung \\
+    A1 & Sitzende Person erkennen & \checkmark & Messung (0{,}5--3\,m)
+       & Bis 2\,m durchgehend erkannt, 3\,m Grenzbereich; leerer Platz ohne Fehlmeldung; Grenze bei
+         direkter Sonne oder Heizung \\
          \trenn
     A2 & Anwesenheit an den Pi melden & \checkmark & Firmware, Beobachtung im Betrieb
        & Meldung bei jeder Änderung und zusätzlich alle 500\,ms; der Pi reagiert mit einer kurzen
@@ -221,7 +230,7 @@ Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
         Studien, deren Ergebnisse genutzt werden können, um die Grenzen zu prüfen und anzupassen.
   \item \textbf{Bedienung und Anwesenheit:} Klicks sind ohne gewohnte Rückmeldung schwer
         reproduzierbar (Abschnitt~\ref{sec:erg_bedienung}); Wärmequellen im Sichtfeld verhindern
-        die Anwesenheitserkennung, und deren Reichweite ist nur beobachtet
+        die Anwesenheitserkennung, und ab etwa 3\,m wird sie unzuverlässig
         (Abschnitt~\ref{sec:erg_anwesenheit}).
   \item \textbf{Ergonomie:} Durch die Größe von Neffy~3.0 liegen Hände und Ellbogen etwas zu hoch;
         dieser Punkt wurde im Entwurf zu wenig beachtet. Als einfache Abhilfe dienen kleine Kissen

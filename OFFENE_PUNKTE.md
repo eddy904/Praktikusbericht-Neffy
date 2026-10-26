@@ -4,12 +4,8 @@
 `notizen/review_ars_2026-10-26.md`.
 
 ## Wartet auf das Team
-- [ ] **Thermalsensor-Fix pushen** (Vergleich mit der eigenen Sensortemperatur statt gelernter
-      Raumtemperatur) → danach Firmware-Repo neu lesen und anpassen: 4.2.1, 4.4.2 inkl. Gl. 4.10
-      (Satz zum Zielkonflikt wieder streichen), 5.2.6 (Absatz Sonne/Heizkörper), Tab. 5.1 A1.
-      Offen: Gibt es das Neulernen nach 20 s noch? Erwärmt sich der Sensor im Gehäuse selbst?
-- [ ] **Reichweitenmessung Thermalsensor** (Younes, 0,5–3 m, `tools/thermal_log.py`) → Zahl/Plot in
-      5.2.6, A1 in Tab. 5.1 von „vorläufig“ auf erfüllt/teilweise
+- [x] **Thermalsensor-Fix** (Commit `e05536c`) eingearbeitet: 4.2.1, 4.4.2, 5.2.6, Tab. 5.1, Fazit (26.10.)
+- [x] **Reichweitenmessung Thermalsensor** eingearbeitet: Abb. in 5.2.6, A1 jetzt ✓ (26.10.)
 - [ ] **Fotos** nach `abbildungen/fotos/`: Neffy frontal (Abb. 3.1c, 5.1a), Hände in den Taschen (Abb. 5.1b),
       optional lackiertes Gehäuse (`\todo` in 4.3.4)
 - [x] **Kürzen:** Stufen 1–3 umgesetzt (26.10.), Kap. 1–7 jetzt 33 S.
