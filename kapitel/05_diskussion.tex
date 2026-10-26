@@ -110,8 +110,9 @@ trotzdem gut erkennbar. A5 lieferte die saubersten Zyklen ohne Sättigung.
 Übertragen auf die Einstufung der Firmware (Abschnitt~\ref{sec:sw_atem}) entsprechen 12{,}1 bis
 15{,}2 Atemzüge pro Minute 6{,}1 bis 7{,}6 Atemzügen in 30\,s und damit der Stufe
 \enquote{normal}; die langsamste Messreihe A6 mit 9{,}7 pro Minute läge mit 4{,}9 Atemzügen in
-30\,s bei \enquote{entspannt}. Die Stufe \enquote{gestresst} wurde in keiner Messreihe erreicht.
-Die Messreihen entstanden am Entwicklungsboard und wurden offline ausgewertet. Am fertigen
+30\,s bei \enquote{entspannt}. Die Messreihen dienten der Auswahl des Sensors, nicht der
+Prüfung der Einstufung; ihre Atemfrequenzen liegen im Bereich ruhiger Atmung. Sie entstanden
+am Entwicklungsboard und wurden offline ausgewertet. Am fertigen
 Roboter funktioniert die Atemerkennung mit der Erkennung der Firmware im praktischen Betrieb
 zuverlässig; eine Erkennungsrate wurde dort jedoch nicht systematisch bestimmt. Die Erprobung mit
 Nutzer:innen ist Teil der laufenden Studie (Abschnitt~\ref{sec:funktionsnachweis}).
@@ -159,9 +160,8 @@ Sonne oder einen Heizkörper aufgestellt werden.
 \label{sec:evaluation}
 
 Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anforderungen}.
-Anforderung~A3 verlangte eine passive Erfassung und ist daher nicht erfüllt. Die stattdessen
-umgesetzte aktive Erfassung ist keine ursprüngliche Anforderung; sie wird als A3* gesondert
-bewertet, damit sichtbar bleibt, was erreicht wurde.
+Die ursprüngliche Idee der passiven Atemerfassung (A3) ließ sich nicht umsetzen; die im
+Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
 
 \begin{table}[htbp]
   \centering
@@ -187,13 +187,12 @@ bewertet, damit sichtbar bleibt, was erreicht wurde.
        & Einatemzüge bei nur aufgelegten Händen nicht vom Rauschen unterscheidbar
          (Abschnitt~\ref{sec:erg_passiv}) \\
          \trenn
-    A3* & Atemtakt aktiv über die Taschen erfassen (geänderte Lösung) & \checkmark
+    A3* & Atemtakt aktiv über die Taschen erfassen & \checkmark
        & Klare Atemzüge in allen sechs Messreihen am Entwicklungsboard (9{,}7--15{,}2/min); am
          Roboter im Betrieb zuverlässig, Erkennungsrate nicht bestimmt \\
          \trenn
     A4 & Einstufung an den Raspberry Pi & \checkmark
-       & Ergebnis kommt an, Pi startet passende Übung; Grenzen der Einstufung nicht validiert,
-         Stufe \enquote{gestresst} in den Messreihen nicht erreicht \\
+       & Ergebnis kommt an, Pi startet passende Übung; Grenzen der Einstufung nicht validiert \\
        \trenn
     A5 & Hub mit beiden Händen & \checkmark
        & Auch mit schwerer aufliegenden Händen; Probleme nur bei starkem Drücken auf den Roboter \\
@@ -225,8 +224,7 @@ bewertet, damit sichtbar bleibt, was erreicht wurde.
         (Abschnitt~\ref{sec:sw_druck}).
   \item \textbf{Einstufung nicht validiert:} Die Grenzen zwischen entspannt, normal und gestresst
         sind aus der üblichen Atemfrequenz in Ruhe abgeleitet~\cite{nicolo2020rr} und wurden nicht
-        mit Nutzer:innen überprüft; die Einstufung ist damit eine Abschätzung. In den Messreihen
-        wurden nur die Stufen \enquote{entspannt} und \enquote{normal} erreicht. Zudem kann das
+        mit Nutzer:innen überprüft; die Einstufung ist damit eine Abschätzung. Zudem kann das
         bewusste Mitdrücken die Atmung selbst verändern. Neffy dient im Labor als Plattform für
         Studien, deren Ergebnisse genutzt werden können, um die Grenzen zu prüfen und anzupassen.
   \item \textbf{Bedienung und Anwesenheit:} Klicks sind ohne gewohnte Rückmeldung schwer

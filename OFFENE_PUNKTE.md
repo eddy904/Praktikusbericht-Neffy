@@ -109,7 +109,8 @@
 - [x] Antrieb: Heben = Motormoment überschritten, von oben = fehlende Selbsthemmung; Motorstrom erwähnt
 - [x] Klassengrenzen 5,5 / 10,5; „Atemtakt angeben“ in Einleitung/Fazit; Tabelle Anwesenheitssensoren (Tab. 3.1)
 - [x] Keine weiteren Tests am Roboter – Validierung über die laufende Studie (Entscheidung Eddy)
-- [ ] **27 Ω:** Begründung bestätigen (große Elektrodenfläche?), Spannung Ruhe/gedrückt am Roboter; Belastbarkeit prüfen (3 V über 27 Ω ≈ 110 mA, 0,33 W)
+- [x] **27 Ω:** im fertigen Aufbau ausprobiert (größere Velostat-Fläche → kleinerer R_F erwartet), so in 4.2.3 beschrieben (Eddy, 26.10.)
+- [x] A3* auch in Tab. 2.1 als „im Projektverlauf ergänzt“; Sätze „gestresst nicht erreicht“ gestrichen
 - [ ] **Messreihen:** Wie viele Personen wurden gemessen? (\todo in 5.2.1)
 - [ ] **A6:** Innenmaße der Taschen + Anzahl/Größe der getesteten Hände (\todo in 4.2.3)
 - [ ] Schwächen Neffy 2 (Kap. 2.1): Quelle? Derzeit als „Laborbetrieb“ formuliert
