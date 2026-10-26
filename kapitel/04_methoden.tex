@@ -292,7 +292,31 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
 \label{sec:hw_taschen}
 
 Als Taschen werden die beiden länglichen Öffnungen im Oberkörper bezeichnet, in die die
-Nutzer:innen ihre Hände legen. Der Drucksensor sitzt in einem eigenen Sensoreinsatz, der von
+Nutzer:innen ihre Hände legen. Ihre Größe orientiert sich an anthropometrischen Handmaßen
+(Tabelle~\ref{tab:handmasse}): Im Mittel (50.~Perzentil) ist eine Hand etwa 17 bis 19\,cm lang
+und 7{,}5 bis 8{,}6\,cm breit; große Hände (95.~Perzentil der Männer) erreichen etwa 20\,cm Länge
+und gut 9\,cm Breite. Nach Anforderung~A7 sollen auch solche großen Hände Platz finden.
+Die Werte stammen aus Erhebungen in Kolumbien und China,
+für Mitteleuropa können sie etwas abweichen.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Handmaße nach Perzentilen (P5\,/\,P50\,/\,P95) in cm}
+  \label{tab:handmasse}
+  \small
+  \begin{tabular}{@{}l l c c@{}}
+    \toprule
+    Quelle & Gruppe & Handlänge & Handbreite \\
+    \midrule
+    \cite{maldonado2023exhand}, Tab.~1 & Frauen & 15{,}4 / 16{,}6 / 18{,}0 & 6{,}9 / 7{,}5 / 8{,}0 \\
+                                       & Männer & 16{,}8 / 18{,}3 / 19{,}9 & 7{,}8 / 8{,}5 / 9{,}1 \\
+    \cite{fu2022tfcc}, Tab.~3 (2016)   & Frauen & 16{,}6 / 17{,}7 / 18{,}7 & 7{,}5 / 8{,}0 / 8{,}5 \\
+                                       & Männer & 17{,}7 / 18{,}8 / 20{,}0 & 8{,}1 / 8{,}6 / 9{,}1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Der Drucksensor sitzt in einem eigenen Sensoreinsatz, der von
 unten durch eine parallelogrammförmige Öffnung in die Tasche gesteckt und dort verschraubt wird.
 Der Einsatz besteht aus mehreren Lagen (Abbildung~\ref{fig:taschenaufbau}): einem
 3D-gedruckten Grundkörper, einer Kupferfolie als erster Elektrode, dem Velostat, einer zweiten
