@@ -109,38 +109,33 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 - Noch nicht im Ordner: Firmware-Logs `logs/pocket-*.csv` und `logs/thermal-*.csv`.
   Thermalsensor D6T-1A-02 ist final integriert.
 
-## Arbeitsstand (26.10.2026)
-| Kapitel | Stand | Fehlt noch |
+## Arbeitsstand (26.10.2026, abends)
+| Teil | Stand | Offen |
 |---|---|---|
-| Titelblatt | fertig (Eddy Werk, Younes Jamil) | Matrikelnummern (erst lokal vor Abgabe), Abgabedatum prüfen |
-| 1 Einleitung | fertig (26.10., 1 S.): Stress → Ommie/Neffy-Studien als einzige Quellen; Zielgruppe bewusst weit (Alltag, Kinder, belastete Gruppen), Projekt sucht noch den besten Einsatzfall; Kernbotschaft „vorgeben → reagieren“, sofort relativiert (geplant vollautomatisch, umgesetzt mit aktiver Mitwirkung) | – |
-| 2 Ziel | 2.2 Anforderungen final (A7 ohne Maße); **2.3 Fragestellung gestrichen (26.10.)**; Tabelle „wer macht was“ in 2.3 Projektorganisation | Zeitraum/Stunden, Zeitaufteilung (optional) |
-| 3 Stand der Technik | Fließtext, Vergleich Neffy 1/2/3; 3.1 grau `\unsicher` | Foto Neffy 3.0; Kamera-Punkt ohne Quelle (belegen oder streichen) |
-| 4 Methoden | Fließtext inkl. **Theorie** (Spannungsteiler Gl./Abb., D6T-Sichtfeld + Reichweitenabschätzung 1,4–2 m, Spindelkraft-Gl.), CAD-Abb. 4.3; 4.1 Schnittstelle grau, UART-Tabelle per `\iffalse` raus | Haltemoment Motor + Wirkungsgrad η (Quelle) → Spindelkraft rechnen; Motorhersteller (Iverntech?); Nachname Kaspar; Festwiderstand final; Kleber; Druckermodelle bestätigen; Schaltplan |
-| 5 Diskussion | Entwurf; Kennwerte als Diagramm (`daten/plot_kennwerte.py`), Tabelle in Anhang D; Evaluation A1–A10 | Fotos (frontal, Hände in Taschen); Anwesenheitsmessung 0,5–3 m mit `tools/thermal_log.py` (Firmware-Repo) → Plot + A1; **5.5 Eigene Ideen bestätigen**; wer führt die Studie durch |
-| 6 Fazit | Entwurf (Younes, 23.10.) | ggf. auf 1 Seite verdichten |
-| 7 Einschätzung | fertig (7.1–7.3 am 26.10.) | genauer Name des C++-Moduls |
-Stand 26.10. abends: 4.1 nicht mehr grau (Ablauf mit Firmware-README geprüft), UART-Befehlstabelle in Anhang A, 5.5 Eigene Ideen geschrieben, 4.4.7 KI neu (Firmware-Code vollständig mit Claude Code, Ideen/Struktur vom Team; Bericht: LaTeX-Satz + Formulierungshilfe). Noch offen: Fotos, Festwiderstand (Farbcode rot-violett-schwarz-? unklar), Motor-Haltemoment/η, Thermalmessung (Younes), 3.1 grau, Zeitraum/Stunden.
-| Anhang | Anhang D Kennwerte-Tabelle | Code-Auszüge, CAD-Zeichnungen, Schaltplan, Verweis Rohdaten |
-| Erklärung | beide Unterschriftszeilen | Wortlaut der BHT |
-Umfang: Kap. 1–7 ca. 29 S. (mit Markern); nicht streng. Kürzen Stufe 2 erledigt.
+| Titelblatt | fertig; Matrikelnummern kommen aus der lokalen `matrikelnummern.tex` (per `.gitignore` ausgeschlossen, Makros `\matrEddy`, `\matrYounes`) | – |
+| 1 Einleitung | fertig (1 S.): Stress → Ommie/Neffy-Studien; Zielgruppe bewusst weit; „vorgeben → reagieren“, sofort relativiert (aktive Mitwirkung nötig) | – |
+| 2 Ziel | fertig. Zielbild = nur Inspiration (Brainstorming), keine Anforderung. Anforderungen **A1–A8** (alt A6 Zielbild und A9 Druckbarkeit gestrichen → A6 Hände, A7 Zugang, A8 Bedienung). Fragestellung gestrichen. Projektorganisation: März–Ende Okt. 2026, geschätzt 450 h/Person, Tabelle „Wer macht was“, Kreisdiagramm Zeitaufteilung (geschätzt: Konstruktion 35, Druck/Nachbearbeitung 25, Programmierung 20, Sensortests 8, Montage/Löten 7, Abstimmung/Beschaffung/Doku 5 %) | – |
+| 3 Stand der Technik | fertig; 3.1 ohne Hinweis auf nachträgliche Recherche | Foto Neffy 3.0 (Abb. 3.1c) |
+| 4 Methoden | fertig: Kommunikation mit Firmware-README geprüft; Handmaße-Tabelle (`maldonado2023exhand` Tab. 1, `fu2022tfcc` Tab. 3); Festwiderstand 27 Ω (bestätigt); Motor 42HB4027-41 (kein Datenblatt gefunden); Spindel-Abschätzung Gl. 4.6–4.9 (η aus Geometrie, μ = 0,1–0,2 angenommen, nicht selbsthemmend); Kopfmechanik Caspar Jaki; Druck in der HROB-Werkstatt; KI-Angabe 4.4.7 final (Firmware-Code vollständig mit Claude Code, Ideen/Struktur vom Team) | optional Foto lackiertes Gehäuse |
+| 5 Diskussion | fertig: Evaluation A1–A8 (A6, A7 erfüllt); Ursache Antriebs-Stillstand = fehlende Selbsthemmung (als Erklärung formuliert); 5.5 Eigene Ideen mit Namen; Studie durch Mitarbeiterin der grafischen Gestaltung | Fotos Abb. 5.1; Thermal-Reichweitenmessung (Younes, wird nachgereicht) |
+| 6 Fazit | fertig | – |
+| 7 Einschätzung | fertig | – |
+| Anhang | A: UART-Befehle + `BreathingDetection.h/.cpp` (Kopie in `anhang/code/`, Commit 2693747); B: Kennwerte + Verweis Rohdaten. CAD- und Schaltplan-Anhang gestrichen (kein Material) | – |
+| Erklärung | übliche Formel in Wir-Form inkl. KI-Hinweis (kein BHT-Wortlaut gefunden) | – |
+
+Umfang: Kap. 1–7 = 33 S., PDF 48 S.; nicht streng (Eddy).
+Layout: booktabs + graue Trennlinien `\trenn` (main.tex); Gleitobjektseiten beginnen oben; alle Abbildungen und
+Tabellen am 26.10. auf Ausrichtung geprüft.
 
 ## Weiteres Vorgehen (für die nächste Sitzung, auch auf einem anderen PC)
-1. **Kap. 1 Einleitung** im Interview schreiben (siehe Tabelle).
-2. **Kap. 7.1–7.3** im Interview schreiben.
-3. **Offene Fakten** bei Eddy einsammeln (`OFFENE_PUNKTE.md`), v. a. Haltemoment/Produktlink Motor,
-   Taschenmaße, Nachname Kaspar, Festwiderstand, Zeitraum/Stunden.
-4. **Entscheidungen Eddy/Younes:** grau markierte Abschnitte 2.2, 2.3, 3.1, 4.1 behalten/ändern/streichen;
-   Messreihen A1–A6 → V1–V6 umbenennen (Verwechslung mit Anforderungen A1–A10)?; Schwachstelle
-   `DISABLE_MOTORS` behalten?
-5. **Material einbauen:** Fotos nach `abbildungen/fotos/` (`neffy3_frontal.jpg`, `haende_taschen.jpg`),
-   Schaltplan als `abbildungen/schaltplan.pdf`, Thermal-Messung nach `daten/`.
-6. **Beurteilungsbogen** (Tabelle unten) gezielt bedienen: Fotos für „Praktische Durchführung“ (30),
-   Theorie ergänzen (20), 5.5 „Eigene Ideen“ (10), Mehrleistung als Sonderpunkte herausstellen (10).
-7. **Abschluss:** Kennzeichnung „wer was“ (Eddy: SolidWorks/CAD/Gehäuse; Younes: ESP32-Firmware) als
-   Tabelle in Kap. 2.4; KI-Angabe mit Prof. Buchem abstimmen; Marker entfernen
-   (`\usepackage[disable,…]{todonotes}` in `main.tex`); Abbildungen/Leerseiten optimieren; ggf. weiter
-   kürzen; Matrikelnummern lokal; Abgabedatum; Abschlussprüfung gegen Kriterien und Formalia.
+1. **Review** im neuen Chat: `/academic-research-skills:ars-reviewer main.pdf` (full) mit Hinweis
+   „Praktikumsbericht, Beurteilungsbogen FB VII; Fotos und Thermalmessung werden nachgereicht“.
+   Ergebnis mit Claude durchgehen, nur für einen Praktikumsbericht Sinnvolles umsetzen.
+2. **Fotos** nach `abbildungen/fotos/` (`neffy3_frontal.jpg`, `haende_taschen.jpg`) und Platzhalter in
+   Abb. 3.1c und 5.1a/b ersetzen. `\platzhalter` verschwindet NICHT mit `[disable]`.
+3. **Thermalmessung** (0,5–3 m, `tools/thermal_log.py` im Firmware-Repo) → Plot + Zahl für A1 in 5.2;
+   sonst Satz „nur beobachtet, nicht systematisch gemessen“ + Ausblick.
+4. **Abschluss:** `\usepackage[disable,…]{todonotes}` in `main.tex`; Endkontrolle; pushen nur auf Eddys Ansage.
 
 ## Technische Hinweise für Claude
 - Build: `pdflatex main` → `biber main` → 2× `pdflatex main`. Plots/Tabellen neu erzeugen mit
@@ -308,4 +303,3 @@ und „Durchgeführte Aufgaben“ → in Kap. 2 klar trennbar machen.
    (pgfplots oder Python → PDF), nicht abtippen.
 7. **Abschlussprüfung:** Kriterientabelle + Aufgabenverteilungstabelle + Formalia einzeln durchgehen und zeigen,
    wo alles erfüllt ist und wo es noch schwach ist.
-Anforderungen ab 26.10.: A1–A8 (Zielbild = nur Inspiration, kein A mehr; FDM-Druckbarkeit gestrichen; alt A7→A6 Hände (erfüllt), A8→A7 Zugang, A10→A8 Bedienung). Tabellen: booktabs + graue Trennlinien \trenn (main.tex).
