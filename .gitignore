@@ -1,2 +1,21 @@
 # Fremde Berichte nicht im öffentlichen Repo veröffentlichen (nur lokal)
 referenz/*.pdf
+
+# LaTeX-Build-Dateien (werden lokal erzeugt, sonst Merge-Konflikte zwischen den PCs)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.lot
+*.toc
+*.tdo
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.fls
+*.fdb_latexmk
+*.xdv
+main.pdf
