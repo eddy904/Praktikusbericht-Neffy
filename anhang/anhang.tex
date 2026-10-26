@@ -46,6 +46,11 @@ gibt den Stand der Firmware wieder~\cite{jamil2026mainboard}.
   \end{tabular}
 \end{table}
 
+Abbildung~\ref{fig:board_3d} zeigt das Neffy Board, Abbildung~\ref{fig:board_anschluesse} die
+Belegung seiner Steckverbinder. Die Taschen sind wie in Gleichung~\ref{eq:teiler} als
+Spannungsteiler angeschlossen: Velostat zwischen 3,3\,V und dem \ac{ADC}-Eingang (GPIO\,13 bzw.\
+14), Festwiderstand gegen Masse.
+
 Der vollständige Quellcode der Firmware, darunter das Modul zur Atemerkennung
 (\texttt{BreathingDetection.h/.cpp}, Abschnitt~\ref{sec:sw_atem}), liegt im Repository des
 Neffy Boards~\cite{jamil2026mainboard}; dieser Bericht bezieht sich auf den Stand von Commit
@@ -55,6 +60,24 @@ Neffy Boards~\cite{jamil2026mainboard}; dieser Bericht bezieht sich auf den Stan
 Die CAD-Dateien des Gehäuses (SolidWorks) liegen in einem online freigegebenen
 Ordner~\cite{werk2026cad}:\\
 {\small\url{https://drive.google.com/drive/folders/1P-KM6tLNsWikUNUKD3UOVQqe3MvZdJb3}}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.62\linewidth]{neffy_board_3d.jpeg}
+  \caption{Neffy Board mit ESP32-S3, zwei Schrittmotortreibern und Steckverbindern
+    (3D-Ansicht; Entwurf: Charly Goerke, Labor für Kommunikation)}
+  \label{fig:board_3d}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{neffy_board_anschluesse.jpeg}
+  \caption{Schaltplan der Steckverbinder des Neffy Boards (Entwurf: Charly Goerke, Labor für
+    Kommunikation). Für die Festwiderstände der Velostat-Taschen (R41, R42) sind im Entwurf
+    10\,k$\Omega$ vorgesehen; im fertigen Aufbau sind 27\,$\Omega$ eingesetzt
+    (Abschnitt~\ref{sec:hw_taschen}).}
+  \label{fig:board_anschluesse}
+\end{figure}
 
 \chapter{Messdaten der Atemsensorik}
 \label{anh:rohdaten}
