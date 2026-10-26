@@ -128,9 +128,29 @@ def vergleich_aufgelegt_aktiv(name):
     plt.close(fig)
 
 
+def vergleich_drei(name):
+    """Kap. 4/5: FSR (F1), Velostat aufgelegt (P2) und Velostat aktiv (A5) nebeneinander."""
+    reihen = [("1_FSR.csv", "F1", "(a) FSR (F1)", False),
+              ("2_Velostat_aufgelegt.csv", "P2", "(b) Velostat, aufgelegt (P2)", False),
+              ("3_Velostat_aktiv.csv", "A5", "(c) Velostat, aktiv (A5)", True)]
+    fig, achsen = plt.subplots(1, 3, figsize=(15 / 2.54, 5.2 / 2.54), sharey=True)
+    for ax, (datei, kennung, titel, mit_peaks) in zip(achsen, reihen):
+        t, u = reihe(lies(datei), kennung)
+        kurve(ax, t, u, kennung, peaks_markieren=mit_peaks)
+        achse_einrichten(ax, t.max(), saettigung=False)
+        ax.axhline(U_MAX, color=FARBE_GEDAEMPFT, linewidth=0.6, linestyle=(0, (3, 2)))
+        ax.set_title(titel, loc="left", fontsize=8, color=FARBE_TEXT)
+        if ax is not achsen[0]:
+            ax.set_ylabel("")
+    fig.tight_layout(pad=0.3, w_pad=0.8)
+    fig.savefig(AUSGABE / name)
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     AUSGABE.mkdir(parents=True, exist_ok=True)
     einzelplot("1_FSR.csv", "F1", "fsr_F1.pdf")
     einzelplot("3_Velostat_aktiv.csv", "A5", "velostat_aktiv_A5.pdf")
     vergleich_aufgelegt_aktiv("velostat_aufgelegt_vs_aktiv.pdf")
+    vergleich_drei("vergleich_F1_P2_A5.pdf")
     print("Diagramme gespeichert in", AUSGABE)

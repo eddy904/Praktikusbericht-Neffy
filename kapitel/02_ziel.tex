@@ -11,7 +11,7 @@
 
 Ausgangspunkt dieser Arbeit ist der Atemroboter Neffy~2 aus dem Labor für Kommunikation
 der \ac{BHT}~\cite{goerke2025neffy2}, dessen Schultern und Kopf sich im Atemrhythmus bewegen,
-während die Hände der Nutzer:innen auf den Schultern liegen (Abschnitt~\ref{sec:sdt_roboter}).
+während die Hände der Nutzer*innen auf den Schultern liegen (Abschnitt~\ref{sec:sdt_roboter}).
 Dieses haptische Prinzip wurde bei Neffy~1 und~2 sehr positiv aufgenommen
 \cite{thomas2025neffy,buchem2026neffy2} und bleibt für Neffy~3.0 erhalten.
 
@@ -22,7 +22,7 @@ mehr genügend Kraft aufbringen, um nach oben zu fahren. Außerdem liefen sie re
 Zudem verfügte Neffy~2 über keinerlei Sensorik und damit über kein Feedback darüber,
 was in seiner Umgebung geschieht. Eine Interaktion fand nur statt, nachdem die
 Übung über den Bildschirm gestartet wurde; davor war der Roboter ein rein passives
-Objekt. Schließlich wurde die Gestaltung als kantig empfunden, und Nutzer:innen
+Objekt. Schließlich wurde die Gestaltung als kantig empfunden, und Nutzer*innen
 bemängelten, dass ihre Hände nicht gut auf die Schultern passten und leicht abrutschten.
 
 \subsection*{Ziele von Neffy~3.0}
@@ -35,14 +35,11 @@ dieses reagieren. Daraus ergaben sich für das Gesamtprojekt folgende Ziele:
   \item \textbf{Anwesenheitserkennung:} Neffy~3.0 soll erkennen, wenn eine Person vor
         ihm sitzt oder an ihm vorbeigeht, und darauf reagieren.
   \item \textbf{Erfassung des Atemrhythmus:} Über Sensoren in den Schultern soll der
-        Atemrhythmus der Nutzer:innen erfasst und eingestuft werden, sodass eine zum
+        Atemrhythmus der Nutzer*innen erfasst und eingestuft werden, sodass eine zum
         aktuellen Stresslevel passende Atemübung ausgewählt werden kann.
-  \item \textbf{Mehrere Atemübungen:} Je nach Stresslevel sollen verschiedene Übungen
-        mit unterschiedlichem Rhythmus von Ein- und Ausatmen zur Verfügung stehen, die
-        zusätzlich personalisiert werden können.
-  \item \textbf{Neuer Bildschirm:} Der fehleranfällige Touchscreen von Neffy~2 wird
-        durch ein leistungsfähigeres 4{,}3-Zoll-Touchdisplay von Waveshare mit
-        DSI-Anschluss ersetzt (800\,$\times$\,480 Pixel, kapazitiver Touch)~\cite{waveshare43dsi}.
+  \item \textbf{Übungen und Bildschirm:} Je nach Stresslevel sollen verschiedene Atemübungen
+        zur Verfügung stehen; der fehleranfällige Touchscreen wird durch ein
+        4{,}3-Zoll-Touchdisplay ersetzt~\cite{waveshare43dsi}.
   \item \textbf{Stärkerer Antrieb:} Die Dynamixel-Motoren von Neffy~2 werden durch
         Schrittmotoren ersetzt, die mehr Kraft für die Hubbewegung bereitstellen und
         leiser laufen sollen.
@@ -79,7 +76,7 @@ Es zeigte sich jedoch, dass dies mit dem gewählten Aufbau nicht zuverlässig m�
 (Abschnitt~\ref{sec:erg_passiv}). Ansätze ohne Sensor am Körper, wie sie für den Roboter
 Ommie entwickelt wurden, erfordern einen erheblichen Aufwand für Datenerhebung und Training
 (Abschnitt~\ref{sec:sdt_atem}). Stattdessen wird der Atemtakt nun aktiv erfasst: Die
-Nutzer:innen drücken beim Einatmen auf die Drucksensoren in den Schultertaschen und lassen
+Nutzer*innen drücken beim Einatmen auf die Drucksensoren in den Schultertaschen und lassen
 beim Ausatmen los. Aus den Zeitpunkten der Einatemzüge wird die Atemfrequenz geschätzt und
 als entspannt, normal oder gestresst eingestuft. Auf dieser Grundlage wählt der Raspberry Pi eine passende Atemübung aus.
 
@@ -132,7 +129,7 @@ Erfassung als Anforderung~A3* ergänzt.
          wird die Atemfrequenz bestimmt.
        & F & Einatemzüge im Signal vom Rauschen unterscheidbar \\
        \trenn
-    A3* & Der Atemtakt wird aktiv erfasst: Die Nutzer:innen drücken beim Einatmen in die Taschen
+    A3* & Der Atemtakt wird aktiv erfasst: Die Nutzer*innen drücken beim Einatmen in die Taschen
          und lassen beim Ausatmen los; aus einer Messung von 30\,s wird die Atemfrequenz bestimmt
          (im Projektverlauf ergänzt).
        & F & Einatemzüge bei aktivem Drücken klar erkennbar \\
@@ -164,21 +161,12 @@ Erfassung als Anforderung~A3* ergänzt.
 \label{sec:organisation}
 
 Das Projekt wurde von den Teams Sensorik und Programmierung bearbeitet; für die
-grafische Gestaltung war eine weitere Mitarbeiterin zuständig. Zu Beginn trafen sich alle
-Beteiligten in mehreren Meetings und legten eine gemeinsame Grundstruktur fest. Auch im
-weiteren Verlauf stimmten sich die Teams regelmäßig ab: Wurde Feedback benötigt, etwa zur
-Gestaltung der Augen, trafen sich alle in einem Online-Meeting und stimmten gemeinsam ab.
-Zusätzlich wurden Umfragen durchgeführt, um herauszufinden, welche Gestaltung am besten
-wahrgenommen wird. Die Organisation lief anschließend über ein gemeinsames Google
-Drive, in dem unter anderem die Liste der benötigten Bauteile geführt wurde. Um die
-Beschaffung kümmerte sich hauptsächlich das Team Sensorik; Bauteile für einzelne
-Komponenten, etwa den Bildschirm, wurden von den jeweils zuständigen Personen
-beschafft. In einem gemeinsamen GitHub-Repository lagen vor allem die Daten und
-SolidWorks-Baugruppen der Vorgängerversionen, sodass etwa Maße von Bauteilen nachgeschlagen
-werden konnten.
-
-Das Praktikum lief von März bis Ende Oktober 2026. Der Arbeitsaufwand lag geschätzt bei
-rund 450~Stunden pro Person.
+grafische Gestaltung war eine weitere Mitarbeiterin zuständig. Nach gemeinsamen
+Auftaktmeetings stimmten sich die Teams bei Bedarf in Online-Meetings ab, etwa zur Gestaltung
+der Augen, ergänzt durch Umfragen. Organisiert wurde das Projekt über ein gemeinsames Google
+Drive mit der Bauteilliste; die Beschaffung übernahm hauptsächlich das Team Sensorik. Das
+Praktikum lief von März bis Ende Oktober 2026, der Arbeitsaufwand lag geschätzt bei rund
+450~Stunden pro Person.
 
 Abbildung~\ref{fig:zeitaufteilung} zeigt, wie sich die Arbeitszeit des Teams Sensorik
 geschätzt auf die Arbeitsbereiche verteilte. Den größten Anteil hatte die Konstruktion,

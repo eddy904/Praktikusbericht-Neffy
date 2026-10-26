@@ -126,7 +126,11 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 | Anhang | A: UART-Befehle + `BreathingDetection.h/.cpp` (Kopie in `anhang/code/`, Commit 2693747); B: Kennwerte + Verweis Rohdaten. CAD- und Schaltplan-Anhang gestrichen (kein Material) | – |
 | Erklärung | übliche Formel in Wir-Form inkl. KI-Hinweis (kein BHT-Wortlaut gefunden) | – |
 
-Umfang: Kap. 1–7 = 37 S., PDF 52 S.; nicht streng (Eddy).
+Umfang: Kap. 1–7 = 33 S., PDF 48 S. (nach Kürzung am 26.10. abends: Sequenzdiagramm, Sichtkegel-Abb.,
+Modultabelle, Handmaße-Tabelle, Gl. η' und Abschnitt LEDs gestrichen; F1/P2/A5 in einer Abbildung
+`fig:fsr_velostat`); nicht streng (Eddy). Keine Sätze über noch ausstehende Tests – außer der
+laufenden Studie und der Thermal-Reichweitenmessung (Eddy, 26.10.). `DISABLE_MOTORS` nicht erwähnen
+(nur in der Befehlsliste im Anhang).
 **Review 26.10. erledigt** (`notizen/review_2026-10-26.md`, alle Textpunkte umgesetzt): A3* in Tab. 2.1 und 5.1
 („im Projektverlauf ergänzt“), A1 vorläufig, Antrieb, Beschleunigungssensor an Ommie angeglichen, Tab. 3.1
 Anwesenheitssensoren, Klassengrenzen 5,5/10,5, „Atemtakt angeben“ in Einleitung/Fazit, 27 Ω (neue, größere
@@ -299,6 +303,7 @@ und „Durchgeführte Aufgaben“ → in Kap. 2 klar trennbar machen.
 - Diskussion mit konkreten Zahlen und Ursachen statt allgemeiner Aussagen; Datenblätter zitieren.
 - Auch Gescheitertes (passive Atemerkennung) sauber als Ergebnis darstellen.
 - Abkürzungen beim ersten Auftreten ausschreiben, Abkürzungsverzeichnis per `acro` oder `glossaries`.
+- Gendern mit Sternchen: „Nutzer*innen“ (nicht Doppelpunkt; Eddy, 26.10.).
 - Literatur: biblatex, numerisch [1], mit DOI/URL und „besucht am“; bevorzugt Fachliteratur
   (ACM, IEEE, Frontiers, Sensors/MDPI) + Datenblätter + Vorgängerberichte zu Neffy 1.0 und 2.0.
 

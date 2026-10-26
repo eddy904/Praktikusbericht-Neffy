@@ -66,72 +66,6 @@ der gemeinsamen Bibliothek Neffy\_UART\_Interface festgelegt, die vom Labor bere
 wurde~\cite{goerke2026uart}. Die vollständige Befehlsliste befindet sich in
 Anhang~\ref{anh:code}.
 
-% Tabelle UART-Befehle nach Gruppen: aus Platzgründen herausgenommen (Lesedurchgang 25.10.)
-\iffalse
-\begin{table}[htbp]
-  \centering
-  \caption{Befehle der \ac{UART}-Schnittstelle nach Gruppen}
-  \label{tab:uart}
-  \small
-  \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{5.6cm} >{\raggedright\arraybackslash}p{5.6cm}@{}}
-    \toprule
-    Gruppe & Raspberry Pi $\rightarrow$ ESP32-S3 & ESP32-S3 $\rightarrow$ Raspberry Pi \\
-    \midrule
-    Bewegung     & Körper und/oder Kopf in vorgegebener Zeit an Zielposition fahren
-                   (\texttt{MOVE\_\ldots\_IN\_TIME})
-                 & Bestätigung mit erreichter Position \\
-                 \trenn
-    Anwesenheit  & --
-                 & Person da / nicht da (\texttt{GET\_PERSON\_READING}), bei jeder
-                   Änderung und alle 0{,}5\,s \\
-                   \trenn
-    Taschen      & --
-                 & Klick links / rechts (\texttt{PRESSURE\_CLICK\_L/R}) \\
-                 \trenn
-    Atmung       & Atemerkennung starten (\texttt{BREATHING\_DETECTION\_START})
-                 & Einstufung entspannt / normal / gestresst \\
-                 \trenn
-    Sonstiges    & Lautsprecher stumm (\texttt{MUTE}); Startsignal einer Übung
-                   (\texttt{DISABLE\_MOTORS}, siehe Abschnitt~\ref{sec:schwachstellen})
-                 & -- \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-\fi
-
-Abbildung~\ref{fig:sequenz} zeigt beispielhaft, wie die Befehle während einer
-Interaktion zusammenspielen.
-
-\begin{figure}[htbp]
-  \centering
-  \begin{tikzpicture}[
-      >={Stealth}, font=\small,
-      msg/.style = {->, shorten >=1pt},
-      note/.style = {font=\scriptsize, text=black!65, align=left},
-    ]
-    \def\L{0} \def\R{8}
-    \node[draw, rounded corners, minimum width=2.6cm] (a) at (\L,0) {Raspberry Pi};
-    \node[draw, rounded corners, minimum width=2.6cm, fill=orange!15] (b) at (\R,0) {ESP32-S3};
-    \draw[dashed, gray] (\L,-0.35) -- (\L,-8.2);
-    \draw[dashed, gray] (\R,-0.35) -- (\R,-8.2);
-
-    \draw[msg] (\R,-1.0) -- node[above]{\texttt{GET\_PERSON\_READING} = 1} (\L,-1.0);
-    \node[note, right] at (\R+0.1,-1.0) {Person erkannt};
-    \draw[msg] (\L,-1.8) -- node[above]{\texttt{MOVE\_BODY\_HEAD\_IN\_TIME}} (\R,-1.8);
-    \node[note, left] at (\L-0.1,-1.8) {Aufwachen};
-    \draw[msg] (\R,-2.6) -- node[above]{Bestätigung: Position erreicht} (\L,-2.6);
-    \draw[msg] (\L,-3.6) -- node[above]{\texttt{BREATHING\_DETECTION\_START}} (\R,-3.6);
-    \node[note, right] at (\R+0.1,-4.2) {30\,s: Drücken beim\\Einatmen, Loslassen\\beim Ausatmen};
-    \draw[msg] (\R,-5.2) -- node[above]{\texttt{BREATHING\_DETECTION\_STRESSED}} (\L,-5.2);
-    \node[note, left] at (\L-0.1,-5.2) {Übung\\auswählen};
-    \draw[msg] (\L,-6.2) -- node[above]{\texttt{DISABLE\_MOTORS} (Startsignal)} (\R,-6.2);
-    \draw[msg] (\L,-7.0) -- node[above]{\texttt{MOVE\_BODY\_HEAD\_IN\_TIME} (Einatmen)} (\R,-7.0);
-    \draw[msg] (\L,-7.8) -- node[above]{\texttt{MOVE\_BODY\_HEAD\_IN\_TIME} (Ausatmen) \ldots} (\R,-7.8);
-  \end{tikzpicture}
-  \caption{Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}
-  \label{fig:sequenz}
-\end{figure}
-
 \section{Hardware und Sensorik}
 \label{sec:hardware}
 
@@ -168,8 +102,7 @@ $\theta = 26{,}5^\circ$ hat der erfasste Bereich in der Entfernung $d$ den Durch
   D(d) = 2\,d\,\tan\frac{\theta}{2} \approx 0{,}47\,d ,
   \label{eq:sichtfeld}
 \end{equation}
-also etwa 24\,cm in 0{,}5\,m, 47\,cm in 1\,m, 94\,cm in 2\,m und 1{,}41\,m in 3\,m
-(Abbildung~\ref{fig:d6t_sichtfeld}). Der Messwert ist näherungsweise der flächengewichtete
+also etwa 24\,cm in 0{,}5\,m, 47\,cm in 1\,m, 94\,cm in 2\,m und 1{,}41\,m in 3\,m. Der Messwert ist näherungsweise der flächengewichtete
 Mittelwert aus Person und Hintergrund,
 \begin{equation}
   T \approx a\,T_\mathrm{P} + (1-a)\,T_\mathrm{R}
@@ -186,53 +119,23 @@ Entfernung zwischen $1/d$ (die Person füllt die Höhe des Sichtfelds noch aus) 
 in beiden Richtungen kleiner als das Sichtfeld) ab, ergibt sich eine Reichweite von etwa 1{,}4 bis
 2\,m. Die Abschätzung vernachlässigt unter anderem, dass der Sensor nicht über das ganze Sichtfeld
 gleich empfindlich ist. Sie liegt unter der im Betrieb beobachteten Reichweite
-(Abschnitt~\ref{sec:erg_anwesenheit}); die ausstehende Messung soll diese Abweichung klären.
-
-\begin{figure}[htbp]
-  \centering
-  \begin{tikzpicture}[x=3.4cm, y=3.4cm, font=\small]
-    \fill[orange!12] (0,0) -- (3.2,0.7536) -- (3.2,-0.7536) -- cycle;
-    \draw[orange!70!black] (0,0) -- (3.2,0.7536);
-    \draw[orange!70!black] (0,0) -- (3.2,-0.7536);
-    \draw[->, gray] (0,0) -- (3.35,0) node[right, black]{$d$};
-    \fill[black!70] (-0.06,-0.05) rectangle (0,0.05);
-    \node[left, font=\scriptsize, align=right] at (-0.07,0) {D6T-1A-02};
-    \draw (0.55,0) arc[start angle=0, end angle=13.25, radius=0.55];
-    \node[font=\scriptsize] at (0.72,0.07) {$\theta/2$};
-    \foreach \d/\D in {0.5/24\,cm, 1/47\,cm, 2/94\,cm, 3/1{,}41\,m} {
-      \draw[thick] (\d,-0.2356*\d) -- (\d,0.2356*\d);
-      \node[below, font=\scriptsize] at (\d,-0.2356*\d) {\d\,m};
-      \node[above, font=\scriptsize] at (\d,0.2356*\d) {$D = \D$};
-    }
-  \end{tikzpicture}
-  \caption{Erfasster Bereich des Thermalsensors in Abhängigkeit von der Entfernung nach
-    Gleichung~\ref{eq:sichtfeld} (Sichtwinkel $\theta = 26{,}5^\circ$ nach~\cite{omron2017d6t};
-    Draufsicht, nicht maßstäblich in der Breite)}
-  \label{fig:d6t_sichtfeld}
-\end{figure}
+(Abschnitt~\ref{sec:erg_anwesenheit}).
 
 \subsection{Auswahl des Drucksensors}
 \label{sec:hw_drucksensor}
 
 Übliche Verfahren zur Atemerfassung arbeiten mit Sensoren, die am Körper getragen werden,
 etwa mit Atemgurten (siehe Abschnitt~\ref{sec:sdt_atem}). Für Neffy~3.0 sollte dagegen
-keine zusätzliche Hardware am Menschen nötig sein: Die Nutzer:innen legen lediglich die
+keine zusätzliche Hardware am Menschen nötig sein: Die Nutzer*innen legen lediglich die
 Hände auf die Schultern bzw.\ in die Taschen des Roboters. Ein Beschleunigungssensor in
 den Schultern wäre grundsätzlich denkbar. Da sich der Roboter aber selbst im Atemrhythmus
 bewegt, müsste die Bewegung des Menschen von der des Roboters getrennt werden. Wie das
 Beispiel Ommie zeigt, gelingt das nur mit einem eigenen Datensatz und einem lernbasierten
 Verfahren (Abschnitt~\ref{sec:sdt_atem}). Das Team entschied sich bewusst für den
-einfacheren Weg über Drucksensoren. Drei Ansätze wurden vorgesehen:
-
-\begin{enumerate}
-  \item \textbf{Punktdrucksensor} (\ac{FSR}, Joy-IT): einfacher, günstiger Einstieg zum
-        ersten Ausprobieren.
-  \item \textbf{Velostat:} flexible, druckempfindliche Folie, die sich frei zuschneiden lässt.
-  \item \textbf{Dehnungssensor als Atemgurt:} Rückfallebene, falls Sensoren in den Schultern
-        nicht ausreichen. Er misst die Atmung direkt am Brustkorb und ist unabhängig von der
-        Bewegung des Roboters, muss aber von der Person getragen werden. Dieser Ansatz
-        wurde im Projekt nicht erprobt.
-\end{enumerate}
+einfacheren Weg über Drucksensoren. Verglichen wurden ein Punktdrucksensor (\ac{FSR}, Joy-IT)
+als einfacher Einstieg und Velostat, eine flexible, druckempfindliche Folie, die sich frei
+zuschneiden lässt. Ein Dehnungssensor als Atemgurt war als Rückfallebene angedacht, wurde aber
+nicht erprobt.
 
 Für den Vergleich wurden die Sensoren an einem ESP32-Entwicklungsboard betrieben, noch nicht
 am späteren Neffy Board. Der Sensor bildete jeweils mit einem Festwiderstand einen
@@ -257,7 +160,7 @@ erklärt, warum sich der Festwiderstand beim \ac{FSR} kaum auswirkte.
 
 Velostat zeigte dagegen einen abgestuften Signalverlauf, erkannte auch schwache
 Druckunterschiede und ließ sich über die Schaltung gut einstellen
-(Abbildung~\ref{fig:fsr_velostat}\,b). Ein weiterer Vorteil ist die frei wählbare Form:
+(Abbildung~\ref{fig:fsr_velostat}\,c). Ein weiterer Vorteil ist die frei wählbare Form:
 Die Folie kann auf die benötigte Fläche zugeschnitten werden, sodass die Hand nicht exakt
 positioniert sein muss. Sie ist mit etwa 0{,}1\,mm sehr dünn~\cite{adafruit1361velostat}, passt sich der Oberfläche an
 und lässt sich unsichtbar unter der Verkleidung integrieren. Tabelle~\ref{tab:bewertung_drucksensor}
@@ -289,18 +192,11 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{plots/fsr_F1.pdf}
-    \caption{\ac{FSR} (Messreihe F1): nahezu binäres Verhalten}
-  \end{subfigure}\hfill
-  \begin{subfigure}[b]{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{plots/velostat_aktiv_A5.pdf}
-    \caption{Velostat (Messreihe A5): abgestufter Verlauf}
-  \end{subfigure}
-  \caption{Spannungsverlauf bei rhythmischem Drücken im Atemtakt: \ac{FSR} und Velostat im
-    Vergleich (eigene Messung am ESP32-Entwicklungsboard)}
+  \includegraphics[width=\linewidth]{plots/vergleich_F1_P2_A5.pdf}
+  \caption{Spannungsverlauf der Drucksensoren: (a) \ac{FSR} bei rhythmischem Drücken, nahezu
+    binär; (b) Velostat mit nur aufgelegten Händen; (c) Velostat mit aktivem Mitdrücken beim
+    Einatmen, Punkte markieren die erkannten Atemzüge (eigene Messung am
+    ESP32-Entwicklungsboard)}
   \label{fig:fsr_velostat}
 \end{figure}
 
@@ -308,32 +204,13 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
 \label{sec:hw_taschen}
 
 Als Taschen werden die beiden länglichen Öffnungen im Oberkörper bezeichnet, in die die
-Nutzer:innen ihre Hände legen. Sie sind im Mittel etwa 20\,cm lang, 16\,cm breit und 6\,cm hoch. Zum
-Vergleich dienen anthropometrische Handmaße
-(Tabelle~\ref{tab:handmasse}): Im Mittel (50.~Perzentil) ist eine Hand etwa 17 bis 19\,cm lang
-und 7{,}5 bis 8{,}6\,cm breit; große Hände (95.~Perzentil der Männer) erreichen etwa 20\,cm Länge
-und gut 9\,cm Breite. Nach Anforderung~A6 sollen auch solche großen Hände Platz finden. Die
-Länge der Taschen entspricht etwa der Handlänge großer Hände, in der Breite bleibt reichlich
-Spielraum. Die Handmaße stammen aus Erhebungen
-in Kolumbien und China, für Mitteleuropa können sie etwas abweichen.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Handmaße nach Perzentilen (P5\,/\,P50\,/\,P95) in cm}
-  \label{tab:handmasse}
-  \small
-  \begin{tabular}{@{}l l c c@{}}
-    \toprule
-    Quelle & Gruppe & Handlänge & Handbreite \\
-    \midrule
-    \cite{maldonado2023exhand}, Tab.~1 & Frauen & 15{,}4 / 16{,}6 / 18{,}0 & 6{,}9 / 7{,}5 / 8{,}0 \\
-                                       & Männer & 16{,}8 / 18{,}3 / 19{,}9 & 7{,}8 / 8{,}5 / 9{,}1 \\
-                                       \trenn
-    \cite{fu2022tfcc}, Tab.~3 (2016)   & Frauen & 16{,}6 / 17{,}7 / 18{,}7 & 7{,}5 / 8{,}0 / 8{,}5 \\
-                                       & Männer & 17{,}7 / 18{,}8 / 20{,}0 & 8{,}1 / 8{,}6 / 9{,}1 \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+Nutzer*innen ihre Hände legen. Sie sind im Mittel etwa 20\,cm lang, 16\,cm breit und 6\,cm hoch.
+Nach anthropometrischen Erhebungen ist eine Hand im Mittel (50.~Perzentil) etwa 17 bis 19\,cm
+lang und 7{,}5 bis 8{,}6\,cm breit; große Hände (95.~Perzentil der Männer) erreichen etwa 20\,cm
+Länge und gut 9\,cm Breite~\cite[Tab.~1]{maldonado2023exhand}\cite[Tab.~3]{fu2022tfcc}. Die
+Länge der Taschen entspricht damit etwa der Handlänge großer Hände, wie sie nach
+Anforderung~A6 Platz finden sollen; in der Breite bleibt reichlich Spielraum. Die Handmaße
+stammen aus Erhebungen in Kolumbien und China, für Mitteleuropa können sie etwas abweichen.
 
 Der Drucksensor sitzt in einem eigenen Sensoreinsatz, der von
 unten durch eine parallelogrammförmige Öffnung in die Tasche gesteckt und dort verschraubt wird.
@@ -397,15 +274,12 @@ Sensorwiderstands im genutzten Druckbereich liegen. Ist er zu klein, bleibt die 
 ist er zu groß, erreicht sie schon bei mäßigem Druck die Sättigung des \ac{ADC} bei etwa
 3{,}1\,V~\cite{jamil2026mainboard}. Anders als beim \ac{FSR} wirkt sich der Festwiderstand beim
 Velostat daher deutlich aus. Die Messreihen zur Sensorauswahl entstanden mit 10\,k$\Omega$.
-Für den fertigen Neffy~3.0 wurden die Sensoreinsätze neu gebaut, nach demselben Prinzip und mit
-demselben Lagenaufbau, aber mit größeren Velostat-Flächen. Da der Widerstand quer durch die Folie
-mit der Fläche sinkt, war nach der Regel $R_\mathrm{F} \approx R_\mathrm{S}$ ein deutlich
-kleinerer Festwiderstand zu erwarten. Eingesetzt ist ein Festwiderstand von 27\,$\Omega$
-(Farbcode Rot-Violett-Schwarz-Gold), mit dem die Taschen feiner auflösten. Der Wert wurde nicht
-berechnet, sondern im fertigen Aufbau ermittelt: Der Widerstand des Velostats hängt stark von
-Fläche, Anpressdruck und Kontakt ab und ändert sich schon beim Nachziehen einer Schraube; ein
-genaues Ausmessen war daher wenig sinnvoll. Das Messprinzip ist dasselbe wie in den Messreihen,
-nur der Arbeitspunkt des Spannungsteilers ist ein anderer.
+Die Sensoreinsätze des fertigen Neffy~3.0 haben denselben Lagenaufbau, aber größere
+Velostat-Flächen; da der Widerstand quer durch die Folie mit der Fläche sinkt, war nach der Regel
+$R_\mathrm{F} \approx R_\mathrm{S}$ ein deutlich kleinerer Festwiderstand zu erwarten. Eingesetzt
+ist ein Festwiderstand von 27\,$\Omega$. Er wurde im fertigen Aufbau ermittelt, weil der
+Widerstand des Velostats stark von Fläche, Anpressdruck und Kontakt abhängt und sich schon beim
+Nachziehen einer Schraube ändert.
 
 \begin{figure}[htbp]
   \centering
@@ -417,10 +291,8 @@ nur der Arbeitspunkt des Spannungsteilers ist ein anderer.
   \label{fig:spannungsteiler}
 \end{figure}
 
-Der \ac{ADC} arbeitet mit 12\,bit Auflösung; jeder Messwert ist der Mittelwert aus acht
-Einzelmessungen und wird über die im Chip hinterlegten Kalibrierdaten in eine Spannung
-umgerechnet, da der \ac{ADC} des ESP32-S3 nicht linear ist. Beide Taschen werden alle
-20\,ms abgetastet.
+Auf dem Neffy Board werden beide Taschen alle 20\,ms mit dem 12-bit-\ac{ADC} abgetastet und
+über die Kalibrierdaten des Chips in eine Spannung umgerechnet.
 
 \subsection{Antrieb}
 \label{sec:hw_antrieb}
@@ -478,12 +350,7 @@ Reserve ausreicht, zeigte sich daher erst im Betrieb (Abschnitt~\ref{sec:schwach
 Wird von oben auf den Roboter gedrückt, ist außerdem wichtig, dass die Spindel nicht selbsthemmend ist:
 Dafür müsste $\varphi < \rho'$ gelten, hier ist $\varphi \approx 20^\circ$ aber deutlich größer als
 $\rho' \approx 6^\circ$ bis $12^\circ$. Eine Kraft von oben kann die Spindel also zurückdrehen, und
-der Motor muss sie aktiv halten. In dieser Richtung beträgt der Wirkungsgrad
-\begin{equation}
-  \eta' = \frac{\tan(\varphi - \rho')}{\tan\varphi} \approx 0{,}40 \text{ bis } 0{,}69 .
-  \label{eq:wirkungsgrad_rueck}
-\end{equation}
-Nicht beziffert sind weitere Verluste durch Reibung in der Linearführung, durch Verkanten des
+der Motor muss sie aktiv halten. Nicht beziffert sind weitere Verluste durch Reibung in der Linearführung, durch Verkanten des
 Schlittens bei außermittigem Druck und durch die Nachgiebigkeit des gedruckten Verbindungsteils.
 
 Der Körper wird über eine Lineareinheit aus Kaufteilen bewegt: Der Schrittmotor treibt eine
@@ -494,11 +361,9 @@ Bewegung auf den Oberkörper. Ziel des neuen Antriebs war mehr Kraft, nicht ein 
 In der Firmware ist der Verfahrweg zwar auf 85\,mm ab dem Endschalter begrenzt, bei den Übungen
 fährt der Körper jedoch höchstens 20\,mm. Der Hub bleibt damit in derselben Größenordnung wie
 bei Neffy~2 (bis 25\,mm~\cite{goerke2025neffy2}), dessen Bewegung sich bewährt hatte.
-Die Kopfmechanik wurde von Caspar Jaki aus dem Team
-Programmierung konstruiert. Ein Schrittmotor im
-Kopf treibt über ein Zahnradpaar mit 30 und 40 Zähnen eine Welle an, die mit dem feststehenden
-Hals verbunden ist, sodass sich der Kopf auf dem Hals neigt. Er nutzt 32° seines mechanischen
-Bewegungsbereichs von etwa 34°. Angesteuert werden beide Motoren über
+Die Kopfmechanik wurde von Caspar Jaki aus dem Team Programmierung konstruiert: Ein Schrittmotor
+neigt den Kopf über ein Zahnradpaar (30 und 40 Zähne) um bis zu 32°. Angesteuert werden beide
+Motoren über
 TMC2225-Treiber mit vier Mikroschritten. Bei jedem Start fahren beide Achsen gegen einen
 Endschalter, um ihre Nullposition zu bestimmen (Referenzfahrt).
 
@@ -611,25 +476,18 @@ Kopfes.
 \subsection{Fertigung und Nachbearbeitung}
 \label{sec:gehaeuse_fertigung}
 
-Bei der Konstruktion wurde von einer Fertigungstoleranz von 0{,}1\,mm ausgegangen. Eigene
-Testkörper zur Bestimmung der Toleranzen wurden wegen der begrenzten Druckkapazität nicht
-gedruckt. Getestet wurden stattdessen einzelne kleinere Teile vorab, etwa die Aufnahmen auf der
-Rückseite für Netzteilbuchse, Schalter und Kopfhöreranschluss. Die großen Hüllenteile wurden
-dagegen jeweils nur einmal gedruckt. Bohrungen wurden, wie im \ac{FDM}-Druck
-üblich, mit einer Ständerbohrmaschine auf das genaue Maß aufgerieben. Ein bis zwei kleinere Teile mussten neu gedruckt werden,
-keines der großen Teile.
-An den Klebestellen der PLA-Teile entstanden zwangsläufig kleine Kanten und Löcher. Sie wurden
-mit Sekundenkleber gefüllt und anschließend geschliffen. Dabei zeigte sich, dass ein elektrisches
-Schleifgerät das PLA sehr schnell beschädigt; dieser Effekt wurde zunächst unterschätzt. Die
-besten Ergebnisse lieferte das Schleifen von Hand mit schrittweise feinerem Schleifpapier. An
-einzelnen Stellen hätte zusätzliches Spachteln die Oberfläche noch weiter verbessert.
+Bei der Konstruktion wurde von einer Fertigungstoleranz von 0{,}1\,mm ausgegangen. Wegen der
+begrenzten Druckkapazität wurden keine eigenen Testkörper gedruckt, sondern nur kleinere Teile
+vorab getestet, etwa die Aufnahmen für Netzteilbuchse, Schalter und Kopfhöreranschluss. Die
+großen Hüllenteile wurden jeweils nur einmal gedruckt; Bohrungen wurden mit einer
+Ständerbohrmaschine auf Maß aufgerieben. Ein bis zwei kleinere Teile mussten neu gedruckt werden.
 
-Lackiert wurde in drei Stufen: Auf einen Kunststoffprimer folgte ein Haftgrund (beide von
-Vincent, Hellweg) und darauf zwei
-bis drei Schichten Sprühlack von Montana GOLD im Farbton Sahara Beige.
-Wichtig war, zwischen den Schichten ausreichend lange trocknen zu lassen, damit der Lack gut
-haftet. Mit genügend Zeit lässt sich PLA so nachbearbeiten, dass sehr saubere Oberflächen
-entstehen; der Aufwand dafür ist allerdings groß.
+Die Kanten und Löcher an den Klebestellen wurden mit Sekundenkleber gefüllt und von Hand mit
+schrittweise feinerem Schleifpapier geschliffen; ein elektrisches Schleifgerät beschädigte das
+PLA zu schnell. Lackiert wurde in drei Stufen: Kunststoffprimer, Haftgrund (beide von Vincent,
+Hellweg) und zwei bis drei Schichten Sprühlack (Montana GOLD, Sahara Beige), jeweils mit
+ausreichend langer Trocknungszeit. So entstehen auch mit PLA sehr saubere Oberflächen, der
+Aufwand dafür ist allerdings groß.
 \todo{Foto des fertigen, lackierten Gehäuses}
 
 \section{Software}
@@ -643,35 +501,8 @@ gebaut~\cite{jamil2026mainboard}. Sie nutzt beide Rechenkerne des ESP32-S3: Die
 Motorsteuerung läuft in einer eigenen Task auf Kern~0, während Kern~1 die \ac{UART}-Kommunikation,
 die Sensoren und die \acp{LED} bedient. Die Trennung ist nötig, weil der Interrupt der
 Schrittmotorsteuerung mit 50\,kHz und die Ausgabe an die \acp{LED} sich auf einem gemeinsamen
-Kern gegenseitig stören. Tabelle~\ref{tab:module} zeigt die Module.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Module der Firmware}
-  \label{tab:module}
-  \small
-  \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{9.4cm}@{}}
-    \toprule
-    Modul & Aufgabe \\
-    \midrule
-    \texttt{main}               & Initialisierung, Hauptschleife, \ac{LED}-Steuerung, Debug-Befehle \\
-    \trenn
-    \texttt{config.h}           & Pins, Hardwarekonstanten, Zeiten, \ac{LED}-Einstellungen \\
-    \trenn
-    \texttt{MotorControlLoop}   & Referenzfahrt, Ausführung der Bewegungsbefehle, Rückmeldungen (Kern~0) \\
-    \trenn
-    \texttt{PersonSensor}       & Auslesen des D6T und Anwesenheitserkennung \\
-    \trenn
-    \texttt{PersonDetector}     & Senden des Anwesenheitszustands \\
-    \trenn
-    \texttt{PressureDetector}   & Klick- und Druckerkennung je Tasche \\
-    \trenn
-    \texttt{BreathingDetection} & Atemerkennung über 30\,s \\
-    \trenn
-    \texttt{VoltageReader}      & Kalibrierte \ac{ADC}-Messung \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+Kern gegenseitig stören. Je Aufgabe gibt es ein eigenes Modul, etwa für die Motorsteuerung,
+den Thermalsensor, die Taschen und die Atemerkennung.
 
 \subsection{Anwesenheitserkennung}
 \label{sec:sw_anwesenheit}
@@ -695,8 +526,7 @@ gelernt, wenn zwar eine Person gemeldet wird, das Signal aber 20\,s lang nahezu 
 bleibt, da eine reale Person die Messung in der Regel innerhalb von Sekunden verändert. Diese
 Absicherung steht in einem Zielkonflikt zu Anforderung~A1: Sie verhindert, dass eine
 Wärmequelle dauerhaft als Person gilt, kann aber auch eine sehr ruhig sitzende Person
-\enquote{weglernen}, wenn deren Signal lange genug nahezu konstant bleibt. Ob das im Betrieb
-auftritt, soll die ausstehende Messung zeigen (Abschnitt~\ref{sec:erg_anwesenheit}). Die Parameter
+\enquote{weglernen}, wenn deren Signal lange genug nahezu konstant bleibt. Die Parameter
 wurden anhand einer geführten Aufzeichnung abgestimmt (leerer Raum, Annähern, Davorstehen,
 Abstand 1\,m, Vorbeigehen, Weggehen; siehe Abschnitt~\ref{sec:messwerte}).
 
@@ -707,19 +537,16 @@ Das Signal der Velostat-Taschen driftet mit der Zeit und unterscheidet sich von 
 Tasche. Die Erkennung ist deshalb selbstkalibrierend: Sie lernt laufend den Ruhepegel, das
 Rauschen und die typische Höhe eines Klicks und leitet daraus ihre Schwellen ab. Ein Klick
 wird erkannt, wenn das Signal kurzzeitig (höchstens 600\,ms) über einen lokalen Grundpegel
-steigt, oder bei leichten Klicks als schneller Sprung in beide Richtungen. Liegt eine Hand
-dauerhaft auf der Tasche, wird dies erkannt; Klicks müssen dann deutlicher ausfallen. Für die
-Atemerkennung gibt es zusätzlich einen schnellen Zustand \enquote{gedrückt}, der nach 140\,ms
-Druck gesetzt und nach 200\,ms ohne Druck zurückgesetzt wird. Die Parameter wurden anhand
-aufgezeichneter Messreihen beider Taschen abgestimmt (Klicks, aufliegende Hand, langes
-Drücken). Für jede Tasche lässt sich die Empfindlichkeit zusätzlich fein einstellen. Die
-Klickmeldungen werden auch zur Bedienung genutzt: Ein Klick links oder rechts dient der
+steigt; liegt eine Hand dauerhaft auf der Tasche, müssen Klicks deutlicher ausfallen. Für die
+Atemerkennung gibt es zusätzlich einen schnellen Zustand \enquote{gedrückt} (gesetzt nach
+140\,ms Druck, zurückgesetzt nach 200\,ms ohne Druck). Die Parameter wurden anhand
+aufgezeichneter Messreihen beider Taschen abgestimmt. Ein Klick links oder rechts dient der
 Navigation, gleichzeitiges Drücken beider Taschen der Auswahl.
 
 \subsection{Atemerkennung}
 \label{sec:sw_atem}
 
-Die Atemerkennung wird vom Raspberry Pi gestartet und dauert 30\,s. Die Nutzer:innen drücken
+Die Atemerkennung wird vom Raspberry Pi gestartet und dauert 30\,s. Die Nutzer*innen drücken
 beim Einatmen auf eine Tasche und lassen beim Ausatmen los; jeder Beginn eines Drucks zählt als
 Einatemzug. Aus den Zeitpunkten des ersten ($t_1$) und letzten ($t_n$) von $n$ Einatemzügen
 wird die mittlere Dauer eines Atemzyklus und daraus die Atemfrequenz bezogen auf 30\,s
@@ -736,21 +563,15 @@ liegen. Erwachsene atmen in Ruhe 12- bis 20-mal pro Minute~\cite{nicolo2020rr}, 
 gestresst. Die Grenzen liegen damit jeweils mittig zwischen ganzen Atemzügen. Das Ergebnis wird an den
 Raspberry Pi gesendet; bei weniger als zwei Einatemzügen wird kein Ergebnis gesendet.
 Während der Messung werden keine Klicks gemeldet, und alle \acp{LED} werden beim Einatmen
-heller und beim Ausatmen dunkler, sodass die Nutzer:innen eine direkte Rückmeldung erhalten.
+heller und beim Ausatmen dunkler, sodass die Nutzer*innen eine direkte Rückmeldung erhalten.
+Außerhalb der Messung folgt die Helligkeit der \acp{LED} (je acht unter jeder Tasche und ein Ring
+mit zwölf) der Kopfposition: Bei gesenktem Kopf glimmen sie schwach, in der Aufwachposition
+leuchten sie voll.
 
 Ursprünglich sollte die Atmung passiv erkannt werden: Die Hände ruhen in den Taschen, und die
 Atmung wird über leichte Änderungen des Drucks der Hände erfasst. Dieser Ansatz erwies sich
 als nicht zuverlässig genug (siehe Abschnitt~\ref{sec:erg_passiv}) und wurde zugunsten der
 beschriebenen aktiven Erfassung aufgegeben.
-
-\subsection{Rückmeldung über die \acp{LED}}
-\label{sec:sw_led}
-
-Unter jeder Tasche liegt ein Streifen mit acht \acp{LED}, dazu kommt ein Ring mit zwölf
-\acp{LED}. Ihre Helligkeit folgt der Kopfposition: Bei gesenktem Kopf glimmen sie schwach, in
-der Aufwachposition leuchten sie voll. Da das Auge Helligkeit nicht linear wahrnimmt, wird
-die Helligkeit kubisch über den Stellweg verteilt. Während der Atemerkennung folgen sie dagegen
-dem Atem (Abschnitt~\ref{sec:sw_atem}).
 
 \subsection{Softwareablage, Build und Tests}
 \label{sec:sw_ablage}

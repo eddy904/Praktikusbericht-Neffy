@@ -12,14 +12,14 @@
       5.2.6, A1 in Tab. 5.1 von „vorläufig“ auf erfüllt/teilweise
 - [ ] **Fotos** nach `abbildungen/fotos/`: Neffy frontal (Abb. 3.1c, 5.1a), Hände in den Taschen (Abb. 5.1b),
       optional lackiertes Gehäuse (`\todo` in 4.3.4)
-- [ ] **Kürzen:** Vorschläge liegen vor (Chat 26.10.), Entscheidung Eddy
+- [x] **Kürzen:** Stufen 1–3 umgesetzt (26.10.), Kap. 1–7 jetzt 33 S.
 
 ## Kann Claude direkt erledigen (nach Freigabe)
 - [ ] A6 in Tab. 5.1: Ergonomie (Ellbogen zu hoch) im Status abbilden; Anzahl/Spannweite der Probehände,
       falls bekannt
 
 ## Abschluss
-- [ ] Matrikelnummern lokal in `matrikelnummern.tex` (nicht committen)
+- [x] Matrikelnummern lokal in `matrikelnummern.tex` eingetragen (nicht committen, per .gitignore draußen)
 - [ ] `\usepackage[disable,…]{todonotes}` in `main.tex`; Platzhalter verschwinden damit NICHT
 - [ ] Endkontrolle (Verweise, Abbildungen, Seitenumbrüche)
 - [ ] Pushen – nur auf Eddys Ansage
