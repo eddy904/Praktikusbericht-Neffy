@@ -53,13 +53,13 @@
 \contentsline {section}{\numberline {7.3}Erwartungen}{29}{section.7.3}%
 \contentsline {section}{\numberline {7.4}Erfahrungen}{29}{section.7.4}%
 \contentsline {section}{\numberline {7.5}Persönliches Fazit}{30}{section.7.5}%
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{31}{chapter*.51}%
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{32}{chapter*.52}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{34}{chapter*.54}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{31}{chapter*.49}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{32}{chapter*.50}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{34}{chapter*.52}%
 \def \@chapapp {\appendixname }
 \contentsline {chapter}{\numberline {A}Code-Auszüge}{36}{appendix.A}%
 \contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{37}{appendix.B}%
 \contentsline {chapter}{\numberline {C}Schaltplan}{38}{appendix.C}%
 \contentsline {chapter}{\numberline {D}Rohdaten}{39}{appendix.D}%
-\contentsline {chapter}{Eigenständigkeitserklärung}{40}{chapter*.60}%
+\contentsline {chapter}{Eigenständigkeitserklärung}{40}{chapter*.58}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
