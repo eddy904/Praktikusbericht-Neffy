@@ -13,7 +13,8 @@
 - Antrieb: Dynamixel XL430-W250 (Neffy 2) zu schwach und laut → NEMA 17; Körper mit integrierter T8-Spindel
   (Hersteller vermutlich Iverntech, kürzere Spindel als 100 mm) → mehr Kraft, leiser. ESP32-Board ersetzt
   U2D2 + Power Hub (zu viel Platz); ESP32 erzeugt die Schrittimpulse.
-- Kap. 2.2, 2.3 und 3.1 sind mit `\unsicher{}` grau markiert (Abstimmung Eddy/Younes) – nicht löschen.
+- Früher waren Kap. 2.2, 2.3 und 3.1 mit `\unsicher{}` grau markiert; seit 26.10. gibt es keine grauen
+  bzw. unsicheren Stellen mehr im Text (Makro in `main.tex` bleibt für neue Fälle).
 - Unser Team: **Sensorik, 2 Personen** – **Eddy Werk** (GitHub eddy904) und Younes Jamil.
   Achtung: In früheren Notizen stand fälschlich „Badre“ – der Name ist Eddy Werk.
 - Charly Goerke (GitHub „LegitimateShake“) ist Mitarbeiter im Labor für Kommunikation und Mitautor des
