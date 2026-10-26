@@ -119,27 +119,30 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 | 2 Ziel | fertig. Zielbild = nur Inspiration (Brainstorming), keine Anforderung. Anforderungen **A1–A8** (alt A6 Zielbild und A9 Druckbarkeit gestrichen → A6 Hände, A7 Zugang, A8 Bedienung). Fragestellung gestrichen. Projektorganisation: März–Ende Okt. 2026, geschätzt 450 h/Person, Tabelle „Wer macht was“, Kreisdiagramm Zeitaufteilung (geschätzt: Konstruktion 35, Druck/Nachbearbeitung 25, Programmierung 20, Sensortests 8, Montage/Löten 7, Abstimmung/Beschaffung/Doku 5 %) | – |
 | 3 Stand der Technik | fertig; 3.1 ohne Hinweis auf nachträgliche Recherche | Foto Neffy 3.0 (Abb. 3.1c) |
 | 4 Methoden | fertig: Kommunikation mit Firmware-README geprüft; Handmaße-Tabelle (`maldonado2023exhand` Tab. 1, `fu2022tfcc` Tab. 3); Festwiderstand 27 Ω (bestätigt); Motor 42HB4027-41 (kein Datenblatt gefunden); Spindel-Abschätzung Gl. 4.6–4.9 (η aus Geometrie, μ = 0,1–0,2 angenommen, nicht selbsthemmend); Kopfmechanik Caspar Jaki; Druck in der HROB-Werkstatt; KI-Angabe 4.4.7 final (Firmware-Code vollständig mit Claude Code, Ideen/Struktur vom Team) | optional Foto lackiertes Gehäuse |
-| 5 Diskussion | fertig: Evaluation A1–A8 (A6, A7 erfüllt); Ursache Antriebs-Stillstand = fehlende Selbsthemmung (als Erklärung formuliert); 5.5 Eigene Ideen mit Namen; Studie durch Mitarbeiterin der grafischen Gestaltung | Fotos Abb. 5.1; Thermal-Reichweitenmessung (Younes, wird nachgereicht) |
+| 5 Diskussion | fertig: Evaluation A1–A8 + A3* (A3 passiv nicht erfüllt, A3* aktiv erfüllt, A1 vorläufig); Antriebs-Stillstand: Heben = Motormoment überschritten, von oben = fehlende Selbsthemmung; 5.5 Eigene Ideen mit Namen (Konzept Team, Code Claude Code); Messreihen = Sensorauswahl am Entwicklungsboard, 2 Personen (Team); Studie durch Mitarbeiterin der grafischen Gestaltung | Fotos Abb. 5.1; Thermal-Reichweitenmessung inkl. ruhiges Sitzen > 20 s (Younes, wird nachgereicht) |
 | 6 Fazit | fertig | – |
 | 7 Einschätzung | fertig | – |
 | Anhang | A: UART-Befehle + `BreathingDetection.h/.cpp` (Kopie in `anhang/code/`, Commit 2693747); B: Kennwerte + Verweis Rohdaten. CAD- und Schaltplan-Anhang gestrichen (kein Material) | – |
 | Erklärung | übliche Formel in Wir-Form inkl. KI-Hinweis (kein BHT-Wortlaut gefunden) | – |
 
-Umfang: Kap. 1–7 = 36 S., PDF 51 S.; nicht streng (Eddy).
-Review 26.10. (`notizen/review_2026-10-26.md`): Textänderungen umgesetzt (A3 nicht erfüllt + A3*, A1 vorläufig,
-Antrieb, Beschleunigungssensor, Tab. 3.1 Anwesenheitssensoren). Keine weiteren Tests – Validierung über die Studie.
-Offen: 27-Ω-Begründung, Anzahl gemessener Personen, Taschenmaße (siehe `OFFENE_PUNKTE.md`).
+Umfang: Kap. 1–7 = 37 S., PDF 52 S.; nicht streng (Eddy).
+**Review 26.10. erledigt** (`notizen/review_2026-10-26.md`, alle Textpunkte umgesetzt): A3* in Tab. 2.1 und 5.1
+(„im Projektverlauf ergänzt“), A1 vorläufig, Antrieb, Beschleunigungssensor an Ommie angeglichen, Tab. 3.1
+Anwesenheitssensoren, Klassengrenzen 5,5/10,5, „Atemtakt angeben“ in Einleitung/Fazit, 27 Ω (neue, größere
+Sensoreinsätze, im Aufbau ermittelt), Velostat-Einbau schrittweise abgestimmt, Taschen im Mittel 20 × 16 × 6 cm,
+Druckbereich 14 × 8 cm (leichte Klicks mittig am zuverlässigsten), Kap. 7 „Rückblickend …“.
+Keine weiteren Tests am Roboter – Validierung über die laufende Studie (Entscheidung Eddy).
 Layout: booktabs + graue Trennlinien `\trenn` (main.tex); Gleitobjektseiten beginnen oben; alle Abbildungen und
 Tabellen am 26.10. auf Ausrichtung geprüft.
 
 ## Weiteres Vorgehen (für die nächste Sitzung, auch auf einem anderen PC)
-1. **Review** im neuen Chat: `/academic-research-skills:ars-reviewer main.pdf` (full) mit Hinweis
-   „Praktikumsbericht, Beurteilungsbogen FB VII; Fotos und Thermalmessung werden nachgereicht“.
-   Ergebnis mit Claude durchgehen, nur für einen Praktikumsbericht Sinnvolles umsetzen.
+1. ~~Review~~ – erledigt am 26.10. (siehe oben).
 2. **Fotos** nach `abbildungen/fotos/` (`neffy3_frontal.jpg`, `haende_taschen.jpg`) und Platzhalter in
-   Abb. 3.1c und 5.1a/b ersetzen. `\platzhalter` verschwindet NICHT mit `[disable]`.
-3. **Thermalmessung** (0,5–3 m, `tools/thermal_log.py` im Firmware-Repo) → Plot + Zahl für A1 in 5.2;
-   sonst Satz „nur beobachtet, nicht systematisch gemessen“ + Ausblick.
+   Abb. 3.1c und 5.1a/b ersetzen. `\platzhalter` verschwindet NICHT mit `[disable]`. Optional Foto des
+   lackierten Gehäuses (`\todo` in 4.3.4).
+3. **Thermalmessung** (0,5–3 m, `tools/thermal_log.py` im Firmware-Repo) → Plot + Zahl für A1 in 5.2.6;
+   dabei prüfen, ob eine ruhig sitzende Person > 20 s erkannt bleibt. Danach A1 in Tab. 5.1 von
+   „vorläufig“ auf erfüllt/teilweise setzen. Sonst Satz „nur beobachtet, nicht systematisch gemessen“ + Ausblick.
 4. **Abschluss:** `\usepackage[disable,…]{todonotes}` in `main.tex`; Endkontrolle; pushen nur auf Eddys Ansage.
 
 ## Technische Hinweise für Claude
