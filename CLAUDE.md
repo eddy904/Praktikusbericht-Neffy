@@ -105,7 +105,9 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
   A3 (= Atemkurve 7) ist teils gesättigt, weil **zu fest gedrückt** wurde – nicht wegen eines falschen
   Widerstands (Notiz war falsch). Beim FSR wurden mehrere Festwiderstände (1 kΩ … 1 MΩ) probiert,
   der Einfluss war vernachlässigbar, das Verhalten blieb binär; im Bericht nur ein Satz dazu. Beim Velostat
-  wirkt der Widerstand deutlich; begonnen mit 4,7 kΩ, endgültiger Wert offen (LIESMICH: 10 kΩ). Plots: `python daten/plots_atemsensorik.py` → `abbildungen/plots/`.
+  wirkt der Widerstand deutlich; Messreihen mit 10 kΩ; im fertigen Roboter neu gebaute, größere Sensoreinsätze (gleicher
+  Aufbau) mit 27 Ω, im Aufbau ermittelt, feinere Auflösung; keine eigenen Messreihen dazu nötig.
+  4,7 kΩ im Bericht nicht erwähnen (Eddy, 26.10.). Plots: `python daten/plots_atemsensorik.py` → `abbildungen/plots/`.
 - Noch nicht im Ordner: Firmware-Logs `logs/pocket-*.csv` und `logs/thermal-*.csv`.
   Thermalsensor D6T-1A-02 ist final integriert.
 
