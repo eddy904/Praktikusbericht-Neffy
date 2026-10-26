@@ -15,7 +15,7 @@
   U2D2 + Power Hub (zu viel Platz); ESP32 erzeugt die Schrittimpulse.
 - Kap. 2.2, 2.3 und 3.1 sind mit `\unsicher{}` grau markiert (Abstimmung Eddy/Younes) – nicht löschen.
 - Unser Team: **Sensorik, 2 Personen** – **Eddy Werk** (GitHub eddy904) und Younes Jamil.
-  Achtung: In früheren Notizen stand fälschlich „Eddy“ – der Name ist Eddy Werk.
+  Achtung: In früheren Notizen stand fälschlich „Badre“ – der Name ist Eddy Werk.
 - Charly Goerke (GitHub „LegitimateShake“) ist Mitarbeiter im Labor für Kommunikation und Mitautor des
   Neffy-2-Berichts. Von ihm stammen der Entwurf des Neffy Boards und die UART-Bibliothek
   (Neffy_UART_Interface). Das ist **nicht** Eigenleistung des Teams und muss so gekennzeichnet werden.
@@ -233,18 +233,20 @@ Zeitraum und Dauer (Stunden) gehören in Kap. 2 (Projektorganisation), nicht auf
 **Abbildungsverzeichnis · Abkürzungsverzeichnis · Literaturverzeichnis · Anhang** (Code-Auszüge, CAD-Zeichnungen,
 Rohdaten, Schaltplan) · **Eigenständigkeitserklärung** (Ort, Datum, Name)
 
-## Bewertungskriterien – Zuordnung prüfen
-| Kriterium | Kapitel |
-|---|---|
-| Anforderungsdefinition | 2 |
-| Stand der Technik/Forschung, Literaturrecherche | 3 |
-| Theoretischer Ansatz | 3 / 4 |
-| Systematische Methodik, begründete Lösungsauswahl, technische Entscheidungen | 4 |
-| Anteil eigener Ideen | 4 + 5 (explizit benennen) |
-| Praktische Durchführung, Funktionsfähigkeit | 4 + 5 |
-| Messwerte, Auswertung, Analyse, Evaluation | 5 |
-| Softwareablage, technische Dokumentation | 4 + Anhang |
-| Selbstständigkeit, Motivation, Teamarbeit | 2 (Tabelle) + 7 |
+## Bewertungskriterien (Beurteilungsbogen Praxisphase, FB VII – `notizen/Beurteilbogen_Praxisphase.pdf`)
+| Nr. | Kriterium (Bogen) | Punkte | Kapitel |
+|---|---|---|---|
+| 1 | Umfang und Schwierigkeitsgrad der gestellten Aufgabe | 0–5 | 2 (Aufgabe, Erweiterung) |
+| 2 | Ermittlung des Standes der Technik / Literaturrecherche | 0–10 | 3 |
+| 3 | Theoretischer Ansatz | 0–20 | 3 / 4 (Gleichungen, Abschätzungen) |
+| 4 | Anteil eigener Ideen | 0–10 | 5.5 (explizit benennen), 4 |
+| 5 | Praktische Durchführung / Funktionsfähigkeit | 0–30 | 4 + 5.1 (Fotos!) |
+| 6 | Auswertung / Analyse der Ergebnisse | 0–10 | 5 |
+| 7 | Arbeitsstil, Motivation, Selbstständigkeit, Zusammenarbeit im Team | 0–15 | 2.4 + 7 |
+| 8 | Sonderpunkte | 0–10 | Mehrleistung (Gehäuse, Modularität) herausstellen |
+Summe 110 (inkl. 10 Sonderpunkte); Notenstufen laut Bogen: 96–100 → 1,0; 90–95 → 1,3; 81–89 → 1,7;
+74–80 → 2,0; 67–73 → 2,3; 57–66 → 2,7; 50–56 → 3,0; … < 20 → 5,0. Der Bogen hat außerdem Felder „Aufgabenstellung“
+und „Durchgeführte Aufgaben“ → in Kap. 2 klar trennbar machen.
 
 ## Stil und Formalia
 - Layout wie Praxisbericht Neffy 2: Kopfzeile links Kapitel, rechts „Praktikumsbericht Neffy 3.0“,

@@ -35,7 +35,7 @@
 - [x] Abgabe: 26.10.2026
 - [x] Ein gemeinsamer Teambericht; Kennzeichnung „wer was“ ganz am Ende
 - [x] Teampartner: Younes Jamil
-- [x] Name: Eddy Werk (nicht „Eddy“ – Fehler in der ursprünglichen CLAUDE.md)
+- [x] Name: Eddy Werk (nicht „Badre“ – Fehler in der ursprünglichen CLAUDE.md)
 - [ ] Beide Matrikelnummern (erst kurz vor der Abgabe lokal eintragen)
 - [ ] „Praxisbericht“ oder „Praktikumsbericht“? (Neffy 2 nutzt „Praxisbericht“)
 - [ ] Arbeitstitel bestätigen
