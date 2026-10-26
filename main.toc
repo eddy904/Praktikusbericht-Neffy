@@ -16,50 +16,51 @@
 \contentsline {section}{\numberline {4.1}Systemarchitektur}{10}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Hardware und Sensorik}{11}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Anwesenheitserkennung}{11}{subsection.4.2.1}%
+\contentsline {paragraph}{\nonumberline Abschätzung des Erfassungsbereichs.}{12}{paragraph*.23}%
 \contentsline {subsection}{\numberline {4.2.2}Auswahl des Drucksensors}{12}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Aufbau der Drucksensor-Taschen}{14}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Antrieb}{14}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Konstruktion des Gehäuses}{15}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Entwurf und Form}{15}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Teilung in druckbare Teile}{15}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Verbindung der Teile}{17}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Fertigung und Nachbearbeitung}{17}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}Software}{18}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Aufbau der Firmware}{18}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Anwesenheitserkennung}{18}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Klick- und Druckerkennung}{19}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Atemerkennung}{19}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Rückmeldung über die \acp {LED}}{19}{subsection.4.4.5}%
-\contentsline {subsection}{\numberline {4.4.6}Softwareablage, Build und Tests}{20}{subsection.4.4.6}%
-\contentsline {subsection}{\numberline {4.4.7}Einsatz von KI-Werkzeugen}{20}{subsection.4.4.7}%
-\contentsline {chapter}{\numberline {5}Diskussion der Ergebnisse}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Funktionsnachweis}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Messwerte und Auswertung}{21}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Messreihen zur Atemsensorik}{21}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Vergleich von FSR und Velostat}{22}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Passive Atemerkennung}{22}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Aktive Atemerkennung}{22}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Bedienung über die Taschen}{23}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}Anwesenheitserkennung}{24}{subsection.5.2.6}%
-\contentsline {section}{\numberline {5.3}Evaluation gegen die Anforderungen}{24}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Schwachstellen}{24}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Eigene Ideen}{26}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Fazit}{27}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Zusammenfassung}{27}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ausblick}{27}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Unsere Einschätzung zum Praktikum}{29}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Studium und Praktikum}{29}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Praktikumsalltag}{29}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Erwartungen}{29}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Erfahrungen}{29}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Persönliches Fazit}{30}{section.7.5}%
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{31}{chapter*.49}%
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{32}{chapter*.50}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{34}{chapter*.52}%
+\contentsline {subsection}{\numberline {4.2.3}Aufbau der Drucksensor-Taschen}{15}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Antrieb}{16}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Konstruktion des Gehäuses}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Entwurf und Form}{17}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Teilung in druckbare Teile}{17}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Verbindung der Teile}{19}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Fertigung und Nachbearbeitung}{19}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Software}{20}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Aufbau der Firmware}{20}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Anwesenheitserkennung}{20}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Klick- und Druckerkennung}{21}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Atemerkennung}{21}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Rückmeldung über die \acp {LED}}{21}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.6}Softwareablage, Build und Tests}{22}{subsection.4.4.6}%
+\contentsline {subsection}{\numberline {4.4.7}Einsatz von KI-Werkzeugen}{22}{subsection.4.4.7}%
+\contentsline {chapter}{\numberline {5}Diskussion der Ergebnisse}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Funktionsnachweis}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Messwerte und Auswertung}{23}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Messreihen zur Atemsensorik}{23}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Vergleich von FSR und Velostat}{24}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Passive Atemerkennung}{24}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Aktive Atemerkennung}{24}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Bedienung über die Taschen}{25}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Anwesenheitserkennung}{26}{subsection.5.2.6}%
+\contentsline {section}{\numberline {5.3}Evaluation gegen die Anforderungen}{26}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Schwachstellen}{26}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Eigene Ideen}{28}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Fazit}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Zusammenfassung}{29}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ausblick}{29}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Unsere Einschätzung zum Praktikum}{31}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Studium und Praktikum}{31}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Praktikumsalltag}{31}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Erwartungen}{31}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Erfahrungen}{31}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Persönliches Fazit}{32}{section.7.5}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{33}{chapter*.53}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{34}{chapter*.54}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{36}{chapter*.56}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Code-Auszüge}{36}{appendix.A}%
-\contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{37}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Schaltplan}{38}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Rohdaten}{39}{appendix.D}%
-\contentsline {chapter}{Eigenständigkeitserklärung}{40}{chapter*.58}%
+\contentsline {chapter}{\numberline {A}Code-Auszüge}{38}{appendix.A}%
+\contentsline {chapter}{\numberline {B}CAD-Zeichnungen}{39}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Schaltplan}{40}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Rohdaten}{41}{appendix.D}%
+\contentsline {chapter}{Eigenständigkeitserklärung}{42}{chapter*.62}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

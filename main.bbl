@@ -548,6 +548,45 @@
       \verb https://github.com/LegitimateShake/Neffy_UART_Interface
       \endverb
     \endentry
+    \entry{interlink2002fsr}{manual}{}{}
+      \list{organization}{1}{%
+        {Interlink Electronics}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{note}{Version 1.0, Dok.-Nr.\ 90-45632 Rev.\ D}
+      \field{title}{FSR Integration Guide \& Evaluation Parts Catalog with Suggested Electrical Interfaces}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://courses.media.mit.edu/2022spring/mas836/readings/fsrguide.pdf
+      \endverb
+      \verb{url}
+      \verb https://courses.media.mit.edu/2022spring/mas836/readings/fsrguide.pdf
+      \endverb
+    \endentry
+    \entry{adafruit1361velostat}{online}{}{}
+      \list{organization}{1}{%
+        {Adafruit Industries}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{Pressure-Sensitive Conductive Sheet (Velostat/Linqstat), Produkt 1361}
+      \field{urlday}{26}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.adafruit.com/product/1361
+      \endverb
+      \verb{url}
+      \verb https://www.adafruit.com/product/1361
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

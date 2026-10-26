@@ -95,3 +95,10 @@
 - [x] Tatsächlicher Hub bei Übungen: max. 20 mm (ähnlich Neffy 2 mit 25 mm); Ziel war mehr Kraft (Kap. 4.2.4)
 - [ ] Kap. 6: Zusammenfassung prüfen – wichtigstes Ergebnis richtig gewichtet?
 - [ ] Schwachstelle `DISABLE_MOTORS` (Name passt nicht zur Funktion, laut Code-Kommentar) behalten oder streichen?
+
+## Theoretischer Ansatz (Beurteilungsbogen: 20 Punkte, Stand 26.10.)
+- [x] Spannungsteiler: Gleichung, Empfindlichkeit, Kennlinie (`daten/plot_spannungsteiler.py`), FSR-Schaltschwelle (Interlink)
+- [x] Erfassungsbereich D6T: Sichtkegel, Mischungsmodell, Abschätzung Reichweite 1,4–2 m (vs. beobachtet 2–3 m)
+- [x] Spindelkraft: Gleichung F = 2πηM/p
+- [ ] **Haltemoment des Motors** (Produktseite/Datenblatt) + **Wirkungsgrad η mit Quelle** → F ausrechnen, mit 20–40 N vergleichen
+- [ ] Taschenmaße aus Handmaßen (A7) – Maße von Eddy, Quelle (DIN 33402-2?)

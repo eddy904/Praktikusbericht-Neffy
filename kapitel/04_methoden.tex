@@ -154,6 +154,56 @@ der Abstand als natürlicher Filter wirkt. Der über \ac{I2C} angebundene Sensor
 gutem Preis-Leistungs-Verhältnis und von einem etablierten Hersteller. Ein Vergleichstest
 entfiel, da bereits der D6T die Anforderungen erfüllte (Abschnitt~\ref{sec:erg_anwesenheit}).
 
+\paragraph{Abschätzung des Erfassungsbereichs.}
+Der Sichtwinkel bestimmt, über welche Fläche der Sensor mittelt. Bei einem Sichtwinkel von
+$\theta = 26{,}5^\circ$ hat der erfasste Bereich in der Entfernung $d$ den Durchmesser
+\begin{equation}
+  D(d) = 2\,d\,\tan\frac{\theta}{2} \approx 0{,}47\,d ,
+  \label{eq:sichtfeld}
+\end{equation}
+also etwa 24\,cm in 0{,}5\,m, 47\,cm in 1\,m, 94\,cm in 2\,m und 1{,}41\,m in 3\,m
+(Abbildung~\ref{fig:d6t_sichtfeld}). Der Messwert ist näherungsweise der flächengewichtete
+Mittelwert aus Person und Hintergrund,
+\begin{equation}
+  T \approx a\,T_\mathrm{P} + (1-a)\,T_\mathrm{R}
+  \quad\Rightarrow\quad
+  T - T_\mathrm{R} \approx a\,(T_\mathrm{P} - T_\mathrm{R}) ,
+  \label{eq:mischung}
+\end{equation}
+wobei $a$ der Anteil des Sichtfelds ist, den die Person ausfüllt. Bei der Abstimmung der Firmware
+ergab sich direkt vor dem Roboter eine Erwärmung um 4 bis 6\,K, in 1\,m Entfernung um etwa
+2\,K~\cite{jamil2026mainboard}. Mit rund 5\,K bei ausgefülltem Sichtfeld entspricht das in 1\,m
+einem Anteil von $a \approx 0{,}4$. Für eine Erkennung muss die Erwärmung mindestens die Schwelle
+von 1\,K erreichen (Gleichung~\ref{eq:anwesenheit}), also $a \geq 0{,}2$. Nimmt der Anteil mit der
+Entfernung zwischen $1/d$ (die Person füllt die Höhe des Sichtfelds noch aus) und $1/d^2$ (sie ist
+in beiden Richtungen kleiner als das Sichtfeld) ab, ergibt sich eine Reichweite von etwa 1{,}4 bis
+2\,m. Die Abschätzung vernachlässigt unter anderem, dass der Sensor nicht über das ganze Sichtfeld
+gleich empfindlich ist. Sie liegt unter der im Betrieb beobachteten Reichweite
+(Abschnitt~\ref{sec:erg_anwesenheit}); die ausstehende Messung soll diese Abweichung klären.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=3.4cm, y=3.4cm, font=\small]
+    \fill[orange!12] (0,0) -- (3.2,0.7536) -- (3.2,-0.7536) -- cycle;
+    \draw[orange!70!black] (0,0) -- (3.2,0.7536);
+    \draw[orange!70!black] (0,0) -- (3.2,-0.7536);
+    \draw[->, gray] (0,0) -- (3.35,0) node[right, black]{$d$};
+    \fill[black!70] (-0.06,-0.05) rectangle (0,0.05);
+    \node[left, font=\scriptsize, align=right] at (-0.07,0) {D6T-1A-02};
+    \draw (0.55,0) arc[start angle=0, end angle=13.25, radius=0.55];
+    \node[font=\scriptsize] at (0.72,0.07) {$\theta/2$};
+    \foreach \d/\D in {0.5/24\,cm, 1/47\,cm, 2/94\,cm, 3/1{,}41\,m} {
+      \draw[thick] (\d,-0.2356*\d) -- (\d,0.2356*\d);
+      \node[below, font=\scriptsize] at (\d,-0.2356*\d) {\d\,m};
+      \node[above, font=\scriptsize] at (\d,0.2356*\d) {$D = \D$};
+    }
+  \end{tikzpicture}
+  \caption{Erfasster Bereich des Thermalsensors in Abhängigkeit von der Entfernung nach
+    Gleichung~\ref{eq:sichtfeld} (Sichtwinkel $\theta = 26{,}5^\circ$ nach~\cite{omron2017d6t};
+    Draufsicht, nicht maßstäblich in der Breite)}
+  \label{fig:d6t_sichtfeld}
+\end{figure}
+
 \subsection{Auswahl des Drucksensors}
 \label{sec:hw_drucksensor}
 
@@ -189,13 +239,19 @@ Zustände erkennbar waren (Abbildung~\ref{fig:fsr_velostat}\,a). Über den Festw
 Spannungsteilers lässt sich die Empfindlichkeit zwar grundsätzlich einstellen; beim \ac{FSR}
 war der Einfluss jedoch vernachlässigbar: Mit mehreren Werten zwischen 1\,k$\Omega$ und
 1\,M$\Omega$ blieb das Verhalten binär. Eine Variante für höhere Lasten
-(bis 10\,kg) wäre vermutlich ebenfalls nicht feinfühlig genug gewesen.
+(bis 10\,kg) wäre vermutlich ebenfalls nicht feinfühlig genug gewesen. Das beobachtete
+Verhalten ist für \acp{FSR} typisch: Bei geringer Kraft reagieren sie wie ein Schalter, dessen
+Widerstand ab einer Auslösekraft von 20 bis 100\,g sprunghaft von über 100\,k$\Omega$ auf etwa
+10\,k$\Omega$ fällt; unbelastet liegt er über 1\,M$\Omega$~\cite{interlink2002fsr}. Da dieser
+Sprung mehr als eine Größenordnung umfasst, durchläuft die Spannung des Spannungsteilers für fast
+jeden Festwiderstand den größten Teil ihres Bereichs (Abbildung~\ref{fig:spannungsteiler}). Das
+erklärt, warum sich der Festwiderstand beim \ac{FSR} kaum auswirkte.
 
 Velostat zeigte dagegen einen abgestuften Signalverlauf, erkannte auch schwache
 Druckunterschiede und ließ sich über die Schaltung gut einstellen
 (Abbildung~\ref{fig:fsr_velostat}\,b). Ein weiterer Vorteil ist die frei wählbare Form:
 Die Folie kann auf die benötigte Fläche zugeschnitten werden, sodass die Hand nicht exakt
-positioniert sein muss. Sie ist mit etwa 0{,}1\,mm sehr dünn, passt sich der Oberfläche an
+positioniert sein muss. Sie ist mit etwa 0{,}1\,mm sehr dünn~\cite{adafruit1361velostat}, passt sich der Oberfläche an
 und lässt sich unsichtbar unter der Verkleidung integrieren. Tabelle~\ref{tab:bewertung_drucksensor}
 fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
 
@@ -275,11 +331,42 @@ genutzt. Mit diesem Aufbau funktionierten die Taschen nach einigen Tests zufried
   \label{fig:taschenaufbau}
 \end{figure}
 
-Das Velostat ändert unter Druck seinen elektrischen Widerstand. Es bildet zusammen mit
-einem Festwiderstand einen Spannungsteiler, dessen Ausgangsspannung der ESP32-S3 misst.
-Anders als beim \ac{FSR} wirkt sich der Festwiderstand hier deutlich auf den Signalverlauf
-aus; begonnen wurde mit 4{,}7\,k$\Omega$.
-\todo{Endgültiger Festwiderstand der Taschen? (LIESMICH der Messdaten nennt 10\,k$\Omega$) Kurz begründen, warum dieser Wert; Schaltplan}
+Velostat ist eine leitfähige Kunststofffolie, deren Widerstand $R_\mathrm{S}$ sinkt, wenn sie
+zusammengedrückt wird~\cite{adafruit1361velostat}. Zusammen mit einem Festwiderstand
+$R_\mathrm{F}$ bildet sie einen Spannungsteiler. Da die gemessene Spannung beim Drücken steigt,
+liegt der Sensor zwischen der Versorgung $U_\mathrm{B} = 3{,}3$\,V und dem Messpunkt, der
+Festwiderstand gegen Masse~\cite{interlink2002fsr}:
+\begin{equation}
+  U_\mathrm{A} = U_\mathrm{B}\,\frac{R_\mathrm{F}}{R_\mathrm{F} + R_\mathrm{S}} .
+  \label{eq:teiler}
+\end{equation}
+Abbildung~\ref{fig:spannungsteiler} zeigt diese Kennlinie für verschiedene Festwiderstände. Am
+empfindlichsten reagiert der Teiler bei $R_\mathrm{S} = R_\mathrm{F}$: Dort wird der Betrag der
+Ableitung
+\begin{equation}
+  \frac{\mathrm{d}U_\mathrm{A}}{\mathrm{d}\ln R_\mathrm{S}}
+  = -\,U_\mathrm{B}\,\frac{R_\mathrm{F}\,R_\mathrm{S}}{(R_\mathrm{F} + R_\mathrm{S})^2}
+  \label{eq:empfindlichkeit}
+\end{equation}
+mit $U_\mathrm{B}/4$ maximal. Der Festwiderstand sollte deshalb in der Größenordnung des
+Sensorwiderstands im genutzten Druckbereich liegen. Ist er zu klein, bleibt die Spannung niedrig;
+ist er zu groß, erreicht sie schon bei mäßigem Druck die Sättigung des \ac{ADC} bei etwa
+3{,}1\,V~\cite{jamil2026mainboard}, wie in den Messreihen A3 und A4 bei zu festem Druck
+(Abschnitt~\ref{sec:erg_aktiv}). Anders als beim \ac{FSR} wirkt sich der Festwiderstand beim
+Velostat daher deutlich aus. Begonnen wurde mit 4{,}7\,k$\Omega$, die Messreihen entstanden mit
+10\,k$\Omega$.
+\todo{Endgültiger Festwiderstand im fertigen Neffy? Schaltplan}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{plots/spannungsteiler.pdf}
+  \caption{Berechnete Kennlinie des Spannungsteilers nach Gleichung~\ref{eq:teiler} für
+    verschiedene Festwiderstände ($U_\mathrm{B} = 3{,}3$\,V). Punkte: größte Empfindlichkeit bei
+    $R_\mathrm{S} = R_\mathrm{F}$; hinterlegt: Schaltschwelle typischer \acp{FSR}
+    nach~\cite{interlink2002fsr}}
+  \label{fig:spannungsteiler}
+\end{figure}
+
 Der \ac{ADC} arbeitet mit 12\,bit Auflösung; jeder Messwert ist der Mittelwert aus acht
 Einzelmessungen und wird über die im Chip hinterlegten Kalibrierdaten in eine Spannung
 umgerechnet, da der \ac{ADC} des ESP32-S3 nicht linear ist. Beide Taschen werden alle
@@ -293,7 +380,18 @@ liefen relativ laut. Sie wurden für Körper und Kopf durch Schrittmotoren der B
 ersetzt. Für den Körper wird ein Schrittmotor mit integrierter T8-Gewindespindel eingesetzt,
 wie er auch in 3D-Druckern verwendet wird; die Spindel ist kürzer als in der Standardausführung
 mit 100\,mm. Dieser Antrieb bringt deutlich mehr Kraft auf und ist zugleich leiser.
-\todo{Hersteller (Iverntech?) bestätigen; Haltemoment, falls bekannt}
+Welche Kraft $F$ die Spindel aus dem Motordrehmoment $M$ erzeugt, folgt aus der Energiebilanz
+einer Umdrehung: Die zugeführte Arbeit $2\pi M$, vermindert um die Reibungsverluste im Gewinde
+(Wirkungsgrad $\eta$), entspricht der Hubarbeit $F\,p$ entlang der Steigung $p$. Damit gilt
+\begin{equation}
+  F = \frac{2\pi\,\eta\,M}{p} .
+  \label{eq:spindel}
+\end{equation}
+Bei der Steigung von 8\,mm wirkt die Spindel wie ein starkes Untersetzungsgetriebe. Dem steht die
+Last der aufgelegten Hände gegenüber, die beim Vorgänger auf etwa 2 bis 4\,kg geschätzt
+wurde~\cite{goerke2025neffy2}.
+\todo{Haltemoment $M$ des Motors (Datenblatt/Produktseite) und Wirkungsgrad $\eta$ mit Quelle -- dann $F$ ausrechnen und mit 20--40\,N vergleichen}
+\todo{Hersteller (Iverntech?) bestätigen}
 Der Körper wird über eine Lineareinheit aus Kaufteilen bewegt: Der Schrittmotor treibt eine
 Gewindespindel mit 8\,mm Steigung an, deren Mutter in einem Schlitten sitzt, der auf einer
 Schiene geführt wird. Ein eigens konstruiertes, 3D-gedrucktes Verbindungsteil verbindet den

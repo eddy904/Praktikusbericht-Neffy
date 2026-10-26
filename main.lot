@@ -6,11 +6,11 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Vergleich der Generationen von Neffy}}{9}{table.caption.16}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Vergleich der getesteten Drucksensoren (+ geeignet, $\circ $ eingeschränkt, -- ungeeignet)}}{13}{table.caption.23}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Teilung des Gehäuses}}{16}{table.caption.32}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Module der Firmware}}{18}{table.caption.36}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Vergleich der getesteten Drucksensoren (+ geeignet, $\circ $ eingeschränkt, -- ungeeignet)}}{14}{table.caption.25}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Teilung des Gehäuses}}{17}{table.caption.36}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Module der Firmware}}{20}{table.caption.40}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Erfüllungsgrad der Anforderungen (\text {$\mathsurround \z@ \mathchar "458$}\ erfüllt, $\circ $ teilweise, -- nicht erfüllt)}}{25}{table.caption.44}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Erfüllungsgrad der Anforderungen (\text {$\mathsurround \z@ \mathchar "458$}\ erfüllt, $\circ $ teilweise, -- nicht erfüllt)}}{27}{table.caption.48}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -19,5 +19,5 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {D.1}{\ignorespaces Kennwerte der Messreihen zur Atemsensorik (erzeugt aus \texttt {daten/Messdaten\_Atemsensorik/00\_Uebersicht\_Kennwerte.csv})}}{39}{table.caption.56}%
+\contentsline {table}{\numberline {D.1}{\ignorespaces Kennwerte der Messreihen zur Atemsensorik (erzeugt aus \texttt {daten/Messdaten\_Atemsensorik/00\_Uebersicht\_Kennwerte.csv})}}{41}{table.caption.60}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
