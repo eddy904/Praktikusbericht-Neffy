@@ -115,8 +115,8 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
     Nr. & Anforderung & Art & Prüfkriterium \\
     \midrule
     A1 & Eine Person, die vor dem Roboter sitzt, wird erkannt, auch wenn sie sich kaum bewegt;
-         ohne Person erfolgt keine Meldung.
-       & F & Person auf dem Platz vor Neffy erkannt; leerer Raum ohne Meldung \\
+         ohne Person wird keine Anwesenheit gemeldet.
+       & F & Person auf dem Platz vor Neffy erkannt; leerer Platz: keine Anwesenheit \\
     A2 & Änderungen der Anwesenheit werden ohne merkliche Verzögerung an den Raspberry Pi
          gemeldet, sodass dieser reagieren kann, etwa mit einer kurzen Hubbewegung.
        & F & Meldung bei jeder Änderung, spätestens alle 0{,}5\,s \\
@@ -224,20 +224,20 @@ das Gehäuse.
     \foreach \von/\bis/\farbe/\wert in {90/-36/zeitA/35, -36/-126/zeitB/25,
         -126/-198/zeitC/20, -198/-226.8/zeitD/8, -226.8/-252/zeitE/7, -252/-270/zeitF/5} {
       \fill[\farbe, draw=white, line width=1pt]
-        (0,0) -- (\von:1.9) arc[start angle=\von, end angle=\bis, radius=1.9] -- cycle;
+        (0,0) -- (\von:1.45) arc[start angle=\von, end angle=\bis, radius=1.45] -- cycle;
       \pgfmathsetmacro{\mitte}{(\von+\bis)/2}
       \ifnum\wert>9
-        \node[white, font=\small\bfseries] at (\mitte:1.25) {\wert\,\%};
+        \node[white, font=\footnotesize\bfseries] at (\mitte:0.95) {\wert\,\%};
       \fi
     }
     \foreach \farbe/\text [count=\i] in {zeitA/{Konstruktion (SolidWorks), 35\,\%},
         zeitB/{3D-Druck und Nachbearbeitung, 25\,\%}, zeitC/{Programmierung, 20\,\%},
         zeitD/{Sensortests und Messungen, 8\,\%}, zeitE/{Montage, Verkabelung, Löten, 7\,\%},
         zeitF/{Abstimmung, Beschaffung, Dokumentation, 5\,\%}} {
-      \fill[\farbe] (2.6,{1.55-0.55*\i}) rectangle ++(0.3,0.3);
-      \node[anchor=west] at (3.0,{1.7-0.55*\i}) {\text};
+      \fill[\farbe] (2.0,{1.33-0.45*\i}) rectangle ++(0.25,0.25);
+      \node[anchor=west] at (2.35,{1.455-0.45*\i}) {\text};
     }
   \end{tikzpicture}
-  \caption{Geschätzte Aufteilung der Arbeitszeit des Teams Sensorik nach Arbeitsbereichen}
+  \caption{Geschätzte Zeitaufteilung im Team Sensorik}
   \label{fig:zeitaufteilung}
 \end{figure}

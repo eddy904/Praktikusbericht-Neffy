@@ -120,7 +120,7 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 | 5 Diskussion | Entwurf; Kennwerte als Diagramm (`daten/plot_kennwerte.py`), Tabelle in Anhang D; Evaluation A1–A10 | Fotos (frontal, Hände in Taschen); Anwesenheitsmessung 0,5–3 m mit `tools/thermal_log.py` (Firmware-Repo) → Plot + A1; **5.5 Eigene Ideen bestätigen**; wer führt die Studie durch |
 | 6 Fazit | Entwurf (Younes, 23.10.) | ggf. auf 1 Seite verdichten |
 | 7 Einschätzung | fertig (7.1–7.3 am 26.10.) | genauer Name des C++-Moduls |
-Stand 26.10. abends: 4.1 nicht mehr grau (Ablauf mit Firmware-README geprüft), UART-Befehlstabelle in Anhang A, 5.5 Eigene Ideen geschrieben, 4.4.7 KI neu (Firmware-Code vollständig mit Claude Code, Ideen/Struktur vom Team; Bericht: LaTeX-Satz + Formulierungshilfe). Noch offen: Fotos, Festwiderstand (Farbcode rot-violett-schwarz-? unklar), Motor-Haltemoment/η, Nachname Kaspar, Thermalmessung (Younes), 3.1 grau, Zeitraum/Stunden.
+Stand 26.10. abends: 4.1 nicht mehr grau (Ablauf mit Firmware-README geprüft), UART-Befehlstabelle in Anhang A, 5.5 Eigene Ideen geschrieben, 4.4.7 KI neu (Firmware-Code vollständig mit Claude Code, Ideen/Struktur vom Team; Bericht: LaTeX-Satz + Formulierungshilfe). Noch offen: Fotos, Festwiderstand (Farbcode rot-violett-schwarz-? unklar), Motor-Haltemoment/η, Thermalmessung (Younes), 3.1 grau, Zeitraum/Stunden.
 | Anhang | Anhang D Kennwerte-Tabelle | Code-Auszüge, CAD-Zeichnungen, Schaltplan, Verweis Rohdaten |
 | Erklärung | beide Unterschriftszeilen | Wortlaut der BHT |
 Umfang: Kap. 1–7 ca. 29 S. (mit Markern); nicht streng. Kürzen Stufe 2 erledigt.
@@ -164,7 +164,7 @@ Gehäuse (Stand 22.10.): Oberkörper 6 Teile → 2 Hälften verklebt, in der Mit
 Unterkörper 6 Teile → Schale + hintere Klappe (6 Schrauben); Kopfhülle 4 Teile (Deckel magnetisch,
 Hinterteil verschraubt, Vorderteil zwei Stifte). **Rundloch-Langloch wurde verworfen – fast alles geklebt.**
 Drucker Prusa MK4S und i3 MK3S, große Teile je ≥ 15 h, Toleranzannahme 0,1 mm, oft nachgebohrt.
-Kopfmechanik: Kaspar (Team Programmierung). Pi sitzt im Kopf. Schwachstelle: Hände/Ellbogen etwas zu
+Kopfmechanik: Caspar Jaki (Team Programmierung). Pi sitzt im Kopf. Schwachstelle: Hände/Ellbogen etwas zu
 hoch → Kissen (Kap. 5/6). Druckerverfügbarkeit eingeschränkt → neutral in Kap. 7.
 Material PLA. Nachbearbeitung: Klebekanten mit Sekundenkleber gefüllt, von Hand geschliffen (Elektroschleifer
 beschädigt PLA), Spachteln wäre an manchen Stellen besser gewesen. Lack: Kunststoffprimer → Haftgrund

@@ -352,7 +352,6 @@ ist er zu groß, erreicht sie schon bei mäßigem Druck die Sättigung des \ac{A
 Velostat daher deutlich aus. Begonnen wurde mit 4{,}7\,k$\Omega$, die Messreihen entstanden mit
 10\,k$\Omega$. Im fertigen Neffy~3.0 ist ein Festwiderstand von 27\,$\Omega$ eingesetzt
 (Farbcode Rot-Violett-Schwarz-Gold).
-\todo{27\,$\Omega$ bestätigen: sitzt dieser Widerstand im Spannungsteiler der Taschen?}
 
 \begin{figure}[htbp]
   \centering
@@ -397,7 +396,7 @@ Bewegung auf den Oberkörper. Ziel des neuen Antriebs war mehr Kraft, nicht ein 
 In der Firmware ist der Verfahrweg zwar auf 85\,mm ab dem Endschalter begrenzt, bei den Übungen
 fährt der Körper jedoch höchstens 20\,mm. Der Hub bleibt damit in derselben Größenordnung wie
 bei Neffy~2 (bis 25\,mm~\cite{goerke2025neffy2}), dessen Bewegung sich bewährt hatte.
-Die Kopfmechanik wurde von Kaspar\todo{Nachname Kaspar (liefert Eddy)} aus dem Team
+Die Kopfmechanik wurde von Caspar Jaki aus dem Team
 Programmierung konstruiert. Ein Schrittmotor im
 Kopf treibt über ein Zahnradpaar mit 30 und 40 Zähnen eine Welle an, die mit dem feststehenden
 Hals verbunden ist, sodass sich der Kopf auf dem Hals neigt. Er nutzt 32° seines mechanischen
@@ -633,9 +632,8 @@ beschriebenen aktiven Erfassung aufgegeben.
 Unter jeder Tasche liegt ein Streifen mit acht \acp{LED}, dazu kommt ein Ring mit zwölf
 \acp{LED}. Ihre Helligkeit folgt der Kopfposition: Bei gesenktem Kopf glimmen sie schwach, in
 der Aufwachposition leuchten sie voll. Da das Auge Helligkeit nicht linear wahrnimmt, wird
-die Helligkeit kubisch über den Stellweg verteilt. Während der Atemerkennung geben die \acp{LED}
-eine direkte Rückmeldung: Beim Einatmen, also solange in die Taschen gedrückt wird, werden sie
-heller, beim Ausatmen wieder dunkler~\cite{jamil2026mainboard}.
+die Helligkeit kubisch über den Stellweg verteilt. Während der Atemerkennung folgen sie dagegen
+dem Atem (Abschnitt~\ref{sec:sw_atem}).
 
 \subsection{Softwareablage, Build und Tests}
 \label{sec:sw_ablage}
