@@ -1,10 +1,8 @@
 % =====================================================================
 %  Anhang
 % =====================================================================
-\chapter{Code-Auszüge}
+\chapter{Schnittstelle und Firmware}
 \label{anh:code}
-
-\section*{Befehle der UART-Schnittstelle}
 
 Jede Nachricht hat das Format \texttt{FA <ID> <Länge> <Nutzdaten>} (115\,200\,Baud);
 mehrbytige Zahlen werden mit dem höherwertigen Byte zuerst übertragen. Der Befehlssatz ist in
@@ -48,18 +46,19 @@ gibt den Stand der Firmware wieder~\cite{jamil2026mainboard}.
   \end{tabular}
 \end{table}
 
-\clearpage
-\section*{Modul zur Atemerkennung}
+Der vollständige Quellcode der Firmware, darunter das Modul zur Atemerkennung
+(\texttt{BreathingDetection.h/.cpp}, Abschnitt~\ref{sec:sw_atem}), liegt im Repository des
+Neffy Boards~\cite{jamil2026mainboard}; dieser Bericht bezieht sich auf den Stand von Commit
+\texttt{2693747} vom 21.10.2026.
 
-Die folgenden Listings zeigen das Modul zur Atemerkennung (Abschnitt~\ref{sec:sw_atem}) im
-Stand von Commit \texttt{2693747}~\cite{jamil2026mainboard}.
-
-\lstinputlisting[language=C++, caption={\texttt{BreathingDetection.h}}]{anhang/code/BreathingDetection.h}
-\clearpage
-\lstinputlisting[language=C++, caption={\texttt{BreathingDetection.cpp}}]{anhang/code/BreathingDetection.cpp}
-
-\chapter{Rohdaten}
+\chapter{Messdaten der Atemsensorik}
 \label{anh:rohdaten}
+
+Tabelle~\ref{tab:kennwerte} enthält die Kennwerte aller Messreihen,
+Abbildung~\ref{fig:alle_messreihen} deren vollständigen Spannungsverlauf. Bei F2 und P1 wurde die
+Ruhephase am Ende der Aufzeichnung auf 2\,s gekürzt. In A6 wurden zwei kurze Störspitzen für die
+Kennwerte herausinterpoliert; in der Abbildung sind sie enthalten. Kennwerte und Diagramme wurden
+mit Python-Skripten direkt aus den aufgezeichneten Messwerten erzeugt.
 
 \begin{table}[htbp]
   \centering
@@ -69,11 +68,11 @@ Stand von Commit \texttt{2693747}~\cite{jamil2026mainboard}.
   \input{daten/tab_kennwerte.tex}
 \end{table}
 
-Die Rohdaten aller Messreihen liegen als CSV-Dateien im Berichts-Repository
-(\url{https://github.com/eddy904/Praktikusbericht-Neffy}) im Ordner
-\path{daten/Messdaten_Atemsensorik/}; Tabelle~\ref{tab:kennwerte} wurde aus der Datei
-\path{00_Uebersicht_Kennwerte.csv} erzeugt. Bei F2 und P1 wurde die Ruhephase am Ende der
-Aufzeichnung auf 2\,s gekürzt; in A6 wurden zwei kurze Störspitzen für die Kennwerte
-herausinterpoliert, in den Rohdaten sind sie enthalten. Die Diagramme und Tabellen dieses
-Berichts werden mit den Python-Skripten im Ordner \texttt{daten/} direkt aus diesen Dateien
-erzeugt. Der Quellcode der Firmware liegt im Repository des Neffy Boards~\cite{jamil2026mainboard}.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{plots/alle_messreihen.pdf}
+  \caption{Spannungsverlauf aller Messreihen zur Atemsensorik: \acs{FSR} (F1--F3), Velostat mit
+    nur aufgelegten Händen (P1, P2) und mit aktivem Mitdrücken (A1--A6); gestrichelt: Sättigung
+    des \acs{ADC}}
+  \label{fig:alle_messreihen}
+\end{figure}

@@ -123,7 +123,7 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 | 5 Diskussion | fertig: Evaluation A1–A8 + A3* (A3 passiv nicht erfüllt, A3* aktiv erfüllt, A1 vorläufig); Antriebs-Stillstand: Heben = Motormoment überschritten, von oben = fehlende Selbsthemmung; 5.5 Eigene Ideen mit Namen (Konzept Team, Code Claude Code); Messreihen = Sensorauswahl am Entwicklungsboard, 2 Personen (Team); Studie durch Mitarbeiterin der grafischen Gestaltung | Fotos Abb. 5.1; Thermal-Reichweitenmessung inkl. ruhiges Sitzen > 20 s (Younes, wird nachgereicht) |
 | 6 Fazit | fertig | – |
 | 7 Einschätzung | fertig | – |
-| Anhang | A: UART-Befehle + `BreathingDetection.h/.cpp` (Kopie in `anhang/code/`, Commit 2693747); B: Kennwerte + Verweis Rohdaten. CAD- und Schaltplan-Anhang gestrichen (kein Material) | – |
+| Anhang | A „Schnittstelle und Firmware“: UART-Befehlstabelle + Verweis aufs Firmware-Repo (Commit 2693747), **keine Code-Listings**; B „Messdaten der Atemsensorik“: Kennwerte-Tabelle + Abbildung aller 11 Messreihen (`alle_messreihen.pdf`). Bericht ist ein PDF und verweist **nicht** auf dieses Berichts-Repo, nur auf das Firmware-Repo (Eddy, 26.10.). CAD- und Schaltplan-Anhang gestrichen (kein Material) | – |
 | Erklärung | übliche Formel in Wir-Form inkl. KI-Hinweis (kein BHT-Wortlaut gefunden) | – |
 
 Umfang: Kap. 1–7 = 33 S., PDF 48 S. (nach Kürzung am 26.10. abends: Sequenzdiagramm, Sichtkegel-Abb.,

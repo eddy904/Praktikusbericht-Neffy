@@ -81,7 +81,7 @@ Signal; die Atembewegung verändert den Druck auf den Sensor dagegen kaum. Atmun
 Handbewegungen lassen sich so nicht zuverlässig unterscheiden. Das Plateau lag zudem nahe am
 oberen Ende des Messbereichs, wo der Spannungsteiler weniger empfindlich ist
 (Gleichung~\ref{eq:empfindlichkeit}); mit einem angepassten Festwiderstand wäre das Signal etwas
-empfindlicher gewesen. Eine spektrale Auswertung (\texttt{daten/spektrum\_atemsensorik.py})
+empfindlicher gewesen. Eine spektrale Auswertung (Fourier-Transformation über das Auswertefenster)
 bestätigt das Bild: Im Atemband von 6 bis 30 Atemzügen pro Minute ist der Signalanteil bei P2
 (Effektivwert 11 ADC-Einheiten) kleiner als der Anteil schnellerer Schwankungen (19), bei P1
 etwa gleich groß (106 bzw.\ 87). P1 zeigt zwar eine langsame Schwankung um 8 pro Minute; ob sie

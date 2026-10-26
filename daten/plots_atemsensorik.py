@@ -147,10 +147,32 @@ def vergleich_drei(name):
     plt.close(fig)
 
 
+def alle_reihen(name):
+    """Anhang B: alle elf Messreihen im Überblick (F1-F3, P1-P2, A1-A6)."""
+    gruppen = [("1_FSR.csv", ["F1", "F2", "F3"]),
+               ("2_Velostat_aufgelegt.csv", ["P1", "P2"]),
+               ("3_Velostat_aktiv.csv", ["A1", "A2", "A3", "A4", "A5", "A6"])]
+    reihen = [(datei, k) for datei, ks in gruppen for k in ks]
+    fig, achsen = plt.subplots(4, 3, figsize=(15 / 2.54, 17 / 2.54), sharey=True)
+    for ax, (datei, kennung) in zip(achsen.flat, reihen):
+        t, u = reihe(lies(datei), kennung)
+        kurve(ax, t, u, kennung)
+        achse_einrichten(ax, t.max(), saettigung=False)
+        ax.axhline(U_MAX, color=FARBE_GEDAEMPFT, linewidth=0.6, linestyle=(0, (3, 2)))
+        ax.set_title(kennung, loc="left", fontsize=8, color=FARBE_TEXT)
+        ax.set_xlabel("Zeit in s", fontsize=7)
+        ax.set_ylabel("U in V" if ax in achsen[:, 0] else "", fontsize=7)
+    achsen.flat[-1].set_visible(False)
+    fig.tight_layout(pad=0.3, h_pad=0.6, w_pad=0.6)
+    fig.savefig(AUSGABE / name)
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     AUSGABE.mkdir(parents=True, exist_ok=True)
     einzelplot("1_FSR.csv", "F1", "fsr_F1.pdf")
     einzelplot("3_Velostat_aktiv.csv", "A5", "velostat_aktiv_A5.pdf")
     vergleich_aufgelegt_aktiv("velostat_aufgelegt_vs_aktiv.pdf")
     vergleich_drei("vergleich_F1_P2_A5.pdf")
+    alle_reihen("alle_messreihen.pdf")
     print("Diagramme gespeichert in", AUSGABE)
