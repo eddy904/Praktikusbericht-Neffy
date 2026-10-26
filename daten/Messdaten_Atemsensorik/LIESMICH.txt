@@ -20,8 +20,8 @@ Kennwerte
 - A6: zwei kurze Störspitzen auf 4095 (~10,5 s und ~12 s) sind für die Kennwerte herausinterpoliert, in den Rohdaten aber enthalten.
 
 Hinweise zur Zuordnung
-- F1 ist im Chat ausdrücklich als FSR benannt. F2 und F3 sind über Chronologie und Signalform (harte Null, sprunghafter Anstieg) dem FSR zugeordnet.
+- F1 ist in den Aufzeichnungen ausdrücklich als FSR benannt. F2 und F3 sind über Chronologie und Signalform (harte Null, sprunghafter Anstieg) dem FSR zugeordnet.
 - P1/P2 (Hände aufgelegt): Dauerplateau ohne erkennbare Atemzyklen; Zuordnung von Eddy bestätigt (21.10.2026).
 - A2 ist gemischt: anfangs aktive Zyklen, ab ~25 s gehaltener Druck mit unregelmäßiger Welligkeit.
 - Bei F2 und P1 wurde die Ruhephase (Nullwerte) am Ende auf 2 s gekürzt; sonst unverändert.
-- Atemkurve 8 wurde im Chat doppelt gesendet und ist nur einmal enthalten.
+- Eine Messreihe lag doppelt vor und ist nur einmal enthalten.

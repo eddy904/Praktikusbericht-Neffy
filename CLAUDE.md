@@ -211,8 +211,7 @@ Als KI-Werkzeug wurde ausschließlich **Claude Code** verwendet. Das wird in Kap
 und Entwicklung der Firmware. **Die Literatursuche wird nicht als KI-Nutzung aufgeführt**, und Kap. 3.1
 (Recherchemethodik) nennt nur Datenbanken, Suchbegriffe und Auswahlkriterien (Entscheidung Eddy,
 21.10.2026). Der Satz „Inhalte, Messwerte und Entscheidungen stammen vom Team; alle Quellen über DOI bzw.
-Originaldokument geprüft“ bleibt. Offen: bei Prof. Buchem klären, welche Form der KI-Angabe die BHT
-erwartet; danach Kap. 4.4.7 und Eigenständigkeitserklärung anpassen.
+Originaldokument geprüft“ bleibt. Kap. 4.4.7 und Eigenständigkeitserklärung bleiben so (Eddy, 26.10.).
 
 ## Harte Regeln
 - Erfinde NIEMALS Messwerte, Ergebnisse, Quellen, Zitate oder Seitenzahlen.

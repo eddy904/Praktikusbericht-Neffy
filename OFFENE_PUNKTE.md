@@ -1,117 +1,33 @@
-# Offene Punkte
+# Offene Punkte (Stand 26.10.2026, abends)
 
-## Material
-- [x] Praxisbericht Neffy 2 liegt in `referenz/` → Analyse: `notizen/analyse_praxisbericht_neffy2.md`
-- [x] BHT-Grafik fürs Titelblatt (`abbildungen/bht_titelseite.pdf`)
-- [ ] Bericht zu Neffy 1 (Dincel & Thomas, 2024) beschaffen
-- [x] Notiz `notizen/Notitzen_Sensoren.txt` gesichtet (Recherche, Testreihenfolge, Messreihen)
-- [x] Atemkurven liegen in `daten/Messdaten_Atemsensorik/` (F1–F3 FSR, P1–P2 aufgelegt, A1–A6 aktiv, 50/200 ms, April 2026)
-  - [x] P1/P2 = Hände nur aufgelegt (bestätigt 21.10.2026)
-  - [x] A3 (Atemkurve 7): zu fest gedrückt, kein falscher Widerstand (bestätigt 21.10.2026)
-  - [x] Messaufbau: ESP32-Entwicklungsboard, nicht Neffy Board (bestätigt, steht in Kap. 4.2)
-  - [x] Plots erzeugt: `daten/plots_atemsensorik.py` → `abbildungen/plots/` (F1, A5 in Kap. 4; P2 vs. A5 für Kap. 5)
-  - [x] FSR: mehrere Festwiderstände (1 kΩ … 1 MΩ) probiert, Einfluss vernachlässigbar, Verhalten blieb binär (Kap. 4.2)
-  - [ ] Velostat: Widerstand wirkt deutlich; Start mit 4,7 kΩ. **Endgültiger Wert?** (LIESMICH nennt 10 kΩ für die Messreihen) + kurze Begründung; Schaltplan
-- [ ] **Ursprüngliche Liste Messdaten (Abgleich):**
-  - `atemkurve_1_kleiner Drucksensor.csv`, `atemkurve_2_kleiner Drucksensor.csv` (FSR)
-  - `atemkurve_3_Velostat.csv`, `atemkurve_4_Velostat ohne mitbewegen.csv` (passiv)
-  - `atemkurve_7_Velostat mit nicht richitgem wiederstand.csv`, `atemkurve_10_Velostat richtig ausgelegt.csv`
-  - Logs aus der Firmware: `logs/pocket-*.csv`, `logs/thermal-*.csv`
-  - Velostat-Messreihe mit 481 Werten à 50 ms: identisch mit einer der atemkurve-Dateien?
-- [ ] Fotos, CAD-Screenshots, Schaltplan in `abbildungen/`
-  - [ ] CAD (a): Körper zusammengebaut, jedes Druckteil in eigener Farbe (weißer Hintergrund, keine Auswahl-Markierung); alte Explosionsansicht gelöscht (23.10.2026)
-  - [ ] CAD (b): Kopf explodiert, nur Boden/Hinterteil/Vorderteil/Deckel
-  - [ ] Fotos Kap. 5: Neffy frontal (auch für Kap. 3) + Hände in den Taschen
-  - [ ] optional: geöffneter Oberkörper mit Magneten, Innenseite mit Klebenaht
-- [x] Firmware-Repo gesichtet → `notizen/analyse_firmware.md`
-- [ ] **Log-Dateien** `logs/pocket-*.csv` und `logs/thermal-*.csv` (per .gitignore nicht im Repo) → nach `daten/`
-- [ ] Präsentation, Notizen in `notizen/`
+Ältere, erledigte Punkte stehen in der Git-Historie dieser Datei. Reviews: `notizen/review_2026-10-26.md`,
+`notizen/review_ars_2026-10-26.md`.
 
-## Formalia / Titelblatt
-- [x] Titelblatt nach Vorlage Neffy 2
-- [x] Labor: Labor für Kommunikation
-- [x] Lehrkraft: Prof. Dr. Ilona Buchem
-- [x] Betreuer: Prof. Dr. Manfred Hild
-- [x] Abgabe: 26.10.2026
-- [x] Ein gemeinsamer Teambericht; Kennzeichnung „wer was“ ganz am Ende
-- [x] Teampartner: Younes Jamil
-- [x] Name: Eddy Werk (nicht „Badre“ – Fehler in der ursprünglichen CLAUDE.md)
-- [ ] Beide Matrikelnummern (erst kurz vor der Abgabe lokal eintragen)
-- [ ] „Praxisbericht“ oder „Praktikumsbericht“? (Neffy 2 nutzt „Praxisbericht“)
-- [ ] Arbeitstitel bestätigen
-- [ ] Wortlaut der Eigenständigkeitserklärung (BHT-Vorgabe)
-- [x] Umfang ~20 Seiten: nicht streng (Eddy, 23.10.2026)
+## Wartet auf das Team
+- [ ] **Thermalsensor-Fix pushen** (Vergleich mit der eigenen Sensortemperatur statt gelernter
+      Raumtemperatur) → danach Firmware-Repo neu lesen und anpassen: 4.2.1, 4.4.2 inkl. Gl. 4.10
+      (Satz zum Zielkonflikt wieder streichen), 5.2.6 (Absatz Sonne/Heizkörper), Tab. 5.1 A1.
+      Offen: Gibt es das Neulernen nach 20 s noch? Erwärmt sich der Sensor im Gehäuse selbst?
+- [ ] **Reichweitenmessung Thermalsensor** (Younes, 0,5–3 m, `tools/thermal_log.py`) → Zahl/Plot in
+      5.2.6, A1 in Tab. 5.1 von „vorläufig“ auf erfüllt/teilweise
+- [ ] **Fotos** nach `abbildungen/fotos/`: Neffy frontal (Abb. 3.1c, 5.1a), Hände in den Taschen (Abb. 5.1b),
+      optional lackiertes Gehäuse (`\todo` in 4.3.4)
+- [ ] **Kürzen:** Vorschläge liegen vor (Chat 26.10.), Entscheidung Eddy
 
-## Inhalt
-- [x] Neffy 3.0 baut auf Neffy 2.0 auf (Raspberry Pi, Schulter- und Kopfbewegung)
-- [x] Dynamixel → Schrittmotoren (mehr Kraft benötigt)
-- [x] Schrittmotoren Körper und Kopf: Baugröße NEMA 17 (Kap. 4.2) – [ ] genaues Modell/Haltemoment, falls bekannt
-- [x] Probleme mit den Schrittmotoren: bei sehr starkem Drücken Stillstand + Geräusche (Kap. 5.4, 6)
-- [x] Haptisches Feedback kam bei Neffy 1 und 2 gut an → Schulter-/Kopfbewegung übernommen
-- [ ] Beleg dafür (Studie/Feedback), falls vorhanden
-- [ ] Zeitraum und Stunden pro Person (für Kap. 2, Zeitaufteilung)
-- [ ] Feingliederung bestätigen (aktuell = Gliederung aus CLAUDE.md)
-- [ ] Anforderungen A1–A4: Entwurf abgleichen, prüfbare Kriterien ergänzen
-- [ ] Aufgabenverteilung „Wer macht was“
-- [x] Thermalsensor D6T-1A-02 integriert
-- [ ] Datenblätter: D6T-1A-02, TMC2225, Schrittmotoren, Velostat
-- [x] Anforderung Anwesenheit: A1 = sitzende Person erkennen, A2 = Meldung an Pi; Pi reagiert auch beim Vorbeigehen (23.10.2026)
-- [ ] **Reichweite Thermalsensor messen** (Daten folgen von Eddy); 2–3 m prüfen – nach Firmware-Werten eher geringer; ruhig sitzende Person > 20 s erkannt?
-- [x] Drucksensoren: FSR (Joy-IT) vs. Velostat, Gründe geklärt
-- [x] Wurde der Dehnungsgurt (Backup) getestet? → nein, nur Idee (Kap. 4.2)
-- [ ] Warum Wechsel von „Sensoren am Pi mit MCP3208“ zum ESP32-Board?
-- [ ] Schaltung der Taschen: Spannungsteiler? Widerstandswert? Schaltplan
-- [x] Gehäuse 4.3: Form, Maße, Teilung, Kleben, Magnete, Drucker, PLA, Nachbearbeitung, Lack (Vincent/Hellweg, Montana GOLD)
-- [x] Keine Toleranz-Testkörper (begrenzte Druckkapazität)
-- [ ] 4.3 Rest: Kleber; viertes Teil der Kopfhülle; Kopf-Hinterteil Schraube und/oder Magnete; Foto fertiges Gehäuse
-- [ ] Nachname Kaspar (Kopfmechanik, Team Programmierung); Spindelantrieb: Lineareinheit aus Kaufteilen, Verbindungsteil Schlitten → Sensoreinsätze vom Team konstruiert (Kap. 4.2) ✔
-- [ ] Maße der Taschen und der Velostat-Fläche
-- [x] Schnittstelle ESP32 ↔ Pi: UART 115200, Befehlssatz Neffy_UART_Interface
-- [ ] A3/A4: Firmware sendet nur entspannt/normal/gestresst, keine Ein-/Ausatemdauer – Ziel anpassen?
-- [ ] Quelle für Atemfrequenz in Ruhe (12–20/min), Grundlage der Einstufung
-- [ ] Wer ist Younes Jamil / LegitimateShake (Teampartner? Team Programmierung?)
-- [x] KI-Nutzung (Claude Code) bei Firmware und Bericht offenlegen → Kap. 4.4.7; Literatursuche nicht mehr als KI-Nutzung genannt (Entscheidung 21.10.2026)
-- [ ] **Bei Prof. Buchem nachfragen, welche Form der KI-Angabe die BHT erwartet** → danach Kap. 4.4.7 und Eigenständigkeitserklärung anpassen
-- [ ] Welche weiteren Messungen gibt es?
+## Kann Claude direkt erledigen (nach Freigabe)
+- [ ] A6 in Tab. 5.1: Ergonomie (Ellbogen zu hoch) im Status abbilden; Anzahl/Spannweite der Probehände,
+      falls bekannt
 
-## Kapitel 5 (Stand 22.10.)
-- [x] Atemsensorik aus Messdaten ausgewertet (Tabelle per `daten/tabelle_kennwerte.py`)
-- [ ] Funktionsnachweis: was funktioniert im Zusammenspiel, Foto des fertigen Neffy 3.0
-- [x] Anwesenheit: ca. 2–3 m beobachtet, reagiert beim Vorbeigehen, Grenze bei Sonne/Heizung
-- [ ] **Messung Anwesenheit** (später): Erkennung in 0,5/1/1,5/2/2,5/3 m mit `tools/thermal_log.py` → Plot + Zahl für A1
-- [ ] Bedienung über Taschen: was funktioniert nicht perfekt?
-- [ ] Wer führt die laufende Studie zu Neffy 3.0 durch?
-- [ ] Messreihen-IDs A1–A6 → V1–V6 umbenennen (Verwechslung mit Anforderungen A1–A10)? Antwort Eddy ausstehend
-- [ ] Tests der Atemerkennung am fertigen Neffy (Erkennungsrate, Einstufung)?
-- [ ] Evaluation A1, A2, A4, A5 bewerten; A3, A6–A9 prüfen
-- [x] Probleme mit den Schrittmotoren konkret (s. o.)
-- [ ] Eigene Ideen bestätigen
+## Abschluss
+- [ ] Matrikelnummern lokal in `matrikelnummern.tex` (nicht committen)
+- [ ] `\usepackage[disable,…]{todonotes}` in `main.tex`; Platzhalter verschwinden damit NICHT
+- [ ] Endkontrolle (Verweise, Abbildungen, Seitenumbrüche)
+- [ ] Pushen – nur auf Eddys Ansage
 
-## Anforderungen (Durchsicht 23.10.2026)
-- [x] A1–A3 neu formuliert (A3 = ursprüngliches passives Ziel → Evaluation „teilweise“)
-- [x] Schwachstelle „Stress-Einstufung nicht validiert“ ergänzt, Ausblick vorgemerkt
-- [ ] A7: prüfbares Kriterium (Taschenmaße vs. Handmaße, z. B. DIN 33402-2 – erst prüfen)
-- [ ] Tests am Roboter (Metronom-Test Atemerkennung, Lasttest A5) – derzeit nicht möglich, Kap. 5 nennt sie als nicht systematisch gemessen
-- [x] Tatsächlicher Hub bei Übungen: max. 20 mm (ähnlich Neffy 2 mit 25 mm); Ziel war mehr Kraft (Kap. 4.2.4)
-- [ ] Kap. 6: Zusammenfassung prüfen – wichtigstes Ergebnis richtig gewichtet?
-- [ ] Schwachstelle `DISABLE_MOTORS` (Name passt nicht zur Funktion, laut Code-Kommentar) behalten oder streichen?
-
-## Theoretischer Ansatz (Beurteilungsbogen: 20 Punkte, Stand 26.10.)
-- [x] Spannungsteiler: Gleichung, Empfindlichkeit, Kennlinie (`daten/plot_spannungsteiler.py`), FSR-Schaltschwelle (Interlink)
-- [x] Erfassungsbereich D6T: Sichtkegel, Mischungsmodell, Abschätzung Reichweite 1,4–2 m (vs. beobachtet 2–3 m)
-- [x] Spindelkraft: Gleichung F = 2πηM/p
-- [ ] **Haltemoment des Motors** (Produktseite/Datenblatt) + **Wirkungsgrad η mit Quelle** → F ausrechnen, mit 20–40 N vergleichen
-- [ ] Taschenmaße aus Handmaßen (A7) – Maße von Eddy, Quelle (DIN 33402-2?)
-
-## Nach Review 26.10.2026 (`notizen/review_2026-10-26.md`, Textänderungen umgesetzt)
-- [x] A3 → „nicht erfüllt“, neue Zeile A3* (aktive Erfassung); A1 → „vorläufig“ (Test ruhiges Sitzen > 20 s)
-- [x] Beschleunigungssensor an Kap. 3 angeglichen; Verallgemeinerung in Kap. 2 auf eigenen Aufbau beschränkt
-- [x] Antrieb: Heben = Motormoment überschritten, von oben = fehlende Selbsthemmung; Motorstrom erwähnt
-- [x] Klassengrenzen 5,5 / 10,5; „Atemtakt angeben“ in Einleitung/Fazit; Tabelle Anwesenheitssensoren (Tab. 3.1)
-- [x] Keine weiteren Tests am Roboter – Validierung über die laufende Studie (Entscheidung Eddy)
-- [x] **27 Ω:** im fertigen Aufbau ausprobiert (größere Velostat-Fläche → kleinerer R_F erwartet), so in 4.2.3 beschrieben (Eddy, 26.10.)
-- [x] A3* auch in Tab. 2.1 als „im Projektverlauf ergänzt“; Sätze „gestresst nicht erreicht“ gestrichen
-- [x] **Messreihen:** zwei Personen, beide Mitglieder des Teams Sensorik (in 5.2.1 eingetragen)
-- [x] **A6:** Taschen ca. 20 × 16 × 6 cm (L × B × H), Druckbereich ca. 14 × 8 cm, leichte Klicks mittig am zuverlässigsten (Eddy, 26.10.) → 4.2.3 als Vergleich mit Handmaßen formuliert
-- [ ] Schwächen Neffy 2 (Kap. 2.1): Quelle? Derzeit als „Laborbetrieb“ formuliert
-- [ ] Kap. 7: neuer Absatz „Rückblickend würden wir …“ prüfen (Eddy/Younes)
+## Entschieden (zur Erinnerung)
+- KI-Angabe (4.4.7, Eigenständigkeitserklärung) bleibt so (Eddy, 26.10.)
+- Keine weiteren Tests am Roboter; Validierung über die laufende Studie
+- 27 Ω: im Aufbau ermittelt; Erwärmung ausprobiert, unkritisch – im Bericht nicht weiter ausgeführt
+- Stand der Technik wird nicht erweitert (Länge); höchstens ersetzen
+- Schrittmotoren und Lineareinheit: von Charly Goerke ausgewählt, im Bericht genannt (2.3, 4.2.4, 5.5)
+- Neffy-1-Bericht (Dincel & Thomas) nicht beschafft; Neffy 1.0 über `thomas2025neffy` belegt
