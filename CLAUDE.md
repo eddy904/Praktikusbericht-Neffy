@@ -108,6 +108,8 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
   der Einfluss war vernachlässigbar, das Verhalten blieb binär; im Bericht nur ein Satz dazu. Beim Velostat
   wirkt der Widerstand deutlich; Messreihen mit 10 kΩ; im fertigen Roboter neu gebaute, größere Sensoreinsätze (gleicher
   Aufbau) mit 27 Ω, im Aufbau ermittelt, feinere Auflösung; keine eigenen Messreihen dazu nötig.
+  Auf dem Neffy Board sind dafür R41/R42 (im Entwurf 10 kΩ) gegen 27 Ω getauscht (Eddy, 26.10.;
+  Schaltplan und 3D-Ansicht in Anhang A, Dateien `abbildungen/neffy_board_*.jpeg`).
   4,7 kΩ im Bericht nicht erwähnen (Eddy, 26.10.). Plots: `python daten/plots_atemsensorik.py` → `abbildungen/plots/`.
 - Noch nicht im Ordner: Firmware-Logs `logs/pocket-*.csv` und `logs/thermal-*.csv`.
   Thermalsensor D6T-1A-02 ist final integriert.
