@@ -154,9 +154,12 @@ der Abstand als natürlicher Filter wirkt. Der über \ac{I2C} angebundene Sensor
 16\,€ teurer als einfache Infrarotsensoren, versprach aber eine zuverlässigere Erkennung bei
 gutem Preis-Leistungs-Verhältnis und von einem etablierten Hersteller. Ein Vergleichstest
 entfiel, da bereits der D6T die Anforderungen im Betrieb erfüllte; dies beruht bisher auf
-Beobachtung (Abschnitt~\ref{sec:erg_anwesenheit}). Da der Sensor nur einen Messpunkt hat,
-unterscheidet er nicht, ob eine Person vor dem Roboter sitzt oder an ihm vorbeigeht; er meldet
-lediglich, dass sich eine warme Person im Sichtfeld befindet.
+Beobachtung (Abschnitt~\ref{sec:erg_anwesenheit}). Der Sensor hat nur einen Messpunkt und
+meldet lediglich, ob sich eine Person im Sichtfeld befindet. Ob sie vor dem Roboter sitzt oder
+an ihm vorbeigeht, ergibt sich jedoch indirekt aus der Dauer der Meldung: Geht jemand vorbei,
+wird die Anwesenheit nur kurz gemeldet; Neffy wacht auf, fährt kurz hoch und gleich wieder
+herunter. Bleibt die Person vor dem Roboter, bleibt auch die Meldung bestehen und Neffy wach.
+Eine eigene Unterscheidung zwischen Sitzen und Vorbeigehen war deshalb nicht nötig.
 
 \paragraph{Abschätzung des Erfassungsbereichs.}
 Der Sichtwinkel bestimmt, über welche Fläche der Sensor mittelt. Bei einem Sichtwinkel von

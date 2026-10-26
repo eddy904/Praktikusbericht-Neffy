@@ -143,6 +143,9 @@ Tabellen am 26.10. auf Ausrichtung geprüft.
 3. **Thermalmessung** (0,5–3 m, `tools/thermal_log.py` im Firmware-Repo) → Plot + Zahl für A1 in 5.2.6;
    dabei prüfen, ob eine ruhig sitzende Person > 20 s erkannt bleibt. Danach A1 in Tab. 5.1 von
    „vorläufig“ auf erfüllt/teilweise setzen. Sonst Satz „nur beobachtet, nicht systematisch gemessen“ + Ausblick.
+3a. **Thermalsensor-Firmware wird noch geändert (Eddy, 26.10.):** Auf Eddys Bescheid das Firmware-Repo
+   neu lesen und 4.2.1, 4.4.2, 5.2.6 und Tab. 5.1 (A1/A2) abgleichen. Sitzen vs. Vorbeigehen wird
+   indirekt über die Dauer der Meldung unterschieden (kurz hoch- und runterfahren beim Vorbeigehen).
 4. **Abschluss:** `\usepackage[disable,…]{todonotes}` in `main.tex`; Endkontrolle; pushen nur auf Eddys Ansage.
 
 ## Technische Hinweise für Claude
