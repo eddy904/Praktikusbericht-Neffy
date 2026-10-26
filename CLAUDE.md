@@ -24,7 +24,7 @@
 - Abgabeformat: LaTeX (VS Code + LaTeX Workshop), Literatur über biblatex (`literatur.bib`)
 - Umfang: **ca. 20 Seiten** (laut Eddy nicht streng, 23.10.2026) von Einleitung bis Ende der Einschätzung; Titelblatt, Verzeichnisse,
   Literatur, Anhang und Eigenständigkeitserklärung zählen nicht mit [bitte bestätigen]
-- Abgabe: **26.10.2026**
+- Abgabe: **Datum klären** (laut Eddy nicht der 26.10.2026; Titelblatt noch anpassen)
 - Sprache: Deutsch
 
 ## Referenzbericht
@@ -109,19 +109,48 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 - Noch nicht im Ordner: Firmware-Logs `logs/pocket-*.csv` und `logs/thermal-*.csv`.
   Thermalsensor D6T-1A-02 ist final integriert.
 
-## Arbeitsstand (23.10.2026)
-| Kapitel | Stand |
-|---|---|
-| Titelblatt | fertig nach Neffy-2-Vorlage; fehlen: Matrikelnummern |
-| 1 Einleitung | offen (wird am Schluss geschrieben) |
-| 2 Ziel der Arbeit | Fließtext fertig; Anforderungen A1–A3 überarbeitet (23.10.), A7 ohne prüfbares Kriterium; fehlen: Zeitraum/Stunden, KI-Zielbild |
-| 3 Stand der Technik | Fließtext fertig; Vergleich Neffy 1.0/2.0/3.0; Foto Neffy 3.0 fehlt |
-| 4 Methoden | Fließtext fertig inkl. 4.3 Gehäuse und Plots; Bilder fehlen (CAD-Teilung Körper + Kopf, Fotos); zu lang → kürzen |
-| 5 Diskussion | Entwurf fertig (Messwerte, Evaluation A1–A10, Schwachstellen); offen: Reichweitenmessung Thermal, Fotos |
-| 6 Fazit | Entwurf fertig (23.10.): Zusammenfassung + Ausblick (Taster, kleineres Gehäuse, am Stück drucken, stärkerer Motor/Servo, Kopf: Metallzahnräder/Riemen, Validierung) |
-| 7 Einschätzung | offen |
-Seitenstand: Kap. 1–5 ≈ 25 S. (mit todo-Boxen) → mit 6, 1, 7 ca. 30 S.; Ziel ~20 S. ist nicht streng.
-Reihenfolge danach: 1 → 7 → Kürzen → Kennzeichnung „wer was“.
+## Arbeitsstand (26.10.2026)
+| Kapitel | Stand | Fehlt noch |
+|---|---|---|
+| Titelblatt | fertig (Eddy Werk, Younes Jamil) | Matrikelnummern (erst lokal vor Abgabe), Abgabedatum prüfen |
+| 1 Einleitung | **leer** | Interview: Zielgruppe, Aufhänger, Stress-Quelle ja/nein |
+| 2 Ziel | Fließtext; 2.2 + 2.3 grau `\unsicher` | Zeitraum/Stunden, Zeitaufteilung, Tabelle „wer macht was“, A7 Taschenmaße + Quelle |
+| 3 Stand der Technik | Fließtext, Vergleich Neffy 1/2/3; 3.1 grau `\unsicher` | Foto Neffy 3.0; Kamera-Punkt ohne Quelle (belegen oder streichen) |
+| 4 Methoden | Fließtext inkl. **Theorie** (Spannungsteiler Gl./Abb., D6T-Sichtfeld + Reichweitenabschätzung 1,4–2 m, Spindelkraft-Gl.), CAD-Abb. 4.3; 4.1 Schnittstelle grau, UART-Tabelle per `\iffalse` raus | Haltemoment Motor + Wirkungsgrad η (Quelle) → Spindelkraft rechnen; Motorhersteller (Iverntech?); Nachname Kaspar; Festwiderstand final; Kleber; Druckermodelle bestätigen; Schaltplan |
+| 5 Diskussion | Entwurf; Kennwerte als Diagramm (`daten/plot_kennwerte.py`), Tabelle in Anhang D; Evaluation A1–A10 | Fotos (frontal, Hände in Taschen); Anwesenheitsmessung 0,5–3 m mit `tools/thermal_log.py` (Firmware-Repo) → Plot + A1; **5.5 Eigene Ideen bestätigen**; wer führt die Studie durch |
+| 6 Fazit | Entwurf (Younes, 23.10.) | ggf. auf 1 Seite verdichten |
+| 7 Einschätzung | 7.4 Erfahrungen + 7.5 Fazit fertig | 7.1 Studium, 7.2 Praktikumsalltag, 7.3 Erwartungen (Interview) |
+| Anhang | Anhang D Kennwerte-Tabelle | Code-Auszüge, CAD-Zeichnungen, Schaltplan, Verweis Rohdaten |
+| Erklärung | beide Unterschriftszeilen | Wortlaut der BHT |
+Umfang: Kap. 1–7 ca. 29 S. (mit Markern); nicht streng. Kürzen Stufe 2 erledigt.
+
+## Weiteres Vorgehen (für die nächste Sitzung, auch auf einem anderen PC)
+1. **Kap. 1 Einleitung** im Interview schreiben (siehe Tabelle).
+2. **Kap. 7.1–7.3** im Interview schreiben.
+3. **Offene Fakten** bei Eddy einsammeln (`OFFENE_PUNKTE.md`), v. a. Haltemoment/Produktlink Motor,
+   Taschenmaße, Nachname Kaspar, Festwiderstand, Zeitraum/Stunden.
+4. **Entscheidungen Eddy/Younes:** grau markierte Abschnitte 2.2, 2.3, 3.1, 4.1 behalten/ändern/streichen;
+   Messreihen A1–A6 → V1–V6 umbenennen (Verwechslung mit Anforderungen A1–A10)?; Schwachstelle
+   `DISABLE_MOTORS` behalten?
+5. **Material einbauen:** Fotos nach `abbildungen/fotos/` (`neffy3_frontal.jpg`, `haende_taschen.jpg`),
+   Schaltplan als `abbildungen/schaltplan.pdf`, Thermal-Messung nach `daten/`.
+6. **Beurteilungsbogen** (Tabelle unten) gezielt bedienen: Fotos für „Praktische Durchführung“ (30),
+   Theorie ergänzen (20), 5.5 „Eigene Ideen“ (10), Mehrleistung als Sonderpunkte herausstellen (10).
+7. **Abschluss:** Kennzeichnung „wer was“ (Eddy: SolidWorks/CAD/Gehäuse; Younes: ESP32-Firmware) als
+   Tabelle in Kap. 2.4; KI-Angabe mit Prof. Buchem abstimmen; Marker entfernen
+   (`\usepackage[disable,…]{todonotes}` in `main.tex`); Abbildungen/Leerseiten optimieren; ggf. weiter
+   kürzen; Matrikelnummern lokal; Abgabedatum; Abschlussprüfung gegen Kriterien und Formalia.
+
+## Technische Hinweise für Claude
+- Build: `pdflatex main` → `biber main` → 2× `pdflatex main`. Plots/Tabellen neu erzeugen mit
+  `python daten/plots_atemsensorik.py`, `daten/plot_kennwerte.py`, `daten/plot_spannungsteiler.py`,
+  `daten/tabelle_kennwerte.py` (matplotlib mit pgf-Backend, pandas).
+- **Bash-Heredocs verschlucken Backslashes** (`\\` → `\`, `\b` …): LaTeX-Ersetzungen nicht inline per
+  Heredoc-Python machen, sondern Skript mit dem Write-Tool als Datei anlegen und dann ausführen – oder das
+  Edit-Tool nutzen. Danach nach Zeilen mit einzelnem `\` am Ende suchen.
+- Viele Dateien haben CRLF-Zeilenenden; Skripte sollten CRLF erhalten.
+- Unsichere Abschnitte: Makro `\unsicher{…}` (gelber Kasten) + `{\color{gray} …}`.
+- Randnotizen (`\todo`) nie in Tabellen/Abbildungen – dort `\todoi` (inline), sonst „Float(s) lost“.
 
 Wichtige Einordnung (Kap. 3/4): Ommie bestimmt die Atemphase trotz Eigenbewegung des Roboters mit einem
 eigenen Datensatz und einem neuronalen Netz (`matheus2023phase`). Unser Argument gegen den
