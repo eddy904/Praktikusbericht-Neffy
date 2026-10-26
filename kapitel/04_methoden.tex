@@ -53,7 +53,7 @@ er dem Raspberry Pi ab.
     \draw[->] (esp) -- (led);
     \draw[->] (esp) -- (amp);
   \end{tikzpicture}
-  \caption{Systemarchitektur von Neffy~3.0 (Aufgabenbereich Team Sensorik: links und unten)}
+  \caption[Systemarchitektur von Neffy~3.0]{Systemarchitektur von Neffy~3.0 (Aufgabenbereich Team Sensorik: links und unten)}
   \label{fig:architektur}
 \end{figure}
 
@@ -168,7 +168,7 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
 
 \begin{table}[htbp]
   \centering
-  \caption{Vergleich der getesteten Drucksensoren (+ geeignet, $\circ$ eingeschränkt, -- ungeeignet)}
+  \caption[Vergleich der getesteten Drucksensoren]{Vergleich der getesteten Drucksensoren (+ geeignet, $\circ$ eingeschränkt, -- ungeeignet)}
   \label{tab:bewertung_drucksensor}
   \small
   \begin{tabular}{@{}>{\raggedright\arraybackslash}p{7.2cm} c c@{}}
@@ -193,7 +193,7 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\linewidth]{plots/vergleich_F1_P2_A5.pdf}
-  \caption{Spannungsverlauf der Drucksensoren: (a) \ac{FSR} bei rhythmischem Drücken, nahezu
+  \caption[Spannungsverlauf der Drucksensoren (\acs{FSR} und Velostat)]{Spannungsverlauf der Drucksensoren: (a) \ac{FSR} bei rhythmischem Drücken, nahezu
     binär; (b) Velostat mit nur aufgelegten Händen; (c) Velostat mit aktivem Mitdrücken beim
     Einatmen, Punkte markieren die erkannten Atemzüge (eigene Messung am
     ESP32-Entwicklungsboard)}
@@ -248,7 +248,7 @@ fertigen Aufbau abgestimmt, bis die Taschen zuverlässig reagierten.
     \draw[->, thick] (-0.6,1.325) -- (0,1.325);
     \node[left, align=right, font=\scriptsize] at (-0.6,0.95) {zum\\ESP32-S3};
   \end{tikzpicture}
-  \caption{Schematischer Lagenaufbau eines Sensoreinsatzes (nicht maßstäblich)}
+  \caption[Lagenaufbau eines Sensoreinsatzes]{Schematischer Lagenaufbau eines Sensoreinsatzes (nicht maßstäblich)}
   \label{fig:taschenaufbau}
 \end{figure}
 
@@ -284,7 +284,7 @@ Nachziehen einer Schraube ändert.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.85\linewidth]{plots/spannungsteiler.pdf}
-  \caption{Berechnete Kennlinie des Spannungsteilers nach Gleichung~\ref{eq:teiler} für
+  \caption[Kennlinie des Spannungsteilers für verschiedene Festwiderstände]{Berechnete Kennlinie des Spannungsteilers nach Gleichung~\ref{eq:teiler} für
     verschiedene Festwiderstände ($U_\mathrm{B} = 3{,}3$\,V). Punkte: größte Empfindlichkeit bei
     $R_\mathrm{S} = R_\mathrm{F}$; hinterlegt: Schaltschwelle typischer \acp{FSR}
     nach~\cite{interlink2002fsr}}
@@ -407,7 +407,7 @@ Schrittmotor der Kopfbewegung.
       \caption{Unterkörper: Schale und hintere Klappe}
     \end{subfigure}
   \end{minipage}
-  \caption{CAD-Modell des Gehäuses von Neffy~3.0; in (b) und (c) ist jedes Druckteil farbig
+  \caption[CAD-Modell des Gehäuses von Neffy~3.0]{CAD-Modell des Gehäuses von Neffy~3.0; in (b) und (c) ist jedes Druckteil farbig
     markiert (Explosionsansicht)}
   \label{fig:gehaeuse}
 \end{figure}
