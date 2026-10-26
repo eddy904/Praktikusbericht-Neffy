@@ -113,7 +113,7 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 | Kapitel | Stand | Fehlt noch |
 |---|---|---|
 | Titelblatt | fertig (Eddy Werk, Younes Jamil) | Matrikelnummern (erst lokal vor Abgabe), Abgabedatum prüfen |
-| 1 Einleitung | **leer** | Interview: Zielgruppe, Aufhänger, Stress-Quelle ja/nein |
+| 1 Einleitung | fertig (26.10., 1 S.): Stress → Ommie/Neffy-Studien als einzige Quellen; Zielgruppe bewusst weit (Alltag, Kinder, belastete Gruppen), Projekt sucht noch den besten Einsatzfall; Kernbotschaft „vorgeben → reagieren“, sofort relativiert (geplant vollautomatisch, umgesetzt mit aktiver Mitwirkung) | – |
 | 2 Ziel | Fließtext; 2.2 + 2.3 grau `\unsicher` | Zeitraum/Stunden, Zeitaufteilung, Tabelle „wer macht was“, A7 Taschenmaße + Quelle |
 | 3 Stand der Technik | Fließtext, Vergleich Neffy 1/2/3; 3.1 grau `\unsicher` | Foto Neffy 3.0; Kamera-Punkt ohne Quelle (belegen oder streichen) |
 | 4 Methoden | Fließtext inkl. **Theorie** (Spannungsteiler Gl./Abb., D6T-Sichtfeld + Reichweitenabschätzung 1,4–2 m, Spindelkraft-Gl.), CAD-Abb. 4.3; 4.1 Schnittstelle grau, UART-Tabelle per `\iffalse` raus | Haltemoment Motor + Wirkungsgrad η (Quelle) → Spindelkraft rechnen; Motorhersteller (Iverntech?); Nachname Kaspar; Festwiderstand final; Kleber; Druckermodelle bestätigen; Schaltplan |

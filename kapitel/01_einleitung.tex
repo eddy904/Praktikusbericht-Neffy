@@ -4,12 +4,41 @@
 \chapter{Einleitung}
 \label{kap:einleitung}
 
-\todoi{Hinführung: Stress im Alltag/Studium, Wirkung von Atemübungen,
-soziale Roboter als Begleiter (mit Quellen).}
+Stress betrifft sehr viele Menschen, sei es durch Arbeit, Studium oder belastende
+Lebensumstände. Eine einfache Möglichkeit, Anspannung zu begegnen, sind angeleitete
+Atemübungen mit einem ruhigen, gleichmäßigen Rhythmus aus Ein- und Ausatmen. Soziale Roboter
+können solche Übungen nicht nur über Bild und Ton anleiten, sondern den Atemrhythmus auch
+körperlich spürbar machen. Der an der Yale University entwickelte Roboter Ommie gibt Einatmen,
+Halten und Ausatmen über haptische Interaktion und Audio vor~\cite{matheus2022ommie}. Im Labor
+für Kommunikation der \ac{BHT} wurde dieses Prinzip mit Neffy aufgegriffen: In einer
+Pilotstudie mit Neffy~1.0 sanken die Angstwerte der Teilnehmenden nach der Übung
+signifikant~\cite{thomas2025neffy}. In einer Studie mit 14 Geflüchteten aus der Ukraine
+empfanden die Teilnehmenden ihren Stress nach einer Übung mit Neffy~2.0 als deutlich geringer
+als nach einer reinen Audioanleitung~\cite{buchem2026neffy2}.
 
-\todoi{Kurzvorstellung Neffy: Tischroboter (Oberkörper ohne Arme,
-Bildschirm als Gesicht), der Atemübungen anleitet; Hub-Mechanismus
-visualisiert den Atemrhythmus.}
+Die Zielgruppe von Neffy ist bewusst weit gefasst. Denkbar ist der Einsatz im Alltag ebenso
+wie bei Kindern oder bei besonders belasteten Gruppen wie in der Studie zu Neffy~2.0. Ein
+Anliegen des Gesamtprojekts ist es, herauszufinden, in welchen Anwendungsfällen ein solcher
+Roboter am meisten Sinn ergibt; möglich sind später auch verschiedene Varianten für
+unterschiedliche Einsatzbereiche. Neffy~3.0 ist in diesem Sinne ein Zwischenschritt in einem
+fortlaufenden Entwicklungsprozess.
 
-\todoi{Worum es in diesem Bericht geht und Aufbau des Berichts
-(Kapitel~\ref{kap:ziel} bis Kapitel~\ref{kap:einschaetzung}).}
+Neffy~1.0 und 2.0 geben den Atemrhythmus vor, nehmen ihr Gegenüber aber nicht wahr. Mit
+Neffy~3.0 soll sich das ändern: Der Roboter soll erkennen, dass jemand vor ihm sitzt, die
+Atmung der Nutzer:innen erfassen und darauf mit einer passenden Übung reagieren. Ursprünglich
+war dafür eine vollautomatische Erfassung vorgesehen, bei der die Atmung allein über die
+aufliegenden Hände erkannt wird. Wie Kapitel~\ref{kap:diskussion} zeigt, ließ sich das mit der
+gewählten Sensorik nicht zuverlässig umsetzen. Die umgesetzte Lösung erfasst die Atmung, wenn
+die Nutzer:innen beim Einatmen aktiv in die Schultertaschen drücken; sie setzt also ihre
+bewusste Mitwirkung voraus.
+
+Dieser Bericht beschreibt den Beitrag des Teams Sensorik zu Neffy~3.0. Das Team war zunächst
+für die Anwesenheits- und die Atemerkennung zuständig und übernahm im Verlauf des Projekts
+zusätzlich die Konstruktion und Fertigung des neuen Gehäuses. Kapitel~\ref{kap:ziel} legt die
+Ziele, die Anforderungen und die Organisation des Projekts dar. Kapitel~\ref{kap:stand}
+ordnet die gewählten Verfahren in den Stand der Technik ein und vergleicht Neffy~3.0 mit
+seinen Vorgängern. Kapitel~\ref{kap:methoden} beschreibt Systemarchitektur, Sensorik,
+Gehäuse und Firmware, Kapitel~\ref{kap:diskussion} die Ergebnisse, die Messwerte und die
+Bewertung gegen die Anforderungen. Kapitel~\ref{kap:fazit} fasst die Arbeit zusammen und
+gibt einen Ausblick, Kapitel~\ref{kap:einschaetzung} enthält unsere persönliche Einschätzung
+des Praktikums.
