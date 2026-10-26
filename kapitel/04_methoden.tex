@@ -59,8 +59,7 @@ er dem Raspberry Pi ab.
 
 \subsection*{Schnittstelle zum Raspberry Pi}
 
-\unsicher{Schnittstelle und Abbildung zum Ablauf: Inhalt noch offen (Abstimmung Eddy/Younes)}
-{\color{gray}Beide Steuereinheiten kommunizieren über \ac{UART} mit 115\,200\,Baud. Jede Nachricht hat
+Beide Steuereinheiten kommunizieren über \ac{UART} mit 115\,200\,Baud. Jede Nachricht hat
 das Format \texttt{FA <ID> <Länge> <Nutzdaten>}; Zahlenwerte werden als ganze Zahlen mit
 dem Faktor~10 übertragen, etwa Positionen in Zehntelmillimetern. Der Befehlssatz ist in
 der gemeinsamen Bibliothek Neffy\_UART\_Interface festgelegt, die vom Labor bereitgestellt
@@ -97,11 +96,10 @@ Anhang~\ref{anh:code}.
 \fi
 
 Abbildung~\ref{fig:sequenz} zeigt beispielhaft, wie die Befehle während einer
-Interaktion zusammenspielen.}
+Interaktion zusammenspielen.
 
 \begin{figure}[htbp]
   \centering
-  \color{gray}
   \begin{tikzpicture}[
       >={Stealth}, font=\small,
       msg/.style = {->, shorten >=1pt},
@@ -129,7 +127,6 @@ Interaktion zusammenspielen.}
   \caption{Beispielhafter Ablauf der Kommunikation während einer Interaktion (vereinfacht)}
   \label{fig:sequenz}
 \end{figure}
-\todo{Ablauf aus Sicht des Pi so richtig? (z.\,B. Begrüßung, Übungsauswahl)}
 
 \section{Hardware und Sensorik}
 \label{sec:hardware}
@@ -303,14 +300,13 @@ Kupferfolie als zweiter Elektrode und einem 3D-gedruckten Rahmen mit Gewinden, �
 Einsatz zusammengehalten und in der Tasche verschraubt wird. Den oberen Abschluss bildet ein
 Silikonstück. In jeder
 Tasche liegen außerdem zwei Reihen mit je vier \acp{LED}.
-\todo{Maße der Taschen und der Velostat-Fläche}
 
 Im ersten Aufbau wurde die Kupferfolie mit ihrer Klebeseite zum Velostat verklebt. Die
 Klebeseite leitete jedoch nicht zuverlässig genug. Da lediglich beidseitig Kontakt mit
 leitendem Material bestehen muss und die abführenden Drähte die Folie ohnehin fixieren,
-wird seitdem nur noch die nicht klebende, leitende Seite der Kupferfolie als Kontaktfläche
-genutzt. Mit diesem Aufbau funktionierten die Taschen nach einigen Tests zufriedenstellend.
-\todo{So richtig beschrieben? (Klebeseite zum Grundkörper, leitende Seite zum Velostat)}
+wird seitdem nur noch die nicht klebende, leitende Seite der Kupferfolie als Kontaktfläche zum
+Velostat genutzt; die Klebeseite zeigt zum Grundkörper. Mit diesem Aufbau funktionierten die
+Taschen nach einigen Tests zufriedenstellend.
 
 \begin{figure}[htbp]
   \centering
@@ -487,17 +483,16 @@ Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
 
 Jedes der großen Teile benötigte 15 Stunden Druckzeit oder mehr. Gedruckt wurde auf
 Druckern vom Typ Prusa MK4S und Prusa i3 MK3S im \ac{FDM}-Verfahren aus PLA.
-\todo{Drucker-Modelle so richtig?}
 
 \subsection{Verbindung der Teile}
 \label{sec:gehaeuse_verbindung}
 
 Ursprünglich war vorgesehen, die Teile über Passstifte nach dem Prinzip Rundloch und Langloch
 auszurichten. In der Umsetzung wurden jedoch zunächst nur Rundlöcher verwendet, und schließlich
-wurden die Teile von Ober- und Unterkörper fast überall direkt miteinander verklebt. Viele der
+wurden die Teile von Ober- und Unterkörper fast überall direkt mit Sekundenkleber
+verklebt. Viele der
 vorgesehenen Bohrungen wurden dadurch nicht mehr benötigt. Eine wichtige Erkenntnis aus der
 Konstruktion war, dass sich mit Kleben deutlich mehr lösen lässt als zunächst angenommen.
-\todo{Welcher Kleber?}
 
 Lösbar sind nur die Verbindungen, über die das Innenleben zugänglich bleibt
 (Tabelle~\ref{tab:gehaeuse_teile}, Anforderung~A8). Ein modularer Aufbau war ein bewusstes
@@ -637,7 +632,9 @@ beschriebenen aktiven Erfassung aufgegeben.
 Unter jeder Tasche liegt ein Streifen mit acht \acp{LED}, dazu kommt ein Ring mit zwölf
 \acp{LED}. Ihre Helligkeit folgt der Kopfposition: Bei gesenktem Kopf glimmen sie schwach, in
 der Aufwachposition leuchten sie voll. Da das Auge Helligkeit nicht linear wahrnimmt, wird
-die Helligkeit kubisch über den Stellweg verteilt.
+die Helligkeit kubisch über den Stellweg verteilt. Während der Atemerkennung geben die \acp{LED}
+eine direkte Rückmeldung: Beim Einatmen, also solange in die Taschen gedrückt wird, werden sie
+heller, beim Ausatmen wieder dunkler~\cite{jamil2026mainboard}.
 
 \subsection{Softwareablage, Build und Tests}
 \label{sec:sw_ablage}
@@ -659,11 +656,13 @@ Datenverkehr zwischen beiden Steuereinheiten im Klartext an.
 \subsection{Einsatz von KI-Werkzeugen}
 \label{sec:sw_ki}
 
-Als \ac{KI}-Werkzeug wurde ausschließlich Claude Code (Anthropic) eingesetzt. Beim Bericht
-unterstützte es die Gliederung, das Ausformulieren der von den Autoren gelieferten Inhalte,
-den Satz in \LaTeX{} und die Analyse der Firmware. Außerdem wurde es bei der Entwicklung
-der Firmware und der Auswerteskripte eingesetzt, mit denen die Diagramme direkt aus den
-Messdaten erzeugt werden (\texttt{daten/plots\_atemsensorik.py}). Inhalte, Messwerte und Entscheidungen stammen vom Team; alle
+Als \ac{KI}-Werkzeug wurde ausschließlich Claude Code (Anthropic) eingesetzt. Der Quellcode der
+Firmware wurde vollständig mit Claude Code geschrieben; Ideen, Funktionsumfang und Aufbau der
+Firmware wurden dabei vom Team vorgegeben und gemeinsam mit dem Werkzeug ausgearbeitet. Geprüft
+wurde der Code am Neffy Board, unter anderem mit eigenen Testprogrammen für die einzelnen
+Komponenten (Abschnitt~\ref{sec:sw_ablage}). Ebenso entstanden die Auswerteskripte, mit denen
+die Diagramme direkt aus den Messdaten erzeugt werden (\texttt{daten/plots\_atemsensorik.py}).
+Beim Bericht wurde Claude Code für den Satz in \LaTeX{} und zur Unterstützung beim Formulieren
+genutzt. Inhalt, Struktur, Messwerte und Entscheidungen stammen vom Team; alle
 Literaturangaben wurden anhand der DOI bzw.\ des Originaldokuments überprüft.
 \todo{KI-Angabe mit Prof.\ Buchem abstimmen (welche Form erwartet die BHT?); danach diesen Abschnitt und die Eigenständigkeitserklärung anpassen}
-\todoi{Wofür wurde Claude Code bei der Firmware eingesetzt, und wie wurde der Code geprüft (Hardwaretests)?}

@@ -100,17 +100,16 @@ eine Mitarbeiterin zuständig.
 \section{Anforderungsdefinition}
 \label{sec:anforderungen}
 
-\unsicher{Abschnitt 2.2 noch offen: behalten oder überarbeiten? (Abstimmung Eddy/Younes)}
-{\color{gray}Aus der Zielstellung wurden die Anforderungen in Tabelle~\ref{tab:anforderungen}
+Aus der Zielstellung wurden die Anforderungen in Tabelle~\ref{tab:anforderungen}
 abgeleitet. Sie beziehen sich auf die Aufgaben des Teams Sensorik und dienen in
-Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.}
+Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
 
 \begin{table}[htbp]
   \centering
   \caption{Anforderungen an Neffy~3.0 im Aufgabenbereich des Teams Sensorik
     (F = funktional, NF = nicht-funktional)}
   \label{tab:anforderungen}
-  \small\color{gray}
+  \small
   \begin{tabular}{@{}l p{7.4cm} l p{4.4cm}@{}}
     \toprule
     Nr. & Anforderung & Art & Prüfkriterium \\
@@ -134,7 +133,7 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.}
        & NF & Abgleich mit Zielbild \\
     A7 & Die Hände liegen gesichert und angenehm in Schultertaschen und rutschen nicht ab;
          auch größere Hände finden Platz.
-       & NF & Taschenmaße aus großen Handmaßen plus Zuschlag \todoi{Maße, Quelle} \\
+       & NF & Hände unterschiedlicher Größe passen hinein und rutschen beim Hub nicht ab \\
     A8 & Schultern bzw.\ Deckel sind abnehmbar, sodass Innenleben und Elektronik gut
          zugänglich sind.
        & NF & Schultern ohne Werkzeug abnehmbar, Unterkörper verschraubt \\
@@ -146,19 +145,6 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.}
     \bottomrule
   \end{tabular}
 \end{table}
-
-\section{Übergeordnete Fragestellung}
-\label{sec:fragestellung}
-
-\unsicher{Abschnitt 2.3 noch offen: Fragestellung behalten? (Abstimmung Eddy/Younes)}
-{\color{gray}Aus der Zielstellung ergibt sich die übergeordnete Fragestellung dieser Arbeit:
-
-\begin{center}
-  \fbox{\parbox{0.85\linewidth}{\centering\itshape
-    Wie kann Neffy durch Sensorik und ein neu gestaltetes Gehäuse von einem
-    ablaufgesteuerten Objekt zu einem Roboter weiterentwickelt werden, der seine
-    Umgebung wahrnimmt und mit den Nutzer:innen interagiert?}}
-\end{center}}
 
 \section{Projektorganisation}
 \label{sec:organisation}
@@ -185,7 +171,39 @@ Befehlssatz: Der Raspberry Pi sendet Bewegungsbefehle und startet die Atemerkenn
 der ESP32-S3 meldet Anwesenheit, Eingaben über die Taschen und das Ergebnis der
 Atemerkennung zurück. Das Protokoll wird in Abschnitt~\ref{sec:architektur} beschrieben.
 
-% Aufgabenverteilung pro Person: wird ganz am Ende ergänzt (Kennzeichnung „wer was“)
+\subsection*{Aufgabenverteilung im Team Sensorik}
+
+Tabelle~\ref{tab:wer_was} zeigt, wer im Team Sensorik welche Aufgaben übernommen hat. Der
+Arbeitsaufwand war insgesamt gleichmäßig auf beide verteilt, die Aufgaben wurden nach Bedarf
+vergeben. Grob lag die Hardware bei Eddy Werk und die Software bei Younes Jamil. Sobald die
+Programmierung und die Überwachung der Druckaufträge erledigt waren, arbeiteten beide gemeinsam
+am Gehäuse weiter.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Aufgabenverteilung im Team Sensorik}
+  \label{tab:wer_was}
+  \small
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{9.2cm} l@{}}
+    \toprule
+    Aufgabe & Verantwortlich \\
+    \midrule
+    Konstruktion des Körpers (Ober- und Unterkörper) in SolidWorks & Eddy Werk \\
+    Auswahl des Drucksensors (Velostat) und Aufbau der Taschen & Eddy Werk \\
+    Konstruktion der Kopfhülle & Younes Jamil \\
+    Firmware des ESP32-S3 (Anwesenheit, Taschen, Atemerkennung, \acp{LED}, Motoren)
+      & Younes Jamil \\
+    Überwachung der Druckaufträge & Younes Jamil \\
+    3D-Druck, Nachbearbeitung, Lackierung und Montage & beide \\
+    Beschaffung der Bauteile & beide \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Außerhalb des Teams lagen die Software auf dem Raspberry Pi und die Kopfmechanik (Team
+Programmierung), die grafische Gestaltung des Gesichts (eine Mitarbeiterin des Labors) sowie der
+Entwurf des Neffy Boards und die \ac{UART}-Bibliothek (Charly Goerke, Labor für
+Kommunikation).
 
 \todoi{Zeitaufteilung nach Arbeitsbereichen (Diagramm, vgl.\ Praxisbericht
 Neffy~2~\cite{goerke2025neffy2}).}

@@ -3,6 +3,43 @@
 % =====================================================================
 \chapter{Code-Auszüge}
 \label{anh:code}
+
+\section*{Befehle der UART-Schnittstelle}
+
+Jede Nachricht hat das Format \texttt{FA <ID> <Länge> <Nutzdaten>} (115\,200\,Baud);
+mehrbytige Zahlen werden mit dem höherwertigen Byte zuerst übertragen. Der Befehlssatz ist in
+der Bibliothek Neffy\_UART\_Interface festgelegt~\cite{goerke2026uart}; Tabelle~\ref{tab:uart_befehle}
+gibt den Stand der Firmware wieder~\cite{jamil2026mainboard}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Befehle zwischen Raspberry Pi und ESP32-S3}
+  \label{tab:uart_befehle}
+  \small
+  \begin{tabular}{@{}l l >{\raggedright\arraybackslash}p{7.2cm}@{}}
+    \toprule
+    ID & Befehl & Nutzdaten / Bedeutung \\
+    \midrule
+    \multicolumn{3}{@{}l}{\textit{Raspberry Pi $\rightarrow$ ESP32-S3}} \\
+    \texttt{0x01} & \texttt{MUTE} & 1 Byte: \texttt{01} Lautsprecher stumm, \texttt{00} Ton an \\
+    \texttt{0x04} & \texttt{MOVE\_BODY\_IN\_TIME} & Zielposition (mm\,$\times$\,10), Dauer (s\,$\times$\,10) \\
+    \texttt{0x05} & \texttt{MOVE\_HEAD\_IN\_TIME} & Zielwinkel (Grad\,$\times$\,10), Dauer (s\,$\times$\,10) \\
+    \texttt{0x06} & \texttt{MOVE\_BODY\_HEAD\_IN\_TIME} & Körper und Kopf gemeinsam, je Ziel und Dauer \\
+    \texttt{0x07} & \texttt{DISABLE\_MOTORS} & Startsignal einer Übung: nächste Bewegung beginnt 0{,}5\,s
+                    später; zweimal gesendet am Ende der Übung. Die Motoren bleiben an. \\
+    \texttt{0x10} & \texttt{BREATHING\_DETECTION\_START} & Atemerkennung über 30\,s starten \\
+    \midrule
+    \multicolumn{3}{@{}l}{\textit{ESP32-S3 $\rightarrow$ Raspberry Pi}} \\
+    \texttt{0x03} & \texttt{GET\_PERSON\_READING} & 1 Byte: \texttt{01} Person da, \texttt{00} niemand \\
+    \texttt{0x08} / \texttt{0x0B} & \texttt{PRESSURE\_CLICK\_L} / \texttt{\_R} & Klick in der linken / rechten Tasche \\
+    \texttt{0x04} / \texttt{0x05} & Antwort auf \texttt{MOVE\_\ldots} & erreichte Position (mm\,$\times$\,10 bzw.\ Grad\,$\times$\,10) \\
+    \texttt{0x0F} / \texttt{0x0D} / \texttt{0x0E} & \texttt{BREATHING\_DETECTION\_\ldots}
+      & Einstufung \texttt{RELAXED} / \texttt{NORMAL} / \texttt{STRESSED}; nichts, wenn weniger
+        als zwei Einatemzüge erkannt wurden \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \todoi{Atemerkennungs-Modul (.cpp/.h) per \textbackslash lstinputlisting einbinden.}
 
 \chapter{CAD-Zeichnungen}

@@ -114,12 +114,13 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
 |---|---|---|
 | Titelblatt | fertig (Eddy Werk, Younes Jamil) | Matrikelnummern (erst lokal vor Abgabe), Abgabedatum prüfen |
 | 1 Einleitung | fertig (26.10., 1 S.): Stress → Ommie/Neffy-Studien als einzige Quellen; Zielgruppe bewusst weit (Alltag, Kinder, belastete Gruppen), Projekt sucht noch den besten Einsatzfall; Kernbotschaft „vorgeben → reagieren“, sofort relativiert (geplant vollautomatisch, umgesetzt mit aktiver Mitwirkung) | – |
-| 2 Ziel | Fließtext; 2.2 + 2.3 grau `\unsicher` | Zeitraum/Stunden, Zeitaufteilung, Tabelle „wer macht was“, A7 Taschenmaße + Quelle |
+| 2 Ziel | 2.2 Anforderungen final (A7 ohne Maße); **2.3 Fragestellung gestrichen (26.10.)**; Tabelle „wer macht was“ in 2.3 Projektorganisation | Zeitraum/Stunden, Zeitaufteilung (optional) |
 | 3 Stand der Technik | Fließtext, Vergleich Neffy 1/2/3; 3.1 grau `\unsicher` | Foto Neffy 3.0; Kamera-Punkt ohne Quelle (belegen oder streichen) |
 | 4 Methoden | Fließtext inkl. **Theorie** (Spannungsteiler Gl./Abb., D6T-Sichtfeld + Reichweitenabschätzung 1,4–2 m, Spindelkraft-Gl.), CAD-Abb. 4.3; 4.1 Schnittstelle grau, UART-Tabelle per `\iffalse` raus | Haltemoment Motor + Wirkungsgrad η (Quelle) → Spindelkraft rechnen; Motorhersteller (Iverntech?); Nachname Kaspar; Festwiderstand final; Kleber; Druckermodelle bestätigen; Schaltplan |
 | 5 Diskussion | Entwurf; Kennwerte als Diagramm (`daten/plot_kennwerte.py`), Tabelle in Anhang D; Evaluation A1–A10 | Fotos (frontal, Hände in Taschen); Anwesenheitsmessung 0,5–3 m mit `tools/thermal_log.py` (Firmware-Repo) → Plot + A1; **5.5 Eigene Ideen bestätigen**; wer führt die Studie durch |
 | 6 Fazit | Entwurf (Younes, 23.10.) | ggf. auf 1 Seite verdichten |
-| 7 Einschätzung | 7.4 Erfahrungen + 7.5 Fazit fertig | 7.1 Studium, 7.2 Praktikumsalltag, 7.3 Erwartungen (Interview) |
+| 7 Einschätzung | fertig (7.1–7.3 am 26.10.) | genauer Name des C++-Moduls |
+Stand 26.10. abends: 4.1 nicht mehr grau (Ablauf mit Firmware-README geprüft), UART-Befehlstabelle in Anhang A, 5.5 Eigene Ideen geschrieben, 4.4.7 KI neu (Firmware-Code vollständig mit Claude Code, Ideen/Struktur vom Team; Bericht: LaTeX-Satz + Formulierungshilfe). Noch offen: Fotos, Festwiderstand (Farbcode rot-violett-schwarz-? unklar), Motor-Haltemoment/η, Nachname Kaspar, Thermalmessung (Younes), 3.1 grau, Zeitraum/Stunden.
 | Anhang | Anhang D Kennwerte-Tabelle | Code-Auszüge, CAD-Zeichnungen, Schaltplan, Verweis Rohdaten |
 | Erklärung | beide Unterschriftszeilen | Wortlaut der BHT |
 Umfang: Kap. 1–7 ca. 29 S. (mit Markern); nicht streng. Kürzen Stufe 2 erledigt.

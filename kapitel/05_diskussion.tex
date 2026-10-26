@@ -12,8 +12,8 @@ Alle Funktionen im Aufgabenbereich des Teams Sensorik arbeiten im Zusammenspiel 
 Pi: Der Roboter erkennt, wenn sich jemand nähert, und reagiert mit einer Bewegung; die
 Atemerkennung über die Taschen läuft, und ihr Ergebnis wird an den Raspberry Pi übermittelt, der
 daraufhin eine Atemübung startet. Körper und Kopf bewegen sich dabei im Atemrhythmus, und die
-\acp{LED} geben eine Rückmeldung. Eine Studie mit Nutzer:innen ist derzeit in Arbeit.
-\todo{Wer führt die Studie durch (Labor/Prof.\ Buchem)? Zeitraum?}
+\acp{LED} geben eine Rückmeldung. Eine Studie mit Nutzer:innen ist derzeit in Arbeit; sie wird
+von der Mitarbeiterin durchgeführt, die im Projekt für die grafische Gestaltung zuständig war.
 
 \begin{figure}[htbp]
   \centering
@@ -222,9 +222,28 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
 \section{Eigene Ideen}
 \label{sec:eigene_ideen}
 
-\todoi{Bestätigen bzw.\ ergänzen -- Vorschlag: Übernahme und Umsetzung des gesamten Gehäuses aus
-eigener Initiative; modularer Aufbau mit Magneten; Wechsel von passiver zu aktiver Atemerfassung
-über die Taschen; Bedienung über die Taschen (links/rechts/beide); Sensoreinsatz zum Einstecken; Verbindungsteil zwischen
-Schlitten der Lineareinheit und Sensoreinsätzen;
-selbstkalibrierende Klick- und Druckerkennung; lernende Raumtemperatur bei der
-Anwesenheitserkennung; LED-Rückmeldung beim Atmen. Wer was (Eddy/Younes): ganz am Ende.}
+Vorgegeben waren das Zielbild eines runderen Gehäuses mit Taschen für die Hände
+(Abbildung~\ref{fig:zielbild}) und die Aufgabe, Anwesenheit und Atmung zu erfassen. Auch der
+modulare Aufbau mit Magneten ist keine neue Idee, er wurde bereits bei Neffy~2.0
+eingesetzt. Das Neffy Board und die \ac{UART}-Bibliothek stammen von
+Charly Goerke (Abschnitt~\ref{sec:architektur}). Wie diese Vorgaben umgesetzt werden, hat das
+Team Sensorik selbst entwickelt:
+
+\begin{itemize}
+  \item \textbf{Gehäuse:} Übernahme der Konstruktion und Fertigung des gesamten Gehäuses aus
+        eigener Initiative, einschließlich Teilung in druckbare Teile und des Verbindungsteils
+        zwischen dem Schlitten der Lineareinheit und den Sensoreinsätzen (Eddy Werk: Körper,
+        Younes Jamil: Kopfhülle).
+  \item \textbf{Sensorik in den Taschen:} Velostat als Drucksensor und der Lagenaufbau der
+        Sensoreinsätze unten in den Taschen (Eddy Werk).
+  \item \textbf{Thermalsensor:} Anwesenheitserkennung über einen Thermalsensor statt über
+        Bewegung oder Abstand (Team Sensorik).
+  \item \textbf{Lernende Raumtemperatur:} Der Hintergrund, gegen den eine Person erkannt wird,
+        passt sich laufend an die Raumtemperatur an (Younes Jamil).
+  \item \textbf{Selbstkalibrierende Druck- und Klickerkennung:} Die Taschen lernen Ruhepegel,
+        Rauschen und typische Klickhöhe selbst und dienen so zugleich als Bedienelement
+        (Younes Jamil).
+  \item \textbf{\ac{LED}-Rückmeldung beim Atmen:} Die \acp{LED} werden beim Einatmen heller und
+        beim Ausatmen dunkler (Younes Jamil). Diese Idee liegt an der Schnittstelle von Hardware
+        und Software.
+\end{itemize}
