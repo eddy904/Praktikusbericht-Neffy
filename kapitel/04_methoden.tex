@@ -427,7 +427,9 @@ umgerechnet, da der \ac{ADC} des ESP32-S3 nicht linear ist. Beide Taschen werden
 
 Die Dynamixel-Motoren (XL430-W250) von Neffy~2 waren für die Hubbewegung zu schwach und
 liefen relativ laut. Sie wurden für Körper und Kopf durch Schrittmotoren der Baugröße NEMA~17
-ersetzt. Für den Körper wird ein Schrittmotor mit integrierter T8-Gewindespindel eingesetzt
+ersetzt. Die Schrittmotoren und die Lineareinheit des Körpers wurden von Charly Goerke (Labor
+für Kommunikation) ausgewählt und bereitgestellt; das Team Sensorik hat den Antrieb in das
+Gehäuse integriert. Für den Körper wird ein Schrittmotor mit integrierter T8-Gewindespindel eingesetzt
 (Typbezeichnung 42HB4027-41),
 wie er auch in 3D-Druckern verwendet wird; die Spindel ist kürzer als in der Standardausführung
 mit 100\,mm. Dieser Antrieb bringt deutlich mehr Kraft auf und läuft nach Beobachtung des
@@ -486,7 +488,7 @@ Schlittens bei außermittigem Druck und durch die Nachgiebigkeit des gedruckten 
 
 Der Körper wird über eine Lineareinheit aus Kaufteilen bewegt: Der Schrittmotor treibt eine
 Gewindespindel mit 8\,mm Steigung an, deren Mutter in einem Schlitten sitzt, der auf einer
-Schiene geführt wird. Ein eigens konstruiertes, 3D-gedrucktes Verbindungsteil verbindet den
+Schiene geführt wird. Ein vom Team Sensorik konstruiertes, 3D-gedrucktes Verbindungsteil verbindet den
 Schlitten mit den von unten verschraubten Sensoreinsätzen der Taschen und überträgt so die
 Bewegung auf den Oberkörper. Ziel des neuen Antriebs war mehr Kraft, nicht ein größerer Hub:
 In der Firmware ist der Verfahrweg zwar auf 85\,mm ab dem Endschalter begrenzt, bei den Übungen

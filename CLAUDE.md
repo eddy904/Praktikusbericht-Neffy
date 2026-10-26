@@ -57,7 +57,8 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
   - Geändert: Die Dynamixel-Motoren von Neffy 2.0 wurden durch **Schrittmotoren** ersetzt, weil mehr
     Kraft benötigt wurde (**NEMA 17**, Körper und Kopf; Körper: fertige Lineareinheit mit Spindel, Schlitten und Schiene,
     Kaufteile; das 3D-gedruckte Verbindungsteil Schlitten → Sensoreinsätze hat **das Team konstruiert**.
-    Charly Goerke hat Motor und Schiene bereitgestellt und den Aufbau gezeigt – im Bericht nicht erwähnen).
+    Charly Goerke hat Schrittmotoren und Lineareinheit ausgewählt und bereitgestellt – wird seit 26.10.
+    im Bericht genannt: 2.3, 4.2.4, 5.5; Entscheidung Eddy).
     Problem: Bei sehr starkem Drücken bleibt der Körper stehen, Motor macht Geräusche (Ausblick: stärkerer Motor/Servo).
     Kopf: gedruckte Zahnräder haben Spiel (Ausblick: Metall oder Riemengetriebe).
 - Ziele 3.0 (gesamt): sensorbasierte Interaktion, besserer Touch, Atemübungen per Interaktion auswählbar.
