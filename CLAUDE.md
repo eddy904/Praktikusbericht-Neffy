@@ -5,8 +5,9 @@
 - Hauptbetreuerin: Prof. Dr. Ilona Buchem (Titelblatt: „Lehrkraft“)
 - Betreuer: Prof. Dr. Manfred Hild (Studiengangsleiter; Titelblatt: „Betreuer“)
 - Durchgeführt im **Labor für Kommunikation** der BHT
-- Gruppenprojekt: Team Sensorik und Team Programmierung; **kein eigenes Team Design** – eine Mitarbeiterin
-  war für die grafische Gestaltung (z. B. Gesicht/Augen) zuständig. Abstimmung bei Bedarf in Online-Meetings
+- Gruppenprojekt: Team Sensorik, Team Programmierung und **Team Design (Marie Mai Han)** – zuständig für die
+  grafische Gestaltung (z. B. Gesicht/Augen), führt auch die Studie zu Neffy 3.0 durch; im Bericht seit
+  26.10. als „Team Design“ mit Namen genannt (Eddy). Abstimmung bei Bedarf in Online-Meetings
   mit gemeinsamer Abstimmung, dazu Umfragen zur Wahrnehmung der Gestaltung.
 - Zielbild (Abb. 2.1) wurde von Prof. Buchem mit ChatGPT erzeugt.
 - Display Neffy 3.0: Waveshare 4,3" DSI LCD, 800 × 480, kapazitiver Touch (`waveshare43dsi`).
