@@ -18,7 +18,7 @@
   bzw. unsicheren Stellen mehr im Text (Makro in `main.tex` bleibt für neue Fälle).
 - Unser Team: **Sensorik, 2 Personen** – **Eddy Werk** (GitHub eddy904) und Younes Jamil.
   Achtung: In früheren Notizen stand fälschlich „Badre“ – der Name ist Eddy Werk.
-- Charly Goerke (GitHub „LegitimateShake“) ist Mitarbeiter im Labor für Kommunikation und Mitautor des
+- Charly Görke (im Text mit ö; in Literaturangaben „Goerke“ wie in den Veröffentlichungen; GitHub „LegitimateShake“) ist Mitarbeiter im Labor für Kommunikation und Mitautor des
   Neffy-2-Berichts. Von ihm stammen der Entwurf des Neffy Boards und die UART-Bibliothek
   (Neffy_UART_Interface). Das ist **nicht** Eigenleistung des Teams und muss so gekennzeichnet werden.
 - Die **Firmware im Repo ist maßgeblich**: Bei Widersprüchen zu Notizen gilt der Code.
