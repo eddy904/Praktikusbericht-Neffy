@@ -132,20 +132,10 @@ die mittlere Erwärmung betrug 3{,}8\,K in 0{,}5\,m, 2{,}7\,K in 1\,m, 1{,}8\,K 
 1{,}1\,K in 2\,m. In 3\,m lag sie mit 0{,}9\,K knapp unter der Schwelle von 1\,K; die Meldung
 schwankte dort und stand während 66\,\% der Zeit an. Bei leerem Platz wurde zu keinem Zeitpunkt
 Anwesenheit gemeldet, und nach dem Weggehen fiel die Meldung in weniger als einer Sekunde ab.
-Die Reichweite liegt damit bei etwa 2\,m, 3\,m ist der Grenzbereich. Das entspricht der oberen
-Grenze der Abschätzung aus Abschnitt~\ref{sec:hw_anwesenheit}: Die Erwärmung nimmt zwischen den
-beiden Grenzfällen $1/d$ und $1/d^2$ ab, näher an $1/d$. Kommt jemand vorbei, fährt der Roboter kurz hoch und wieder
-herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Innenräumen traten auch bei
+Die Reichweite liegt damit bei etwa 2\,m, 3\,m ist der Grenzbereich. Das bestätigt die obere
+Grenze der Abschätzung aus Abschnitt~\ref{sec:hw_anwesenheit}. Kommt jemand vorbei, fährt der
+Roboter kurz hoch und wieder herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Innenräumen traten auch bei
 normalem Tageslicht keine Probleme auf.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.66\linewidth]{plots/thermal_reichweite.pdf}
-  \caption[Erwärmung des Thermalsensors in Abhängigkeit von der Entfernung]{Erwärmung des Thermalsensors gegenüber der gelernten Raumtemperatur in Abhängigkeit von
-    der Entfernung der Person: Mittelwert, Striche vom kleinsten bis zum größten Wert (einschließlich
-    des Positionswechsels), Prozentwerte: Anteil der Zeit mit Meldung \enquote{Person da}}
-  \label{fig:thermal_reichweite}
-\end{figure}
 
 Eine Grenze ergibt sich aus dem Verfahren selbst: Die gelernte Raumtemperatur steigt nur langsam,
 folgt einem Absinken aber sofort (Abschnitt~\ref{sec:sw_anwesenheit}). Scheint die Sonne längere
@@ -163,50 +153,50 @@ Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
 
 \begin{table}[htbp]
   \centering
-  \caption[Erfüllungsgrad der Anforderungen]{Erfüllungsgrad der Anforderungen (\checkmark\ Prüfkriterium mit der angegebenen
-    Nachweisart erfüllt, $\circ$ teilweise, -- nicht erfüllt)}
+  \caption[Erfüllungsgrad der Anforderungen]{Erfüllungsgrad der Anforderungen (Status bezogen auf das Prüfkriterium und die
+    angegebene Nachweisart)}
   \label{tab:evaluation}
   \small
   \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{2.9cm}
-                    >{\centering\arraybackslash}p{1.1cm}
+                    >{\raggedright\arraybackslash}p{1.6cm}
                     >{\raggedright\arraybackslash}p{2.3cm}
-                    >{\raggedright\arraybackslash}p{5.9cm}@{}}
+                    >{\raggedright\arraybackslash}p{5.4cm}@{}}
     \toprule
     Nr. & Anforderung & Status & Nachweis & Begründung \\
     \midrule
-    A1 & Sitzende Person erkennen & \checkmark & Messung (0{,}5--3\,m, stehende Person)
+    A1 & Sitzende Person erkennen & erfüllt & Messung (0{,}5--3\,m, stehende Person)
        & Bis 2\,m durchgehend erkannt, 3\,m Grenzbereich; leerer Platz ohne Fehlmeldung; Grenze bei
          direkter Sonne oder Heizung \\
          \trenn
-    A2 & Anwesenheit an den Pi melden & \checkmark & Firmware, Beobachtung im Betrieb
+    A2 & Anwesenheit an den Pi melden & erfüllt & Firmware, Beobachtung im Betrieb
        & Meldung bei jeder Änderung und zusätzlich alle 500\,ms; der Pi reagiert mit einer kurzen
          Hubbewegung, auch beim Vorbeigehen \\
          \trenn
-    A3 & Atemrhythmus passiv über die Hände erfassen & -- & Messung (Ent\-wick\-lungs\-board)
+    A3 & Atemrhythmus passiv über die Hände erfassen & nicht erfüllt & Messung (Ent\-wick\-lungs\-board)
        & Einatemzüge bei nur aufgelegten Händen nicht vom Rauschen unterscheidbar
          (Abschnitt~\ref{sec:erg_passiv}) \\
          \trenn
-    A3* & Atemtakt aktiv über die Taschen erfassen & \checkmark
+    A3* & Atemtakt aktiv über die Taschen erfassen & erfüllt
        & Messung (Ent\-wick\-lungs\-board), Beobachtung am Roboter
        & Klare Atemzüge in allen sechs Messreihen (9{,}7--15{,}2/min); die Messreihen belegen die
          Signalqualität, nicht die Erkennung der Firmware; diese funktioniert am Roboter im
          Betrieb, Erprobung mit Nutzer*innen in der laufenden Studie \\
          \trenn
-    A4 & Einstufung an den Raspberry Pi & \checkmark & Beobachtung im Betrieb
+    A4 & Einstufung an den Raspberry Pi & erfüllt & Beobachtung im Betrieb
        & Ergebnis kommt an, Pi startet passende Übung; Grenzen der Einstufung nicht validiert \\
        \trenn
-    A5 & Hub mit beiden Händen & \checkmark & Beobachtung im Betrieb
+    A5 & Hub mit beiden Händen & erfüllt & Beobachtung im Betrieb
        & Auch mit schwerer aufliegenden Händen; Probleme nur bei starkem Drücken auf den Roboter \\
        \trenn
-    A6 & Hände sicher in Taschen & \checkmark & Handmaße aus der Literatur, Beobachtung
+    A6 & Hände sicher in Taschen & erfüllt & Handmaße aus der Literatur, Beobachtung
        & Mit verschiedenen Handgrößen geprüft: Hände passen und liegen gesichert; Ellbogen liegen
          etwas hoch, ein Kissen darunter wird empfohlen \\
          \trenn
-    A7 & Zugang zur Elektronik & \checkmark & Konstruktion
+    A7 & Zugang zur Elektronik & erfüllt & Konstruktion
        & Oberkörper und Kopfdeckel magnetisch, ohne Werkzeug abnehmbar; Unterkörper mit sechs
          Schrauben \\
          \trenn
-    A8 & Bedienung über die Taschen & $\circ$ & Beobachtung im Betrieb
+    A8 & Bedienung über die Taschen & teilweise & Beobachtung im Betrieb
        & Navigation und Auswahl möglich, aber noch nicht immer zuverlässig \\
     \bottomrule
   \end{tabular}

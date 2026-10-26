@@ -14,6 +14,7 @@ import matplotlib
 
 matplotlib.use("pgf")
 import matplotlib.pyplot as plt  # noqa: E402
+import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 from matplotlib.ticker import FuncFormatter  # noqa: E402
 
@@ -22,6 +23,8 @@ DATEI = BASIS / "thermal-distance-261026-2137.csv"
 AUSGABE = BASIS.parent / "abbildungen" / "plots"
 
 SCHWELLE_K = 1.0  # ENTER_MIN_C in PersonSensor.cpp
+ERWAERMUNG_VOLL_K = 5.0  # Erwärmung bei ausgefülltem Sichtfeld (Abstimmung der Firmware: 4 bis 6 K)
+ANTEIL_1M = 0.4          # Anteil der Person am Sichtfeld in 1 m (Abschätzung in Abschnitt 4.2.1)
 
 FARBE_LINIE = "#2a78d6"
 FARBE_TEXT = "#0b0b0b"
@@ -78,13 +81,24 @@ if __name__ == "__main__":
     p = p.sort_values("d_m")
 
     fig, ax = plt.subplots(figsize=(10 / 2.54, 5.6 / 2.54))
+    # Abschätzung aus Abschnitt 4.2.1: Erwärmung = ERWAERMUNG_VOLL_K * a, mit a = 0,4 in 1 m,
+    # abnehmend zwischen 1/d und 1/d^2 (a höchstens 1)
+    d = np.linspace(0.3, 3.3, 200)
+    obere = ERWAERMUNG_VOLL_K * np.minimum(1, ANTEIL_1M / d)
+    untere = ERWAERMUNG_VOLL_K * np.minimum(1, ANTEIL_1M / d**2)
+    ax.fill_between(d, untere, obere, color=FARBE_RASTER, linewidth=0,
+                    label="Abschätzung ($1/d$ bis $1/d^2$)")
+    ax.plot(d, obere, color=FARBE_GEDAEMPFT, linewidth=0.6)
+    ax.plot(d, untere, color=FARBE_GEDAEMPFT, linewidth=0.6)
     ax.vlines(p["d_m"], p["dT_min"], p["dT_max"], color=FARBE_LINIE, linewidth=1.0)
-    ax.plot(p["d_m"], p["dT_mittel"], "o-", color=FARBE_LINIE, markersize=4, linewidth=1.0)
+    ax.plot(p["d_m"], p["dT_mittel"], "o-", color=FARBE_LINIE, markersize=4, linewidth=1.0,
+            label="Messung")
+    ax.legend(loc="upper right", fontsize=8, frameon=False)
     for _, z in p.iterrows():
         ax.text(z["d_m"] + 0.06, z["dT_mittel"] + 0.12, f"{100 * z['erkannt_anteil']:.0f}\\,\\%",
-                fontsize=7, color=FARBE_GEDAEMPFT)
+                fontsize=8, color=FARBE_GEDAEMPFT)
     ax.axhline(SCHWELLE_K, color=FARBE_GEDAEMPFT, linewidth=0.6, linestyle=(0, (3, 2)))
-    ax.text(0.05, SCHWELLE_K + 0.08, "Schwelle 1\\,K", ha="left", fontsize=7, color=FARBE_GEDAEMPFT)
+    ax.text(0.05, SCHWELLE_K + 0.08, "Schwelle 1\\,K", ha="left", fontsize=8, color=FARBE_GEDAEMPFT)
     ax.set_xlim(0, 3.3)
     ax.set_ylim(0, 5)
     ax.xaxis.set_major_formatter(KOMMA)

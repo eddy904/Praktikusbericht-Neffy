@@ -180,7 +180,7 @@ Neue Quellen nur nach derselben Prüfung aufnehmen.
 Gehäuse (Stand 22.10.): Oberkörper 6 Teile → 2 Hälften verklebt, in der Mitte magnetisch verbunden;
 Unterkörper 6 Teile → Schale + hintere Klappe (6 Schrauben); Kopfhülle 4 Teile (Deckel magnetisch,
 Hinterteil verschraubt, Vorderteil zwei Stifte). **Rundloch-Langloch wurde verworfen – fast alles geklebt.**
-Drucker Prusa MK4S und i3 MK3S, große Teile je ≥ 15 h, Toleranzannahme 0,1 mm, oft nachgebohrt.
+Drucker Prusa MK4S und i3 MK3S, größte Teile je ca. 12–18 h, Toleranzannahme 0,1 mm, oft nachgebohrt.
 Kopfmechanik: Caspar Jaki (Team Programmierung). Pi sitzt im Kopf. Schwachstelle: Hände/Ellbogen etwas zu
 hoch → Kissen (Kap. 5/6). Druckerverfügbarkeit eingeschränkt → neutral in Kap. 7.
 Material PLA. Nachbearbeitung: Klebekanten mit Sekundenkleber gefüllt, von Hand geschliffen (Elektroschleifer

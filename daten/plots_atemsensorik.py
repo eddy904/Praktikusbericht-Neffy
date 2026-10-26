@@ -87,7 +87,7 @@ def achse_einrichten(ax, t_max, saettigung=True):
     if saettigung:
         ax.axhline(U_MAX, color=FARBE_GEDAEMPFT, linewidth=0.6, linestyle=(0, (3, 2)))
         ax.text(t_max, U_MAX + 0.06, "Sättigung (ADC 4095)", ha="right", va="bottom",
-                fontsize=7, color=FARBE_GEDAEMPFT)
+                fontsize=8, color=FARBE_GEDAEMPFT)
 
 
 def kurve(ax, t, u, kennung, peaks_markieren=False):
@@ -160,8 +160,8 @@ def alle_reihen(name):
         achse_einrichten(ax, t.max(), saettigung=False)
         ax.axhline(U_MAX, color=FARBE_GEDAEMPFT, linewidth=0.6, linestyle=(0, (3, 2)))
         ax.set_title(kennung, loc="left", fontsize=8, color=FARBE_TEXT)
-        ax.set_xlabel("Zeit in s", fontsize=7)
-        ax.set_ylabel("U in V" if ax in achsen[:, 0] else "", fontsize=7)
+        ax.set_xlabel("Zeit in s", fontsize=8)
+        ax.set_ylabel("U in V" if ax in achsen[:, 0] else "", fontsize=8)
     achsen.flat[-1].set_visible(False)
     fig.tight_layout(pad=0.3, h_pad=0.6, w_pad=0.6)
     fig.savefig(AUSGABE / name)

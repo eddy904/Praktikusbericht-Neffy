@@ -55,8 +55,8 @@ fig, ax = plt.subplots(figsize=(12.5 / 2.54, 6.4 / 2.54))
 
 # FSR-Schaltschwelle laut Interlink: von > 100 kOhm auf etwa 10 kOhm
 ax.axvspan(1e4, 1e5, color=FARBE_BAND, zorder=0)
-ax.text(np.sqrt(1e4 * 1e5), 0.08, "FSR-Schalt-\nschwelle",
-        ha="center", va="bottom", fontsize=7, color=FARBE_GEDAEMPFT)
+ax.text(np.sqrt(1e4 * 1e5), 1.42, "FSR-Schalt-\nschwelle",
+        ha="center", va="bottom", fontsize=8, color=FARBE_GEDAEMPFT)
 
 # (R_F, Name, Farbe, Linienstärke, Höhe der Beschriftung in V) – Beschriftungen gestaffelt
 kurven = [(100e3, "100 k$\\Omega$", FARBE_GRAU, 1.0, 2.75),
@@ -72,13 +72,13 @@ for r_f, name, farbe, breite, u_text in kurven:
     # nicht an der nahen 4,7-kOhm-Kurve steht (x-Achse ist invertiert)
     x_text = r_f * (U_B / u_text - 1.0)
     if r_f == 10e3:
-        ax.text(x_text * 1.35, u_text, r"$R_\mathrm{F}$ = " + name, fontsize=7, color=FARBE_TEXT,
+        ax.text(x_text * 1.35, u_text, r"$R_\mathrm{F}$ = " + name, fontsize=8, color=FARBE_TEXT,
                 va="center", ha="right")
     else:
-        ax.text(x_text / 1.35, u_text, r"$R_\mathrm{F}$ = " + name, fontsize=7, color=FARBE_TEXT, va="center")
+        ax.text(x_text / 1.35, u_text, r"$R_\mathrm{F}$ = " + name, fontsize=8, color=FARBE_TEXT, va="center")
 
 ax.axhline(U_SAETTIGUNG, color=FARBE_GEDAEMPFT, linewidth=0.6, linestyle=(0, (3, 2)))
-ax.text(9e5, U_SAETTIGUNG + 0.05, "Sättigung des ADC (ca. 3,1 V)", fontsize=7, color=FARBE_GEDAEMPFT,
+ax.text(9e5, U_SAETTIGUNG + 0.05, "Sättigung des ADC (ca. 3,1 V)", fontsize=8, color=FARBE_GEDAEMPFT,
         va="bottom", ha="left")
 
 ax.set_xscale("log")

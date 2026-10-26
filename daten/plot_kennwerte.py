@@ -104,19 +104,19 @@ ax1.set_xticks([0, 25, 50, 75, 100])
 ax1.set_xlabel(r"Anteil der Messwerte in \%")
 ax1.set_title("(a) Verteilung der Messwerte", loc="left", fontsize=9, color=FARBE_TEXT)
 ax1.legend(loc="upper left", bbox_to_anchor=(-0.2, -0.2), ncol=4, frameon=False,
-           fontsize=7, handlelength=1.2, columnspacing=1.0, title="Messwerte (ADC):",
-           title_fontsize=7, alignment="left")
+           fontsize=8, handlelength=1.2, columnspacing=1.0, title="Messwerte (ADC):",
+           title_fontsize=8, alignment="left")
 
 # (b) Signalhub, Atemfrequenz als Beschriftung
 for yy, h, fa in zip(positionen, hub, f_atem):
     if h is None:
-        ax2.text(60, yy, "nicht bestimmt", va="center", fontsize=7, color=FARBE_GEDAEMPFT)
+        ax2.text(60, yy, "nicht bestimmt", va="center", fontsize=8, color=FARBE_GEDAEMPFT)
         continue
     ax2.barh(yy, h, height=hoehe, color=FARBE_LINIE, **rand)
     if fa is not None:
-        ax2.text(h + 60, yy, komma(fa) + r"\,/min", va="center", fontsize=7, color=FARBE_TEXT)
+        ax2.text(h + 60, yy, komma(fa) + r"\,/min", va="center", fontsize=8, color=FARBE_TEXT)
     else:
-        ax2.text(h + 60, yy, "keine Atemzüge", va="center", fontsize=7, color=FARBE_GEDAEMPFT)
+        ax2.text(h + 60, yy, "keine Atemzüge", va="center", fontsize=8, color=FARBE_GEDAEMPFT)
 ax2.set_xlim(0, 4300)
 ax2.set_xticks([0, 1000, 2000, 3000, 4000])
 ax2.set_xlabel("Signalhub in ADC-Einheiten (P95 -- P5)")

@@ -15,8 +15,8 @@ das ORCID-Profil von Prof.\ Dr.\ Ilona Buchem gesucht. Suchbegriffe waren unter 
 \enquote{respiratory rate monitoring}, \enquote{contact-based / contactless respiratory
 rate}, \enquote{social robot breathing exercise}, \enquote{Ommie}, \enquote{NEFFY} und
 \enquote{PIR occupancy stationary}. Aufgenommen wurden begutachtete Veröffentlichungen mit
-DOI sowie Datenblätter, die einen direkten Bezug zu Atemerfassung, Anwesenheitserkennung
-oder robotergestützten Atemübungen haben.
+DOI sowie Datenblätter mit direktem Bezug zu Atemerfassung, Anwesenheitserkennung oder
+robotergestützten Atemübungen.
 
 \section{Atemerkennung}
 \label{sec:sdt_atem}
@@ -34,7 +34,7 @@ aber voraus, dass die Person etwas am Körper trägt. In Studien mit Atemroboter
 deshalb vor allem als Referenzmessung~\cite{matheus2023phase}.
 
 \textbf{Berührungslose Verfahren} kommen ohne Kontakt zum Körper aus~\cite{massaroni2021contactless}.
-Sie sind komfortabler, erfordern aber in der Regel aufwendigere Sensorik und Signalverarbeitung.
+Sie sind komfortabler, erfordern aber meist aufwendigere Sensorik und Signalverarbeitung.
 
 Für Atemroboter ergibt sich eine besondere Schwierigkeit: Der Roboter bewegt sich selbst im
 Atemrhythmus. Matheus et~al.\ zeigen für den Roboter Ommie, dass sich die Atemphasen
@@ -55,15 +55,13 @@ Für die Erkennung von Personen kommen verschiedene Sensorprinzipien in Frage:
   \item \textbf{Abstandssensoren (z.\,B.\ \ac{ToF}, Infrarot-Abstand):} messen die Entfernung zum
         nächsten Objekt, unterscheiden aber nicht, ob es sich um einen Menschen oder ein beliebiges
         Hindernis handelt.
-  \item \textbf{Kamera:} liefert die meisten Informationen, erfordert aber eine aufwendige
-        Bildverarbeitung.
+  \item \textbf{Kamera:} liefert die meisten Informationen, erfordert aber aufwendige Bildverarbeitung.
   \item \textbf{Thermopile-Sensoren:} messen die Temperatur einer Fläche berührungslos und können so
         auch die Anwesenheit unbewegter Personen erkennen~\cite{omron2017d6t}.
 \end{itemize}
 
 Tabelle~\ref{tab:anwesenheit} stellt die Prinzipien gegenüber. Wärmebasierte Sensoren
-reagieren dabei nicht auf jedes Hindernis, wohl aber auf andere Wärmequellen wie Heizkörper
-oder Sonneneinstrahlung.
+reagieren nicht auf jedes Hindernis, wohl aber auf Wärmequellen wie Heizkörper oder Sonne.
 
 \begin{table}[htbp]
   \centering
@@ -71,7 +69,7 @@ oder Sonneneinstrahlung.
     (+ ja, $\circ$ eingeschränkt, -- nein)}
   \label{tab:anwesenheit}
   \small
-  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.0cm} c c c c@{}}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{7.4cm} c c c c@{}}
     \toprule
     Kriterium & \acs{PIR} & Abstand & Kamera & Thermopile \\
     \midrule
@@ -113,17 +111,18 @@ darunter die Atemfrequenz, fielen dagegen uneinheitlich aus~\cite{buchem2026neff
   \centering
   \begin{subfigure}[b]{0.3\linewidth}
     \centering
-    \includegraphics[height=3.8cm]{neffy1}
+    \includegraphics[height=3.3cm]{neffy1}
     \caption{Neffy~1.0}
   \end{subfigure}\hfill
   \begin{subfigure}[b]{0.3\linewidth}
     \centering
-    \includegraphics[height=3.8cm]{neffy2}
+    \includegraphics[height=3.3cm]{neffy2}
     \caption{Neffy~2.0 (Rendering)}
   \end{subfigure}\hfill
   \begin{subfigure}[b]{0.3\linewidth}
     \centering
-    \platzhalter[\linewidth]{Foto Neffy~3.0}
+    % Platzhalter in Bildhöhe; später: \includegraphics[height=3.3cm]{fotos/neffy3_frontal}
+    \fbox{\parbox[c][3.3cm][c]{0.85\linewidth}{\centering\small\textit{Platzhalter:}\\ Foto Neffy~3.0}}
     \caption{Neffy~3.0}
   \end{subfigure}
   \caption[Die drei Generationen von Neffy]{Die drei Generationen von Neffy; (a) und (b) aus~\cite{goerke2025neffy2}}
@@ -133,17 +132,15 @@ darunter die Atemfrequenz, fielen dagegen uneinheitlich aus~\cite{buchem2026neff
 \section{Vergleich und Einordnung von Neffy~3.0}
 \label{sec:sdt_vergleich}
 
-Abbildung~\ref{fig:neffy_versionen} zeigt die drei Generationen von Neffy,
-Tabelle~\ref{tab:vergleich_neffy} stellt sie gegenüber. Allen
-gemeinsam ist das Grundprinzip, dass die Nutzer*innen den Atemrhythmus über die Hände spüren.
-Neffy~1.0 und 2.0 geben diesen Rhythmus jedoch nur vor: Sie nehmen weder wahr, ob jemand vor
-ihnen sitzt, noch wie die Person atmet.
+Abbildung~\ref{fig:neffy_versionen} und Tabelle~\ref{tab:vergleich_neffy} stellen die drei
+Generationen von Neffy gegenüber. Allen gemeinsam ist das Grundprinzip, dass die Nutzer*innen
+den Atemrhythmus über die Hände spüren.
 
 \begin{table}[htbp]
   \centering
   \caption{Vergleich der Generationen von Neffy}
   \label{tab:vergleich_neffy}
-  \small
+  \footnotesize
   \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}
                     >{\raggedright\arraybackslash}p{3.6cm}
                     >{\raggedright\arraybackslash}p{3.6cm}
@@ -171,10 +168,9 @@ ihnen sitzt, noch wie die Person atmet.
   \end{tabular}
 \end{table}
 
-Neffy~3.0 ergänzt das bewährte haptische Prinzip um Wahrnehmung. Der Thermalsensor erkennt,
-ob jemand vor dem Roboter sitzt. Für die Atemerfassung wurde bewusst kein aufwendiges
-lernbasiertes Verfahren wie bei Ommie gewählt~\cite{matheus2023phase} und auch kein Sensor am
-Körper. Stattdessen begleiten die Nutzer*innen ihre Atmung mit einem Druck in die Taschen.
-Das ist keine physiologische Messung im engeren Sinne, ermöglicht aber mit einfacher
-Hardware eine Einschätzung der Atemfrequenz und damit eine Reaktion des Roboters auf sein
-Gegenüber.
+Neffy~1.0 und 2.0 geben den Rhythmus nur vor. Neffy~3.0 ergänzt das bewährte haptische Prinzip
+um Wahrnehmung: Der Thermalsensor erkennt, ob jemand vor dem Roboter sitzt. Für die Atemerfassung
+wurde bewusst weder ein aufwendiges lernbasiertes Verfahren wie bei Ommie~\cite{matheus2023phase}
+noch ein Sensor am Körper gewählt; stattdessen begleiten die Nutzer*innen ihre Atmung mit einem
+Druck in die Taschen. Das ist keine physiologische Messung im engeren Sinne, ermöglicht aber mit
+einfacher Hardware eine Einschätzung der Atemfrequenz und eine Reaktion auf das Gegenüber.

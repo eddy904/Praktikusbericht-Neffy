@@ -72,11 +72,12 @@ Anhang~\ref{anh:code}.
 \subsection{Anwesenheitserkennung}
 \label{sec:hw_anwesenheit}
 
-Der Roboter soll erkennen, wenn sich eine Person direkt vor ihn setzt, und zwar auch
-dann, wenn sie still sitzt. Ursprünglich sollten Personen, die in zwei bis drei Metern
-Entfernung vorbeigehen, keine Reaktion auslösen. Im Projektverlauf wurde stattdessen
-entschieden, dass Neffy auch auf vorbeigehende Personen kurz reagiert, um zur Nutzung
-einzuladen (Anforderung~A2).
+Neffy soll auf Menschen in seiner Umgebung reagieren und dafür erkennen, ob jemand da ist,
+vor allem wenn sich eine Person vor ihn setzt, und zwar auch dann, wenn sie still sitzt. Eine
+feste Reichweite oder eine Entfernung, ab der Personen nicht mehr erkannt werden sollen, wurde
+nicht festgelegt. Dass Neffy auch Personen erkennt, die in einiger Entfernung vorbeigehen, und
+kurz auf sie reagiert, ergab sich aus diesem Ziel: So lädt der Roboter zur Nutzung ein
+(Anforderung~A2).
 
 Abstands- und \ac{PIR}-Sensoren schieden aus, da sie auf jedes Hindernis reagieren bzw.\
 still sitzende Personen nicht zuverlässig erkennen (Abschnitt~\ref{sec:sdt_anwesenheit}).
@@ -118,8 +119,24 @@ von 1\,K erreichen (Gleichung~\ref{eq:anwesenheit}), also $a \geq 0{,}2$. Nimmt 
 Entfernung zwischen $1/d$ (die Person füllt die Höhe des Sichtfelds noch aus) und $1/d^2$ (sie ist
 in beiden Richtungen kleiner als das Sichtfeld) ab, ergibt sich eine Reichweite von etwa 1{,}4 bis
 2\,m. Die Abschätzung vernachlässigt unter anderem, dass der Sensor nicht über das ganze Sichtfeld
-gleich empfindlich ist. Die Messung in Abschnitt~\ref{sec:erg_anwesenheit} bestätigt die obere
-Grenze von etwa 2\,m.
+gleich empfindlich ist.
+
+Abbildung~\ref{fig:thermal_reichweite} vergleicht die Abschätzung mit einer Reichweitenmessung am
+fertigen Roboter (Ablauf und Auswertung in Abschnitt~\ref{sec:erg_anwesenheit}). Die gemessene
+Erwärmung folgt etwa dem Grenzfall $1/d$ und liegt ab 1\,m leicht darüber; die Schwelle von 1\,K
+wird bis etwa 2\,m erreicht. Die obere Grenze der Abschätzung wird damit bestätigt.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.66\linewidth]{plots/thermal_reichweite.pdf}
+  \caption[Erwärmung des Thermalsensors in Abhängigkeit von der Entfernung]{Erwärmung des
+    Thermalsensors gegenüber der gelernten Raumtemperatur in Abhängigkeit von der Entfernung der
+    Person. Messung am fertigen Roboter: Mittelwert, Striche vom kleinsten bis zum größten Wert
+    (einschließlich des Positionswechsels), Prozentwerte: Anteil der Zeit mit Meldung
+    \enquote{Person da}. Hinterlegt: Abschätzung nach Gleichung~\ref{eq:mischung} mit
+    $a \approx 0{,}4$ in 1\,m, abnehmend zwischen $1/d$ und $1/d^2$}
+  \label{fig:thermal_reichweite}
+\end{figure}
 
 \subsection{Auswahl des Drucksensors}
 \label{sec:hw_drucksensor}
@@ -407,8 +424,9 @@ Schrittmotor der Kopfbewegung.
       \caption{Unterkörper: Schale und hintere Klappe}
     \end{subfigure}
   \end{minipage}
-  \caption[CAD-Modell des Gehäuses von Neffy~3.0]{CAD-Modell des Gehäuses von Neffy~3.0; in (b) und (c) ist jedes Druckteil farbig
-    markiert (Explosionsansicht)}
+  \caption[CAD-Modell des Gehäuses von Neffy~3.0]{CAD-Modell des Gehäuses von Neffy~3.0; in (b) und (c) sind die Druckteile farbig
+    markiert (Explosionsansicht). Da linke und rechte Hälfte spiegelbildlich sind, genügen
+    jeweils drei Farben für sechs Teile.}
   \label{fig:gehaeuse}
 \end{figure}
 
@@ -448,7 +466,7 @@ Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
   \end{tabular}
 \end{table}
 
-Jedes der großen Teile benötigte 15 Stunden Druckzeit oder mehr. Gedruckt wurde auf
+Die größten Teile benötigten jeweils etwa 12 bis 18 Stunden Druckzeit. Gedruckt wurde auf
 Druckern vom Typ Prusa MK4S und Prusa i3 MK3S im \ac{FDM}-Verfahren aus \ac{PLA}. Da die Drucker im
 Labor für Kommunikation nicht für alle Teile ausreichten, wurde in der Werkstatt des
 Studiengangs Humanoide Robotik gedruckt, die dafür besser ausgestattet war.
@@ -480,7 +498,7 @@ Bei der Konstruktion wurde von einer Fertigungstoleranz von 0{,}1\,mm ausgegange
 begrenzten Druckkapazität wurden keine eigenen Testkörper gedruckt, sondern nur kleinere Teile
 vorab getestet, etwa die Aufnahmen für Netzteilbuchse, Schalter und Kopfhöreranschluss. Die
 großen Hüllenteile wurden jeweils nur einmal gedruckt; Bohrungen wurden mit einer
-Ständerbohrmaschine auf Maß aufgerieben. Ein bis zwei kleinere Teile mussten neu gedruckt werden.
+Ständerbohrmaschine auf Maß aufgerieben. Mehrere kleine Teile mussten neu gedruckt werden.
 
 Die Kanten und Löcher an den Klebestellen wurden mit Sekundenkleber gefüllt und von Hand mit
 schrittweise feinerem Schleifpapier geschliffen; ein elektrisches Schleifgerät beschädigte das
