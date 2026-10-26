@@ -59,7 +59,9 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
     Kraft benötigt wurde (**NEMA 17**, Körper und Kopf; Körper: fertige Lineareinheit mit Spindel, Schlitten und Schiene,
     Kaufteile; das 3D-gedruckte Verbindungsteil Schlitten → Sensoreinsätze hat **das Team konstruiert**.
     Charly Goerke hat Schrittmotoren und Lineareinheit ausgewählt und bereitgestellt – wird seit 26.10.
-    im Bericht genannt: 2.3, 4.2.4, 5.5; Entscheidung Eddy).
+    im Bericht genannt: 2.3, 4.2.4, 5.5; Entscheidung Eddy). Ebenso Lautsprecher und Kopfhöreranschluss
+    (von Charly bereitgestellt, vom Team eingebaut). Team: Verbindungsteil, Aufnahmen für Netzteilbuchse,
+    Schalter, Kopfhörer, Kabelführung, Einbau aller Komponenten → 4.3.5 „Einbau der Komponenten“.
     Problem: Bei sehr starkem Drücken bleibt der Körper stehen, Motor macht Geräusche (Ausblick: stärkerer Motor/Servo).
     Kopf: gedruckte Zahnräder haben Spiel (Ausblick: Metall oder Riemengetriebe).
 - Ziele 3.0 (gesamt): sensorbasierte Interaktion, besserer Touch, Atemübungen per Interaktion auswählbar.
