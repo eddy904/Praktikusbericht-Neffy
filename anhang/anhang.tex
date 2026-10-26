@@ -40,15 +40,13 @@ gibt den Stand der Firmware wieder~\cite{jamil2026mainboard}.
   \end{tabular}
 \end{table}
 
-\todoi{Atemerkennungs-Modul (.cpp/.h) per \textbackslash lstinputlisting einbinden.}
+\section*{Modul zur Atemerkennung}
 
-\chapter{CAD-Zeichnungen}
-\label{anh:cad}
-\todoi{Technische Zeichnungen des Gehäuses.}
+Die folgenden Listings zeigen das Modul zur Atemerkennung (Abschnitt~\ref{sec:sw_atem}) im
+Stand von Commit \texttt{2693747}~\cite{jamil2026mainboard}.
 
-\chapter{Schaltplan}
-\label{anh:schaltplan}
-\todoi{Schaltplan Neffy Board / Sensoranschluss.}
+\lstinputlisting[language=C++, caption={\texttt{BreathingDetection.h}}]{anhang/code/BreathingDetection.h}
+\lstinputlisting[language=C++, caption={\texttt{BreathingDetection.cpp}}]{anhang/code/BreathingDetection.cpp}
 
 \chapter{Rohdaten}
 \label{anh:rohdaten}
@@ -62,4 +60,8 @@ gibt den Stand der Firmware wieder~\cite{jamil2026mainboard}.
   \input{daten/tab_kennwerte.tex}
 \end{table}
 
-\todoi{Verweis auf Dateien in daten/ bzw.\ Repository.}
+Die Rohdaten aller Messreihen liegen als CSV-Dateien im Ordner
+\texttt{daten/Messdaten\_Atemsensorik/} des Berichts-Repositorys
+(\url{https://github.com/eddy904/Praktikusbericht-Neffy}). Die Diagramme und Tabellen dieses
+Berichts werden mit den Python-Skripten im Ordner \texttt{daten/} direkt aus diesen Dateien
+erzeugt. Der Quellcode der Firmware liegt im Repository des Neffy Boards~\cite{jamil2026mainboard}.

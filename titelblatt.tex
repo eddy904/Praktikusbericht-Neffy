@@ -10,6 +10,14 @@
   \colorbox{orange!50}{\strut #1}%
   \addcontentsline{tdo}{todo}{Titelblatt: #1}}
 
+% Matrikelnummern stehen nur lokal in matrikelnummern.tex (per .gitignore
+% ausgeschlossen, öffentliches Repo), z. B.:
+%   \newcommand{\matrEddy}{123456}
+%   \newcommand{\matrYounes}{654321}
+\InputIfFileExists{matrikelnummern}{}{}
+\providecommand{\matrEddy}{\titelfehlt{Matrikelnummer}}
+\providecommand{\matrYounes}{\titelfehlt{Matrikelnummer}}
+
 % \titelzeile{Abstand von oben}{Inhalt}
 \newcommand{\titelzeile}[2]{%
   \node[anchor=base west, inner sep=0pt]
@@ -27,10 +35,10 @@
     \titelzeile{16.40cm}{\large vorgelegt von:}
 
     \titelzeile{17.45cm}{\large\textbf{Eddy Werk}}
-    \titelzeile{18.10cm}{\large Matr.-Nr.: \titelfehlt{Matrikelnummer}}
+    \titelzeile{18.10cm}{\large Matr.-Nr.: \matrEddy}
 
     \titelzeile{19.17cm}{\large\textbf{Younes Jamil}}
-    \titelzeile{19.82cm}{\large Matr.-Nr.: \titelfehlt{Matrikelnummer}}
+    \titelzeile{19.82cm}{\large Matr.-Nr.: \matrYounes}
 
     \titelzeile{21.30cm}{\large
       \begin{tabular}[t]{@{}l l@{}}

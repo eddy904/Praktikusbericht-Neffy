@@ -19,3 +19,6 @@ referenz/*.pdf
 *.fdb_latexmk
 *.xdv
 main.pdf
+
+# Matrikelnummern nur lokal (personenbezogene Daten)
+matrikelnummern.tex
