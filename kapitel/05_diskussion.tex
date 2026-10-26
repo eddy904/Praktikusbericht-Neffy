@@ -8,11 +8,12 @@
 \label{sec:funktionsnachweis}
 
 Neffy~3.0 wurde vollständig aufgebaut und in Betrieb genommen (Abbildung~\ref{fig:neffy_fertig}).
-Alle Funktionen im Aufgabenbereich des Teams Sensorik arbeiten im Zusammenspiel mit dem Raspberry
+Die Funktionen im Aufgabenbereich des Teams Sensorik arbeiten im Zusammenspiel mit dem Raspberry
 Pi: Der Roboter erkennt, wenn sich jemand nähert, und reagiert mit einer Bewegung; die
 Atemerkennung über die Taschen läuft, und ihr Ergebnis wird an den Raspberry Pi übermittelt, der
 daraufhin eine Atemübung startet. Körper und Kopf bewegen sich dabei im Atemrhythmus, und die
-\acp{LED} geben eine Rückmeldung. Eine Studie mit Nutzer:innen ist derzeit in Arbeit; sie wird
+\acp{LED} geben eine Rückmeldung. Nur die Bedienung über die Taschen ist noch nicht in allen
+Fällen zuverlässig (Abschnitt~\ref{sec:erg_bedienung}). Eine Studie mit Nutzer:innen ist derzeit in Arbeit; sie wird
 von der Mitarbeiterin durchgeführt, die im Projekt für die grafische Gestaltung zuständig war.
 
 \begin{figure}[htbp]
@@ -166,47 +167,51 @@ Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
 
 \begin{table}[htbp]
   \centering
-  \caption{Erfüllungsgrad der Anforderungen (\checkmark\ erfüllt, (\checkmark) vorläufig erfüllt,
+  \caption{Erfüllungsgrad der Anforderungen (\checkmark\ Prüfkriterium mit der angegebenen
+    Nachweisart erfüllt, (\checkmark) vorläufig erfüllt, geplante Messung steht aus,
     $\circ$ teilweise, -- nicht erfüllt)}
   \label{tab:evaluation}
   \small
-  \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{3.6cm}
-                    >{\centering\arraybackslash}p{1.3cm}
-                    >{\raggedright\arraybackslash}p{6.6cm}@{}}
+  \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{2.9cm}
+                    >{\centering\arraybackslash}p{1.1cm}
+                    >{\raggedright\arraybackslash}p{2.3cm}
+                    >{\raggedright\arraybackslash}p{5.9cm}@{}}
     \toprule
-    Nr. & Anforderung & Status & Begründung \\
+    Nr. & Anforderung & Status & Nachweis & Begründung \\
     \midrule
-    A1 & Sitzende Person erkennen & (\checkmark)
-       & Im Betrieb zuverlässig erkannt (beobachtet); Messung ausstehend, auch für ruhiges Sitzen
+    A1 & Sitzende Person erkennen & (\checkmark) & Beobachtung im Betrieb
+       & Im Betrieb zuverlässig erkannt; Messung ausstehend, auch für ruhiges Sitzen
          über 20\,s; Grenze bei direkter Sonne oder Heizung \\
          \trenn
-    A2 & Anwesenheit an den Pi melden & \checkmark
+    A2 & Anwesenheit an den Pi melden & \checkmark & Firmware, Beobachtung im Betrieb
        & Meldung bei jeder Änderung und zusätzlich alle 500\,ms; der Pi reagiert mit einer kurzen
          Hubbewegung, auch beim Vorbeigehen \\
          \trenn
-    A3 & Atemrhythmus passiv über die Hände erfassen & --
+    A3 & Atemrhythmus passiv über die Hände erfassen & -- & Messung (Ent\-wick\-lungs\-board)
        & Einatemzüge bei nur aufgelegten Händen nicht vom Rauschen unterscheidbar
          (Abschnitt~\ref{sec:erg_passiv}) \\
          \trenn
     A3* & Atemtakt aktiv über die Taschen erfassen & \checkmark
-       & Klare Atemzüge in allen sechs Messreihen am Entwicklungsboard (9{,}7--15{,}2/min); am
-         Roboter im Betrieb zuverlässig, Erkennungsrate nicht bestimmt \\
+       & Messung (Ent\-wick\-lungs\-board), Beobachtung am Roboter
+       & Klare Atemzüge in allen sechs Messreihen (9{,}7--15{,}2/min); die Messreihen belegen die
+         Signalqualität, nicht die Erkennung der Firmware; diese funktioniert am Roboter im
+         Betrieb, Erkennungsrate nicht bestimmt \\
          \trenn
-    A4 & Einstufung an den Raspberry Pi & \checkmark
+    A4 & Einstufung an den Raspberry Pi & \checkmark & Beobachtung im Betrieb
        & Ergebnis kommt an, Pi startet passende Übung; Grenzen der Einstufung nicht validiert \\
        \trenn
-    A5 & Hub mit beiden Händen & \checkmark
+    A5 & Hub mit beiden Händen & \checkmark & Beobachtung im Betrieb
        & Auch mit schwerer aufliegenden Händen; Probleme nur bei starkem Drücken auf den Roboter \\
        \trenn
-    A6 & Hände sicher in Taschen & \checkmark
+    A6 & Hände sicher in Taschen & \checkmark & Handmaße aus der Literatur, Beobachtung
        & Mit verschiedenen Handgrößen geprüft: Hände passen und liegen gesichert; Ellbogen liegen
          etwas hoch, ein Kissen darunter wird empfohlen \\
          \trenn
-    A7 & Zugang zur Elektronik & \checkmark
+    A7 & Zugang zur Elektronik & \checkmark & Konstruktion
        & Oberkörper und Kopfdeckel magnetisch, ohne Werkzeug abnehmbar; Unterkörper mit sechs
          Schrauben \\
          \trenn
-    A8 & Bedienung über die Taschen & $\circ$
+    A8 & Bedienung über die Taschen & $\circ$ & Beobachtung im Betrieb
        & Navigation und Auswahl möglich, aber noch nicht immer zuverlässig \\
     \bottomrule
   \end{tabular}

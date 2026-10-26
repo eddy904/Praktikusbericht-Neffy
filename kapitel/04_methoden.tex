@@ -153,7 +153,10 @@ desto kleiner ist ihr Anteil am Sichtfeld und desto geringer die gemessene Erwä
 der Abstand als natürlicher Filter wirkt. Der über \ac{I2C} angebundene Sensor ist mit rund
 16\,€ teurer als einfache Infrarotsensoren, versprach aber eine zuverlässigere Erkennung bei
 gutem Preis-Leistungs-Verhältnis und von einem etablierten Hersteller. Ein Vergleichstest
-entfiel, da bereits der D6T die Anforderungen erfüllte (Abschnitt~\ref{sec:erg_anwesenheit}).
+entfiel, da bereits der D6T die Anforderungen im Betrieb erfüllte; dies beruht bisher auf
+Beobachtung (Abschnitt~\ref{sec:erg_anwesenheit}). Da der Sensor nur einen Messpunkt hat,
+unterscheidet er nicht, ob eine Person vor dem Roboter sitzt oder an ihm vorbeigeht; er meldet
+lediglich, dass sich eine warme Person im Sichtfeld befindet.
 
 \paragraph{Abschätzung des Erfassungsbereichs.}
 Der Sichtwinkel bestimmt, über welche Fläche der Sensor mittelt. Bei einem Sichtwinkel von
@@ -424,7 +427,8 @@ liefen relativ laut. Sie wurden für Körper und Kopf durch Schrittmotoren der B
 ersetzt. Für den Körper wird ein Schrittmotor mit integrierter T8-Gewindespindel eingesetzt
 (Typbezeichnung 42HB4027-41),
 wie er auch in 3D-Druckern verwendet wird; die Spindel ist kürzer als in der Standardausführung
-mit 100\,mm. Dieser Antrieb bringt deutlich mehr Kraft auf und ist zugleich leiser.
+mit 100\,mm. Dieser Antrieb bringt deutlich mehr Kraft auf und läuft nach Beobachtung des
+Teams leiser; die Lautstärke wurde nicht gemessen.
 Welche Kraft $F$ die Spindel aus dem Motordrehmoment $M$ erzeugt, folgt aus der Energiebilanz
 einer Umdrehung: Die zugeführte Arbeit $2\pi M$, vermindert um die Reibungsverluste im Gewinde
 (Wirkungsgrad $\eta$), entspricht der Hubarbeit $F\,p$ entlang der Steigung $p$. Damit gilt
@@ -680,7 +684,11 @@ Sensor nur erwärmen kann. Steigt sie, wird sie nur langsam nachgeführt, damit 
 die sich langsam nähert oder etwas weiter entfernt steht, nicht als Raumtemperatur
 \enquote{weggelernt} wird. Als zusätzliche Absicherung wird die Raumtemperatur schneller neu
 gelernt, wenn zwar eine Person gemeldet wird, das Signal aber 20\,s lang nahezu konstant
-bleibt, da eine reale Person die Messung innerhalb von Sekunden verändert. Die Parameter
+bleibt, da eine reale Person die Messung in der Regel innerhalb von Sekunden verändert. Diese
+Absicherung steht in einem Zielkonflikt zu Anforderung~A1: Sie verhindert, dass eine
+Wärmequelle dauerhaft als Person gilt, kann aber auch eine sehr ruhig sitzende Person
+\enquote{weglernen}, wenn deren Signal lange genug nahezu konstant bleibt. Ob das im Betrieb
+auftritt, soll die ausstehende Messung zeigen (Abschnitt~\ref{sec:erg_anwesenheit}). Die Parameter
 wurden anhand einer geführten Aufzeichnung abgestimmt (leerer Raum, Annähern, Davorstehen,
 Abstand 1\,m, Vorbeigehen, Weggehen; siehe Abschnitt~\ref{sec:messwerte}).
 
