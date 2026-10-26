@@ -11,8 +11,10 @@
 - [x] **Kürzen:** Stufen 1–3 umgesetzt (26.10.), Kap. 1–7 jetzt 33 S.
 
 ## Kann Claude direkt erledigen (nach Freigabe)
-- [ ] A6 in Tab. 5.1: Ergonomie (Ellbogen zu hoch) im Status abbilden; Anzahl/Spannweite der Probehände,
-      falls bekannt
+- [x] A6 in Tab. 5.1: Ergonomie (Ellbogen zu hoch, Kissen) steht in der Begründung
+- [ ] Optional: Anzahl/Spannweite der Probehände für A6, falls bekannt
+- [x] Namen vereinheitlicht (26.10.): Teammitglieder nur einmal in 2.3, danach nur „Team Programmierung“
+      bzw. „Team Design“; Charly Görke nach 2.1 ohne Zusatz „Labor für Kommunikation“
 
 ## Abschluss
 - [x] Matrikelnummern lokal in `matrikelnummern.tex` eingetragen (nicht committen, per .gitignore draußen)

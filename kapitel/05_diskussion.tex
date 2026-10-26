@@ -14,7 +14,7 @@ Atemerkennung über die Taschen läuft, und ihr Ergebnis wird an den Raspberry P
 daraufhin eine Atemübung startet. Körper und Kopf bewegen sich dabei im Atemrhythmus, und die
 \acp{LED} geben eine Rückmeldung. Nur die Bedienung über die Taschen ist noch nicht in allen
 Fällen zuverlässig (Abschnitt~\ref{sec:erg_bedienung}). Eine Studie mit Nutzer*innen ist derzeit in Arbeit; sie wird
-von Marie Mai Han (Team Design) durchgeführt.
+vom Team Design durchgeführt.
 
 \begin{figure}[htbp]
   \centering
@@ -257,7 +257,12 @@ Charly Görke (Abschnitt~\ref{sec:architektur}), ebenso die Auswahl der Schrittm
 Lineareinheit, des Lautsprechers und des Kopfhöreranschlusses (Abschnitte~\ref{sec:hw_antrieb}
 und~\ref{sec:gehaeuse_einbau}). Wie diese Vorgaben umgesetzt werden, hat das
 Team Sensorik selbst entwickelt. Bei den Ideen zur Firmware stammen Konzept und Funktionsweise
-vom Team, den Quellcode hat Claude Code geschrieben (Abschnitt~\ref{sec:sw_ki}):
+vom Team, den Quellcode hat Claude Code geschrieben (Abschnitt~\ref{sec:sw_ki}).
+
+Die Namen in der folgenden Aufzählung geben an, von wem eine Idee stammt. Über den Arbeitsaufwand
+sagen sie nichts aus: Dieser war zwischen beiden Teammitgliedern gleich verteilt
+(Abschnitt~\ref{sec:organisation}), und der größte Teil der Arbeit, Konstruktion und Fertigung
+des Gehäuses, erscheint hier als ein einzelner Punkt.
 
 \begin{itemize}
   \item \textbf{Gehäuse:} Übernahme der Konstruktion und Fertigung des gesamten Gehäuses aus
@@ -268,12 +273,8 @@ vom Team, den Quellcode hat Claude Code geschrieben (Abschnitt~\ref{sec:sw_ki}):
         Sensoreinsätze unten in den Taschen (Eddy Werk).
   \item \textbf{Thermalsensor:} Anwesenheitserkennung über einen Thermalsensor statt über
         Bewegung oder Abstand (Team Sensorik).
-  \item \textbf{Lernende Raumtemperatur:} Der Hintergrund, gegen den eine Person erkannt wird,
-        passt sich laufend an die Raumtemperatur an (Younes Jamil).
-  \item \textbf{Selbstkalibrierende Druck- und Klickerkennung:} Die Taschen lernen Ruhepegel,
-        Rauschen und typische Klickhöhe selbst und dienen so zugleich als Bedienelement
-        (Younes Jamil).
-  \item \textbf{\ac{LED}-Rückmeldung beim Atmen:} Die \acp{LED} werden beim Einatmen heller und
-        beim Ausatmen dunkler (Younes Jamil). Diese Idee liegt an der Schnittstelle von Hardware
-        und Software.
+  \item \textbf{Firmware:} Eine lernende Raumtemperatur, gegen die eine Person erkannt wird; eine
+        selbstkalibrierende Druck- und Klickerkennung, durch die die Taschen zugleich als
+        Bedienelement dienen; eine \ac{LED}-Rückmeldung, bei der die \acp{LED} beim Einatmen heller
+        und beim Ausatmen dunkler werden (Younes Jamil).
 \end{itemize}

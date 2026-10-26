@@ -12,8 +12,7 @@ Der Raspberry Pi (Team Programmierung) steuert den Ablauf der Interaktion, die A
 und den Bildschirm. Der ESP32-S3 auf dem Neffy Board liest alle Sensoren aus und steuert
 Motoren, \acp{LED} und die Stummschaltung des Lautsprechers. Er trifft keine Entscheidungen
 über den Ablauf, sondern führt die Befehle des Raspberry Pi aus und meldet zurück, was er
-erfasst~\cite{jamil2026mainboard}. Die Platine wurde von Charly Görke (Labor für
-Kommunikation) entworfen (Ansicht und Steckverbinder in Anhang~\ref{anh:code}); die Firmware
+erfasst~\cite{jamil2026mainboard}. Die Platine wurde von Charly Görke entworfen (Ansicht und Steckverbinder in Anhang~\ref{anh:code}); die Firmware
 entstand im Team Sensorik.
 
 Ursprünglich war vorgesehen, die Sensoren direkt am Raspberry Pi zu betreiben. Da dieser
@@ -300,8 +299,7 @@ Auf dem Neffy Board werden beide Taschen alle 20\,ms mit dem 12-bit-\ac{ADC} abg
 
 Die Dynamixel-Motoren (XL430-W250) von Neffy~2 waren für die Hubbewegung zu schwach und
 liefen relativ laut. Sie wurden für Körper und Kopf durch Schrittmotoren der Baugröße NEMA~17
-ersetzt. Die Schrittmotoren und die Lineareinheit des Körpers wurden von Charly Görke (Labor
-für Kommunikation) ausgewählt und bereitgestellt; das Team Sensorik hat den Antrieb in das
+ersetzt. Die Schrittmotoren und die Lineareinheit des Körpers wurden von Charly Görke ausgewählt und bereitgestellt; das Team Sensorik hat den Antrieb in das
 Gehäuse integriert. Für den Körper wird ein Schrittmotor mit integrierter T8-Gewindespindel eingesetzt
 (Typbezeichnung 42HB4027-41),
 wie er auch in 3D-Druckern verwendet wird; die Spindel ist kürzer als in der Standardausführung
@@ -362,7 +360,7 @@ Bewegung auf den Oberkörper. Ziel des neuen Antriebs war mehr Kraft, nicht ein 
 In der Firmware ist der Verfahrweg zwar auf 85\,mm ab dem Endschalter begrenzt, bei den Übungen
 fährt der Körper jedoch höchstens 20\,mm. Der Hub bleibt damit in derselben Größenordnung wie
 bei Neffy~2 (bis 25\,mm~\cite{goerke2025neffy2}), dessen Bewegung sich bewährt hatte.
-Die Kopfmechanik wurde von Caspar Jaki aus dem Team Programmierung konstruiert: Ein Schrittmotor
+Die Kopfmechanik wurde vom Team Programmierung konstruiert: Ein Schrittmotor
 neigt den Kopf über ein Zahnradpaar (30 und 40 Zähne) um bis zu 32°. Angesteuert werden beide
 Motoren über
 TMC2225-Treiber mit vier Mikroschritten. Bei jedem Start fahren beide Achsen gegen einen
@@ -451,7 +449,7 @@ Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
 \end{table}
 
 Jedes der großen Teile benötigte 15 Stunden Druckzeit oder mehr. Gedruckt wurde auf
-Druckern vom Typ Prusa MK4S und Prusa i3 MK3S im \ac{FDM}-Verfahren aus PLA. Da die Drucker im
+Druckern vom Typ Prusa MK4S und Prusa i3 MK3S im \ac{FDM}-Verfahren aus \ac{PLA}. Da die Drucker im
 Labor für Kommunikation nicht für alle Teile ausreichten, wurde in der Werkstatt des
 Studiengangs Humanoide Robotik gedruckt, die dafür besser ausgestattet war.
 
@@ -520,7 +518,7 @@ den Thermalsensor, die Taschen und die Atemerkennung.
 \label{sec:sw_anwesenheit}
 
 Der D6T liefert etwa alle 100\,ms einen neuen Temperaturwert $T$, der mit einer
-CRC-Prüfsumme auf Übertragungsfehler geprüft wird. Die Erkennung vergleicht $T$ mit einer
+Prüfsumme (\acl{CRC}, \acs{CRC}) auf Übertragungsfehler geprüft wird. Die Erkennung vergleicht $T$ mit einer
 laufend gelernten Raumtemperatur $T_\mathrm{R}$. Eine Person gilt als anwesend, sobald
 \begin{equation}
   T - T_\mathrm{R} \geq \vartheta \quad\text{mit}\quad
@@ -539,7 +537,7 @@ Das Weggehen wird zusätzlich an einem schnellen Abfall des Messwerts erkannt.
 
 Beim Einschalten kann bereits jemand vor dem Roboter sitzen und darf dann nicht als
 Raumtemperatur gelernt werden. Der D6T misst deshalb auch seine eigene Gehäusetemperatur
-(PTAT)~\cite{jamil2026mainboard}, die kurz nach dem Einschalten nur wenige Kelvin über der
+(\acl{PTAT}, \acs{PTAT})~\cite{jamil2026mainboard}, die kurz nach dem Einschalten nur wenige Kelvin über der
 Raumtemperatur liegt. Liegt der Messwert in den ersten 3\,s um 1 bis 5\,K darüber, gilt das als
 Person im Sichtfeld, und die Gehäusetemperatur wird vorläufig als Raumtemperatur verwendet. Die
 Parameter wurden anhand mehrerer Aufzeichnungen abgestimmt (leerer Raum, Annähern, Davorstehen,
