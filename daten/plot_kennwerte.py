@@ -25,6 +25,8 @@ FARBE_TEXT = "#0b0b0b"
 FARBE_GEDAEMPFT = "#52514e"
 FARBE_RASTER = "#e2e1dc"
 
+VOLT_PRO_ADC = 3.3 / 4095  # Rohwert linear in Spannung (wie in plots_atemsensorik.py)
+
 plt.rcParams.update({
     "pgf.texsystem": "pdflatex",
     "pgf.rcfonts": False,
@@ -84,6 +86,7 @@ mitte = [zahl(r["Anteil_Zwischenbereich_100-4000_%"]) for r in reihen]
 # Werte 1-99 und 4001-4094 gehören zu keiner der drei Klassen der Quelle
 randwerte = [max(100.0 - n - m - v, 0.0) for n, m, v in zip(null, mitte, voll)]
 hub = [zahl(r["Signalhub_P95-P5_ADC"]) for r in reihen]
+hub = [h * VOLT_PRO_ADC if h is not None else None for h in hub]
 f_atem = [frequenz(r["Mittl_Atemperiode / Atemfrequenz"]) for r in reihen]
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15.0 / 2.54, 7.2 / 2.54), sharey=True,
@@ -93,10 +96,10 @@ rand = dict(edgecolor="white", linewidth=0.8)
 
 # (a) Anteile: 0 | Zwischenbereich | Sättigung
 links = [0.0] * len(reihen)
-for werte, farbe, name in [(null, FARBE_NULL, "0 (aus)"),
-                           (randwerte, FARBE_RAND, "1--99 bzw. 4001--4094"),
-                           (mitte, FARBE_LINIE, "100--4000 (abgestuft)"),
-                           (voll, FARBE_VOLL, "4095 (voll)")]:
+for werte, farbe, name in [(null, FARBE_NULL, r"0\,V (aus)"),
+                           (randwerte, FARBE_RAND, r"knapp darüber bzw. darunter"),
+                           (mitte, FARBE_LINIE, r"0{,}08--3{,}22\,V (abgestuft)"),
+                           (voll, FARBE_VOLL, r"3{,}3\,V (voll)")]:
     ax1.barh(positionen, werte, left=links, height=hoehe, color=farbe, label=name, **rand)
     links = [l + w for l, w in zip(links, werte)]
 ax1.set_xlim(0, 100)
@@ -104,22 +107,22 @@ ax1.set_xticks([0, 25, 50, 75, 100])
 ax1.set_xlabel(r"Anteil der Messwerte in \%")
 ax1.set_title("(a) Verteilung der Messwerte", loc="left", fontsize=9, color=FARBE_TEXT)
 ax1.legend(loc="upper left", bbox_to_anchor=(-0.2, -0.2), ncol=4, frameon=False,
-           fontsize=8, handlelength=1.2, columnspacing=1.0, title="Messwerte (ADC):",
+           fontsize=8, handlelength=1.2, columnspacing=1.0, title="Messwerte:",
            title_fontsize=8, alignment="left")
 
 # (b) Signalhub, Atemfrequenz als Beschriftung
 for yy, h, fa in zip(positionen, hub, f_atem):
     if h is None:
-        ax2.text(60, yy, "nicht bestimmt", va="center", fontsize=8, color=FARBE_GEDAEMPFT)
+        ax2.text(0.05, yy, "nicht bestimmt", va="center", fontsize=8, color=FARBE_GEDAEMPFT)
         continue
     ax2.barh(yy, h, height=hoehe, color=FARBE_LINIE, **rand)
     if fa is not None:
-        ax2.text(h + 60, yy, komma(fa) + r"\,/min", va="center", fontsize=8, color=FARBE_TEXT)
+        ax2.text(h + 0.05, yy, komma(fa) + r"\,/min", va="center", fontsize=8, color=FARBE_TEXT)
     else:
-        ax2.text(h + 60, yy, "keine Atemzüge", va="center", fontsize=8, color=FARBE_GEDAEMPFT)
-ax2.set_xlim(0, 4300)
-ax2.set_xticks([0, 1000, 2000, 3000, 4000])
-ax2.set_xlabel("Signalhub in ADC-Einheiten (P95 -- P5)")
+        ax2.text(h + 0.05, yy, "keine Atemzüge", va="center", fontsize=8, color=FARBE_GEDAEMPFT)
+ax2.set_xlim(0, 3.5)
+ax2.set_xticks([0, 1, 2, 3])
+ax2.set_xlabel("Signalhub in V (P95 -- P5)")
 ax2.set_title("(b) Signalhub und Atemfrequenz", loc="left", fontsize=9, color=FARBE_TEXT)
 
 ax1.set_yticks(positionen)

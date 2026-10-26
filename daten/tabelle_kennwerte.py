@@ -21,6 +21,14 @@ def zahl(text):
     return text.replace(",", "{,}") if text else "--"
 
 
+def volt(text):
+    """ADC-Rohwert -> Spannung in V (4095 entspricht 3,3 V), zwei Nachkommastellen."""
+    text = text.strip()
+    if not text:
+        return "--"
+    return f"{float(text.replace(',', '.')) * 3.3 / 4095:.2f}".replace(".", "{,}")
+
+
 def frequenz(text):
     """'4,22 s / 14,2 /min' -> '14{,}2'; leer -> Strich."""
     if "/" not in text:
@@ -37,8 +45,8 @@ ausgabe = [
     r"  \toprule",
     r"  & & Dauer & \multicolumn{3}{c}{Anteil der Messwerte in \%} & Signal- & Atem- & Atem- \\",
     r"  \cmidrule(lr){4-6}",
-    r"  ID & Aufbau & in s & bei 0 & bei 4095 & 100--4000 & hub & züge & frequenz \\",
-    r"  & & & & & & (ADC) & & (1/min) \\",
+    r"  ID & Aufbau & in s & bei 0\,V & bei 3{,}3\,V & 0{,}08--3{,}22\,V & hub & züge & frequenz \\",
+    r"  & & & & & & in V & & (1/min) \\",
     r"  \midrule",
 ]
 vorher = None
@@ -49,7 +57,7 @@ for z in zeilen:
     ausgabe.append("  " + " & ".join([
         z["ID"], GRUPPE.get(z["Gruppe"], z["Gruppe"]), zahl(z["Dauer_s"]),
         zahl(z["Anteil_Null_%"]), zahl(z["Anteil_Saettigung_4095_%"]),
-        zahl(z["Anteil_Zwischenbereich_100-4000_%"]), zahl(z["Signalhub_P95-P5_ADC"]),
+        zahl(z["Anteil_Zwischenbereich_100-4000_%"]), volt(z["Signalhub_P95-P5_ADC"]),
         zahl(z["Atemzyklen_erkannt"]), frequenz(z["Mittl_Atemperiode / Atemfrequenz"]),
     ]) + r" \\")
 ausgabe += [r"  \bottomrule", r"\end{tabular}", ""]

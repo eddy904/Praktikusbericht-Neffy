@@ -506,7 +506,7 @@ PLA zu schnell. Lackiert wurde in drei Stufen: Kunststoffprimer, Haftgrund (beid
 Hellweg) und zwei bis drei Schichten Sprühlack (Montana GOLD, Sahara Beige), jeweils mit
 ausreichend langer Trocknungszeit. So entstehen auch mit PLA sehr saubere Oberflächen, der
 Aufwand dafür ist allerdings groß.
-\todo{Foto des fertigen, lackierten Gehäuses}
+\todo{Nahaufnahme der lackierten Oberfläche}
 
 \subsection{Einbau der Komponenten}
 \label{sec:gehaeuse_einbau}
@@ -514,9 +514,10 @@ Aufwand dafür ist allerdings groß.
 Zur Konstruktion gehörte auch die Integration aller Komponenten in das neue Gehäuse: das
 Verbindungsteil zwischen Lineareinheit und Sensoreinsätzen (Abschnitt~\ref{sec:hw_antrieb}), die
 Aufnahmen auf der Rückseite für Netzteilbuchse, Schalter und Kopfhöreranschluss sowie die
-Kabelführung zwischen Neffy Board, Motoren, Taschen, Kopf und Anschlüssen. Lautsprecher und
-Kopfhöreranschluss wurden von Charly Görke ausgewählt und bereitgestellt; das Team Sensorik hat
-sie eingebaut und angeschlossen.
+Kabelführung zwischen Neffy Board, Motoren, Taschen, Kopf und Anschlüssen. Ebenso wurden
+Lautsprecher und Kopfhöreranschluss (bereitgestellt von Charly Görke, Abschnitt~\ref{sec:organisation})
+eingebaut und angeschlossen.
+\todo{Foto vom Innenleben (geöffneter Oberkörper)}
 
 \section{Software}
 \label{sec:software}
@@ -546,8 +547,9 @@ laufend gelernten Raumtemperatur $T_\mathrm{R}$. Eine Person gilt als anwesend, 
 wobei $\sigma$ das gemessene Rauschen des Sensors ohne Person ist. Als abwesend gilt sie,
 sobald die Differenz unter $0{,}6\,\vartheta$ fällt; der Abstand zwischen beiden Schwellen
 verhindert ein Flackern des Zustands. Die Raumtemperatur folgt der Messung je nach Situation
-unterschiedlich schnell: Sinkt die Temperatur, wird sie sofort übernommen, da eine Person den
-Sensor nur erwärmen kann. Steigt sie, wird sie nur langsam nachgeführt, damit eine Person,
+unterschiedlich schnell: Sinkt der Messwert deutlich unter die Raumtemperatur, wird er innerhalb
+etwa einer Sekunde übernommen, da eine Person den Messwert nur erhöhen kann, solange sie wärmer
+ist als der Hintergrund. Steigt er, wird sie nur langsam nachgeführt, damit eine Person,
 die sich langsam nähert oder etwas weiter entfernt steht, nicht als Raumtemperatur
 \enquote{weggelernt} wird. Solange eine Person gemeldet wird, folgt die Raumtemperatur mit einer
 Zeitkonstante von 900\,s; eine völlig ruhig sitzende Person bleibt so etwa 20 Minuten erkannt.
@@ -568,11 +570,13 @@ Das Signal der Velostat-Taschen driftet mit der Zeit und unterscheidet sich von 
 Tasche. Die Erkennung ist deshalb selbstkalibrierend: Sie lernt laufend den Ruhepegel, das
 Rauschen und die typische Höhe eines Klicks und leitet daraus ihre Schwellen ab. Ein Klick
 wird erkannt, wenn das Signal kurzzeitig (höchstens 600\,ms) über einen lokalen Grundpegel
-steigt; liegt eine Hand dauerhaft auf der Tasche, müssen Klicks deutlicher ausfallen. Für die
-Atemerkennung gibt es zusätzlich einen schnellen Zustand \enquote{gedrückt} (gesetzt nach
-140\,ms Druck, zurückgesetzt nach 200\,ms ohne Druck). Die Parameter wurden anhand
-aufgezeichneter Messreihen beider Taschen abgestimmt. Ein Klick links oder rechts dient der
-Navigation, gleichzeitiges Drücken beider Taschen der Auswahl.
+steigt; leichte Klicks ohne aufliegende Hand werden zusätzlich als kurzer Sprung nach oben und
+wieder nach unten erkannt. Liegt eine Hand dauerhaft auf der Tasche, müssen Klicks deutlicher
+ausfallen. Für die Atemerkennung gibt es zusätzlich einen schnellen Zustand \enquote{gedrückt}
+(gesetzt nach 140\,ms Druck, zurückgesetzt nach 200\,ms ohne Druck). Die Parameter wurden anhand
+aufgezeichneter Messreihen beider Taschen abgestimmt. Der ESP32-S3 meldet jeden Klick als Klick
+links oder rechts; der Raspberry Pi nutzt einen einzelnen Klick zur Navigation und zwei
+gleichzeitige Klicks auf beiden Taschen zur Auswahl.
 
 \subsection{Atemerkennung}
 \label{sec:sw_atem}

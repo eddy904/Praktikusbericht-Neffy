@@ -12,8 +12,8 @@ Die Funktionen im Aufgabenbereich des Teams Sensorik arbeiten im Zusammenspiel m
 Pi: Der Roboter erkennt, wenn sich jemand nähert, und reagiert mit einer Bewegung; die
 Atemerkennung über die Taschen läuft, und ihr Ergebnis wird an den Raspberry Pi übermittelt, der
 daraufhin eine Atemübung startet. Körper und Kopf bewegen sich dabei im Atemrhythmus, und die
-\acp{LED} geben eine Rückmeldung. Nur die Bedienung über die Taschen ist noch nicht in allen
-Fällen zuverlässig (Abschnitt~\ref{sec:erg_bedienung}). Eine Studie mit Nutzer*innen ist derzeit in Arbeit; sie wird
+\acp{LED} geben eine Rückmeldung. Nur die Bedienung über die Taschen ist noch nicht über die
+gesamte Druckfläche zuverlässig (Abschnitt~\ref{sec:erg_bedienung}). Eine Studie mit Nutzer*innen ist derzeit in Arbeit; sie wird
 vom Team Design durchgeführt.
 
 \begin{figure}[htbp]
@@ -44,11 +44,13 @@ Mitdrücken beim Einatmen (A1--A6). Gemessen wurde mit dem in Abschnitt~\ref{sec
 beschriebenen Aufbau am ESP32-Entwicklungsboard mit 10\,k$\Omega$ Festwiderstand beim Velostat;
 es sind also Versuche zur Sensorauswahl, nicht Messungen am fertigen Roboter. Gemessen wurden die
 beiden Mitglieder des Teams Sensorik. Abbildung~\ref{fig:kennwerte} fasst die Kennwerte zusammen,
-die vollständige Tabelle steht in Anhang~\ref{anh:rohdaten}. Der Anteil der Messwerte bei 0 bzw.\
-4095 zeigt, wie oft der Sensor nur \enquote{aus} oder \enquote{voll} meldet; der Signalhub ist die
-Differenz zwischen 95.- und 5.-Perzentil, solange die Hand aufliegt. Die Atemzüge wurden offline
-aus dem geglätteten Signal bestimmt (gleitender Mittelwert über sieben Werte, Mindesthöhe eines
-Maximums 700 ADC-Einheiten, Mindestabstand 1{,}5\,s). Diese Mindesthöhe ist auf das aktive
+die vollständige Tabelle steht in Anhang~\ref{anh:rohdaten}. Alle Spannungen sind wie in
+Abbildung~\ref{fig:fsr_velostat} linear aus den Rohwerten des \ac{ADC} umgerechnet (4095
+entsprechen 3{,}3\,V). Der Anteil der Messwerte bei 0\,V bzw.\ 3{,}3\,V zeigt, wie oft der Sensor
+nur \enquote{aus} oder \enquote{voll} meldet; der Signalhub ist die Differenz zwischen 95.- und
+5.-Perzentil, solange die Hand aufliegt. Die Atemzüge wurden offline aus dem geglätteten Signal
+bestimmt (gleitender Mittelwert über sieben Werte, Mindesthöhe eines Maximums 0{,}56\,V,
+Mindestabstand 1{,}5\,s). Diese Mindesthöhe ist auf das aktive
 Mitdrücken ausgelegt; P1 und P2 wurden deshalb anhand des Signalverlaufs und spektral beurteilt.
 
 \begin{figure}[htbp]
@@ -64,7 +66,7 @@ Mitdrücken ausgelegt; P1 und P2 wurden deshalb anhand des Signalverlaufs und sp
 \label{sec:erg_fsr}
 
 Die Kennwerte bestätigen die Beobachtung aus Abschnitt~\ref{sec:hw_drucksensor} quantitativ. Beim
-\ac{FSR} lagen 57 bis 64\,\% aller Messwerte bei 0 und in zwei Messreihen 20 bis 25\,\% am oberen
+\ac{FSR} lagen 57 bis 64\,\% aller Messwerte bei 0\,V und in zwei Messreihen 20 bis 25\,\% am oberen
 Ende des Messbereichs; nur 16 bis 36\,\% der Werte lagen dazwischen. Der Sensor meldete damit
 überwiegend nur \enquote{kein Druck} oder \enquote{voller Druck}. Beim Velostat mit aktivem
 Mitdrücken lagen dagegen 72 bis 100\,\% der Werte im Zwischenbereich, sodass sich der Verlauf
@@ -75,7 +77,7 @@ eines Atemzugs abbilden lässt.
 
 Lagen die Hände nur auf dem Velostat (P1, P2), entstand ein nahezu konstantes Plateau, in dem
 keine Atemzüge erkennbar waren (Abbildung~\ref{fig:fsr_velostat}\,b). Der Signalhub betrug nur
-455 bzw.\ 107 ADC-Einheiten und lag damit in derselben Größenordnung wie die Schwankungen durch
+0{,}37 bzw.\ 0{,}09\,V und lag damit in derselben Größenordnung wie die Schwankungen durch
 kleine, unbeabsichtigte Bewegungen der Hände. Das Gewicht der aufliegenden Hände bestimmt das
 Signal; die Atembewegung verändert den Druck auf den Sensor dagegen kaum. Atmung und zufällige
 Handbewegungen lassen sich so nicht zuverlässig unterscheiden. Das Plateau lag zudem nahe am
@@ -83,10 +85,10 @@ oberen Ende des Messbereichs, wo der Spannungsteiler weniger empfindlich ist
 (Gleichung~\ref{eq:empfindlichkeit}); mit einem angepassten Festwiderstand wäre das Signal etwas
 empfindlicher gewesen. Eine spektrale Auswertung (Fourier-Transformation über das Auswertefenster)
 bestätigt das Bild: Im Atemband von 6 bis 30 Atemzügen pro Minute ist der Signalanteil bei P2
-(Effektivwert 11 ADC-Einheiten) kleiner als der Anteil schnellerer Schwankungen (19), bei P1
-etwa gleich groß (106 bzw.\ 87). P1 zeigt zwar eine langsame Schwankung um 8 pro Minute; ob sie
+(Effektivwert 9\,mV) kleiner als der Anteil schnellerer Schwankungen (15\,mV), bei P1
+etwa gleich groß (85 bzw.\ 70\,mV). P1 zeigt zwar eine langsame Schwankung um 8 pro Minute; ob sie
 von der Atmung oder von langsamen Handbewegungen stammt, lässt sich ohne Referenzmessung nicht
-entscheiden. Bei aktivem Mitdrücken ist der Anteil im Atemband mit 486 bis 1160 ADC-Einheiten
+entscheiden. Bei aktivem Mitdrücken ist der Anteil im Atemband mit 0{,}39 bis 0{,}93\,V
 dagegen deutlich größer als der übrige Anteil, und sein Maximum liegt in der Nähe der gezählten
 Atemfrequenz. Die ursprünglich geplante passive Erkennung ist mit diesem Aufbau daher nicht
 zuverlässig umsetzbar.
@@ -95,7 +97,7 @@ zuverlässig umsetzbar.
 \label{sec:erg_aktiv}
 
 Mit aktivem Mitdrücken zeigten alle sechs Messreihen deutliche, regelmäßige Atemzüge
-(Abbildung~\ref{fig:fsr_velostat}\,c). Der Signalhub lag mit 1410 bis 3360 ADC-Einheiten etwa
+(Abbildung~\ref{fig:fsr_velostat}\,c). Der Signalhub lag mit 1{,}14 bis 2{,}71\,V etwa
 drei- bis dreißigmal so hoch wie bei nur aufgelegten Händen. In jedem Auswertefenster wurden vier
 bis fünf Atemzüge erkannt; die mittlere Atemperiode lag zwischen 3{,}95 und 6{,}17\,s, was einer
 Atemfrequenz von 9{,}7 bis 15{,}2 Atemzügen pro Minute entspricht. In A3 und A4 erreichten 14\,\%
@@ -115,7 +117,7 @@ Nutzer*innen ist Teil der laufenden Studie (Abschnitt~\ref{sec:funktionsnachweis
 
 Zusätzlich zur Atemerkennung lassen sich die Taschen zur Bedienung nutzen: Ein Klick links oder
 rechts dient der Navigation, gleichzeitiges Drücken beider Taschen der Auswahl. Diese Funktion
-arbeitet, aber noch nicht in allen Fällen zuverlässig. Gewohnt sind die meisten Menschen
+arbeitet, aber noch nicht über die gesamte Druckfläche zuverlässig. Gewohnt sind die meisten Menschen
 Touchscreens oder Tasten mit spürbarem und hörbarem Klick. Die Taschen geben keine solche
 Rückmeldung, reagieren erst ab einer bestimmten Druckstärke und -dauer und erkennen leichte
 Klicks zum Rand hin weniger zuverlässig (Abschnitt~\ref{sec:hw_taschen}). Ohne Übung fällt es
@@ -197,7 +199,7 @@ Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
          Schrauben \\
          \trenn
     A8 & Bedienung über die Taschen & teilweise & Beobachtung im Betrieb
-       & Navigation und Auswahl möglich, aber noch nicht immer zuverlässig \\
+       & Navigation und Auswahl möglich, aber nicht über die gesamte Druckfläche zuverlässig \\
     \bottomrule
   \end{tabular}
 \end{table}

@@ -6,8 +6,10 @@
 ## Wartet auf das Team
 - [x] **Thermalsensor-Fix** (Commit `e05536c`) eingearbeitet: 4.2.1, 4.4.2, 5.2.6, Tab. 5.1, Fazit (26.10.)
 - [x] **Reichweitenmessung Thermalsensor** eingearbeitet: Abb. in 5.2.6, A1 jetzt ✓ (26.10.)
-- [ ] **Fotos** nach `abbildungen/fotos/`: Neffy frontal (Abb. 3.1c, 5.1a), Hände in den Taschen (Abb. 5.1b),
-      optional lackiertes Gehäuse (`\todo` in 4.3.4)
+- [ ] **Fotos** nach `abbildungen/fotos/` (Younes macht sie, 27.10.): Neffy frontal (Abb. 3.1c, 5.1a),
+      Hände in den Taschen (Abb. 5.1b), Nahaufnahme lackierte Oberfläche (`\todo` in 4.3.4), Innenleben /
+      geöffneter Oberkörper (`\todo` in 4.3.5). Abb. 3.1c: Platzhalter ist inline (Höhe 3,3 cm), Zeile
+      `\includegraphics[height=3.3cm]{fotos/neffy3_frontal}` steht als Kommentar darüber
 - [x] **Kürzen:** Stufen 1–3 umgesetzt (26.10.), Kap. 1–7 jetzt 33 S.
 
 ## Kann Claude direkt erledigen (nach Freigabe)
