@@ -22,17 +22,25 @@ gibt den Stand der Firmware wieder~\cite{jamil2026mainboard}.
     \midrule
     \multicolumn{3}{@{}l}{\textit{Raspberry Pi $\rightarrow$ ESP32-S3}} \\
     \texttt{0x01} & \texttt{MUTE} & 1 Byte: \texttt{01} Lautsprecher stumm, \texttt{00} Ton an \\
+    \trenn
     \texttt{0x04} & \texttt{MOVE\_BODY\_IN\_TIME} & Zielposition (mm\,$\times$\,10), Dauer (s\,$\times$\,10) \\
+    \trenn
     \texttt{0x05} & \texttt{MOVE\_HEAD\_IN\_TIME} & Zielwinkel (Grad\,$\times$\,10), Dauer (s\,$\times$\,10) \\
+    \trenn
     \texttt{0x06} & \texttt{MOVE\_BODY\_HEAD\_IN\_TIME} & Körper und Kopf gemeinsam, je Ziel und Dauer \\
+    \trenn
     \texttt{0x07} & \texttt{DISABLE\_MOTORS} & Startsignal einer Übung: nächste Bewegung beginnt 0{,}5\,s
                     später; zweimal gesendet am Ende der Übung. Die Motoren bleiben an. \\
+                    \trenn
     \texttt{0x10} & \texttt{BREATHING\_DETECTION\_START} & Atemerkennung über 30\,s starten \\
     \midrule
     \multicolumn{3}{@{}l}{\textit{ESP32-S3 $\rightarrow$ Raspberry Pi}} \\
     \texttt{0x03} & \texttt{GET\_PERSON\_READING} & 1 Byte: \texttt{01} Person da, \texttt{00} niemand \\
+    \trenn
     \texttt{0x08} / \texttt{0x0B} & \texttt{PRESSURE\_CLICK\_L} / \texttt{\_R} & Klick in der linken / rechten Tasche \\
+    \trenn
     \texttt{0x04} / \texttt{0x05} & Antwort auf \texttt{MOVE\_\ldots} & erreichte Position (mm\,$\times$\,10 bzw.\ Grad\,$\times$\,10) \\
+    \trenn
     \texttt{0x0F} / \texttt{0x0D} / \texttt{0x0E} & \texttt{BREATHING\_DETECTION\_\ldots}
       & Einstufung \texttt{RELAXED} / \texttt{NORMAL} / \texttt{STRESSED}; nichts, wenn weniger
         als zwei Einatemzüge erkannt wurden \\
@@ -55,15 +63,15 @@ Stand von Commit \texttt{2693747}~\cite{jamil2026mainboard}.
 
 \begin{table}[htbp]
   \centering
-  \caption{Kennwerte der Messreihen zur Atemsensorik (aus
-    \texttt{00\_Uebersicht\_Kennwerte.csv})}
+  \caption{Kennwerte der Messreihen zur Atemsensorik}
   \label{tab:kennwerte}
   \small
   \input{daten/tab_kennwerte.tex}
 \end{table}
 
-Die Rohdaten aller Messreihen liegen als CSV-Dateien im Ordner
-\texttt{daten/Messdaten\_Atemsensorik/} des Berichts-Repositorys
-(\url{https://github.com/eddy904/Praktikusbericht-Neffy}). Die Diagramme und Tabellen dieses
+Die Rohdaten aller Messreihen liegen als CSV-Dateien im Berichts-Repository
+(\url{https://github.com/eddy904/Praktikusbericht-Neffy}) im Ordner
+\path{daten/Messdaten_Atemsensorik/}; Tabelle~\ref{tab:kennwerte} wurde aus der Datei
+\path{00_Uebersicht_Kennwerte.csv} erzeugt. Die Diagramme und Tabellen dieses
 Berichts werden mit den Python-Skripten im Ordner \texttt{daten/} direkt aus diesen Dateien
 erzeugt. Der Quellcode der Firmware liegt im Repository des Neffy Boards~\cite{jamil2026mainboard}.

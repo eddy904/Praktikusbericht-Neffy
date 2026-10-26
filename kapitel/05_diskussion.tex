@@ -162,26 +162,30 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
     A1 & Sitzende Person erkennen & \checkmark
        & Im Betrieb zuverlässig erkannt (beobachtet, Messung ausstehend); Grenze bei direkter Sonne
          oder Heizung \\
+         \trenn
     A2 & Anwesenheit an den Pi melden & \checkmark
        & Meldung bei jeder Änderung und zusätzlich alle 500\,ms; der Pi reagiert mit einer kurzen
          Hubbewegung, auch beim Vorbeigehen \\
+         \trenn
     A3 & Atemrhythmus über die Hände erfassen & $\circ$
        & Passiv nicht möglich (Abschnitt~\ref{sec:erg_passiv}); mit aktivem Mitdrücken zuverlässig,
          Labormessung 9{,}7--15{,}2/min; Erkennungsrate nicht quantifiziert \\
+         \trenn
     A4 & Einstufung an den Raspberry Pi & \checkmark
        & Ergebnis kommt an, Pi startet passende Übung; Grenzen der Einstufung nicht validiert \\
+       \trenn
     A5 & Hub mit beiden Händen & \checkmark
        & Auch mit schwerer aufliegenden Händen; Probleme nur bei starkem Drücken auf den Roboter \\
-    A6 & Gestaltung nach Zielbild & \checkmark
-       & Runde, weniger kantige Form mit Taschen umgesetzt \\
-    A7 & Hände sicher in Taschen & $\circ$
-       & Mit verschiedenen Handgrößen geprüft: Hände passen und liegen gesichert; Position von
-         Händen und Ellbogen etwas zu hoch \\
-    A8 & Zugang zur Elektronik & \checkmark
-       & Oberkörper magnetisch, ohne Werkzeug abnehmbar; Unterkörper mit sechs Schrauben \\
-    A9 & Druck auf vorhandenen Druckern & \checkmark
-       & Alle Teile gedruckt; dafür Teilung in 16 Druckteile nötig \\
-    A10 & Bedienung über die Taschen & $\circ$
+       \trenn
+    A6 & Hände sicher in Taschen & \checkmark
+       & Mit verschiedenen Handgrößen geprüft: Hände passen und liegen gesichert; Ellbogen liegen
+         etwas hoch, ein Kissen darunter wird empfohlen \\
+         \trenn
+    A7 & Zugang zur Elektronik & \checkmark
+       & Oberkörper und Kopfdeckel magnetisch, ohne Werkzeug abnehmbar; Unterkörper mit sechs
+         Schrauben \\
+         \trenn
+    A8 & Bedienung über die Taschen & $\circ$
        & Navigation und Auswahl möglich, aber noch nicht immer zuverlässig \\
     \bottomrule
   \end{tabular}
@@ -225,8 +229,8 @@ Tabelle~\ref{tab:evaluation} bewertet die Anforderungen aus Tabelle~\ref{tab:anf
 \section{Eigene Ideen}
 \label{sec:eigene_ideen}
 
-Vorgegeben waren das Zielbild eines runderen Gehäuses mit Taschen für die Hände
-(Abbildung~\ref{fig:zielbild}) und die Aufgabe, Anwesenheit und Atmung zu erfassen. Auch der
+Vorgegeben war die Aufgabe, Anwesenheit und Atmung zu erfassen. Als Inspiration diente das
+Zielbild eines runderen Gehäuses mit Taschen für die Hände (Abbildung~\ref{fig:zielbild}). Auch der
 modulare Aufbau mit Magneten ist keine neue Idee, er wurde bereits bei Neffy~2.0
 eingesetzt. Das Neffy Board und die \ac{UART}-Bibliothek stammen von
 Charly Goerke (Abschnitt~\ref{sec:architektur}). Wie diese Vorgaben umgesetzt werden, hat das

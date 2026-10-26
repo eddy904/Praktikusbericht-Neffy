@@ -46,9 +46,10 @@ dieses reagieren. Daraus ergaben sich für das Gesamtprojekt folgende Ziele:
   \item \textbf{Stärkerer Antrieb:} Die Dynamixel-Motoren von Neffy~2 werden durch
         Schrittmotoren ersetzt, die mehr Kraft für die Hubbewegung bereitstellen und
         deutlich leiser laufen.
-  \item \textbf{Neue Gestaltung:} Als gestalterische Vorgabe diente ein
-        \ac{KI}-generiertes Bild, das die Vorstellung der Betreuerin von Neffy~3.0
-        wiedergibt (Abbildung~\ref{fig:zielbild}). Der Roboter sollte
+  \item \textbf{Neue Gestaltung:} Als Inspiration diente ein \ac{KI}-generiertes Bild aus
+        einem gemeinsamen Brainstorming, das die Vorstellung der Betreuerin von Neffy~3.0
+        wiedergibt (Abbildung~\ref{fig:zielbild}). Es gab die Richtung vor, ließ bei der
+        Umsetzung aber viel Spielraum. Der Roboter sollte
         weniger kantig und insgesamt runder wirken. Die wichtigste Neuerung sind
         Taschen in den Schultern, in denen die Hände gesichert und angenehm liegen,
         statt von den Schultern abzurutschen.
@@ -62,7 +63,7 @@ es für das Verständnis der Schnittstellen nötig ist.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.55\linewidth]{idee neffy.jpeg}
-  \caption{Gestalterische Vorgabe für Neffy~3.0 (mit ChatGPT erzeugt von Prof.\ Dr.\ Ilona Buchem)}
+  \caption{Gestalterische Inspiration für Neffy~3.0 (mit ChatGPT erzeugt von Prof.\ Dr.\ Ilona Buchem)}
   \label{fig:zielbild}
 \end{figure}
 
@@ -84,8 +85,8 @@ eingestuft. Auf dieser Grundlage wählt der Raspberry Pi eine passende Atemübun
 
 Im Projektverlauf erweiterte sich das Aufgabenfeld des Teams deutlich. Nach
 Einschätzung des Teams Sensorik wäre ein Neffy~2, der lediglich um Sensoren ergänzt
-wird, kein wirklicher Fortschritt gewesen. Das Team entschied sich daher, das Zielbild
-der Betreuerin vollständig umzusetzen, und übernahm aus eigener Initiative die
+wird, kein wirklicher Fortschritt gewesen. Das Team entschied sich daher, sich am Zielbild
+der Betreuerin zu orientieren, und übernahm aus eigener Initiative die
 komplette Neukonstruktion des Roboters: Konstruktion in SolidWorks, 3D-Druck,
 Nachbearbeitung und Lackierung des Gehäuses. Hinzu kam die Firmware für den
 ESP32-S3 auf dem Neffy Board, der die Sensoren ausliest und die Befehle des
@@ -110,37 +111,41 @@ Kapitel~\ref{kap:diskussion} als Grundlage der Evaluation.
     (F = funktional, NF = nicht-funktional)}
   \label{tab:anforderungen}
   \small
-  \begin{tabular}{@{}l p{7.4cm} l p{4.4cm}@{}}
+  \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{7.4cm} l
+                  >{\raggedright\arraybackslash}p{4.4cm}@{}}
     \toprule
     Nr. & Anforderung & Art & Prüfkriterium \\
     \midrule
     A1 & Eine Person, die vor dem Roboter sitzt, wird erkannt, auch wenn sie sich kaum bewegt;
          ohne Person wird keine Anwesenheit gemeldet.
        & F & Person auf dem Platz vor Neffy erkannt; leerer Platz: keine Anwesenheit \\
+       \trenn
     A2 & Änderungen der Anwesenheit werden ohne merkliche Verzögerung an den Raspberry Pi
          gemeldet, sodass dieser reagieren kann, etwa mit einer kurzen Hubbewegung.
        & F & Meldung bei jeder Änderung, spätestens alle 0{,}5\,s \\
+       \trenn
     A3 & Der Atemrhythmus wird allein über die in den Schultertaschen aufliegenden Hände
          erfasst (passiv), ohne zusätzliche Hardware am Körper; aus einer Messung von 30\,s
          wird die Atemfrequenz bestimmt.
        & F & Einatemzüge im Signal vom Rauschen unterscheidbar \\
+       \trenn
     A4 & Die Atemfrequenz wird als entspannt, normal oder gestresst eingestuft und an den
          Raspberry Pi übermittelt.
        & F & Einstufung kommt am Pi an \\
+       \trenn
     A5 & Die Hubbewegung gelingt auch mit beiden aufgelegten Händen zuverlässig.
        & F & Hub mit beiden aufgelegten Händen ohne Stocken \\
-    A6 & Die Gestaltung folgt dem Zielbild: weniger kantig, runde Formen.
-       & NF & Abgleich mit Zielbild \\
-    A7 & Die Hände liegen gesichert und angenehm in Schultertaschen und rutschen nicht ab;
+       \trenn
+    A6 & Die Hände liegen gesichert und angenehm in Schultertaschen und rutschen nicht ab;
          auch größere Hände finden Platz.
        & NF & Taschen nach Handmaßen aus der Literatur ausgelegt; verschiedene Handgrößen passen
               und rutschen beim Hub nicht ab \\
-    A8 & Schultern bzw.\ Deckel sind abnehmbar, sodass Innenleben und Elektronik gut
+              \trenn
+    A7 & Schultern bzw.\ Deckel sind abnehmbar, sodass Innenleben und Elektronik gut
          zugänglich sind.
-       & NF & Schultern ohne Werkzeug abnehmbar, Unterkörper verschraubt \\
-    A9 & Alle Gehäuseteile sind auf den verfügbaren FDM-Druckern herstellbar.
-       & NF & alle Teile auf den Druckern des Labors gedruckt \\
-    A10 & Die Taschen dienen zusätzlich als Eingabe: Klick links bzw.\ rechts zur Navigation,
+       & NF & Schultern und Kopfdeckel ohne Werkzeug abnehmbar, Unterkörper verschraubt \\
+       \trenn
+    A8 & Die Taschen dienen zusätzlich als Eingabe: Klick links bzw.\ rechts zur Navigation,
           beide gleichzeitig zur Auswahl.
        & F & Klicks und Auswahl werden erkannt \\
     \bottomrule
@@ -191,12 +196,17 @@ Programmierung erledigt war, arbeiteten beide gemeinsam am Gehäuse weiter.
     Aufgabe & Verantwortlich \\
     \midrule
     Konstruktion des Körpers (Ober- und Unterkörper) in SolidWorks & Eddy Werk \\
+    \trenn
     Auswahl des Drucksensors (Velostat) und Aufbau der Taschen & Eddy Werk \\
+    \trenn
     Konstruktion der Kopfhülle & Younes Jamil \\
+    \trenn
     Firmware des ESP32-S3 (Anwesenheit, Taschen, Atemerkennung, \acp{LED}, Motoren)
       & Younes Jamil \\
+      \trenn
     3D-Druck mit Überwachung der Druckaufträge, Nachbearbeitung, Lackierung und Montage
       & beide \\
+      \trenn
     Beschaffung der Bauteile & beide \\
     \bottomrule
   \end{tabular}

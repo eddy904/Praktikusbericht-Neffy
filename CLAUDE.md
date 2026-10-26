@@ -308,3 +308,4 @@ und „Durchgeführte Aufgaben“ → in Kap. 2 klar trennbar machen.
    (pgfplots oder Python → PDF), nicht abtippen.
 7. **Abschlussprüfung:** Kriterientabelle + Aufgabenverteilungstabelle + Formalia einzeln durchgehen und zeigen,
    wo alles erfüllt ist und wo es noch schwach ist.
+Anforderungen ab 26.10.: A1–A8 (Zielbild = nur Inspiration, kein A mehr; FDM-Druckbarkeit gestrichen; alt A7→A6 Hände (erfüllt), A8→A7 Zugang, A10→A8 Bedienung). Tabellen: booktabs + graue Trennlinien \trenn (main.tex).

@@ -80,13 +80,17 @@ Anhang~\ref{anh:code}.
     Bewegung     & Körper und/oder Kopf in vorgegebener Zeit an Zielposition fahren
                    (\texttt{MOVE\_\ldots\_IN\_TIME})
                  & Bestätigung mit erreichter Position \\
+                 \trenn
     Anwesenheit  & --
                  & Person da / nicht da (\texttt{GET\_PERSON\_READING}), bei jeder
                    Änderung und alle 0{,}5\,s \\
+                   \trenn
     Taschen      & --
                  & Klick links / rechts (\texttt{PRESSURE\_CLICK\_L/R}) \\
+                 \trenn
     Atmung       & Atemerkennung starten (\texttt{BREATHING\_DETECTION\_START})
                  & Einstufung entspannt / normal / gestresst \\
+                 \trenn
     Sonstiges    & Lautsprecher stumm (\texttt{MUTE}); Startsignal einer Übung
                    (\texttt{DISABLE\_MOTORS}, siehe Abschnitt~\ref{sec:schwachstellen})
                  & -- \\
@@ -103,7 +107,7 @@ Interaktion zusammenspielen.
   \begin{tikzpicture}[
       >={Stealth}, font=\small,
       msg/.style = {->, shorten >=1pt},
-      note/.style = {font=\scriptsize\itshape, align=left},
+      note/.style = {font=\scriptsize, text=black!65, align=left},
     ]
     \def\L{0} \def\R{8}
     \node[draw, rounded corners, minimum width=2.6cm] (a) at (\L,0) {Raspberry Pi};
@@ -257,15 +261,20 @@ fasst den Vergleich zusammen; die Entscheidung fiel auf Velostat.
   \caption{Vergleich der getesteten Drucksensoren (+ geeignet, $\circ$ eingeschränkt, -- ungeeignet)}
   \label{tab:bewertung_drucksensor}
   \small
-  \begin{tabular}{@{}p{7.2cm} c c@{}}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{7.2cm} c c@{}}
     \toprule
     Kriterium & \ac{FSR} & Velostat \\
     \midrule
     Abgestufter Signalverlauf statt Ein/Aus           & --      & + \\
+    \trenn
     Erkennung schwacher Druckunterschiede             & --      & + \\
+    \trenn
     Einstellbarkeit über die Schaltung                & --      & + \\
+    \trenn
     Fläche und Form frei wählbar                      & --      & + \\
+    \trenn
     Integration unter der Verkleidung (dünn, flexibel) & $\circ$ & + \\
+    \trenn
     Kosten und Beschaffung                            & +       & + \\
     \bottomrule
   \end{tabular}
@@ -295,7 +304,7 @@ Als Taschen werden die beiden länglichen Öffnungen im Oberkörper bezeichnet, 
 Nutzer:innen ihre Hände legen. Ihre Größe orientiert sich an anthropometrischen Handmaßen
 (Tabelle~\ref{tab:handmasse}): Im Mittel (50.~Perzentil) ist eine Hand etwa 17 bis 19\,cm lang
 und 7{,}5 bis 8{,}6\,cm breit; große Hände (95.~Perzentil der Männer) erreichen etwa 20\,cm Länge
-und gut 9\,cm Breite. Nach Anforderung~A7 sollen auch solche großen Hände Platz finden.
+und gut 9\,cm Breite. Nach Anforderung~A6 sollen auch solche großen Hände Platz finden.
 Die Werte stammen aus Erhebungen in Kolumbien und China,
 für Mitteleuropa können sie etwas abweichen.
 
@@ -310,6 +319,7 @@ für Mitteleuropa können sie etwas abweichen.
     \midrule
     \cite{maldonado2023exhand}, Tab.~1 & Frauen & 15{,}4 / 16{,}6 / 18{,}0 & 6{,}9 / 7{,}5 / 8{,}0 \\
                                        & Männer & 16{,}8 / 18{,}3 / 19{,}9 & 7{,}8 / 8{,}5 / 9{,}1 \\
+                                       \trenn
     \cite{fu2022tfcc}, Tab.~3 (2016)   & Frauen & 16{,}6 / 17{,}7 / 18{,}7 & 7{,}5 / 8{,}0 / 8{,}5 \\
                                        & Männer & 17{,}7 / 18{,}8 / 20{,}0 & 8{,}1 / 8{,}6 / 9{,}1 \\
     \bottomrule
@@ -482,7 +492,7 @@ Zweck des Roboters unerheblich.
 Das Gehäuse hat die Form einer weitgehend eiförmigen Schale (Abbildung~\ref{fig:gehaeuse}\,a):
 Ober- und Unterseite sind eben, damit der Roboter sicher steht, während die Seiten stark
 abgerundet sind. So entsteht statt eines reinen Kastens die weichere, weniger kantige Form des
-Zielbilds (Anforderung~A6). Neffy~3.0 ist 43\,cm breit, 21{,}5\,cm tief und 45\,cm hoch. Auch
+Zielbilds. Neffy~3.0 ist 43\,cm breit, 21{,}5\,cm tief und 45\,cm hoch. Auch
 der Kopf ist rund bis oval geformt. In ihm sitzen der Bildschirm, der Raspberry Pi und der
 Schrittmotor der Kopfbewegung.
 
@@ -519,7 +529,7 @@ Wegen der starken Rundungen ließen sich Ober- und Unterkörper nicht am Stück 
 größer als der Bauraum der Drucker, und selbst einzelne große Teile hätten sehr viel
 Stützmaterial erfordert. Besonders anspruchsvoll waren die Rundungen um die Taschen. Das Gehäuse
 wurde deshalb in mehrere druckbare Teile zerlegt (Tabelle~\ref{tab:gehaeuse_teile},
-Abbildung~\ref{fig:gehaeuse}\,b und~c; Anforderung~A9). Der Aufbau folgt dabei stets demselben
+Abbildung~\ref{fig:gehaeuse}\,b und~c). Der Aufbau folgt dabei stets demselben
 Prinzip: Zwei Seitenstücke bilden zusammen mit einem Vorder- und einem Hinterteil eine
 Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
 
@@ -536,8 +546,10 @@ Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
     \midrule
     Oberkörper  & 6 & je drei Teile zur linken und rechten Hälfte verklebt
                 & Hälften in der Mitte mit Magneten verbunden, ohne Werkzeug abnehmbar \\
+                \trenn
     Unterkörper & 6 & verklebt zu einer Schale und einer hinteren Klappe (aus zwei Teilen)
                 & Klappe mit zwei Schrauben seitlich und vier Schrauben im Boden befestigt \\
+                \trenn
     Kopfhülle   & 4 & Boden, Hinterteil und Vorderteil zu einer Einheit verschraubt bzw.\ gesteckt
                 & Deckel mit Magneten, ohne Werkzeug abnehmbar \\
     \bottomrule
@@ -545,7 +557,9 @@ Baugruppe, und linke und rechte Hälfte sind spiegelbildlich aufgebaut.
 \end{table}
 
 Jedes der großen Teile benötigte 15 Stunden Druckzeit oder mehr. Gedruckt wurde auf
-Druckern vom Typ Prusa MK4S und Prusa i3 MK3S im \ac{FDM}-Verfahren aus PLA.
+Druckern vom Typ Prusa MK4S und Prusa i3 MK3S im \ac{FDM}-Verfahren aus PLA. Da die Drucker im
+Labor für Kommunikation nicht für alle Teile ausreichten, wurde in der Werkstatt des
+Studiengangs Humanoide Robotik gedruckt, die dafür besser ausgestattet war.
 
 \subsection{Verbindung der Teile}
 \label{sec:gehaeuse_verbindung}
@@ -558,7 +572,7 @@ vorgesehenen Bohrungen wurden dadurch nicht mehr benötigt. Eine wichtige Erkenn
 Konstruktion war, dass sich mit Kleben deutlich mehr lösen lässt als zunächst angenommen.
 
 Lösbar sind nur die Verbindungen, über die das Innenleben zugänglich bleibt
-(Tabelle~\ref{tab:gehaeuse_teile}, Anforderung~A8). Ein modularer Aufbau war ein bewusstes
+(Tabelle~\ref{tab:gehaeuse_teile}, Anforderung~A7). Ein modularer Aufbau war ein bewusstes
 Konstruktionsziel: Der Roboter soll sich vollständig zerlegen und wieder zusammensetzen lassen,
 um Änderungen vorzunehmen oder defekte Teile zu tauschen. Wie wichtig das ist, zeigte sich
 bereits im Projekt, in dem der Roboter immer wieder geöffnet werden musste. Dafür werden vor
@@ -608,17 +622,24 @@ Kern gegenseitig stören. Tabelle~\ref{tab:module} zeigt die Module.
   \caption{Module der Firmware}
   \label{tab:module}
   \small
-  \begin{tabular}{@{}l p{9.4cm}@{}}
+  \begin{tabular}{@{}l >{\raggedright\arraybackslash}p{9.4cm}@{}}
     \toprule
     Modul & Aufgabe \\
     \midrule
     \texttt{main}               & Initialisierung, Hauptschleife, \ac{LED}-Steuerung, Debug-Befehle \\
+    \trenn
     \texttt{config.h}           & Pins, Hardwarekonstanten, Zeiten, \ac{LED}-Einstellungen \\
+    \trenn
     \texttt{MotorControlLoop}   & Referenzfahrt, Ausführung der Bewegungsbefehle, Rückmeldungen (Kern~0) \\
+    \trenn
     \texttt{PersonSensor}       & Auslesen des D6T und Anwesenheitserkennung \\
+    \trenn
     \texttt{PersonDetector}     & Senden des Anwesenheitszustands \\
+    \trenn
     \texttt{PressureDetector}   & Klick- und Druckerkennung je Tasche \\
+    \trenn
     \texttt{BreathingDetection} & Atemerkennung über 30\,s \\
+    \trenn
     \texttt{VoltageReader}      & Kalibrierte \ac{ADC}-Messung \\
     \bottomrule
   \end{tabular}
