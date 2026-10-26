@@ -164,8 +164,7 @@ SolidWorks-Baugruppen der Vorgängerversionen, sodass etwa Maße von Bauteilen n
 werden konnten.
 
 Das Praktikum lief von März bis Ende Oktober 2026. Der Arbeitsaufwand lag geschätzt bei
-rund 640~Stunden pro Person, was etwa vier Monaten in Vollzeit mit 40~Stunden pro Woche
-entspricht.
+rund 450~Stunden pro Person.
 
 Die zentrale Schnittstelle zwischen den Teams ist die Verbindung zwischen dem
 Raspberry Pi (Team Programmierung) und dem ESP32-S3 auf dem Neffy Board (Team
@@ -179,15 +178,14 @@ Atemerkennung zurück. Das Protokoll wird in Abschnitt~\ref{sec:architektur} bes
 Tabelle~\ref{tab:wer_was} zeigt, wer im Team Sensorik welche Aufgaben übernommen hat. Der
 Arbeitsaufwand war insgesamt gleichmäßig auf beide verteilt, die Aufgaben wurden nach Bedarf
 vergeben. Grob lag die Hardware bei Eddy Werk und die Software bei Younes Jamil. Sobald die
-Programmierung und die Überwachung der Druckaufträge erledigt waren, arbeiteten beide gemeinsam
-am Gehäuse weiter.
+Programmierung erledigt war, arbeiteten beide gemeinsam am Gehäuse weiter.
 
 \begin{table}[htbp]
   \centering
   \caption{Aufgabenverteilung im Team Sensorik}
   \label{tab:wer_was}
   \small
-  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{9.2cm} l@{}}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{10.6cm} l@{}}
     \toprule
     Aufgabe & Verantwortlich \\
     \midrule
@@ -196,8 +194,8 @@ am Gehäuse weiter.
     Konstruktion der Kopfhülle & Younes Jamil \\
     Firmware des ESP32-S3 (Anwesenheit, Taschen, Atemerkennung, \acp{LED}, Motoren)
       & Younes Jamil \\
-    Überwachung der Druckaufträge & Younes Jamil \\
-    3D-Druck, Nachbearbeitung, Lackierung und Montage & beide \\
+    3D-Druck mit Überwachung der Druckaufträge, Nachbearbeitung, Lackierung und Montage
+      & beide \\
     Beschaffung der Bauteile & beide \\
     \bottomrule
   \end{tabular}
@@ -208,5 +206,38 @@ Programmierung), die grafische Gestaltung des Gesichts (eine Mitarbeiterin des L
 Entwurf des Neffy Boards und die \ac{UART}-Bibliothek (Charly Goerke, Labor für
 Kommunikation).
 
-\todoi{Zeitaufteilung nach Arbeitsbereichen (Diagramm, vgl.\ Praxisbericht
-Neffy~2~\cite{goerke2025neffy2}).}
+Abbildung~\ref{fig:zeitaufteilung} zeigt, wie sich die Arbeitszeit des Teams Sensorik
+geschätzt auf die Arbeitsbereiche verteilte. Den größten Anteil hatte die Konstruktion,
+gefolgt von 3D-Druck und Nachbearbeitung; zusammen entfielen damit rund 60\,\% der Zeit auf
+das Gehäuse.
+
+\definecolor{zeitA}{HTML}{2A78D6}
+\definecolor{zeitB}{HTML}{D9822B}
+\definecolor{zeitC}{HTML}{2E9E6E}
+\definecolor{zeitD}{HTML}{8C6BC8}
+\definecolor{zeitE}{HTML}{C04F6B}
+\definecolor{zeitF}{HTML}{8A8983}
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[font=\small]
+    % Anteile in Prozent -> Winkel (1 % = 3,6 Grad), im Uhrzeigersinn ab 12 Uhr
+    \foreach \von/\bis/\farbe/\wert in {90/-36/zeitA/35, -36/-126/zeitB/25,
+        -126/-198/zeitC/20, -198/-226.8/zeitD/8, -226.8/-252/zeitE/7, -252/-270/zeitF/5} {
+      \fill[\farbe, draw=white, line width=1pt]
+        (0,0) -- (\von:1.9) arc[start angle=\von, end angle=\bis, radius=1.9] -- cycle;
+      \pgfmathsetmacro{\mitte}{(\von+\bis)/2}
+      \ifnum\wert>9
+        \node[white, font=\small\bfseries] at (\mitte:1.25) {\wert\,\%};
+      \fi
+    }
+    \foreach \farbe/\text [count=\i] in {zeitA/{Konstruktion (SolidWorks), 35\,\%},
+        zeitB/{3D-Druck und Nachbearbeitung, 25\,\%}, zeitC/{Programmierung, 20\,\%},
+        zeitD/{Sensortests und Messungen, 8\,\%}, zeitE/{Montage, Verkabelung, Löten, 7\,\%},
+        zeitF/{Abstimmung, Beschaffung, Dokumentation, 5\,\%}} {
+      \fill[\farbe] (2.6,{1.55-0.55*\i}) rectangle ++(0.3,0.3);
+      \node[anchor=west] at (3.0,{1.7-0.55*\i}) {\text};
+    }
+  \end{tikzpicture}
+  \caption{Geschätzte Aufteilung der Arbeitszeit des Teams Sensorik nach Arbeitsbereichen}
+  \label{fig:zeitaufteilung}
+\end{figure}
