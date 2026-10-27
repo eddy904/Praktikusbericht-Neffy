@@ -4,10 +4,9 @@
 `notizen/review_ars_2026-10-26.md`, `notizen/gutachten_gremium_2026-10-27.md` (simuliertes Gremium).
 
 ## Vor der Abgabe heute
-- [ ] **Fotos** nach `abbildungen/fotos/` (Younes): Neffy frontal (Abb. 3.1c, 5.1a), Hände in den Taschen
-      (Abb. 5.1b), Nahaufnahme lackierte Oberfläche (`\todo` in 4.3.4), Innenleben / geöffneter Oberkörper
-      (`\todo` in 4.3.5). Abb. 3.1c: Platzhalter ist inline (Höhe 3,3 cm), die Zeile
-      `\includegraphics[height=3.3cm]{fotos/neffy3_frontal}` steht als Kommentar darüber
+- [x] **Fotos** eingebaut (27.10.): Abb. 3.1c, 5.1a/b, 4.7 (lackierte Schulter, 4.3.4), 4.8 (Innenleben Körper
+      und Kopf, 4.3.5). Zuschnitte in `abbildungen/fotos/` (einheitliche Formate), Originale in `abbildungen/`
+- [ ] Kap. 3 (ca. 7 Zeilen) und Kap. 5 (ca. 5 Zeilen) ragen auf eine neue Seite – kürzen oder so lassen
 - [x] Firmware-Teamanteil in 4.4.6 (Ideen/Funktionsumfang vom Team, Aufbau vom Werkzeug vorgeschlagen,
       iterativer Ablauf mit Tests am Board; 27.10., Younes). Achtung: 4.4.6 war „bleibt so“ (Eddy) – Eddy informieren
 - [x] Begründungen in 4.3 (Teilung, PLA, Kleben statt Rundloch/Langloch, Magnete vs. Schrauben; 27.10.)

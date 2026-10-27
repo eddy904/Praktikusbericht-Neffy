@@ -509,9 +509,16 @@ Die Kanten und Löcher an den Klebestellen wurden mit Sekundenkleber gefüllt un
 schrittweise feinerem Schleifpapier geschliffen; ein elektrisches Schleifgerät beschädigte das
 PLA zu schnell. Lackiert wurde in drei Stufen: Kunststoffprimer, Haftgrund (beide von Vincent,
 Hellweg) und zwei bis drei Schichten Sprühlack (Montana GOLD, Sahara Beige), jeweils mit
-ausreichend langer Trocknungszeit. So entstehen auch mit PLA sehr saubere Oberflächen, der
-Aufwand dafür ist allerdings groß.
-\todo{Nahaufnahme der lackierten Oberfläche}
+ausreichend langer Trocknungszeit. So entstehen auch mit PLA sehr saubere Oberflächen
+(Abbildung~\ref{fig:oberflaeche}), der Aufwand dafür ist allerdings groß.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.3\linewidth]{fotos/schulter_lackiert}
+  \caption[Lackierte Oberfläche an der Schulter]{Lackierte Oberfläche an der Schulter mit dem
+    Übergang zwischen zwei verklebten Druckteilen}
+  \label{fig:oberflaeche}
+\end{figure}
 
 \subsection{Einbau der Komponenten}
 \label{sec:gehaeuse_einbau}
@@ -521,8 +528,24 @@ Verbindungsteil zwischen Lineareinheit und Sensoreinsätzen (Abschnitt~\ref{sec:
 Aufnahmen auf der Rückseite für Netzteilbuchse, Schalter und Kopfhöreranschluss sowie die
 Kabelführung zwischen Neffy Board, Motoren, Taschen, Kopf und Anschlüssen. Ebenso wurden
 Lautsprecher und Kopfhöreranschluss (bereitgestellt von Charly Görke, Abschnitt~\ref{sec:organisation})
-eingebaut und angeschlossen.
-\todo{Foto vom Innenleben (geöffneter Oberkörper)}
+eingebaut und angeschlossen. Abbildung~\ref{fig:innenleben} zeigt das Innenleben von Körper und
+Kopf.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{fotos/innenleben_oberkoerper}
+    \caption{Geöffneter Körper mit Kabelführung und Neffy Board}
+  \end{subfigure}\hspace{0.06\linewidth}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{fotos/innenleben_kopf}
+    \caption{Geöffneter Kopf mit Raspberry Pi, Schrittmotor und Zahnrädern}
+  \end{subfigure}
+  \caption{Innenleben von Neffy~3.0}
+  \label{fig:innenleben}
+\end{figure}
 
 \section{Software}
 \label{sec:software}
