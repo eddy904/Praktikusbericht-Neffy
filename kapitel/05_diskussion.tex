@@ -138,13 +138,17 @@ Entfernung vor dem Roboter, je etwa 30\,s (in 3\,m 60\,s); davor und danach war 
 leer. Aufgezeichnet wurden Messwert, gelernte Raumtemperatur und Meldung der Firmware alle
 120\,ms (Abbildung~\ref{fig:thermal_reichweite}). Bis 2\,m wurde die Person durchgehend erkannt;
 die mittlere Erwärmung betrug 3{,}8\,K in 0{,}5\,m, 2{,}7\,K in 1\,m, 1{,}8\,K in 1{,}5\,m und
-1{,}1\,K in 2\,m. In 3\,m lag sie mit 0{,}9\,K knapp unter der Schwelle von 1\,K; die Meldung
-schwankte dort und stand während 66\,\% der Zeit an. Bei leerem Platz wurde zu keinem Zeitpunkt
-Anwesenheit gemeldet, und nach dem Weggehen fiel die Meldung in weniger als einer Sekunde ab.
+1{,}1\,K in 2\,m. In 3\,m lag sie mit 0{,}9\,K knapp unter der damaligen Schwelle von 1\,K; die
+Meldung schwankte dort und stand während 66\,\% der Zeit an. Bei leerem Platz wurde zu keinem
+Zeitpunkt Anwesenheit gemeldet. Aufgrund dieser Messung wurde die Schwelle auf 0{,}8\,K gesenkt
+(Gleichung~\ref{eq:anwesenheit}). Auf der Aufzeichnung nachgerechnet, wird die Person in 3\,m
+damit während etwa 95\,\% der Zeit erkannt, und auch bei leerem Platz bleibt die Meldung aus.
+Das Weggehen wird durch die Wartezeit von 2\,s (Abschnitt~\ref{sec:sw_anwesenheit}) etwa 2\,s
+später gemeldet als bei der Messung.
 Dass die Person bei der Messung stand, ist für das Ergebnis unerheblich: Erfasst wurde etwa der
 Oberkörper, der auch bei einer sitzenden Person im Sichtfeld liegt. Mit sitzenden Personen wurde
 die Erkennung zudem während der gesamten Arbeit am Roboter im Betrieb erprobt.
-Die Reichweite liegt damit bei etwa 2\,m, 3\,m ist der Grenzbereich. Das bestätigt die obere
+Die Reichweite liegt damit bei etwa 2\,m sicher, 3\,m ist der Grenzbereich. Das bestätigt die obere
 Grenze der Abschätzung aus Abschnitt~\ref{sec:hw_anwesenheit}. Kommt jemand vorbei, fährt der
 Roboter kurz hoch und wieder herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Innenräumen traten auch bei
 normalem Tageslicht keine Probleme auf.
@@ -177,7 +181,7 @@ Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
     Nr. & Anforderung & Status & Nachweis & Begründung \\
     \midrule
     A1 & Sitzende Person erkennen & erfüllt & Messung (0{,}5--3\,m, stehende Person), Betrieb
-       & Bis 2\,m durchgehend erkannt, 3\,m Grenzbereich; leerer Platz ohne Fehlmeldung; Oberkörper
+       & Bis 2\,m durchgehend, in 3\,m zu etwa 95\,\% erkannt; leerer Platz ohne Fehlmeldung; Oberkörper
          wie im Sitzen im Sichtfeld; Grenze bei direkter Sonne oder Heizung \\
          \trenn
     A2 & Anwesenheit an den Pi melden & erfüllt & Firmware, Beobachtung im Betrieb

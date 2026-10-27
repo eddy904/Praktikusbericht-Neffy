@@ -22,7 +22,8 @@ BASIS = Path(__file__).resolve().parent
 DATEI = BASIS / "thermal-distance-261026-2137.csv"
 AUSGABE = BASIS.parent / "abbildungen" / "plots"
 
-SCHWELLE_K = 1.0  # ENTER_MIN_C in PersonSensor.cpp
+SCHWELLE_MESSUNG_K = 1.0  # ENTER_MIN_C in PersonSensor.cpp bei der Messung (Commit e05536c)
+SCHWELLE_K = 0.8          # ENTER_MIN_C ab Commit 4873fa0, aufgrund dieser Messung gesenkt
 ERWAERMUNG_VOLL_K = 5.0  # Erwärmung bei ausgefülltem Sichtfeld (Abstimmung der Firmware: 4 bis 6 K)
 ANTEIL_1M = 0.4          # Anteil der Person am Sichtfeld in 1 m (Abschätzung in Abschnitt 4.2.1)
 
@@ -97,8 +98,12 @@ if __name__ == "__main__":
     for _, z in p.iterrows():
         ax.text(z["d_m"] + 0.06, z["dT_mittel"] + 0.12, f"{100 * z['erkannt_anteil']:.0f}\\,\\%",
                 fontsize=8, color=FARBE_GEDAEMPFT)
+    ax.axhline(SCHWELLE_MESSUNG_K, color=FARBE_GEDAEMPFT, linewidth=0.6, linestyle=(0, (1, 2)))
     ax.axhline(SCHWELLE_K, color=FARBE_GEDAEMPFT, linewidth=0.6, linestyle=(0, (3, 2)))
-    ax.text(0.05, SCHWELLE_K + 0.08, "Schwelle 1\\,K", ha="left", fontsize=8, color=FARBE_GEDAEMPFT)
+    ax.text(0.05, SCHWELLE_MESSUNG_K + 0.08, "Schwelle bei der Messung 1\\,K", ha="left", fontsize=8,
+            color=FARBE_GEDAEMPFT)
+    ax.text(0.05, SCHWELLE_K - 0.3, "Schwelle aktuell 0{,}8\\,K", ha="left", fontsize=8,
+            color=FARBE_GEDAEMPFT)
     ax.set_xlim(0, 3.3)
     ax.set_ylim(0, 5)
     ax.xaxis.set_major_formatter(KOMMA)

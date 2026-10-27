@@ -115,16 +115,16 @@ wobei $a$ der Anteil des Sichtfelds ist, den die Person ausfüllt. Bei der Absti
 ergab sich direkt vor dem Roboter eine Erwärmung um 4 bis 6\,K, in 1\,m Entfernung um etwa
 2\,K~\cite{jamil2026mainboard}. Mit rund 5\,K bei ausgefülltem Sichtfeld entspricht das in 1\,m
 einem Anteil von $a \approx 0{,}4$. Für eine Erkennung muss die Erwärmung mindestens die Schwelle
-von 1\,K erreichen (Gleichung~\ref{eq:anwesenheit}), also $a \geq 0{,}2$. Nimmt der Anteil mit der
+von 0{,}8\,K erreichen (Gleichung~\ref{eq:anwesenheit}), also $a \geq 0{,}16$. Nimmt der Anteil mit der
 Entfernung zwischen $1/d$ (die Person füllt die Höhe des Sichtfelds noch aus) und $1/d^2$ (sie ist
-in beiden Richtungen kleiner als das Sichtfeld) ab, ergibt sich eine Reichweite von etwa 1{,}4 bis
-2\,m. Die Abschätzung vernachlässigt unter anderem, dass der Sensor nicht über das ganze Sichtfeld
+in beiden Richtungen kleiner als das Sichtfeld) ab, ergibt sich eine Reichweite von etwa 1{,}6 bis
+2{,}5\,m. Die Abschätzung vernachlässigt unter anderem, dass der Sensor nicht über das ganze Sichtfeld
 gleich empfindlich ist.
 
 Abbildung~\ref{fig:thermal_reichweite} vergleicht die Abschätzung mit einer Reichweitenmessung am
 fertigen Roboter (Ablauf und Auswertung in Abschnitt~\ref{sec:erg_anwesenheit}). Die gemessene
-Erwärmung folgt etwa dem Grenzfall $1/d$ und liegt ab 1\,m leicht darüber; die Schwelle von 1\,K
-wird bis etwa 2\,m erreicht. Die obere Grenze der Abschätzung wird damit bestätigt.
+Erwärmung folgt etwa dem Grenzfall $1/d$ und liegt ab 1\,m leicht darüber; die Schwelle von
+0{,}8\,K wird im Mittel bis 3\,m knapp erreicht. Die obere Grenze der Abschätzung wird damit bestätigt.
 
 \begin{figure}[htbp]
   \centering
@@ -133,7 +133,7 @@ wird bis etwa 2\,m erreicht. Die obere Grenze der Abschätzung wird damit bestä
     Thermalsensors gegenüber der gelernten Raumtemperatur in Abhängigkeit von der Entfernung der
     Person. Messung am fertigen Roboter: Mittelwert, Striche vom kleinsten bis zum größten Wert
     (einschließlich des Positionswechsels), Prozentwerte: Anteil der Zeit mit Meldung
-    \enquote{Person da}. Hinterlegt: Abschätzung nach Gleichung~\ref{eq:mischung} mit
+    \enquote{Person da} (Firmware-Stand bei der Messung, Schwelle 1\,K). Hinterlegt: Abschätzung nach Gleichung~\ref{eq:mischung} mit
     $a \approx 0{,}4$ in 1\,m, abnehmend zwischen $1/d$ und $1/d^2$}
   \label{fig:thermal_reichweite}
 \end{figure}
@@ -583,19 +583,20 @@ Prüfsumme (\acl{CRC}, \acs{CRC}) auf Übertragungsfehler geprüft wird. Die Erk
 laufend gelernten Raumtemperatur $T_\mathrm{R}$. Eine Person gilt als anwesend, sobald
 \begin{equation}
   T - T_\mathrm{R} \geq \vartheta \quad\text{mit}\quad
-  \vartheta = \max\left(8\,\sigma;\ 1\,\mathrm{K}\right),
+  \vartheta = \max\left(8\,\sigma;\ 0{,}8\,\mathrm{K}\right),
   \label{eq:anwesenheit}
 \end{equation}
 wobei $\sigma$ das gemessene Rauschen des Sensors ohne Person ist. Als abwesend gilt sie,
-sobald die Differenz unter $0{,}6\,\vartheta$ fällt; der Abstand zwischen beiden Schwellen
-verhindert ein Flackern des Zustands. Die Raumtemperatur folgt der Messung je nach Situation
+wenn die Differenz 2\,s lang unter $0{,}6\,\vartheta$ liegt, damit kurzes Zurücklehnen nicht als
+Weggehen zählt; der Abstand zwischen beiden Schwellen verhindert ein Flackern des Zustands. Die Raumtemperatur folgt der Messung je nach Situation
 unterschiedlich schnell: Sinkt der Messwert deutlich unter die Raumtemperatur, wird er innerhalb
 etwa einer Sekunde übernommen, da eine Person den Messwert nur erhöhen kann, solange sie wärmer
 ist als der Hintergrund. Steigt er, wird sie nur langsam nachgeführt, damit eine Person,
 die sich langsam nähert oder etwas weiter entfernt steht, nicht als Raumtemperatur
 \enquote{weggelernt} wird. Solange eine Person gemeldet wird, folgt die Raumtemperatur mit einer
 Zeitkonstante von 900\,s; eine völlig ruhig sitzende Person bleibt so etwa 20 Minuten erkannt.
-Das Weggehen wird zusätzlich an einem schnellen Abfall des Messwerts erkannt.
+Da die Fläche nach dem Weggehen noch bis etwa 1\,K wärmer bleibt, gilt die Person auch als
+abwesend, wenn der Messwert 1\,K unter ihren niedrigsten Wert fällt.
 
 Beim Einschalten kann bereits jemand vor dem Roboter sitzen und darf dann nicht als
 Raumtemperatur gelernt werden. Der D6T misst deshalb auch seine eigene Gehäusetemperatur
@@ -657,8 +658,8 @@ beschriebenen aktiven Erfassung aufgegeben.
 \label{sec:sw_ablage}
 
 Der Quellcode liegt im Repository \url{https://github.com/YounesJamil/Neffy-3.0-Mainboard}
-\cite{jamil2026mainboard}; dieser Bericht bezieht sich auf den Stand vom 26.10.2026
-(Commit \texttt{e05536c}). Board-Definition und Pinbelegung sind im Repository enthalten,
+\cite{jamil2026mainboard}; dieser Bericht bezieht sich auf den Stand vom 27.10.2026
+(Commit \texttt{b20af95}). Board-Definition und Pinbelegung sind im Repository enthalten,
 die verwendeten Bibliotheken (Neffy\_UART\_Interface, TMX222x\_StepperDriver, FastLED)
 werden von PlatformIO in festen Versionen geladen. Die Firmware wird über den USB-Anschluss
 der Platine aufgespielt, ohne dass eine Taste gedrückt werden muss.
