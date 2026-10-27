@@ -16,6 +16,11 @@ daraufhin eine Atemübung startet. Körper und Kopf bewegen sich dabei im Atemrh
 gesamte Druckfläche zuverlässig (Abschnitt~\ref{sec:erg_bedienung}). Eine Studie mit Nutzer*innen ist derzeit in Arbeit; sie wird
 vom Team Design durchgeführt.
 
+Neffy~3.0 wird bislang nur betreut eingesetzt: Bei Tests mit Nutzer*innen ist immer eine Person
+anwesend, die in den Roboter eingewiesen ist, und wie schon bei den Vorgängern werden die
+Kontaktflächen vor der Nutzung gereinigt. Eine Nutzung ohne Betreuung ist erst zu einem späteren
+Zeitpunkt vorgesehen.
+
 \begin{figure}[htbp]
   \centering
   \begin{subfigure}[b]{0.48\linewidth}
@@ -90,8 +95,10 @@ etwa gleich groß (85 bzw.\ 70\,mV). P1 zeigt zwar eine langsame Schwankung um 8
 von der Atmung oder von langsamen Handbewegungen stammt, lässt sich ohne Referenzmessung nicht
 entscheiden. Bei aktivem Mitdrücken ist der Anteil im Atemband mit 0{,}39 bis 0{,}93\,V
 dagegen deutlich größer als der übrige Anteil, und sein Maximum liegt in der Nähe der gezählten
-Atemfrequenz. Die ursprünglich geplante passive Erkennung ist mit diesem Aufbau daher nicht
-zuverlässig umsetzbar.
+Atemfrequenz. In den Vorversuchen ließ sich die Atmung bei nur aufgelegten Händen daher nicht
+zuverlässig erkennen. Mit diesem Aufbau und den im Projekt verfügbaren Mitteln war die passive
+Erkennung nicht umsetzbar; ein lernbasierter Ansatz wie bei Ommie erfordert deutlich mehr Daten und
+Aufwand (Abschnitt~\ref{sec:sdt_atem}).
 
 \subsection{Aktive Atemerkennung}
 \label{sec:erg_aktiv}
@@ -134,6 +141,9 @@ die mittlere Erwärmung betrug 3{,}8\,K in 0{,}5\,m, 2{,}7\,K in 1\,m, 1{,}8\,K 
 1{,}1\,K in 2\,m. In 3\,m lag sie mit 0{,}9\,K knapp unter der Schwelle von 1\,K; die Meldung
 schwankte dort und stand während 66\,\% der Zeit an. Bei leerem Platz wurde zu keinem Zeitpunkt
 Anwesenheit gemeldet, und nach dem Weggehen fiel die Meldung in weniger als einer Sekunde ab.
+Dass die Person bei der Messung stand, ist für das Ergebnis unerheblich: Erfasst wurde etwa der
+Oberkörper, der auch bei einer sitzenden Person im Sichtfeld liegt. Mit sitzenden Personen wurde
+die Erkennung zudem während der gesamten Arbeit am Roboter im Betrieb erprobt.
 Die Reichweite liegt damit bei etwa 2\,m, 3\,m ist der Grenzbereich. Das bestätigt die obere
 Grenze der Abschätzung aus Abschnitt~\ref{sec:hw_anwesenheit}. Kommt jemand vorbei, fährt der
 Roboter kurz hoch und wieder herunter und lädt so zur Nutzung ein (Anforderung~A2). Bei Tests in Innenräumen traten auch bei
@@ -166,9 +176,9 @@ Projektverlauf ergänzte aktive Erfassung (A3*) funktioniert.
     \toprule
     Nr. & Anforderung & Status & Nachweis & Begründung \\
     \midrule
-    A1 & Sitzende Person erkennen & erfüllt & Messung (0{,}5--3\,m, stehende Person)
-       & Bis 2\,m durchgehend erkannt, 3\,m Grenzbereich; leerer Platz ohne Fehlmeldung; Grenze bei
-         direkter Sonne oder Heizung \\
+    A1 & Sitzende Person erkennen & erfüllt & Messung (0{,}5--3\,m, stehende Person), Betrieb
+       & Bis 2\,m durchgehend erkannt, 3\,m Grenzbereich; leerer Platz ohne Fehlmeldung; Oberkörper
+         wie im Sitzen im Sichtfeld; Grenze bei direkter Sonne oder Heizung \\
          \trenn
     A2 & Anwesenheit an den Pi melden & erfüllt & Firmware, Beobachtung im Betrieb
        & Meldung bei jeder Änderung und zusätzlich alle 500\,ms; der Pi reagiert mit einer kurzen

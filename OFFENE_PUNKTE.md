@@ -1,33 +1,32 @@
-# Offene Punkte (Stand 26.10.2026, abends)
+# Offene Punkte (Stand 27.10.2026, Abgabetag)
 
 Ältere, erledigte Punkte stehen in der Git-Historie dieser Datei. Reviews: `notizen/review_2026-10-26.md`,
-`notizen/review_ars_2026-10-26.md`.
+`notizen/review_ars_2026-10-26.md`, `notizen/gutachten_gremium_2026-10-27.md` (simuliertes Gremium).
 
-## Wartet auf das Team
-- [x] **Thermalsensor-Fix** (Commit `e05536c`) eingearbeitet: 4.2.1, 4.4.2, 5.2.6, Tab. 5.1, Fazit (26.10.)
-- [x] **Reichweitenmessung Thermalsensor** eingearbeitet: Abb. in 5.2.6, A1 jetzt ✓ (26.10.)
-- [ ] **Fotos** nach `abbildungen/fotos/` (Younes macht sie, 27.10.): Neffy frontal (Abb. 3.1c, 5.1a),
-      Hände in den Taschen (Abb. 5.1b), Nahaufnahme lackierte Oberfläche (`\todo` in 4.3.4), Innenleben /
-      geöffneter Oberkörper (`\todo` in 4.3.5). Abb. 3.1c: Platzhalter ist inline (Höhe 3,3 cm), Zeile
+## Vor der Abgabe heute
+- [ ] **Fotos** nach `abbildungen/fotos/` (Younes): Neffy frontal (Abb. 3.1c, 5.1a), Hände in den Taschen
+      (Abb. 5.1b), Nahaufnahme lackierte Oberfläche (`\todo` in 4.3.4), Innenleben / geöffneter Oberkörper
+      (`\todo` in 4.3.5). Abb. 3.1c: Platzhalter ist inline (Höhe 3,3 cm), die Zeile
       `\includegraphics[height=3.3cm]{fotos/neffy3_frontal}` steht als Kommentar darüber
-- [x] **Kürzen:** Stufen 1–3 umgesetzt (26.10.), Kap. 1–7 jetzt 33 S.
-
-## Kann Claude direkt erledigen (nach Freigabe)
-- [x] A6 in Tab. 5.1: Ergonomie (Ellbogen zu hoch, Kissen) steht in der Begründung
-- [ ] Optional: Anzahl/Spannweite der Probehände für A6, falls bekannt
-- [x] Namen vereinheitlicht (26.10.): Teammitglieder nur einmal in 2.3, danach nur „Team Programmierung“
-      bzw. „Team Design“; Charly Görke nach 2.1 ohne Zusatz „Labor für Kommunikation“
-
-## Abschluss
-- [x] Matrikelnummern lokal in `matrikelnummern.tex` eingetragen (nicht committen, per .gitignore draußen)
-- [ ] `\usepackage[disable,…]{todonotes}` in `main.tex`; Platzhalter verschwinden damit NICHT
-- [ ] Endkontrolle (Verweise, Abbildungen, Seitenumbrüche)
-- [ ] Pushen – nur auf Eddys Ansage
+- [ ] **CAD-Link prüfen:** Der Google-Drive-Ordner (`werk2026cad`, 4.3.1 und Anhang A) leitete beim Quellencheck
+      auf die Google-Anmeldung um → Freigabe auf „Jeder mit dem Link“ stellen oder Link streichen
+- [ ] **Firmware-Teamanteil** sichtbar machen (Gremium, 4 Rollen): Antworten von Younes ausstehend
+- [ ] Optional: **Begründungen in 4.3** (Teilung, Kleben statt Passstifte, PLA, Magnete) – Antworten ausstehend
+- [ ] Optional: **Stand der Technik** um 2–3 geprüfte Quellen ergänzen (weitere haptische Atemgeräte,
+      langsames Atmen/Stress) – Entscheidung ausstehend
+- [ ] Optional: „Stresslevel“/„passende Übung“ in 2.1, 4.4.4, 6.1 als grobe Einstufung formulieren (Gremium)
+- [ ] Neffy-2-Bericht (nur bei Eddy): Kurbelschleife + zwei Displays bei Neffy 1 (3.4) und Handlast
+      2–4 kg (4.2.4) gegenprüfen
+- [ ] **Abschluss:** Layout (Kap. 5 endet derzeit mit 6 Zeilen auf neuer Seite), `\usepackage[disable,…]{todonotes}`
+      in `main.tex` (Platzhalter verschwinden damit NICHT), Endkontrolle, Pushen nur auf Eddys Ansage
 
 ## Entschieden (zur Erinnerung)
 - KI-Angabe (4.4.7, Eigenständigkeitserklärung) bleibt so (Eddy, 26.10.)
-- Keine weiteren Tests am Roboter; Validierung über die laufende Studie
+- Keine weiteren Tests am Roboter; Validierung über die laufende Studie. Die Reichweitenmessung im Stehen ist
+  auf sitzende Personen übertragbar (Oberkörper im Sichtfeld), im Betrieb vielfach sitzend erprobt (Younes, 27.10.)
+- Roboter steht während der 30-s-Atemmessung still; Tests nur betreut, Kontaktflächen werden gereinigt (27.10.)
 - 27 Ω: im Aufbau ermittelt; Erwärmung ausprobiert, unkritisch – im Bericht nicht weiter ausgeführt
-- Stand der Technik wird nicht erweitert (Länge); höchstens ersetzen
-- Schrittmotoren und Lineareinheit: von Charly Goerke ausgewählt, im Bericht genannt (2.3, 4.2.4, 5.5)
+- 4,7-kΩ-Kurve darf im Spannungsteiler-Diagramm bleiben (Rechenbeispiel, Younes 27.10.)
+- Schrittmotoren und Lineareinheit: von Charly Görke ausgewählt, im Bericht genannt (2.3, 4.2.4, 5.5)
 - Neffy-1-Bericht (Dincel & Thomas) nicht beschafft; Neffy 1.0 über `thomas2025neffy` belegt
+- Seitenzahl ist kein hartes Limit (Vorgabe ca. 20 S., nicht streng); Ergänzungen sind möglich, wenn sie Punkte bringen

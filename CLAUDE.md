@@ -5,10 +5,11 @@
 - Hauptbetreuerin: Prof. Dr. Ilona Buchem (Titelblatt: „Lehrkraft“)
 - Betreuer: Prof. Dr. Manfred Hild (Studiengangsleiter; Titelblatt: „Betreuer“)
 - Durchgeführt im **Labor für Kommunikation** der BHT
-- Gruppenprojekt: Team Sensorik, Team Programmierung und **Team Design (Marie Mai Han)** – zuständig für die
-  grafische Gestaltung (z. B. Gesicht/Augen), führt auch die Studie zu Neffy 3.0 durch; im Bericht seit
-  26.10. als „Team Design“ mit Namen genannt (Eddy). Abstimmung bei Bedarf in Online-Meetings
-  mit gemeinsamer Abstimmung, dazu Umfragen zur Wahrnehmung der Gestaltung.
+- Gruppenprojekt: Team Sensorik, **Team Programmierung (nur Caspar Jaki)** – Software auf dem Pi und
+  Kopfmechanik – und **Team Design (nur Marie Mai Han)** – grafische Gestaltung (z. B. Gesicht/Augen), führt
+  auch die Studie zu Neffy 3.0 durch. Im Bericht werden die Mitglieder **nur einmal in 2.3** namentlich
+  genannt, danach nur „Team Programmierung“ / „Team Design“ (27.10.). Abstimmung bei Bedarf in
+  Online-Meetings, dazu Umfragen zur Wahrnehmung der Gestaltung.
 - Zielbild (Abb. 2.1) wurde von Prof. Buchem mit ChatGPT erzeugt.
 - Display Neffy 3.0: Waveshare 4,3" DSI LCD, 800 × 480, kapazitiver Touch (`waveshare43dsi`).
 - Antrieb: Dynamixel XL430-W250 (Neffy 2) zu schwach und laut → NEMA 17; Körper mit integrierter T8-Spindel
@@ -24,9 +25,10 @@
 - Die **Firmware im Repo ist maßgeblich**: Bei Widersprüchen zu Notizen gilt der Code.
 - Bericht: **ein gemeinsamer Teambericht**. Wer was gemacht hat, wird erst ganz am Ende gekennzeichnet.
 - Abgabeformat: LaTeX (VS Code + LaTeX Workshop), Literatur über biblatex (`literatur.bib`)
-- Umfang: **ca. 20 Seiten** (laut Eddy nicht streng, 23.10.2026) von Einleitung bis Ende der Einschätzung; Titelblatt, Verzeichnisse,
-  Literatur, Anhang und Eigenständigkeitserklärung zählen nicht mit [bitte bestätigen]
-- Abgabe: **26.10.2026** (am 26.10. bestätigt; steht so auf dem Titelblatt)
+- Umfang: **ca. 20 Seiten** von Einleitung bis Ende der Einschätzung, **kein hartes Limit** (Eddy 23.10.,
+  Younes 27.10.); Ergänzungen sind in Ordnung, wenn sie Punkte bringen. Stand 27.10.: Kap. 1–7 ≈ 33 S.
+- Abgabe: **27.10.2026** (verschoben, Younes 27.10.; steht so auf dem Titelblatt)
+- Auf dem PC mit Laufwerk Q: arbeitet **Younes**; Commits dort repo-lokal als `YounesJamil`.
 - Sprache: Deutsch
 
 ## Referenzbericht
@@ -85,8 +87,8 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
   dieser eine wurde bestellt und erfüllte die Anforderungen. Kein Vergleichstest → ehrlich so darstellen,
   technische Einordnung (PIR/Kamera/ToF) über Kap. 3.
 - Passive Atemerkennung: Hände ruhen in den Taschen, Atmung soll über leichte Gewichtsänderungen erkannt
-  werden → nicht eindeutig genug. Messdaten existieren (folgen).
-- Schaltplan existiert (folgt). Gehäuse-Infos folgen.
+  werden → nicht eindeutig genug (Messreihen P1/P2, siehe unten). Im Bericht auf den eigenen Aufbau und die
+  verfügbaren Mittel bezogen; lernbasiert wie bei Ommie wäre deutlich mehr Aufwand.
 - Ergebnisse Atemerkennung:
   - Passive Erkennung (Hand auf der Schulter, Atembewegung) unzuverlässig – Signal zu verrauscht
   - Aktive Variante funktioniert: beim Einatmen drücken, beim Ausatmen loslassen → klare Flanken;
@@ -114,55 +116,48 @@ bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in de
   Aufbau) mit 27 Ω, im Aufbau ermittelt, feinere Auflösung; keine eigenen Messreihen dazu nötig.
   Auf dem Neffy Board sind dafür R41/R42 (im Entwurf 10 kΩ) gegen 27 Ω getauscht (Eddy, 26.10.;
   Schaltplan und 3D-Ansicht in Anhang A, Dateien `abbildungen/neffy_board_*.jpeg`).
-  4,7 kΩ im Bericht nicht erwähnen (Eddy, 26.10.). Plots: `python daten/plots_atemsensorik.py` → `abbildungen/plots/`.
+  4,7 kΩ im Text nicht als eingebauten Wert erwähnen (Eddy, 26.10.); als Rechenbeispiel im
+  Spannungsteiler-Diagramm darf die Kurve bleiben (Younes, 27.10.). 27 Ω: Erwärmung ausprobiert, unkritisch.
+  Plots: `python daten/plots_atemsensorik.py` → `abbildungen/plots/`.
 - Noch nicht im Ordner: Firmware-Logs `logs/pocket-*.csv` und `logs/thermal-*.csv`.
   Thermalsensor D6T-1A-02 ist final integriert.
 
-## Arbeitsstand (26.10.2026, abends)
-| Teil | Stand | Offen |
-|---|---|---|
-| Titelblatt | fertig; Matrikelnummern kommen aus der lokalen `matrikelnummern.tex` (per `.gitignore` ausgeschlossen, Makros `\matrEddy`, `\matrYounes`) | – |
-| 1 Einleitung | fertig (1 S.): Stress → Ommie/Neffy-Studien; Zielgruppe bewusst weit; „vorgeben → reagieren“, sofort relativiert (aktive Mitwirkung nötig) | – |
-| 2 Ziel | fertig. Zielbild = nur Inspiration (Brainstorming), keine Anforderung. Anforderungen **A1–A8** (alt A6 Zielbild und A9 Druckbarkeit gestrichen → A6 Hände, A7 Zugang, A8 Bedienung). Fragestellung gestrichen. Projektorganisation: März–Ende Okt. 2026, geschätzt 450 h/Person, Tabelle „Wer macht was“, Kreisdiagramm Zeitaufteilung (geschätzt: Konstruktion 35, Druck/Nachbearbeitung 25, Programmierung 20, Sensortests 8, Montage/Löten 7, Abstimmung/Beschaffung/Doku 5 %) | – |
-| 3 Stand der Technik | fertig; 3.1 ohne Hinweis auf nachträgliche Recherche | Foto Neffy 3.0 (Abb. 3.1c) |
-| 4 Methoden | fertig: Kommunikation mit Firmware-README geprüft; Handmaße-Tabelle (`maldonado2023exhand` Tab. 1, `fu2022tfcc` Tab. 3); Festwiderstand 27 Ω (bestätigt); Motor 42HB4027-41 (kein Datenblatt gefunden); Spindel-Abschätzung Gl. 4.6–4.9 (η aus Geometrie, μ = 0,1–0,2 angenommen, nicht selbsthemmend); Kopfmechanik Caspar Jaki; Druck in der HROB-Werkstatt; KI-Angabe 4.4.7 final (Firmware-Code vollständig mit Claude Code, Ideen/Struktur vom Team) | optional Foto lackiertes Gehäuse |
-| 5 Diskussion | fertig: Evaluation A1–A8 + A3* (A3 passiv nicht erfüllt, A3* aktiv erfüllt, A1 erfüllt nach Messung); Antriebs-Stillstand: Heben = Motormoment überschritten, von oben = fehlende Selbsthemmung; 5.5 Eigene Ideen mit Namen (Konzept Team, Code Claude Code); Messreihen = Sensorauswahl am Entwicklungsboard, 2 Personen (Team); Studie durch Mitarbeiterin der grafischen Gestaltung | Fotos Abb. 5.1; Thermal-Reichweitenmessung inkl. ruhiges Sitzen > 20 s (Younes, wird nachgereicht) |
-| 6 Fazit | fertig | – |
-| 7 Einschätzung | fertig | – |
-| Anhang | A „Schnittstelle und Firmware“: UART-Befehlstabelle + Verweis aufs Firmware-Repo (Commit e05536c), **keine Code-Listings**; B „Messdaten der Atemsensorik“: Kennwerte-Tabelle + Abbildung aller 11 Messreihen (`alle_messreihen.pdf`). Bericht ist ein PDF und verweist **nicht** auf dieses Berichts-Repo, nur auf das Firmware-Repo (Eddy, 26.10.). CAD- und Schaltplan-Anhang gestrichen (kein Material) | – |
-| Erklärung | übliche Formel in Wir-Form inkl. KI-Hinweis (kein BHT-Wortlaut gefunden) | – |
+## Arbeitsstand (27.10.2026, Abgabetag)
+Alle Kapitel 1–7, Anhang und Erklärung sind inhaltlich fertig. **Was noch offen ist, steht ausschließlich in
+`OFFENE_PUNKTE.md`** (v. a. Fotos). Wichtige Festlegungen:
+- **Titelblatt:** Matrikelnummern aus der lokalen `matrikelnummern.tex` (per `.gitignore` ausgeschlossen, Makros
+  `\matrEddy`, `\matrYounes`); Abgabedatum 27.10.2026.
+- **Kap. 2:** Zielbild = nur Inspiration. Anforderungen **A1–A8 + A3*** (A3 passiv, A3* aktiv im Projektverlauf
+  ergänzt). Am Ende von 2.1 die Listen „Aufgabenstellung“ / „Durchgeführte Aufgaben“ (Felder im Bewertungsbogen).
+  Projektorganisation März–Okt. 2026, ca. 450 h/Person, Tab. „Wer macht was“, Kreisdiagramm Zeitaufteilung.
+- **Kap. 4:** Thermal-Reichweitenmessung (`daten/thermal-distance-261026-2137.csv`, `daten/plot_thermal.py`) steht
+  als Abbildung in **4.2.1** zusammen mit der Abschätzung (1/d bis 1/d²); Ablauf und Zahlen in 5.2.6. Abschnitt
+  4.4 am 27.10. mit dem Firmware-Repo (Commit `e05536c`) abgeglichen: Auswahl mit beiden Taschen wertet der Pi
+  aus; Roboter steht während der 30-s-Atemmessung still. KI-Angabe 4.4.7 bleibt (Eddy).
+- **Kap. 5:** Tab. 5.1 mit Status in Worten (erfüllt / teilweise / nicht erfüllt); A1 erfüllt (stehend gemessen,
+  übertragbar, im Betrieb sitzend erprobt); A8 teilweise („nicht über die gesamte Druckfläche zuverlässig“).
+  Signalwerte in **Volt** (linear, 4095 ≙ 3,3 V). Tests nur betreut, Kontaktflächen werden gereinigt.
+- **Anhang:** A „Schnittstelle, Firmware und CAD-Daten“ (UART-Befehlstabelle, Firmware-Repo, CAD-Link, Neffy Board
+  3D-Ansicht und Steckverbinder-Schaltplan); B „Messdaten der Atemsensorik“. Keine Code-Listings; kein Verweis auf
+  dieses Berichts-Repo (Eddy, 26.10.). `DISABLE_MOTORS` nur in der Befehlsliste.
+- **Quellen:** am 27.10. vollständig geprüft (Crossref/OpenAlex/Volltexte, keine Rückrufe).
+- **Gutachten:** `notizen/review_2026-10-26.md` und `notizen/gutachten_gremium_2026-10-27.md` (simuliertes
+  Gremium, geschätzt 77–85/110 → Note 2,0–1,7).
+- **Personen:** Eddy und Younes immer gleichwertig darstellen; Aufwand war gleich verteilt.
+- **Layout:** booktabs + graue Trennlinien `\trenn`; Bildunterschriften `\small`, Kurztitel für die Verzeichnisse;
+  keine Schusterjungen/Hurenkinder; geringer Abstand vor Kapitelüberschriften. Keine fast leeren Seiten am
+  Kapitelende außer unvermeidbaren. `\platzhalter` verschwindet NICHT mit `[disable]`.
 
-Umfang: Kap. 1–7 = 33 S., PDF 48 S. (nach Kürzung am 26.10. abends: Sequenzdiagramm, Sichtkegel-Abb.,
-Modultabelle, Handmaße-Tabelle, Gl. η' und Abschnitt LEDs gestrichen; F1/P2/A5 in einer Abbildung
-`fig:fsr_velostat`); nicht streng (Eddy). Keine Sätze über noch ausstehende Tests – außer der
-laufenden Studie und der Thermal-Reichweitenmessung (Eddy, 26.10.). `DISABLE_MOTORS` nicht erwähnen
-(nur in der Befehlsliste im Anhang).
-**Review 26.10. erledigt** (`notizen/review_2026-10-26.md`, alle Textpunkte umgesetzt): A3* in Tab. 2.1 und 5.1
-(„im Projektverlauf ergänzt“), A1 vorläufig, Antrieb, Beschleunigungssensor an Ommie angeglichen, Tab. 3.1
-Anwesenheitssensoren, Klassengrenzen 5,5/10,5, „Atemtakt angeben“ in Einleitung/Fazit, 27 Ω (neue, größere
-Sensoreinsätze, im Aufbau ermittelt), Velostat-Einbau schrittweise abgestimmt, Taschen im Mittel 20 × 16 × 6 cm,
-Druckbereich 14 × 8 cm (leichte Klicks mittig am zuverlässigsten), Kap. 7 „Rückblickend …“.
-Keine weiteren Tests am Roboter – Validierung über die laufende Studie (Entscheidung Eddy).
-Layout: booktabs + graue Trennlinien `\trenn` (main.tex); Gleitobjektseiten beginnen oben; alle Abbildungen und
-Tabellen am 26.10. auf Ausrichtung geprüft.
-
-## Weiteres Vorgehen (für die nächste Sitzung, auch auf einem anderen PC)
-1. ~~Review~~ – erledigt am 26.10. (siehe oben).
-2. **Fotos** nach `abbildungen/fotos/` (`neffy3_frontal.jpg`, `haende_taschen.jpg`) und Platzhalter in
-   Abb. 3.1c und 5.1a/b ersetzen. `\platzhalter` verschwindet NICHT mit `[disable]`. Optional Foto des
-   lackierten Gehäuses (`\todo` in 4.3.4).
-3. ~~Thermalmessung und Thermal-Fix~~ – erledigt am 26.10.: Messung `daten/thermal-distance-261026-2137.csv`
-   (Plot `daten/plot_thermal.py` → Abb. in 5.2.6): bis 2 m durchgehend erkannt (ΔT 3,8/2,7/1,8/1,1 K bei
-   0,5/1/1,5/2 m), 3 m Grenzbereich (0,9 K, 66 %), leer keine Fehlmeldung → A1 ✓. Firmware-Stand jetzt
-   Commit `e05536c` (26.10.): 20-s-Neulernen entfernt, Raumtemperatur bei Person τ = 900 s (~20 min),
-   Weggehen über schnellen Abfall, PTAT nur beim Einschalten (Messwert 1–5 K über PTAT = Person davor).
-   Sitzen vs. Vorbeigehen indirekt über die Dauer der Meldung.
-4. **Abschluss:** `\usepackage[disable,…]{todonotes}` in `main.tex`; Endkontrolle; pushen nur auf Eddys Ansage.
+## Weiteres Vorgehen
+Siehe `OFFENE_PUNKTE.md`. Abschluss: `\usepackage[disable,…]{todonotes}` in `main.tex`, Endkontrolle,
+pushen nur auf Eddys Ansage.
 
 ## Technische Hinweise für Claude
 - Build: `pdflatex main` → `biber main` → 2× `pdflatex main`. Plots/Tabellen neu erzeugen mit
   `python daten/plots_atemsensorik.py`, `daten/plot_kennwerte.py`, `daten/plot_spannungsteiler.py`,
-  `daten/tabelle_kennwerte.py` (matplotlib mit pgf-Backend, pandas).
+  `daten/tabelle_kennwerte.py`, `daten/plot_thermal.py` (matplotlib mit pgf-Backend, pandas). Auf Younes' PC
+  sind beide per `pip install --user` installiert; Skripte dann ohne `python -I` starten (sonst fehlt das
+  Benutzerverzeichnis).
 - **Bash-Heredocs verschlucken Backslashes** (`\\` → `\`, `\b` …): LaTeX-Ersetzungen nicht inline per
   Heredoc-Python machen, sondern Skript mit dem Write-Tool als Datei anlegen und dann ausführen – oder das
   Edit-Tool nutzen. Danach nach Zeilen mit einzelnem `\` am Ende suchen.
@@ -205,7 +200,7 @@ Messwerte, Entscheidungen) kommen von mir bzw. aus dem Material in diesem Ordner
 ## Arbeitsweise beim Schreiben (vereinbart am 21.10.2026)
 Kapitel für Kapitel, im Interview:
 1. Claude fragt gezielt, was in das Kapitel bzw. den Abschnitt gehört (konkrete Fragen, Bekanntes vorausgefüllt).
-2. Eddy beschreibt den Inhalt in Stichpunkten oder frei formuliert.
+2. Eddy bzw. Younes beschreibt den Inhalt in Stichpunkten oder frei formuliert.
 3. Claude formuliert daraus den Fließtext in LaTeX, kompiliert und meldet zurück:
    - wo eine Literaturrecherche sinnvoll ist (und was gesucht wird),
    - welche Messdaten/Auswertungen, Bilder/Fotos oder Angaben aus dem Neffy-1/2-Bericht noch fehlen,
