@@ -8,13 +8,12 @@
       (Abb. 5.1b), Nahaufnahme lackierte Oberfläche (`\todo` in 4.3.4), Innenleben / geöffneter Oberkörper
       (`\todo` in 4.3.5). Abb. 3.1c: Platzhalter ist inline (Höhe 3,3 cm), die Zeile
       `\includegraphics[height=3.3cm]{fotos/neffy3_frontal}` steht als Kommentar darüber
-- [ ] **CAD-Link prüfen:** Der Google-Drive-Ordner (`werk2026cad`, 4.3.1 und Anhang A) leitete beim Quellencheck
-      auf die Google-Anmeldung um → Freigabe auf „Jeder mit dem Link“ stellen oder Link streichen
-- [ ] **Firmware-Teamanteil** sichtbar machen (Gremium, 4 Rollen): Antworten von Younes ausstehend
-- [ ] Optional: **Begründungen in 4.3** (Teilung, Kleben statt Passstifte, PLA, Magnete) – Antworten ausstehend
-- [ ] Optional: **Stand der Technik** um 2–3 geprüfte Quellen ergänzen (weitere haptische Atemgeräte,
-      langsames Atmen/Stress) – Entscheidung ausstehend
-- [ ] Optional: „Stresslevel“/„passende Übung“ in 2.1, 4.4.4, 6.1 als grobe Einstufung formulieren (Gremium)
+- [x] Firmware-Teamanteil in 4.4.6 (Ideen/Funktionsumfang vom Team, Aufbau vom Werkzeug vorgeschlagen,
+      iterativer Ablauf mit Tests am Board; 27.10., Younes). Achtung: 4.4.6 war „bleibt so“ (Eddy) – Eddy informieren
+- [x] Begründungen in 4.3 (Teilung, PLA, Kleben statt Rundloch/Langloch, Magnete vs. Schrauben; 27.10.)
+- [x] „Stresslevel“ → „geschätzte Einstufung der Atemfrequenz“ (2.1, Tab. 5.1, 6.1, 6.2; 27.10.)
+- [ ] **Stand der Technik:** 3 Quellen geprüft (Haynes 2022, Zaccaro 2018, Levinson 2014) – Freigabe des
+      Textvorschlags ausstehend
 - [ ] Neffy-2-Bericht (nur bei Eddy): Kurbelschleife + zwei Displays bei Neffy 1 (3.4) und Handlast
       2–4 kg (4.2.4) gegenprüfen
 - [ ] **Abschluss:** Layout (Kap. 5 endet derzeit mit 6 Zeilen auf neuer Seite), `\usepackage[disable,…]{todonotes}`

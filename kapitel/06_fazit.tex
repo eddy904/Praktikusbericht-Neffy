@@ -17,7 +17,7 @@ Ein Thermalsensor erkennt bis etwa 2\,m zuverlässig, wenn sich eine Person vor 
 befindet; der Raspberry Pi
 reagiert darauf mit einer kurzen Bewegung und lädt so zur Nutzung ein. Über Velostat-Sensoren
 in den Schultertaschen geben die Nutzer*innen ihren Atemtakt an; daraus wird die Atemfrequenz
-geschätzt und als entspannt, normal oder gestresst eingestuft, woraufhin eine passende
+geschätzt und als entspannt, normal oder gestresst eingestuft, woraufhin die zugehörige
 Atemübung startet. Dieselben Taschen dienen zusätzlich als
 Bedienelement. Das ursprüngliche Ziel, die Atmung passiv über die aufliegenden Hände zu
 erkennen, wurde mit dem erprobten Aufbau nicht erreicht: Der Signalhub lag dabei mit 0{,}09 bis 0{,}37\,V weit
@@ -33,8 +33,8 @@ Taschen sicheren Halt für die Hände und lässt sich dank Magnetverbindungen oh
 stark auf den Roboter gedrückt wird, bleibt der Körper stehen und der Motor macht Geräusche.
 
 Neffy~3.0 nimmt damit Anwesenheit wahr, erfasst den von den Nutzer*innen angegebenen
-Atemtakt und reagiert auf beides. Wie gut die Stress-Einstufung im Einsatz mit Nutzer*innen
-trägt, wird die laufende Studie zu Neffy~3.0 zeigen.
+Atemtakt und reagiert auf beides. Wie gut die geschätzte Einstufung der Atemfrequenz im Einsatz
+mit Nutzer*innen trägt, wird die laufende Studie zu Neffy~3.0 zeigen.
 
 \section{Ausblick}
 \label{sec:ausblick}
@@ -61,6 +61,6 @@ Für eine nächste Version ergeben sich folgende Ansätze:
         sinnvoll, damit der Hub auch bei starkem Druck nicht stehen bleibt. Die gedruckten
         Zahnräder der Kopfmechanik haben Spiel; Metallzahnräder oder besser ein Riemengetriebe
         würden es verringern.
-  \item \textbf{Stress-Einstufung:} Die Grenzen der Einstufung können mit den Daten aus den
+  \item \textbf{Einstufung der Atemfrequenz:} Die Grenzen der Einstufung können mit den Daten aus den
         Studien zu Neffy angepasst werden.
 \end{itemize}
