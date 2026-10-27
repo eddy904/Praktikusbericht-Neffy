@@ -11,12 +11,15 @@
 - [x] Firmware-Teamanteil in 4.4.6 (Ideen/Funktionsumfang vom Team, Aufbau vom Werkzeug vorgeschlagen,
       iterativer Ablauf mit Tests am Board; 27.10., Younes). Achtung: 4.4.6 war „bleibt so“ (Eddy) – Eddy informieren
 - [x] Begründungen in 4.3 (Teilung, PLA, Kleben statt Rundloch/Langloch, Magnete vs. Schrauben; 27.10.)
-- [x] „Stresslevel“ → „geschätzte Einstufung der Atemfrequenz“ (2.1, Tab. 5.1, 6.1, 6.2; 27.10.)
-- [ ] **Stand der Technik:** 3 Quellen geprüft (Haynes 2022, Zaccaro 2018, Levinson 2014) – Freigabe des
-      Textvorschlags ausstehend
+- [x] „geschätzte Einstufung des Stresslevels“ + „dazu passende Übung“ (2.1, Tab. 5.1, 6.1, 6.2; Younes 27.10.)
+- [x] Stand der Technik ergänzt: Haynes 2022 (haptisches Atemkissen, 3.4), Zaccaro 2018 (langsames Atmen,
+      3.2 und 4.4.4), Levinson 2014 (Tastendruck folgt Atemfrequenz, r = 0,99; 3.5) – alle geprüft
+- [ ] **Eddy informieren:** 4.4.6 (KI-Angabe) um Teamanteil und Ablauf ergänzt, obwohl „bleibt so“ vereinbart war;
+      drei neue Quellen
 - [ ] Neffy-2-Bericht (nur bei Eddy): Kurbelschleife + zwei Displays bei Neffy 1 (3.4) und Handlast
       2–4 kg (4.2.4) gegenprüfen
-- [ ] **Abschluss:** Layout (Kap. 5 endet derzeit mit 6 Zeilen auf neuer Seite), `\usepackage[disable,…]{todonotes}`
+- [ ] **Abschluss:** Layout nach dem Einsetzen der Fotos (derzeit ragen Kap. 3 mit 10 und Kap. 5 mit 8 Zeilen auf eine
+      neue Seite), `\usepackage[disable,…]{todonotes}`
       in `main.tex` (Platzhalter verschwinden damit NICHT), Endkontrolle, Pushen nur auf Eddys Ansage
 
 ## Entschieden (zur Erinnerung)

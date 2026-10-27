@@ -601,7 +601,9 @@ Dieses Vorgehen ist genauer als das Zählen ganzer Atemzüge, da in 30\,s nur we
 liegen. Erwachsene atmen in Ruhe 12- bis 20-mal pro Minute~\cite{nicolo2020rr}, also 6- bis
 10-mal in 30\,s. Daraus ergeben sich die Grenzen der Einstufung: Bis 5{,}5 Atemzüge pro 30\,s
 (11 pro Minute) gelten als entspannt, bis 10{,}5 (21 pro Minute) als normal und mehr als
-gestresst. Die Grenzen liegen damit jeweils mittig zwischen ganzen Atemzügen. Das Ergebnis wird an den
+gestresst. Die Grenzen liegen damit jeweils mittig zwischen ganzen Atemzügen. Die Grenze für
+\enquote{entspannt} liegt nahe dem Bereich unter zehn Atemzügen pro Minute, auf den Übungen zum
+langsamen Atmen abzielen~\cite{zaccaro2018slow}. Das Ergebnis wird an den
 Raspberry Pi gesendet; bei weniger als zwei Einatemzügen wird kein Ergebnis gesendet.
 Während der Messung werden keine Klicks gemeldet, und alle \acp{LED} werden beim Einatmen
 heller und beim Ausatmen dunkler, sodass die Nutzer*innen eine direkte Rückmeldung erhalten.
@@ -635,9 +637,9 @@ Datenverkehr zwischen beiden Steuereinheiten im Klartext an.
 \label{sec:sw_ki}
 
 Als \ac{KI}-Werkzeug wurde ausschließlich Claude Code (Anthropic) eingesetzt. Der Quellcode der
-Firmware wurde vollständig mit Claude Code geschrieben. Die Ideen und der Funktionsumfang, also
-die Verfahren in den Abschnitten~\ref{sec:sw_anwesenheit} bis~\ref{sec:sw_atem}, stammen vom Team;
-den Aufbau in Module schlug das Werkzeug vor. Entwickelt wurde in kurzen Schleifen: Das Team
+Firmware wurde vollständig mit Claude Code geschrieben. Die Ideen, der Funktionsumfang und der
+Aufbau in Module, also auch die Verfahren in den Abschnitten~\ref{sec:sw_anwesenheit}
+bis~\ref{sec:sw_atem}, gab das Team vor. Entwickelt wurde in kurzen Schleifen: Das Team
 spielte jede Änderung auf das Neffy Board auf, testete sie, zeichnete Messdaten auf und wertete sie
 gemeinsam mit dem Werkzeug aus, um Fehler zu beheben und Parameter abzustimmen. So zeigte sich
 etwa, dass die Referenzfahrt von einem bereits gedrückten Endschalter aus gegen den Anschlag fuhr;
