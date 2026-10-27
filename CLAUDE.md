@@ -32,7 +32,7 @@
 - Sprache: Deutsch
 
 ## Referenzbericht
-In `referenz/Praxisbericht.pdf` liegt der **Praxisbericht zu Neffy 2** (Goerke & Kazubski, BHT,
+In `daten/Praxisbericht.pdf` (früher `referenz/`) liegt der **Praxisbericht zu Neffy 2** (Goerke & Kazubski, BHT,
 Labor für Kommunikation, 11.03.2025). Analyse: `notizen/analyse_praxisbericht_neffy2.md`.
 **Die PDF ist per `.gitignore` vom (öffentlichen) Repo ausgeschlossen** und liegt nur lokal. Wer sie braucht,
 bekommt sie direkt von Eddy. Alle für den Bericht wichtigen Fakten stehen in der Analyse-Notiz.

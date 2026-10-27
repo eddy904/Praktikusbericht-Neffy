@@ -14,10 +14,10 @@
 - [x] „geschätzte Einstufung des Stresslevels“ + „dazu passende Übung“ (2.1, Tab. 5.1, 6.1, 6.2; Younes 27.10.)
 - [x] Stand der Technik ergänzt: Haynes 2022 (haptisches Atemkissen, 3.4), Zaccaro 2018 (langsames Atmen,
       3.2 und 4.4.4), Levinson 2014 (Tastendruck folgt Atemfrequenz, r = 0,99; 3.5) – alle geprüft
-- [ ] **Eddy informieren:** 4.4.6 (KI-Angabe) um Teamanteil und Ablauf ergänzt, obwohl „bleibt so“ vereinbart war;
-      drei neue Quellen
-- [ ] Neffy-2-Bericht (nur bei Eddy): Kurbelschleife + zwei Displays bei Neffy 1 (3.4) und Handlast
-      2–4 kg (4.2.4) gegenprüfen
+- [x] Mit Eddy abgesprochen (27.10.): 4.4.6 mit Teamanteil, drei neue Quellen
+- [x] Neffy-2-Bericht gegengeprüft (liegt lokal als `daten/Praxisbericht.pdf`, per .gitignore ausgeschlossen):
+      Kurbelschleife, zwei Displays nur für Augen, Riementrieb bis 25 mm, Zahnradantrieb Kopf, Sprachausgabe,
+      XL430-W250, U2D2 + Power Hub, Magnete – alles bestätigt; Handlast 2–4 kg „ermittelt“ statt „geschätzt“
 - [ ] **Abschluss:** Layout nach dem Einsetzen der Fotos (derzeit ragen Kap. 3 mit 10 und Kap. 5 mit 8 Zeilen auf eine
       neue Seite), `\usepackage[disable,…]{todonotes}`
       in `main.tex` (Platzhalter verschwinden damit NICHT), Endkontrolle, Pushen nur auf Eddys Ansage
